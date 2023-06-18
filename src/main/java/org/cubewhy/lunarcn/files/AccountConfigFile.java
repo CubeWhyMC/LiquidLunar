@@ -110,7 +110,7 @@ public class AccountConfigFile {
         for (Map.Entry<String, JsonElement> account :
                 config.entrySet()) {
             String uuid = account.getKey();
-            accounts.add(AccountUtils.fromJson((JsonObject) config.get(uuid)));
+            accounts.add(AccountUtils.fromJson(config.get(uuid).getAsJsonObject()));
         }
         return accounts.toArray(new IAccount[0]);
     }

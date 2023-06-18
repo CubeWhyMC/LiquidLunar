@@ -66,6 +66,8 @@ public class Client {
         ClientConfigFile.getInstance().load(); // load config
         ClientConfigFile.getInstance().initClient(); // init client config
 
+        AccountConfigFile.getInstance().load(); // Accounts
+
         discordIPC = DiscordIPC.startIPC();
     }
 
@@ -76,7 +78,6 @@ public class Client {
         ModuleConfigFile.getInstance().load(); // module config
         PositionConfigFile.getInstance().load(); // module draggable position config
         ModuleManager.getInstance().registerModules(); // register modules
-        AccountConfigFile.getInstance().load(); // Accounts
 
         List<KeyBinding> bindings = new ArrayList<>(Arrays.asList(mc.gameSettings.keyBindings)); // Keybindings
         bindings.add(this.keyBindClickGui);

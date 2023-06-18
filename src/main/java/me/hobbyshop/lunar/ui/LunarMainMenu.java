@@ -96,7 +96,7 @@ public class LunarMainMenu extends GuiMainMenu {
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         GlStateManager.disableAlpha();
-//        super.renderSkybox(mouseX, mouseY, partialTicks);
+        this.renderSkybox(mouseX, mouseY, partialTicks);
         drawDefaultBackground(); // TODO fix this
         GlStateManager.enableAlpha();
 
@@ -209,5 +209,62 @@ public class LunarMainMenu extends GuiMainMenu {
         GlStateManager.depthMask(true);
         GlStateManager.enableCull();
         GlStateManager.enableDepth();
+    }
+
+    private void rotateAndBlurSkybox(float p_73968_1_) {
+        GL11.glTexParameteri(3553, 10241, 9729);
+        GL11.glTexParameteri(3553, 10240, 9729);
+        GL11.glCopyTexSubImage2D(3553, 0, 0, 0, 0, 0, 256, 256);
+        GlStateManager.enableBlend();
+        GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
+        GlStateManager.colorMask(true, true, true, false);
+        Tessellator tessellator = Tessellator.getInstance();
+        WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
+        GlStateManager.disableAlpha();
+        int i = 3;
+
+        for(int j = 0; j < i; ++j) {
+            float f = 1.0F / (float)(j + 1);
+            int k = this.width;
+            int l = this.height;
+            float f1 = (float)(j - i / 2) / 256.0F;
+            worldrenderer.pos((double)k, (double)l, (double)this.zLevel).tex((double)(0.0F + f1), 1.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
+            worldrenderer.pos((double)k, 0.0, (double)this.zLevel).tex((double)(1.0F + f1), 1.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
+            worldrenderer.pos(0.0, 0.0, (double)this.zLevel).tex((double)(1.0F + f1), 0.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
+            worldrenderer.pos(0.0, (double)l, (double)this.zLevel).tex((double)(0.0F + f1), 0.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
+        }
+
+        tessellator.draw();
+        GlStateManager.enableAlpha();
+        GlStateManager.colorMask(true, true, true, true);
+    }
+
+    public void renderSkybox(int p_73971_1_, int p_73971_2_, float p_73971_3_) {
+        this.mc.getFramebuffer().unbindFramebuffer();
+        GlStateManager.viewport(0, 0, 256, 256);
+        this.drawPanorama(p_73971_1_, p_73971_2_, p_73971_3_);
+        this.rotateAndBlurSkybox(p_73971_3_);
+        this.rotateAndBlurSkybox(p_73971_3_);
+        this.rotateAndBlurSkybox(p_73971_3_);
+        this.rotateAndBlurSkybox(p_73971_3_);
+        this.rotateAndBlurSkybox(p_73971_3_);
+        this.rotateAndBlurSkybox(p_73971_3_);
+        this.rotateAndBlurSkybox(p_73971_3_);
+        this.mc.getFramebuffer().bindFramebuffer(true);
+        GlStateManager.viewport(0, 0, this.mc.displayWidth, this.mc.displayHeight);
+        float f = this.width > this.height ? 120.0F / (float)this.width : 120.0F / (float)this.height;
+        float f1 = (float)this.height * f / 256.0F;
+        float f2 = (float)this.width * f / 256.0F;
+        int i = this.width;
+        int j = this.height;
+        Tessellator tessellator = Tessellator.getInstance();
+        WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
+        worldrenderer.pos(0.0, (double)j, (double)this.zLevel).tex((double)(0.5F - f1), (double)(0.5F + f2)).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        worldrenderer.pos((double)i, (double)j, (double)this.zLevel).tex((double)(0.5F - f1), (double)(0.5F - f2)).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        worldrenderer.pos((double)i, 0.0, (double)this.zLevel).tex((double)(0.5F + f1), (double)(0.5F - f2)).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        worldrenderer.pos(0.0, 0.0, (double)this.zLevel).tex((double)(0.5F + f1), (double)(0.5F + f2)).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        tessellator.draw();
     }
 }

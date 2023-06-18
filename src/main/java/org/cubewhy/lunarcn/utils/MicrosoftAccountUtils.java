@@ -112,7 +112,7 @@ public class MicrosoftAccountUtils {
 
         try (Response response = HttpUtils.request(request).execute()) {
             if (response.body() != null) {
-                return JsonParser.parseString(response.body().string());
+                return new JsonParser().parse(response.body().string());
             }
         }
         return null;
@@ -134,7 +134,7 @@ public class MicrosoftAccountUtils {
 
         try (Response response = HttpUtils.request(request).execute()) {
             if (response.body() != null) {
-                return JsonParser.parseString(response.body().string());
+                return new JsonParser().parse(response.body().string());
             }
         }
         return null;
@@ -150,7 +150,7 @@ public class MicrosoftAccountUtils {
                 .build();
         try (Response response = HttpUtils.request(request).execute()) {
             if (response.body() != null) {
-                return JsonParser.parseString(response.body().string());
+                return new JsonParser().parse(response.body().string());
             }
         }
         return null;
@@ -166,7 +166,7 @@ public class MicrosoftAccountUtils {
                 .build();
         try (Response response = HttpUtils.request(request).execute()) {
             if (response.body() != null) {
-                return JsonParser.parseString(response.body().string());
+                return new JsonParser().parse(response.body().string());
             }
         }
         return null;
@@ -182,7 +182,7 @@ public class MicrosoftAccountUtils {
                 .build();
         try (Response response = HttpUtils.request(request).execute()) {
             if (response.body() != null) {
-                return JsonParser.parseString(response.body().string());
+                return new JsonParser().parse(response.body().string());
             }
         }
         return null;
@@ -197,7 +197,7 @@ public class MicrosoftAccountUtils {
                 .build();
         try (Response response = HttpUtils.request(request).execute()) {
             if (response.body() != null) {
-                return JsonParser.parseString(response.body().string());
+                return new JsonParser().parse(response.body().string());
             }
         }
         return null;
@@ -212,7 +212,7 @@ public class MicrosoftAccountUtils {
                 .build();
         try (Response response = HttpUtils.request(request).execute()) {
             if (response.body() != null) {
-                return JsonParser.parseString(response.body().string());
+                return new JsonParser().parse(response.body().string());
             }
         }
         return null;

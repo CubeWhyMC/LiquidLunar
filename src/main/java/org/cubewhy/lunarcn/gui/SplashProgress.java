@@ -8,10 +8,12 @@ import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.util.ResourceLocation;
 import org.cubewhy.lunarcn.Client;
+import org.cubewhy.lunarcn.utils.RenderUtils;
 import org.cubewhy.lunarcn.utils.UnicodeFontRenderer;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
+import java.io.IOException;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
@@ -27,7 +29,7 @@ public class SplashProgress {
             return;
         }
 
-        drawSplash(mc.getTextureManager());
+        drawSplash();
     }
 
     public static void setProgress(int giveProgress, String giveText) {
@@ -42,7 +44,7 @@ public class SplashProgress {
         update();
     }
 
-    public static void drawSplash(TextureManager textureManager) {
+    public static void drawSplash() {
         ScaledResolution scaledResolution = new ScaledResolution(mc);
         int scaleFactor = scaledResolution.getScaleFactor();
         Framebuffer framebuffer = new Framebuffer(scaledResolution.getScaledWidth() * scaleFactor, scaledResolution.getScaledHeight() * scaleFactor, true);
@@ -63,7 +65,8 @@ public class SplashProgress {
             splash = new ResourceLocation(Client.splashImage);
         }
 
-        textureManager.bindTexture(splash);
+//        textureManager.bindTexture(splash);
+        GL11.glBindTexture(GL11.GL_TEXTURE_2D, RenderUtils.loadGlTexture(splash));
 
         GlStateManager.resetColor();
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);

@@ -9,6 +9,7 @@ import org.cubewhy.lunarcn.account.OfflineAccount;
 import org.cubewhy.lunarcn.utils.AccountUtils;
 
 import java.io.*;
+import java.util.Map;
 
 public class AccountConfigFile {
     public static String configFilePath = Client.configDir + "/accounts.json";
@@ -25,9 +26,9 @@ public class AccountConfigFile {
     public void addAccount(IAccount account) {
         JsonElement json = account.toJson();
         if (account instanceof OfflineAccount) {
-            for (String key :
-                    config.keySet()) {
-                if (config.get(key).getAsJsonObject().get("username").getAsString().equals(account.getUserName())) {
+            for (Map.Entry<String, JsonElement> entry :
+                    config.entrySet()) {
+                if (config.get(entry.getKey()).getAsJsonObject().get("username").getAsString().equals(account.getUserName())) {
                     return;
                 }
             }

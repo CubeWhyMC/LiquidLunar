@@ -7,8 +7,8 @@
   "client": [
     "client.MixinGameSettings",
     "client.MixinMinecraft",
-    "gui.MixinGuiScreen",
     "gui.MixinGuiNewChat",
+    "gui.MixinGuiScreen",
     "multiplayer.MixinPlayerControllerMP",
     "network.MixinNetHandlerPlayClient"
   ],
@@ -16,6 +16,8 @@
     "client.MixinEntityRenderer",
     "entity.MixinEntityLivingBase",
     "entity.MixinEntityPlayerSP",
+    "forge.MixinSplashProgress",
+    "forge.MixinSplashProgressRunnable",
     "network.MixinNetworkManager"
   ]
 }

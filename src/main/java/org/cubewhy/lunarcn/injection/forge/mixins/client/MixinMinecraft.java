@@ -26,6 +26,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.io.File;
+import java.io.IOException;
 
 @Mixin(Minecraft.class)
 abstract public class MixinMinecraft {
@@ -81,13 +82,8 @@ abstract public class MixinMinecraft {
     @Shadow
     public abstract void setIngameFocus();
 
-    @Inject(method = "startGame", at = @At("HEAD"))
-    public void startGameHead(CallbackInfo ci) {
-        Client.getInstance().onInit(); // init game
-    }
-
     @Inject(method = "startGame", at = @At("RETURN"))
-    public void startGameReturn(CallbackInfo ci) {
+    public void startGameReturn(CallbackInfo ci) throws IOException {
         Client.getInstance().onStart();
     }
 
@@ -109,15 +105,6 @@ abstract public class MixinMinecraft {
     @Inject(method = "runTick", at = @At("RETURN"))
     public void runTick(CallbackInfo ci) {
         new TickEvent().callEvent();
-    }
-
-    /**
-     * @author CubeWhy
-     * @reason 使用自定义加载屏幕
-     */
-    @Overwrite
-    public void drawSplashScreen(TextureManager textureManager) {
-        SplashProgress.drawSplash(textureManager);
     }
 
     /**

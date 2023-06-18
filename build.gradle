@@ -52,7 +52,7 @@ dependencies {
 
     include "org.jetbrains.kotlin:kotlin-stdlib"
     include 'com.squareup.okhttp3:okhttp:4.11.0'
-    include 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.google.code.gson:gson:2.2.4' // 因为Minecraft使用2.2.4的gson, 请不要升级这个
     include 'com.jagrosh:DiscordIPC:0.4'
     implementation 'org.realityforge.org.jetbrains.annotations:org.jetbrains.annotations:1.7.0'
 }

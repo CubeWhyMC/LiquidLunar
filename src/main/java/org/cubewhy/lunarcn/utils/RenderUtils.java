@@ -3,6 +3,11 @@ package org.cubewhy.lunarcn.utils;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 import static org.lwjgl.opengl.GL11.*;
@@ -35,5 +40,36 @@ public class RenderUtils {
 
         gui.drawVerticalLine(x, y, y + height, color);
         gui.drawVerticalLine(x + width, y, y + height, color);
+    }
+
+    public static int loadGlTexture(ResourceLocation resource) {
+        try {
+            BufferedImage bufferedImage = ImageIO.read(FileUtils.getInstance().getFile(resource.getResourcePath()));
+            return loadGlTexture(bufferedImage);
+        } catch (Throwable e) {
+            return 0;
+        }
+    }
+
+    public static int loadGlTexture(BufferedImage bufferedImage) {
+        try {
+            int textureId = GL11.glGenTextures();
+
+            GL11.glBindTexture(GL11.GL_TEXTURE_2D, textureId);
+
+            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_S, GL11.GL_REPEAT);
+            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_T, GL11.GL_REPEAT);
+            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_LINEAR);
+            GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
+
+            GL11.glTexImage2D(GL11.GL_TEXTURE_2D, 0, GL11.GL_RGBA, bufferedImage.getWidth(), bufferedImage.getHeight(),
+                    0, GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, ImageUtils.readImageToBuffer(bufferedImage));
+
+            GL11.glBindTexture(GL11.GL_TEXTURE_2D, 0);
+
+            return textureId;
+        } catch (Throwable e) {
+            return 0;
+        }
     }
 }

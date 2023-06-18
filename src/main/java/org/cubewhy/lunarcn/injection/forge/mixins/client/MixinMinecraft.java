@@ -77,6 +77,7 @@ abstract public class MixinMinecraft {
 
     @Shadow
     public abstract void setIngameNotInFocus();
+
     @Shadow
     public abstract void setIngameFocus();
 
@@ -125,7 +126,7 @@ abstract public class MixinMinecraft {
      */
     @Overwrite
     public void displayGuiScreen(GuiScreen guiScreenIn) {
-        if (guiScreenIn == null && this.theWorld == null || guiScreenIn instanceof GuiMainMenu ) {
+        if (guiScreenIn == null && this.theWorld == null || guiScreenIn instanceof GuiMainMenu) {
             guiScreenIn = ClientConfigFile.getInstance().getMenuStyle();
         } else if (guiScreenIn == null && this.thePlayer.getHealth() <= 0.0F) {
             guiScreenIn = new GuiGameOver();

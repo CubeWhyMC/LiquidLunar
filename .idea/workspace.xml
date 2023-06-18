@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="增加mainmenu(不是完全工作)" />
+    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="utils">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,123 +130,10 @@
     </option>
   </component>
   <component name="RunManager" selected="应用程序.Minecraft Client">
-    <configuration name="Minecraft Client" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="GradleStart" />
-      <module name="LiquidLunarForge.main" />
-      <option name="VM_PARAMETERS" value="-Dfml.coreMods.load=org.cubewhy.lunarcn.injection.forge.TransformerLoader -Xmx1024m -Xms1024m -Ddev-mode" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Minecraft Server" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="GradleStartServer" />
-      <module name="LiquidLunarForge.main" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../LiquidLunarForge\run" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LiquidLunarForge [cleanCache]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="cleanCache" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="LiquidLunarForge [recompileMc]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--stacktrace --info" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="recompileMc" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="LiquidLunarForge [setupCiWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="setupCiWorkspace" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="LiquidLunarForge [setupDecompWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--stacktrace --info" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="setupDecompWorkspace" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.LiquidLunarForge [setupDecompWorkspace]" />
-        <item itemvalue="Gradle.LiquidLunarForge [recompileMc]" />
-        <item itemvalue="Gradle.LiquidLunarForge [cleanCache]" />
-        <item itemvalue="Gradle.LiquidLunarForge [setupCiWorkspace]" />
-      </list>
-    </recent_temporary>
+    <list>
+      <item itemvalue="应用程序.Minecraft Client" />
+      <item itemvalue="应用程序.Minecraft Server" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -297,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687084742472</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="utils">
+      <created>1687084868897</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687084868897</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -309,6 +205,7 @@
     <MESSAGE value="修复源码(部分)" />
     <MESSAGE value="Mixins" />
     <MESSAGE value="增加mainmenu(不是完全工作)" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加mainmenu(不是完全工作)" />
+    <MESSAGE value="utils" />
+    <option name="LAST_COMMIT_MESSAGE" value="utils" />
   </component>
 </project>

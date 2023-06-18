@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="forge with mixins">
+    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="修复源码(部分)">
       <change afterPath="$PROJECT_DIR$/run/.mixin.out/audit/mixin_implementation_report.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/run/.mixin.out/audit/mixin_implementation_report.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/run/config/forge.cfg" afterDir="false" />
@@ -53,6 +53,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/cheats/AutoSag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/cheats/AutoSag.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/move/ToggleSprint.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/move/ToggleSprint.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/lunarcn_at.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lunarcn_at.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687069854433</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修复源码(部分)">
+      <created>1687078090429</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687078090429</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -330,6 +338,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="forge" />
     <MESSAGE value="forge with mixins" />
-    <option name="LAST_COMMIT_MESSAGE" value="forge with mixins" />
+    <MESSAGE value="修复源码(部分)" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复源码(部分)" />
   </component>
 </project>

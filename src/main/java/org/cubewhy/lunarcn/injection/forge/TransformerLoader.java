@@ -1,7 +1,6 @@
 package org.cubewhy.lunarcn.injection.forge;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
-import org.cubewhy.lunarcn.injection.transformers.ForgeNetworkTransformer;
 import org.cubewhy.lunarcn.injection.transformers.OptimizeTransformer;
 import org.spongepowered.asm.launch.MixinBootstrap;
 import org.spongepowered.asm.mixin.MixinEnvironment;
@@ -25,7 +24,8 @@ public class TransformerLoader implements IFMLLoadingPlugin {
      */
     @Override
     public String[] getASMTransformerClass() {
-        return new String[] {ForgeNetworkTransformer.class.getName(), OptimizeTransformer.class.getName()};
+//        return new String[] {ForgeNetworkTransformer.class.getName(), OptimizeTransformer.class.getName()};
+        return new String[]{OptimizeTransformer.class.getName()};
     }
 
     /**

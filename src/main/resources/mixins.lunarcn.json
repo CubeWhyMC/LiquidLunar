@@ -5,6 +5,7 @@
   "refmap": "mixins.lunarcn.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "client": [
+    "client.MixinGameSettings",
     "client.MixinMinecraft",
     "gui.MixinGuiNewChat",
     "multiplayer.MixinPlayerControllerMP",

@@ -1,5 +1,6 @@
 package org.cubewhy.lunarcn.gui.hud;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
@@ -52,7 +53,7 @@ public class HudDesigner extends GuiScreen {
     }
 
     private void moveElement(IRenderer renderer, ScreenPosition position) {
-        ScaledResolution scaledResolution = new ScaledResolution(mc);
+        ScaledResolution scaledResolution = new ScaledResolution(Minecraft.getMinecraft());
 
         int screenWidth = scaledResolution.getScaledWidth();
         int screenHeight = scaledResolution.getScaledHeight();

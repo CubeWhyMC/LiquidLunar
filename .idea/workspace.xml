@@ -4,54 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="修复源码(部分)">
-      <change afterPath="$PROJECT_DIR$/run/.mixin.out/audit/mixin_implementation_report.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/.mixin.out/audit/mixin_implementation_report.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/config/forge.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/config/forgeChunkLoading.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/config/splash.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/crash-reports/crash-2023-06-18_16.13.06-server.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/logs/2023-06-18-1.log.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/logs/fml-client-1.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/logs/fml-client-latest.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/logs/fml-junk-earlystartup.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/options.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/villages_nether.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/DIM-1/forcedchunks.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/DIM1/data/villages_end.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/DIM1/forcedchunks.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/data/Mineshaft.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/data/villages.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/forcedchunks.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/level.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/level.dat_mcr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/level.dat_old" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/region/r.-1.0.mca" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/region/r.0.0.mca" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/saves/New World/session.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinGameSettings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/utils/PacketUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="Mixins">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hobbyshop/lunar/ui/LunarMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hobbyshop/lunar/ui/LunarMainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/account/IAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/account/IAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/ClientButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/ClientButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/hud/HudDesigner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/hud/HudDesigner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/TransformerLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/TransformerLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/network/MixinNetHandlerPlayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/network/MixinNetHandlerPlayClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/network/MixinNetworkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/network/MixinNetworkManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/transformers/ForgeNetworkTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/transformers/ForgeNetworkTransformer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/transformers/OptimizeTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/transformers/OptimizeTransformer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MinecraftInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MinecraftInstance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/cheats/AutoSag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/cheats/AutoSag.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/move/ToggleSprint.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/move/ToggleSprint.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/lunarcn_at.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lunarcn_at.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" afterDir="false" />
     </list>
@@ -149,6 +109,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/CubeWhy/Desktop/shadiao/LiquidLunarForge/src/main/resources/assets/minecraft",
     "project.structure.last.edited": "SDK",
     "project.structure.proportion": "0.14648438",
     "project.structure.side.proportion": "0.24284078",
@@ -161,6 +122,9 @@
     </force-push-targets>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CubeWhy\Desktop\shadiao\LiquidLunarForge\src\main\resources\assets\minecraft" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\CubeWhy\Desktop\shadiao\LiquidLunarForge\.gradle\minecraft" />
     </key>
@@ -329,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687078090429</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Mixins">
+      <created>1687078175598</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687078175598</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -339,6 +310,7 @@
     <MESSAGE value="forge" />
     <MESSAGE value="forge with mixins" />
     <MESSAGE value="修复源码(部分)" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复源码(部分)" />
+    <MESSAGE value="Mixins" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mixins" />
   </component>
 </project>

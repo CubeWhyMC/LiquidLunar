@@ -30,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -76,7 +77,7 @@ public class Client {
         ModuleManager.getInstance().registerModules(); // register modules
         AccountConfigFile.getInstance().load(); // Accounts
 
-        List<KeyBinding> bindings = Arrays.asList(mc.gameSettings.keyBindings); // Keybindings
+        List<KeyBinding> bindings = new ArrayList<>(Arrays.asList(mc.gameSettings.keyBindings)); // Keybindings
         bindings.add(this.keyBindClickGui);
         mc.gameSettings.keyBindings = bindings.toArray(new KeyBinding[0]);
 

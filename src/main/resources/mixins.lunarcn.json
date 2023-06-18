@@ -7,6 +7,7 @@
   "client": [
     "client.MixinGameSettings",
     "client.MixinMinecraft",
+    "gui.MixinGuiScreen",
     "gui.MixinGuiNewChat",
     "multiplayer.MixinPlayerControllerMP",
     "network.MixinNetHandlerPlayClient"

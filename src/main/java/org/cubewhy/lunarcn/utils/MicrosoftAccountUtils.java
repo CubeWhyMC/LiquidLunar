@@ -93,7 +93,7 @@ public class MicrosoftAccountUtils {
         String userName = MinecraftProfile.getAsJsonObject().get("name").getAsString();
         String refreshToken = tokenMicrosoft.getAsJsonObject().get("refresh_token").getAsString();
 
-        return new MicrosoftAccount(userName, uuid, accessToken, refreshToken, new Date());
+        return new MicrosoftAccount(userName, uuid, minecraftToken, refreshToken, new Date());
     }
 
     private JsonElement authFromAuthCode(String code) throws IOException {
@@ -343,7 +343,7 @@ public class MicrosoftAccountUtils {
                                     "<label>不要将此界面发送给其他人, 这会让你的Minecraft账户被盗!</label><br>" +
                                     "<label>Don't send this interface to others as it may result in your Minecraft account being stolen!</label>"
                             , userName, uuid, minecraftToken, refreshToken);
-                    MicrosoftAccount account = new MicrosoftAccount(userName, uuid, accessToken, refreshToken, new Date());
+                    MicrosoftAccount account = new MicrosoftAccount(userName, uuid, minecraftToken, refreshToken, new Date());
                     AccountConfigFile.getInstance().addAccount(account);
                     account.switchAccount();
                     if (mc.currentScreen instanceof LoginScreen) {

@@ -57,11 +57,6 @@ dependencies {
     implementation 'org.realityforge.org.jetbrains.annotations:org.jetbrains.annotations:1.7.0'
 }
 
-jar {
-    manifestContentCharset 'utf-8'
-    metadataCharset 'utf-8'
-}
-
 shadowJar {
     archiveClassifier.set("fatjar")
     configurations = [project.configurations.include]
@@ -88,6 +83,8 @@ minecraft {
 }
 
 jar {
+    manifestContentCharset 'utf-8'
+    metadataCharset 'utf-8'
     manifest.attributes(
             "FMLCorePlugin": "org.cubewhy.lunarcn.injection.forge.TransformerLoader",
             "FMLCorePluginContainsFMLMod": true,
@@ -98,8 +95,6 @@ jar {
             "TweakOrder": "0",
             "FMLAT": "lunarcn_at.cfg",
     )
-
-    enabled = false
 }
 
 mixin {

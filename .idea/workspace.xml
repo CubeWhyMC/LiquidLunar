@@ -4,7 +4,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="forge" />
+    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="forge with mixins">
+      <change afterPath="$PROJECT_DIR$/run/.mixin.out/audit/mixin_implementation_report.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/.mixin.out/audit/mixin_implementation_report.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/config/forge.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/config/forgeChunkLoading.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/config/splash.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/crash-reports/crash-2023-06-18_16.13.06-server.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/logs/2023-06-18-1.log.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/logs/fml-client-1.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/logs/fml-client-latest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/logs/fml-junk-earlystartup.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/options.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/DIM-1/data/villages_nether.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/DIM-1/forcedchunks.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/DIM1/data/villages_end.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/DIM1/forcedchunks.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/data/Mineshaft.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/data/villages.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/forcedchunks.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/level.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/level.dat_mcr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/level.dat_old" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/region/r.-1.0.mca" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/region/r.0.0.mca" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run/saves/New World/session.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinGameSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/utils/PacketUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/account/IAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/account/IAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/ClientButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/ClientButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/hud/HudDesigner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/hud/HudDesigner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/TransformerLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/TransformerLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/network/MixinNetHandlerPlayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/network/MixinNetHandlerPlayClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/network/MixinNetworkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/network/MixinNetworkManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/transformers/ForgeNetworkTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/transformers/ForgeNetworkTransformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/transformers/OptimizeTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/transformers/OptimizeTransformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MinecraftInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MinecraftInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/cheats/AutoSag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/cheats/AutoSag.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/move/ToggleSprint.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/move/ToggleSprint.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lunarcn_at.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lunarcn_at.cfg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +86,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="LiquidLunarForge" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LiquidLunarForge" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="forgegradle" type="c8890929:TasksNode$1" />
               </path>
               <path>
@@ -56,6 +111,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
         <option value="Class" />
       </list>
     </option>
@@ -71,6 +127,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2RMPgBMkbZsQq3DSra4SXTqlCY4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -89,10 +148,10 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "master",
-    "project.structure.last.edited": "库",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "vcs.Git"
+    "project.structure.last.edited": "SDK",
+    "project.structure.proportion": "0.14648438",
+    "project.structure.side.proportion": "0.24284078",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
   <component name="Push.Settings">
@@ -100,13 +159,20 @@
       <force-push-target remote-path="origin" branch="master" />
     </force-push-targets>
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CubeWhy\Desktop\shadiao\LiquidLunarForge\.gradle\minecraft" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle minecraft" />
       <command value="gradle setupDecompWorkspace" />
+      <command value="recompileMc --stacktrace --info" />
+      <command value="gradle recompileMc --stacktrace --info" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.LiquidLunarForge [setupDecompWorkspace]">
+  <component name="RunManager" selected="应用程序.Minecraft Client">
     <configuration name="Minecraft Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="LiquidLunarForge.main" />
@@ -127,6 +193,50 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="LiquidLunarForge [cleanCache]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="cleanCache" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="LiquidLunarForge [recompileMc]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--stacktrace --info" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="recompileMc" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
     </configuration>
     <configuration name="LiquidLunarForge [setupCiWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -155,7 +265,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--stacktrace --info" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -175,6 +285,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.LiquidLunarForge [setupDecompWorkspace]" />
+        <item itemvalue="Gradle.LiquidLunarForge [recompileMc]" />
+        <item itemvalue="Gradle.LiquidLunarForge [cleanCache]" />
         <item itemvalue="Gradle.LiquidLunarForge [setupCiWorkspace]" />
       </list>
     </recent_temporary>
@@ -202,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687069296370</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="forge with mixins">
+      <created>1687069854433</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687069854433</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -210,6 +329,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="forge" />
-    <option name="LAST_COMMIT_MESSAGE" value="forge" />
+    <MESSAGE value="forge with mixins" />
+    <option name="LAST_COMMIT_MESSAGE" value="forge with mixins" />
   </component>
 </project>

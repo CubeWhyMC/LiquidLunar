@@ -69,7 +69,7 @@ public class ClickGui extends GuiScreen {
     }
 
     private void drawPanel() {
-        this.drawHollowRect(this.width / 4 - 50, this.height / 4 - 50, this.width / 2 + 100, this.height / 2 + 100, new Color(255, 255, 255).getRGB());
+        RenderUtils.drawHollowRect(this, this.width / 4 - 50, this.height / 4 - 50, this.width / 2 + 100, this.height / 2 + 100, new Color(255, 255, 255).getRGB());
         this.drawString(fontRendererObj, Client.clientName, this.width / 4 + 20, this.height / 4, new Color(255, 255, 255).getRGB());
         RenderUtils.drawImage(Client.clientLogo, this.width / 4 - 40, this.height / 4 - 40, 55, 55);
         this.drawHorizontalLine(this.width / 4 - 50, this.width / 4 - 50 + this.width / 2 + 100, this.height / 4 + 30, new Color(255, 255, 255).getRGB());

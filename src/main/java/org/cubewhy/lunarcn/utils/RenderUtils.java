@@ -28,4 +28,12 @@ public class RenderUtils {
     public static boolean isHovering(int mouseX, int mouseY, float xLeft, float yUp, float xRight, float yBottom) {
         return (float)mouseX > xLeft && (float)mouseX < xRight && (float)mouseY > yUp && (float)mouseY < yBottom;
     }
+
+    public static void drawHollowRect(Gui gui, int x, int y, int width, int height, int color) {
+        gui.drawHorizontalLine(x, x + width, y, color);
+        gui.drawHorizontalLine(x, x + width, y + height, color);
+
+        gui.drawVerticalLine(x, y, y + height, color);
+        gui.drawVerticalLine(x + width, y, y + height, color);
+    }
 }

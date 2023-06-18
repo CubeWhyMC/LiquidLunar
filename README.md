@@ -24,7 +24,7 @@ LiquidLunar是一个开源的Minecraft 1.8.9 PVP客户端, 与LunarClient没有�
 
 ### recompileMc报错
 
-这是因为你之前成功编译过一次Minecraft导致的, 直接重新导入gradle项目即可
+请检查`lunarcn_at.cfg`文件是否配置正确
 
 ### Others
 

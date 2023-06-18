@@ -21,6 +21,8 @@ import java.util.HashMap;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+import static org.cubewhy.lunarcn.utils.RenderUtils.drawHollowRect;
+
 public class HudDesigner extends GuiScreen {
     private final HashMap<IRenderer, ScreenPosition> renderers = new HashMap<>();
     private Optional<IRenderer> selectedRenderer = Optional.empty();
@@ -74,14 +76,14 @@ public class HudDesigner extends GuiScreen {
         final float zBackUp = this.zLevel;
         this.zLevel = 200;
 
-        this.drawHollowRect(0, 0, this.width - 1, this.height - 1, new Color(255, 0, 0).getRGB());
+        drawHollowRect(this, 0, 0, this.width - 1, this.height - 1, new Color(255, 0, 0).getRGB());
 
         for (IRenderer renderer : renderers.keySet()) {
             ScreenPosition position = renderers.get(renderer);
 
             renderer.renderDummy(position);
 
-            this.drawHollowRect(position.getAbsoluteX(), position.getAbsoluteY(), renderer.getWidth(), renderer.getHeight(), new Color(108, 218, 202).getRGB());
+            drawHollowRect(this, position.getAbsoluteX(), position.getAbsoluteY(), renderer.getWidth(), renderer.getHeight(), new Color(108, 218, 202).getRGB());
         }
 
 

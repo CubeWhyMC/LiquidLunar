@@ -17,7 +17,7 @@ class AutoSag : Module() {
     @EventTarget
     fun onAttack(event: AttackEvent) {
         if (mc.thePlayer.heldItem.item is ItemSword) {
-//            mc.rightClickMouse()
+            mc.rightClickMouse()
         }
     }
 }

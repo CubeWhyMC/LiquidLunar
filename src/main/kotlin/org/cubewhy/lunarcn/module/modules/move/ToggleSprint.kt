@@ -62,9 +62,7 @@ class ToggleSprint : ModuleDraggable() {
         } else {
             this.text = ""
         }
-        if (sprintState) {
-            mc.gameSettings.keyBindSprint.isPressed = sprintState
-        }
+        mc.gameSettings.keyBindSprint.pressed = sprintState
         if (mc.gameSettings.keyBindSprint.isPressed) {
             sprintState = !sprintState
         }

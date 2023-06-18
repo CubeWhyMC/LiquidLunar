@@ -52,4 +52,5 @@ public class MixinMinecraft {
     public void drawSplashScreen(TextureManager textureManager) {
         SplashProgress.drawSplash(textureManager);
     }
+
 }

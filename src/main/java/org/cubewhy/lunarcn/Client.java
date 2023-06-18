@@ -11,9 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.event.EventTarget;
-import org.cubewhy.lunarcn.event.events.ChatSentEvent;
 import org.cubewhy.lunarcn.event.events.PacketEvent;
-import org.cubewhy.lunarcn.event.events.ChatEvent;
 import org.cubewhy.lunarcn.event.events.TickEvent;
 import org.cubewhy.lunarcn.files.AccountConfigFile;
 import org.cubewhy.lunarcn.files.ClientConfigFile;
@@ -29,12 +27,11 @@ import org.cubewhy.lunarcn.utils.GitUtils;
 import org.cubewhy.lunarcn.utils.LoggerUtils;
 import org.cubewhy.lunarcn.utils.MicrosoftAccountUtils;
 import org.jetbrains.annotations.NotNull;
-import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
-import javax.management.RuntimeErrorException;
-import javax.swing.*;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
@@ -78,6 +75,10 @@ public class Client {
         PositionConfigFile.getInstance().load(); // module draggable position config
         ModuleManager.getInstance().registerModules(); // register modules
         AccountConfigFile.getInstance().load(); // Accounts
+
+        List<KeyBinding> bindings = Arrays.asList(mc.gameSettings.keyBindings); // Keybindings
+        bindings.add(this.keyBindClickGui);
+        mc.gameSettings.keyBindings = bindings.toArray(new KeyBinding[0]);
 
         new Thread(() -> {
             try {

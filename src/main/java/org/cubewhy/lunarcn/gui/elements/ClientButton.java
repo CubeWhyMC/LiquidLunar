@@ -5,6 +5,7 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
+import org.cubewhy.lunarcn.utils.RenderUtils;
 
 import java.awt.*;
 
@@ -49,7 +50,7 @@ public class ClientButton extends GuiButton {
             }
 
             if (this.drawRect) {
-                this.drawHollowRect(this.xPosition, this.yPosition, this.width - 1, this.height - 1, rectColor);
+                RenderUtils.drawHollowRect(this, this.xPosition, this.yPosition, this.width - 1, this.height - 1, rectColor);
             }
 
             this.drawCenteredString(fontrenderer, this.displayString, this.xPosition + this.width / 2, this.yPosition + (this.height - 8) / 2, color);

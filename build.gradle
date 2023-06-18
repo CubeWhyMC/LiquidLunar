@@ -1,0 +1,105 @@
+plugins {
+    id 'java'
+    id "idea"
+    id 'org.jetbrains.kotlin.jvm' version '1.9.0-Beta'
+    id "com.github.johnrengelman.shadow" version "6.1.0"
+    id "com.gorylenko.gradle-git-properties" version "2.4.1"
+    id "net.minecraftforge.gradle.forge"
+    id "org.spongepowered.mixin"
+}
+
+group = 'org.cubewhy.lunarcn'
+version = '1.0-SNAPSHOT'
+
+println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
+println("Give us stars -> httpsL//github.com/CubeWhy/LiquidLunar")
+
+compileJava.options.encoding = "UTF-8"
+
+configurations {
+    include
+    compile
+    implemetation.extendsFrom(compile)
+    implementation.extendsFrom(include)
+}
+
+repositories {
+    maven {
+        allowInsecureProtocol = true
+        url "https://maven.aliyun.com/repository/public/"
+    }
+    maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
+    maven { url = "https://jitpack.io/" }
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+    include fileTree(dir: "lib", includes: ['*.jar'])
+
+    include("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
+        transitive = false
+        exclude module: "guava"
+        exclude module: "commons-io"
+        exclude module: "gson"
+        exclude module: "launchwrapper"
+        exclude module: "log4j-core"
+        exclude module: "slf4j-api"
+    }
+
+    annotationProcessor("org.spongepowered:mixin:0.7.11-SNAPSHOT")
+
+    include "org.jetbrains.kotlin:kotlin-stdlib"
+    include 'com.squareup.okhttp3:okhttp:4.11.0'
+    include 'com.google.code.gson:gson:2.10.1'
+    include 'com.jagrosh:DiscordIPC:0.4'
+    implementation 'org.realityforge.org.jetbrains.annotations:org.jetbrains.annotations:1.7.0'
+}
+
+jar {
+    manifestContentCharset 'utf-8'
+    metadataCharset 'utf-8'
+}
+
+shadowJar {
+    archiveClassifier.set("fatjar")
+    configurations = [project.configurations.include]
+    duplicatesStrategy DuplicatesStrategy.EXCLUDE
+}
+
+
+minecraft {
+    version = "1.8.9-11.15.1.2318-1.8.9"
+    runDir = "run"
+    mappings = "stable_22"
+    makeObfSourceJar = false
+    clientJvmArgs += ["-Dfml.coreMods.load=org.cubewhy.lunarcn.injection.forge.TransformerLoader", "-Xmx1024m -Xms1024m", "-Ddev-mode"]
+}
+
+jar {
+    manifest.attributes(
+            "FMLCorePlugin": "org.cubewhy.lunarcn.injection.forge.TransformerLoader",
+            "FMLCorePluginContainsFMLMod": true,
+            "ForceLoadAsMod": true,
+            "MixinConfigs": "mixins.lunarcn.json",
+            "ModSide": "CLIENT",
+            "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
+            "TweakOrder": "0",
+            "FMLAT": "lunarcn_at.cfg",
+    )
+
+    enabled = false
+}
+
+mixin {
+    disableRefMapWarning = true
+    defaultObfuscationEnv searge
+    add sourceSets.main, "mixins.lunarcn.refmap.json"
+}
+
+reobf {
+    shadowJar {
+        mappingType = "SEARGE"
+    }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "lunarcn",
+    "name": "LiquidLunar",
+    "description": "Best Minecraft PVP client",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://cubewhy.eu.org",
+    "updateUrl": "",
+    "authorList": ["CubeWhy", "catand", "yuxiangll"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

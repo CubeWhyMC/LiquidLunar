@@ -1,6 +1,10 @@
-# [LiquidLunar](https://liquid.lunarcn.top)
+# LiquidLunar
 
 > Forge version
+
+## Links
+
+[Website](https://liquid.lunarcn.top)
 
 ## 关于LiquidLunar
 

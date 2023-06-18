@@ -9,7 +9,7 @@ import org.cubewhy.lunarcn.account.OfflineAccount;
 import org.cubewhy.lunarcn.utils.AccountUtils;
 
 import java.io.*;
-import java.util.Map;
+import java.util.*;
 
 public class AccountConfigFile {
     public static String configFilePath = Client.configDir + "/accounts.json";
@@ -103,5 +103,15 @@ public class AccountConfigFile {
 
     public JsonObject getConfig() {
         return config;
+    }
+
+    public IAccount[] getAccounts() {
+        List<IAccount> accounts = new ArrayList<>(Collections.emptyList());
+        for (Map.Entry<String, JsonElement> account :
+                config.entrySet()) {
+            String uuid = account.getKey();
+            accounts.add(AccountUtils.fromJson((JsonObject) config.get(uuid)));
+        }
+        return accounts.toArray(new IAccount[0]);
     }
 }

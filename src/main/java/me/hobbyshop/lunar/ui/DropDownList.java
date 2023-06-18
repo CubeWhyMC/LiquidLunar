@@ -1,29 +1,32 @@
-package org.cubewhy.lunarcn.gui.elements;
+package me.hobbyshop.lunar.ui;
 
-import me.hobbyshop.lunar.font.FontUtil;
 import me.hobbyshop.lunar.util.ClientGuiUtils;
 import net.minecraft.client.renderer.GlStateManager;
+import org.cubewhy.lunarcn.gui.elements.LunarButton;
 
 import java.awt.*;
 
-public class LunarButton {
+public class DropDownList {
+    protected LunarButton[] items;
+    protected int x, y;
+    protected int width, height;
 
-    public String text;
-    public int x, y;
-    public int width, height;
+    private LunarButton currentItem;
 
     public int hoverFade = 0;
 
-    public LunarButton(String text, int x, int y) {
-        this.text = text;
+    public DropDownList(LunarButton[] items, int x, int y) {
+        this.items = items;
         this.x = x;
         this.y = y;
 
         this.width = 132;
         this.height = 11;
+
+        this.currentItem = items[0];
     }
 
-    public void drawButton(int mouseX, int mouseY) {
+    public void drawList(int mouseX, int mouseY) {
         boolean hovered = mouseX >= this.x && mouseY >= this.y && mouseX < this.x + this.width && mouseY < this.y + this.height;
         if (hovered) {
             if (hoverFade < 40) hoverFade += 10;
@@ -37,8 +40,16 @@ public class LunarButton {
 
         ClientGuiUtils.drawRoundedOutline(this.x, this.y, this.x + this.width, this.y + this.height, 2, 3, new Color(255, 255, 255, 30).getRGB());
 
-        FontUtil.TEXT_BOLD.getFont().drawCenteredString(this.text, this.x + (float) this.width / 2 + 0.5F, this.y + (float) (this.height - 4) / 2 + 0.5F, new Color(30, 30, 30, 50).getRGB());
-        FontUtil.TEXT_BOLD.getFont().drawCenteredString(this.text, this.x + (float) this.width / 2, this.y + (float) (this.height - 4) / 2, new Color(190, 195, 189).getRGB());
+        if (hovered) {
+            // TODO 展开列表
+            for (int i = 0; i < items.length; i++) {
+                LunarButton item = items[i];
+                item.x = this.x;
+                item.y = this.y += i * item.height + 5;
+                item.drawButton(mouseX, mouseY);
+            }
+        } else {
+            currentItem.drawButton(mouseX, mouseY);
+        }
     }
-
 }

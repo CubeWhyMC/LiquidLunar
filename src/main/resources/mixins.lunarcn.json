@@ -4,6 +4,16 @@
   "package": "org.cubewhy.lunarcn.injection.forge.mixins",
   "refmap": "mixins.lunarcn.refmap.json",
   "compatibilityLevel": "JAVA_8",
+  "client": [
+    "client.MixinMinecraft",
+    "gui.MixinGuiNewChat",
+    "multiplayer.MixinPlayerControllerMP",
+    "network.MixinNetHandlerPlayClient"
+  ],
   "mixins": [
+    "client.MixinEntityRenderer",
+    "entity.MixinEntityLivingBase",
+    "entity.MixinEntityPlayerSP",
+    "network.MixinNetworkManager"
   ]
 }

@@ -12,7 +12,7 @@ group = 'org.cubewhy.lunarcn'
 version = '1.0-SNAPSHOT'
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
-println("Give us stars -> httpsL//github.com/CubeWhy/LiquidLunar")
+println("Give us stars -> https://github.com/CubeWhy/LiquidLunar")
 
 compileJava.options.encoding = "UTF-8"
 

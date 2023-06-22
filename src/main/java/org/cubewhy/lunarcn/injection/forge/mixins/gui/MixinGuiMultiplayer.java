@@ -1,6 +1,7 @@
 package org.cubewhy.lunarcn.injection.forge.mixins.gui;
 
 
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraft.client.gui.ServerListEntryNormal;
@@ -13,8 +14,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.awt.*;
+
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
+
 @Mixin(GuiMultiplayer.class)
-public class MixinGuiMultiplayer {
+public abstract class MixinGuiMultiplayer {
     @Shadow
     private ServerList savedServerList;
 
@@ -22,6 +27,11 @@ public class MixinGuiMultiplayer {
     private GuiButton btnEditServer;
     @Shadow
     private GuiButton btnDeleteServer;
+
+    @Inject(method = "drawScreen", at = @At("RETURN"))
+    public void drawScreen(int mouseX, int mouseY, float partialTicks, CallbackInfo ci) {
+        mc.fontRendererObj.drawString("You are playing on " + mc.getSession().getUsername(), 20, 20, new Color(255, 255, 255).getRGB());
+    }
 
     /**
      * @author CubeWhy

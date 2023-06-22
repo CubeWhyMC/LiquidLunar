@@ -1,5 +1,8 @@
 package org.cubewhy.lunarcn;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.jagrosh.discordipc.IPCClient;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.multiplayer.ServerList;
@@ -8,6 +11,8 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.client.C17PacketCustomPayload;
 import net.minecraft.network.play.server.S3FPacketCustomPayload;
 import net.minecraft.util.ResourceLocation;
+import okhttp3.Call;
+import okhttp3.Response;
 import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.event.EventTarget;
@@ -22,17 +27,12 @@ import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
 import org.cubewhy.lunarcn.gui.hud.HudManager;
 import org.cubewhy.lunarcn.ipc.DiscordIPC;
 import org.cubewhy.lunarcn.module.ModuleManager;
-import org.cubewhy.lunarcn.utils.ClientUtils;
-import org.cubewhy.lunarcn.utils.GitUtils;
-import org.cubewhy.lunarcn.utils.LoggerUtils;
-import org.cubewhy.lunarcn.utils.MicrosoftAccountUtils;
+import org.cubewhy.lunarcn.utils.*;
 import org.jetbrains.annotations.NotNull;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
@@ -41,13 +41,14 @@ public class Client {
     public static final String splashImage = "lunarcn/splash.png"; // loading screen
     private static final Client instance = new Client(); // instance
     public static final String clientName = "LiquidLunar"; // client name
-    public static final String clientVersion = "1.0.0"; // client version
+    public static final String clientVersion = "b2"; // client version
     public static final String clientOwner = "CubeWhy"; // Client dev
     public static String configDir = System.getProperty("user.home") + "/.cubewhy/liquidlunar/config";
     public static ResourceLocation clientLogo = new ResourceLocation("lunarcn/logo.png");
-    public static final FeaturedServerData[] featuredServerDataList = new FeaturedServerData[]{
+    public static FeaturedServerData[] featuredServerDataList = new FeaturedServerData[]{
             new FeaturedServerData("QbyPixel", "mc.cubewhy.eu.org")
     };
+    public static final String pinnedServerApi = "https://www.lunarcn.top/api/pinned_servers.php?format=json";
     public static long discordAppId = 1072028154564198420L; // Discord api id
     public IPCClient discordIPC;
 
@@ -71,6 +72,25 @@ public class Client {
         AccountConfigFile.getInstance().load(); // Accounts
 
         discordIPC = DiscordIPC.startIPC();
+
+        // load pinned servers
+        try {
+            Call call = HttpUtils.get(pinnedServerApi);
+            ArrayList<FeaturedServerData> serverDataList = new ArrayList<>();
+            try (Response response = call.execute()) {
+                if (response.body() != null) {
+                    JsonObject json = new JsonParser().parse(response.body().string()).getAsJsonObject();
+                    for (Map.Entry<String, JsonElement> set :
+                            json.entrySet()) {
+                        serverDataList.add(new FeaturedServerData(set.getKey(), set.getValue().getAsString()));
+                    }
+                }
+            }
+
+            featuredServerDataList = serverDataList.toArray(new FeaturedServerData[]{});
+        } catch (Throwable ignored) {
+
+        }
     }
 
     public void onStart() {

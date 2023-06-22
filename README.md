@@ -8,12 +8,6 @@
 
 [Website](https://liquid.lunarcn.top)
 
-## Load with LunarCN Loader
-
-> LiquidLunar依然可以通过Forge进行加载
-
-在b3之后我们使用了LunarCN ModLoader, 你可以通过[LunarClient-CN](https://lunarcn.top)进行修改(需要next-gen b2以上版本)
-
 ## 关于LiquidLunar
 
 > 我们使用Mixin修改游戏, 这不违反[Minecraft Eula](https://www.minecraft.net/zh-hans/eula)

@@ -1,0 +1,8 @@
+{
+  "mixinConfigs": [
+    "mixins.lunarcn.json"
+  ],
+  "entrypoints": [
+    "org.cubewhy.lunarcn.LunarCnMod"
+  ]
+}

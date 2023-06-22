@@ -2,11 +2,10 @@ package org.cubewhy.lunarcn.gui.elements;
 
 import java.awt.Color;
 
-import org.cubewhy.lunarcn.gui.elements.LunarButton;
 import org.lwjgl.opengl.GL11;
 
-import me.hobbyshop.lunar.font.FontUtil;
-import me.hobbyshop.lunar.util.ClientGuiUtils;
+import org.cubewhy.lunarcn.gui.mainmenu.lunar.font.FontUtil;
+import org.cubewhy.lunarcn.gui.mainmenu.lunar.util.ClientGuiUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;

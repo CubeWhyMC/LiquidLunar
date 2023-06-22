@@ -3,7 +3,7 @@ package org.cubewhy.lunarcn.files;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
-import me.hobbyshop.lunar.ui.LunarMainMenu;
+import org.cubewhy.lunarcn.gui.mainmenu.lunar.ui.LunarMainMenu;
 import net.minecraft.client.gui.GuiMainMenu;
 import org.cubewhy.lunarcn.Client;
 import org.cubewhy.lunarcn.gui.mainmenu.LiquidLunarMainMenu;

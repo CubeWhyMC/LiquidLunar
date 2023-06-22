@@ -30,7 +30,6 @@ import org.jetbrains.annotations.NotNull;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -41,9 +40,9 @@ public class Client {
 
     public static final String splashImage = "lunarcn/splash.png"; // loading screen
     private static final Client instance = new Client(); // instance
-    public static String clientName = "LiquidLunar"; // client name
-    public static String clientVersion = "1.0.0"; // client version
-    public static String clientOwner = "CubeWhy"; // Client dev
+    public static final String clientName = "LiquidLunar"; // client name
+    public static final String clientVersion = "1.0.0"; // client version
+    public static final String clientOwner = "CubeWhy"; // Client dev
     public static String configDir = System.getProperty("user.home") + "/.cubewhy/liquidlunar/config";
     public static ResourceLocation clientLogo = new ResourceLocation("lunarcn/logo.png");
     public static long discordAppId = 1072028154564198420L; // Discord api id
@@ -102,7 +101,7 @@ public class Client {
     }
 
     public void onStop() {
-        LoggerUtils.LOGGER.info(clientName + clientVersion + " stopping!");
+        LoggerUtils.logger.info(clientName + clientVersion + " stopping!");
     }
 
     public void loadFeaturedServers(@NotNull ServerList base) {
@@ -175,12 +174,4 @@ public class Client {
             }
         }
     }
-
-//    @EventTarget
-//    public void onChat(ChatSentEvent event) {
-//        String msg = event.getChatMessage();
-//        if (msg.contains(".login")) {
-//            MicrosoftAccountUtils.getInstance().loginWithBrowser();
-//        }
-//    }
 }

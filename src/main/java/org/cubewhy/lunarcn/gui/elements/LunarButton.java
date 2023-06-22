@@ -1,7 +1,7 @@
 package org.cubewhy.lunarcn.gui.elements;
 
-import me.hobbyshop.lunar.font.FontUtil;
-import me.hobbyshop.lunar.util.ClientGuiUtils;
+import org.cubewhy.lunarcn.gui.mainmenu.lunar.font.FontUtil;
+import org.cubewhy.lunarcn.gui.mainmenu.lunar.util.ClientGuiUtils;
 import net.minecraft.client.renderer.GlStateManager;
 
 import java.awt.*;

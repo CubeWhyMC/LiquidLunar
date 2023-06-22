@@ -2,6 +2,7 @@ package org.cubewhy.lunarcn.gui.clickgui;
 
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.renderer.GlStateManager;
 import org.cubewhy.lunarcn.Client;
 import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.event.EventTarget;
@@ -29,6 +30,7 @@ public class ClickGui extends GuiScreen {
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         super.drawDefaultBackground();
+        GlStateManager.color(1.0F, 1.0F, 1.0F);
 
         this.drawPanel();
         this.drawModules();

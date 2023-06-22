@@ -1,4 +1,4 @@
-package me.hobbyshop.lunar.font;
+package org.cubewhy.lunarcn.gui.mainmenu.lunar.font;
 
 import java.util.regex.Pattern;
 
@@ -32,11 +32,11 @@ public enum CharColor {
     private final boolean isFormat;
     private final String toString;
 
-    private CharColor(final char code) {
+    CharColor(final char code) {
         this(code, false);
     }
 
-    private CharColor(final char code, final boolean isFormat) {
+    CharColor(final char code, final boolean isFormat) {
         this.code = code;
         this.isFormat = isFormat;
         this.toString = new String(new char[] { '&', code });

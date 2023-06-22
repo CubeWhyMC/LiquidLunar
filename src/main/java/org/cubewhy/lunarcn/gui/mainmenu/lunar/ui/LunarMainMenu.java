@@ -1,7 +1,8 @@
-package me.hobbyshop.lunar.ui;
+package org.cubewhy.lunarcn.gui.mainmenu.lunar.ui;
 
-import me.hobbyshop.lunar.font.FontUtil;
-import me.hobbyshop.lunar.ui.buttons.QuitButton;
+import org.cubewhy.lunarcn.gui.mainmenu.lunar.font.FontUtil;
+import org.cubewhy.lunarcn.gui.mainmenu.lunar.ui.buttons.AccountButton;
+import org.cubewhy.lunarcn.gui.mainmenu.lunar.ui.buttons.QuitButton;
 import net.minecraft.client.gui.*;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
@@ -14,7 +15,6 @@ import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.event.EventTarget;
 import org.cubewhy.lunarcn.event.events.SessionEvent;
 import org.cubewhy.lunarcn.files.AccountConfigFile;
-import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
 import org.cubewhy.lunarcn.gui.elements.ImageButton;
 import org.cubewhy.lunarcn.gui.elements.LunarButton;
 import org.cubewhy.lunarcn.gui.hud.HudManager;
@@ -23,8 +23,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.Project;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 import java.util.List;
 
 public class LunarMainMenu extends GuiMainMenu {
@@ -62,7 +61,7 @@ public class LunarMainMenu extends GuiMainMenu {
 
         this.btnSinglePlayer = new LunarButton("S I N G L E P L A Y E R", this.width / 2 - 66, this.height / 2);
         this.btnMultiplayer = new LunarButton("M U L T I P L A Y E R", this.width / 2 - 66, this.height / 2 + 15);
-        this.altList = new DropDownList(new LunarButton[]{new LunarButton(mc.session.getUsername(), 0, 0)}, 10, 10); // TODO 实现altmanager
+        this.altList = new DropDownList(10, 10); // TODO 实现altmanager
 
         int yPos = this.height - 20;
         this.btnClientOptions = new ImageButton("SETTINGS", new ResourceLocation("lunar/icons/lunar.png"), this.width / 2 - 30, yPos);
@@ -82,14 +81,27 @@ public class LunarMainMenu extends GuiMainMenu {
 
     public void updateAccounts() {
         IAccount[] accounts = AccountConfigFile.getInstance().getAccounts();
-        List<LunarButton> items = new ArrayList<>(Collections.emptyList());
+        List<AccountButton> items = new ArrayList<>(Collections.emptyList());
         for (IAccount account :
                 accounts) {
-            String name = account.getUserName();
-            LunarButton accountButton = new LunarButton(name, 0, 0);
+            AccountButton accountButton = new AccountButton(account);
             items.add(accountButton);
         }
-        altList.items = items.toArray(new LunarButton[0]);
+        altList.items = items.toArray(new AccountButton[0]);
+
+        ArrayList<AccountButton> items1 = new ArrayList<>(Arrays.asList(altList.items));
+        if (!items1.isEmpty() && !Objects.equals(items1.get(0).account.getUserName(), altList.currentItem.account.getUserName())) {
+            for (int i = 0; i < items.size(); i++) {
+                if (items.get(i).account.getUserName().equals(altList.currentItem.account.getUserName())) {
+                    altList.currentItem = items.get(i);
+                    items.remove(i); // TODO 最终不这样实现
+                    items1.add(0, altList.currentItem);
+                }
+            }
+            altList.items = items1.toArray(new AccountButton[]{});
+        }
+
+        altList.reset();
     }
 
     @Override
@@ -113,7 +125,10 @@ public class LunarMainMenu extends GuiMainMenu {
             HudManager.getInstance().openConfigScreen();
         }
         if (this.altList.hoverFade > 0) {
-            mc.displayGuiScreen(new LoginScreen());
+            AccountButton accountButton = this.altList.getCurrentHeld();
+            this.altList.currentItem = accountButton;
+            updateAccounts(); // 更新账户列表
+            accountButton.account.switchAccount(); // 切换账户
         }
     }
 
@@ -121,7 +136,6 @@ public class LunarMainMenu extends GuiMainMenu {
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         GlStateManager.disableAlpha();
         this.renderSkybox(mouseX, mouseY, partialTicks);
-//        drawDefaultBackground(); // TODO fix this
         GlStateManager.enableAlpha();
 
         GlStateManager.enableBlend();
@@ -147,7 +161,6 @@ public class LunarMainMenu extends GuiMainMenu {
         String s = "Copyright Mojang Studios. Do not distribute!";
         FontUtil.TEXT.getFont().drawString(Client.clientName + Client.clientVersion + "(" + GitUtils.gitBranch + "/" + GitUtils.gitInfo.getProperty("git.commit.id.abbrev") + ") | Minecraft 1.8.9", 7, this.height - 11, new Color(255, 255, 255, 100).getRGB());
         FontUtil.TEXT.getFont().drawString(s, this.width - FontUtil.TEXT.getFont().getWidth(s) - 6, this.height - 11, new Color(255, 255, 255, 100).getRGB());
-
     }
 
     @Override
@@ -253,10 +266,10 @@ public class LunarMainMenu extends GuiMainMenu {
             int k = this.width;
             int l = this.height;
             float f1 = (float) (j - i / 2) / 256.0F;
-            worldrenderer.pos((double) k, (double) l, (double) this.zLevel).tex((double) (0.0F + f1), 1.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
-            worldrenderer.pos((double) k, 0.0, (double) this.zLevel).tex((double) (1.0F + f1), 1.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
-            worldrenderer.pos(0.0, 0.0, (double) this.zLevel).tex((double) (1.0F + f1), 0.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
-            worldrenderer.pos(0.0, (double) l, (double) this.zLevel).tex((double) (0.0F + f1), 0.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
+            worldrenderer.pos(k, l, this.zLevel).tex(0.0F + f1, 1.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
+            worldrenderer.pos(k, 0.0, this.zLevel).tex(1.0F + f1, 1.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
+            worldrenderer.pos(0.0, 0.0, this.zLevel).tex(1.0F + f1, 0.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
+            worldrenderer.pos(0.0, l, this.zLevel).tex(0.0F + f1, 0.0).color(1.0F, 1.0F, 1.0F, f).endVertex();
         }
 
         tessellator.draw();
@@ -285,10 +298,10 @@ public class LunarMainMenu extends GuiMainMenu {
         Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
-        worldrenderer.pos(0.0, (double) j, (double) this.zLevel).tex((double) (0.5F - f1), (double) (0.5F + f2)).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
-        worldrenderer.pos((double) i, (double) j, (double) this.zLevel).tex((double) (0.5F - f1), (double) (0.5F - f2)).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
-        worldrenderer.pos((double) i, 0.0, (double) this.zLevel).tex((double) (0.5F + f1), (double) (0.5F - f2)).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
-        worldrenderer.pos(0.0, 0.0, (double) this.zLevel).tex((double) (0.5F + f1), (double) (0.5F + f2)).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        worldrenderer.pos(0.0, j, this.zLevel).tex(0.5F - f1, 0.5F + f2).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        worldrenderer.pos(i, j, this.zLevel).tex(0.5F - f1, 0.5F - f2).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        worldrenderer.pos(i, 0.0, this.zLevel).tex(0.5F + f1, 0.5F - f2).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        worldrenderer.pos(0.0, 0.0, this.zLevel).tex(0.5F + f1, 0.5F + f2).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
         tessellator.draw();
     }
 }

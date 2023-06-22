@@ -1,4 +1,4 @@
-package me.hobbyshop.lunar.font;
+package org.cubewhy.lunarcn.gui.mainmenu.lunar.font;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
@@ -26,8 +26,8 @@ public class CustomFontRenderer {
     private float antiAliasingFactor;
     private UnicodeFont unicodeFont;
     private int prevScaleFactor;
-    private String name;
-    private float size;
+    private final String name;
+    private final float size;
 
     public CustomFontRenderer(final String fontName, final float fontSize) {
         this.colorCodes = new int[] { 0, 170, 43520, 43690, 11141120, 11141290, 16755200, 11184810, 5592405, 5592575, 5635925, 5636095, 16733525, 16733695, 16777045, 16777215 };
@@ -72,7 +72,7 @@ public class CustomFontRenderer {
 
     public void drawStringScaled(final String text, final int givenX, final int givenY, final int color, final double givenScale) {
         GL11.glPushMatrix();
-        GL11.glTranslated((double)givenX, (double)givenY, 0.0);
+        GL11.glTranslated(givenX, givenY, 0.0);
         GL11.glScaled(givenScale, givenScale, givenScale);
         this.drawString(text, 0, 0, color);
         GL11.glPopMatrix();
@@ -80,7 +80,7 @@ public class CustomFontRenderer {
 
     public void drawStringScaled(final String text, final float givenX, final float givenY, final int color, final double givenScale) {
         GL11.glPushMatrix();
-        GL11.glTranslated((double)givenX, (double)givenY, 0.0);
+        GL11.glTranslated(givenX, givenY, 0.0);
         GL11.glScaled(givenScale, givenScale, givenScale);
         this.drawString(text, 0, 0, color);
         GL11.glPopMatrix();
@@ -176,7 +176,7 @@ public class CustomFontRenderer {
 
     public void drawCenteredTextScaled(final String text, final int givenX, final int givenY, final int color, final double givenScale) {
         GL11.glPushMatrix();
-        GL11.glTranslated((double)givenX, (double)givenY, 0.0);
+        GL11.glTranslated(givenX, givenY, 0.0);
         GL11.glScaled(givenScale, givenScale, givenScale);
         this.drawCenteredString(text, 0.0f, 0.0f, color);
         GL11.glPopMatrix();
@@ -215,7 +215,7 @@ public class CustomFontRenderer {
         final String[] splitText = text.split(" ");
         StringBuilder currentString = new StringBuilder();
         for (final String word : splitText) {
-            final String potential = (Object)currentString + " " + word;
+            final String potential = currentString + " " + word;
             if (this.getWidth(potential) >= wrapWidth) {
                 lines.add(currentString.toString());
                 currentString = new StringBuilder();

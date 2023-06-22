@@ -1,4 +1,4 @@
-package me.hobbyshop.lunar.font;
+package org.cubewhy.lunarcn.gui.mainmenu.lunar.font;
 
 public enum FontUtil {
 	
@@ -6,9 +6,9 @@ public enum FontUtil {
 	TEXT (new CustomFontRenderer("", 11)),
 	TEXT_BOLD (new CustomFontRenderer("text_bold", 9));
 	
-	private CustomFontRenderer font;
+	private final CustomFontRenderer font;
 	
-	private FontUtil(CustomFontRenderer font) {
+	FontUtil(CustomFontRenderer font) {
 		this.font = font;
 	}
 	

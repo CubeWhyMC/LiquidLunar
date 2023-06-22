@@ -1,4 +1,4 @@
-package me.hobbyshop.lunar.util;
+package org.cubewhy.lunarcn.gui.mainmenu.lunar.util;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;

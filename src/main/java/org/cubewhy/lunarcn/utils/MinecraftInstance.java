@@ -11,7 +11,7 @@ public class MinecraftInstance {
 
     public static void setSession(@NotNull Session session) {
         mc.session = session;
-        LoggerUtils.LOGGER.info("Switch account, PlayerName: " + session.getUsername());
+        LoggerUtils.logger.info("Switch account, PlayerName: " + session.getUsername());
     }
 
     public static void setSession(@NotNull IAccount account) {

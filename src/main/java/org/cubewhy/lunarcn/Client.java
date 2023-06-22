@@ -45,6 +45,9 @@ public class Client {
     public static final String clientOwner = "CubeWhy"; // Client dev
     public static String configDir = System.getProperty("user.home") + "/.cubewhy/liquidlunar/config";
     public static ResourceLocation clientLogo = new ResourceLocation("lunarcn/logo.png");
+    public static final FeaturedServerData[] featuredServerDataList = new FeaturedServerData[]{
+            new FeaturedServerData("QbyPixel", "mc.cubewhy.eu.org")
+    };
     public static long discordAppId = 1072028154564198420L; // Discord api id
     public IPCClient discordIPC;
 
@@ -58,8 +61,8 @@ public class Client {
     }
 
     public void onInit() {
-        SplashProgress.setProgress(1, "Initializing Minecraft 1.8.9");
-        Display.setTitle("Minecraft 1.8.9 | Initializing");
+        SplashProgress.setProgress(1, "Initializing Minecraft");
+        Display.setTitle(clientName + " | Initializing");
         EventManager.register(this);
 
         ClientConfigFile.getInstance().load(); // load config
@@ -102,10 +105,6 @@ public class Client {
 
     public void onStop() {
         LoggerUtils.logger.info(clientName + clientVersion + " stopping!");
-    }
-
-    public void loadFeaturedServers(@NotNull ServerList base) {
-        base.addServerData(new FeaturedServerData("QbyPixel", "mc.cubewhy.eu.org"));
     }
 
     /**

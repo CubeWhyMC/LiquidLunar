@@ -7,9 +7,12 @@
   "client": [
     "client.MixinGameSettings",
     "client.MixinMinecraft",
+    "gui.MixinGuiMultiplayer",
     "gui.MixinGuiNewChat",
     "gui.MixinGuiScreen",
+    "gui.MixinServerListEntryNormal",
     "multiplayer.MixinPlayerControllerMP",
+    "multiplayer.MixinServerList",
     "network.MixinNetHandlerPlayClient"
   ],
   "mixins": [

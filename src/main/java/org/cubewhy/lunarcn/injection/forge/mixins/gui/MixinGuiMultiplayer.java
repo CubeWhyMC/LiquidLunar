@@ -1,0 +1,68 @@
+package org.cubewhy.lunarcn.injection.forge.mixins.gui;
+
+
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiMultiplayer;
+import net.minecraft.client.gui.ServerListEntryNormal;
+import net.minecraft.client.multiplayer.ServerList;
+import org.cubewhy.lunarcn.FeaturedServerData;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+@Mixin(GuiMultiplayer.class)
+public class MixinGuiMultiplayer {
+    @Shadow
+    private ServerList savedServerList;
+
+    @Shadow
+    private GuiButton btnEditServer;
+    @Shadow
+    private GuiButton btnDeleteServer;
+
+    /**
+     * @author CubeWhy
+     * @reason canMoveUp
+     */
+    @Overwrite
+    public boolean func_175392_a(ServerListEntryNormal serverListEntryNormal, int index) {
+        int serverCount = this.savedServerList.countServers();
+        if (serverCount == 1) {
+            return index > 0;
+        }
+        if (index - 1 >= 0 && this.savedServerList.getServerData(index - 1) instanceof FeaturedServerData) {
+            return false;
+        }
+        return index > 0;
+    }
+
+    /**
+     * @author CubeWhy
+     * @reason canMoveDown
+     */
+    @Overwrite
+    public boolean func_175394_b(ServerListEntryNormal serverListEntryNormal, int index) {
+        if (this.savedServerList.getServerData(index) instanceof FeaturedServerData) {
+            return false;
+        }
+        return index < this.savedServerList.countServers() - 1;
+    }
+
+    /**
+     * @author CubeWhy
+     * @reason selectServer
+     */
+    @Inject(method = "selectServer", at = @At(value = "RETURN"))
+    public void selectServer(int index, CallbackInfo ci) {
+        if (index == -1) {
+            return;
+        }
+        if (savedServerList.getServerData(index) instanceof FeaturedServerData) {
+            this.btnEditServer.enabled = false;
+            this.btnDeleteServer.enabled = false;
+        }
+    }
+}

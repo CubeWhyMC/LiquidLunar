@@ -14,6 +14,7 @@ import okhttp3.Response;
 import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.account.MicrosoftAccount;
 import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
+import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
 import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
 
 import javax.net.ssl.KeyManagerFactory;
@@ -35,8 +36,7 @@ import static org.cubewhy.lunarcn.utils.WebUtils.getRequestParam;
 import static org.cubewhy.lunarcn.utils.WebUtils.handleResponse;
 
 public class MicrosoftAccountUtils {
-    public static final String CLIENT_ID = "dbb5fc17-43ac-4aa6-997e-ca69cde129a4";
-    public static final String CLIENT_SECRET = "";
+    public static String CLIENT_ID = "dbb5fc17-43ac-4aa6-997e-ca69cde129a4";
     public static final String REDIRECT_URL = "https://127.0.0.1:8888/login";
     private static MicrosoftAccountUtils instance = null;
 

@@ -9,6 +9,7 @@ import net.minecraft.client.multiplayer.PlayerControllerMP;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.particle.EffectRenderer;
 import net.minecraft.client.settings.GameSettings;
+import net.minecraft.crash.CrashReport;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,6 +25,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -104,6 +106,12 @@ abstract public class MixinMinecraft {
     @Inject(method = "runTick", at = @At("RETURN"))
     public void runTick(CallbackInfo ci) {
         new TickEvent().callEvent();
+    }
+
+    @Inject(method = "displayCrashReport", at = @At(value = "INVOKE", target = "Lnet/minecraft/crash/CrashReport;getFile()Ljava/io/File;"))
+    public void displayCrashReport(CrashReport crashReportIn, CallbackInfo ci) {
+        String message = crashReportIn.getCauseStackTraceOrString();
+        JOptionPane.showMessageDialog(null, "Game crashed!\n如果你看到这个窗口就说明游戏崩溃了\n给dev提供log可能会帮助你解决问题\n" + message, "oops, game crashed!", JOptionPane.ERROR_MESSAGE);
     }
 
     /**

@@ -30,6 +30,8 @@ import org.cubewhy.lunarcn.utils.*;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
+import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.util.*;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
@@ -64,10 +66,10 @@ public class Client {
         Display.setTitle(clientName + " | Initializing");
         EventManager.register(this);
 
-        ClientConfigFile.getInstance(); // load config
+        ClientConfigFile.getInstance().load(); // load config
         ClientConfigFile.getInstance().initClient(); // init client config
 
-        AccountConfigFile.getInstance(); // Accounts
+        AccountConfigFile.getInstance().load(); // Accounts
 
         discordIPC = DiscordIPC.startIPC();
 
@@ -94,9 +96,9 @@ public class Client {
     public void onStart() {
         SplashProgress.setProgress(4, "Initializing " + clientName);
         Display.setTitle(clientName + " " + clientVersion + " (" + GitUtils.gitBranch + "/" + GitUtils.gitInfo.getProperty("git.commit.id.abbrev") + ")");
+        ModuleConfigFile.getInstance().load(); // module config
+        PositionConfigFile.getInstance().load(); // module draggable position config
         hudManager = HudManager.getInstance(); // hud manager
-        ModuleConfigFile.getInstance(); // module config
-        PositionConfigFile.getInstance(); // module draggable position config
         ModuleManager.getInstance().registerModules(); // register modules
 
         List<KeyBinding> bindings = new ArrayList<>(Arrays.asList(mc.gameSettings.keyBindings)); // Keybindings
@@ -118,6 +120,14 @@ public class Client {
             mc.displayGuiScreen(new LoginScreen());
         } else {
             currentAccount.switchAccount();
+        }
+
+        try {
+            Display.setIcon(new ByteBuffer[]{
+                    RenderUtils.imageToByteBuffer(clientLogo)
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         // HttpRequest.get("https://api.lunarcn.top/liquid/start.php?uuid=" + mc.getSession().getPlayerID()).userAgent("liquidlunar").ok();

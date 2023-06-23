@@ -1,23 +1,20 @@
 package org.cubewhy.lunarcn.files.configs;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.cubewhy.lunarcn.Client;
 import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.account.OfflineAccount;
-import org.cubewhy.lunarcn.files.ConfigFile;
 import org.cubewhy.lunarcn.utils.AccountUtils;
 
+import java.io.*;
 import java.util.*;
 
-public class AccountConfigFile extends ConfigFile {
+public class AccountConfigFile {
+    public static String configFilePath = Client.configDir + "/accounts.json";
     private static AccountConfigFile instance = null;
     private static JsonObject config;
-
-    public AccountConfigFile() {
-        super(Client.configDir + "/accounts.json");
-        config = getConfig();
-    }
 
     public static AccountConfigFile getInstance() {
         if (instance == null) {
@@ -63,6 +60,50 @@ public class AccountConfigFile extends ConfigFile {
         return AccountUtils.fromJson(config.get(current).getAsJsonObject());
     }
 
+    public void save() {
+        try {
+            File configFile = new File(configFilePath);
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(configFile));
+            bufferedWriter.write(config.toString());
+            bufferedWriter.flush();
+            bufferedWriter.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void load() {
+        Gson gson = new Gson();
+        File configFile = new File(configFilePath);
+        BufferedReader bufferedReader;
+        boolean successful = false;
+
+        while (!successful) {
+            try {
+                bufferedReader = new BufferedReader(new FileReader(configFile));
+                config = gson.fromJson(bufferedReader, JsonObject.class);
+                if (config == null) {
+                    config = new JsonObject();
+                }
+                successful = true;
+            } catch (FileNotFoundException e) {
+
+                try {
+                    if (!configFile.getParentFile().exists()) {
+                        configFile.getParentFile().mkdirs();
+                    }
+                    configFile.createNewFile();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        }
+
+    }
+
+    public JsonObject getConfig() {
+        return config;
+    }
 
     public IAccount[] getAccounts() {
         List<IAccount> accounts = new ArrayList<>(Collections.emptyList());

@@ -2,17 +2,11 @@ package org.cubewhy.lunarcn.account;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonPrimitive;
-import net.minecraft.util.Session;
-import org.cubewhy.lunarcn.files.AccountConfigFile;
+import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
 import org.cubewhy.lunarcn.utils.MicrosoftAccountUtils;
 
-import java.awt.*;
 import java.io.IOException;
-import java.net.URI;
 import java.util.Date;
-
-import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
 public class MicrosoftAccount implements IAccount {
     private String userName;

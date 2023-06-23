@@ -1,22 +1,22 @@
-package org.cubewhy.lunarcn.files;
+package org.cubewhy.lunarcn.files.configs;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import org.cubewhy.lunarcn.Client;
+import org.cubewhy.lunarcn.files.ConfigFile;
 import org.cubewhy.lunarcn.module.Module;
 import org.cubewhy.lunarcn.utils.ClassUtils;
 import org.cubewhy.lunarcn.value.Value;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.*;
 import java.util.List;
 
-public class ModuleConfigFile {
-    public static String configJsonPath = Client.configDir + "/config.json";
+public class ModuleConfigFile extends ConfigFile {
     private static ModuleConfigFile instance = null;
     private static JsonObject config;
 
     private ModuleConfigFile() {
+        super(Client.configDir + "/config.json");
+        config = getConfig();
     }
 
     public static ModuleConfigFile getInstance() {
@@ -58,50 +58,5 @@ public class ModuleConfigFile {
         }
 
         save();
-    }
-
-    public void save() {
-        try {
-            File configFile = new File(configJsonPath);
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(configFile));
-            bufferedWriter.write(config.toString());
-            bufferedWriter.flush();
-            bufferedWriter.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void load() {
-        Gson gson = new Gson();
-        File configFile = new File(configJsonPath);
-        BufferedReader bufferedReader;
-        boolean successful = false;
-
-        while (!successful) {
-            try {
-                bufferedReader = new BufferedReader(new FileReader(configFile));
-                config = gson.fromJson(bufferedReader, JsonObject.class);
-                if (config == null) {
-                    config = new JsonObject();
-                }
-                successful = true;
-            } catch (FileNotFoundException e) {
-
-                try {
-                    if (!configFile.getParentFile().exists()) {
-                        configFile.getParentFile().mkdirs();
-                    }
-                    configFile.createNewFile();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        }
-
-    }
-
-    public JsonObject getConfig() {
-        return config;
     }
 }

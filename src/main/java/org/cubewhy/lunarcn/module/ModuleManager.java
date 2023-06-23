@@ -1,8 +1,8 @@
 package org.cubewhy.lunarcn.module;
 
 import org.cubewhy.lunarcn.event.EventManager;
-import org.cubewhy.lunarcn.files.ModuleConfigFile;
-import org.cubewhy.lunarcn.files.PositionConfigFile;
+import org.cubewhy.lunarcn.files.configs.ModuleConfigFile;
+import org.cubewhy.lunarcn.files.configs.PositionConfigFile;
 import org.cubewhy.lunarcn.gui.hud.HudManager;
 import org.cubewhy.lunarcn.gui.hud.IRenderer;
 import org.cubewhy.lunarcn.utils.ClassUtils;

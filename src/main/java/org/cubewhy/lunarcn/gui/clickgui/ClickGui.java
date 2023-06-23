@@ -5,16 +5,13 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import org.cubewhy.lunarcn.Client;
 import org.cubewhy.lunarcn.event.EventManager;
-import org.cubewhy.lunarcn.event.EventTarget;
-import org.cubewhy.lunarcn.event.events.TickEvent;
-import org.cubewhy.lunarcn.files.ModuleConfigFile;
+import org.cubewhy.lunarcn.files.configs.ModuleConfigFile;
 import org.cubewhy.lunarcn.gui.elements.SwitchButton;
 import org.cubewhy.lunarcn.module.Module;
 import org.cubewhy.lunarcn.module.ModuleCategory;
 import org.cubewhy.lunarcn.module.ModuleManager;
 import org.cubewhy.lunarcn.utils.RenderUtils;
 import org.jetbrains.annotations.NotNull;
-import org.lwjgl.input.Mouse;
 
 import java.awt.*;
 import java.io.IOException;

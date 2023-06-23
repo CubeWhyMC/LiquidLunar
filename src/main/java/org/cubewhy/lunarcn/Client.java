@@ -5,7 +5,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.jagrosh.discordipc.IPCClient;
 import io.netty.buffer.Unpooled;
-import net.minecraft.client.multiplayer.ServerList;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.client.C17PacketCustomPayload;
@@ -18,17 +17,16 @@ import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.event.EventTarget;
 import org.cubewhy.lunarcn.event.events.PacketEvent;
 import org.cubewhy.lunarcn.event.events.TickEvent;
-import org.cubewhy.lunarcn.files.AccountConfigFile;
-import org.cubewhy.lunarcn.files.ClientConfigFile;
-import org.cubewhy.lunarcn.files.ModuleConfigFile;
-import org.cubewhy.lunarcn.files.PositionConfigFile;
+import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
+import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
+import org.cubewhy.lunarcn.files.configs.ModuleConfigFile;
+import org.cubewhy.lunarcn.files.configs.PositionConfigFile;
 import org.cubewhy.lunarcn.gui.SplashProgress;
 import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
 import org.cubewhy.lunarcn.gui.hud.HudManager;
 import org.cubewhy.lunarcn.ipc.DiscordIPC;
 import org.cubewhy.lunarcn.module.ModuleManager;
 import org.cubewhy.lunarcn.utils.*;
-import org.jetbrains.annotations.NotNull;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
@@ -66,10 +64,10 @@ public class Client {
         Display.setTitle(clientName + " | Initializing");
         EventManager.register(this);
 
-        ClientConfigFile.getInstance().load(); // load config
+        ClientConfigFile.getInstance(); // load config
         ClientConfigFile.getInstance().initClient(); // init client config
 
-        AccountConfigFile.getInstance().load(); // Accounts
+        AccountConfigFile.getInstance(); // Accounts
 
         discordIPC = DiscordIPC.startIPC();
 
@@ -97,8 +95,8 @@ public class Client {
         SplashProgress.setProgress(4, "Initializing " + clientName);
         Display.setTitle(clientName + " " + clientVersion + " (" + GitUtils.gitBranch + "/" + GitUtils.gitInfo.getProperty("git.commit.id.abbrev") + ")");
         hudManager = HudManager.getInstance(); // hud manager
-        ModuleConfigFile.getInstance().load(); // module config
-        PositionConfigFile.getInstance().load(); // module draggable position config
+        ModuleConfigFile.getInstance(); // module config
+        PositionConfigFile.getInstance(); // module draggable position config
         ModuleManager.getInstance().registerModules(); // register modules
 
         List<KeyBinding> bindings = new ArrayList<>(Arrays.asList(mc.gameSettings.keyBindings)); // Keybindings

@@ -4,8 +4,7 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import org.cubewhy.lunarcn.Client;
 import org.cubewhy.lunarcn.account.OfflineAccount;
-import org.cubewhy.lunarcn.files.AccountConfigFile;
-import org.cubewhy.lunarcn.utils.AccountUtils;
+import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
 import org.cubewhy.lunarcn.utils.MicrosoftAccountUtils;
 import org.cubewhy.lunarcn.utils.RenderUtils;
 

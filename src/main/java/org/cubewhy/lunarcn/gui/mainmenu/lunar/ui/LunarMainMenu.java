@@ -14,7 +14,7 @@ import org.cubewhy.lunarcn.Client;
 import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.event.EventTarget;
 import org.cubewhy.lunarcn.event.events.SessionEvent;
-import org.cubewhy.lunarcn.files.AccountConfigFile;
+import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
 import org.cubewhy.lunarcn.gui.elements.ImageButton;
 import org.cubewhy.lunarcn.gui.elements.LunarButton;
 import org.cubewhy.lunarcn.gui.hud.HudManager;

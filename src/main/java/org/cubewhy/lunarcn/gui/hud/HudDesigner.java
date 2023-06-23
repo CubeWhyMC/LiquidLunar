@@ -5,15 +5,11 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
 import org.cubewhy.lunarcn.event.EventManager;
-import org.cubewhy.lunarcn.event.EventTarget;
-import org.cubewhy.lunarcn.event.events.TickEvent;
-import org.cubewhy.lunarcn.files.PositionConfigFile;
+import org.cubewhy.lunarcn.files.configs.PositionConfigFile;
 import org.cubewhy.lunarcn.gui.clickgui.ClickGui;
 import org.cubewhy.lunarcn.gui.elements.ClientButton;
-import org.cubewhy.lunarcn.gui.elements.SwitchButton;
 import org.jetbrains.annotations.NotNull;
 import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
 
 import java.awt.*;
 import java.io.IOException;

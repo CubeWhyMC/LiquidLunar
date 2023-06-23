@@ -1,5 +1,7 @@
 package org.cubewhy.lunarcn.gui.mainmenu.lunar.ui;
 
+import net.minecraftforge.client.gui.ForgeGuiFactory;
+import net.minecraftforge.fml.client.GuiModList;
 import org.cubewhy.lunarcn.gui.mainmenu.lunar.font.FontUtil;
 import org.cubewhy.lunarcn.gui.mainmenu.lunar.ui.buttons.AccountButton;
 import org.cubewhy.lunarcn.gui.mainmenu.lunar.ui.buttons.QuitButton;
@@ -37,6 +39,7 @@ public class LunarMainMenu extends GuiMainMenu {
     private ImageButton btnCosmetics;
     private ImageButton btnMinecraftOptions;
     private ImageButton btnLanguage;
+    private ImageButton btnForgeModList;
 
     private QuitButton btnQuit;
 
@@ -68,6 +71,7 @@ public class LunarMainMenu extends GuiMainMenu {
         this.btnCosmetics = new ImageButton("COSMETICS", new ResourceLocation("lunar/icons/cosmetics.png"), this.width / 2 - 15, yPos);
         this.btnMinecraftOptions = new ImageButton("MINECRAFT SETTINGS", new ResourceLocation("lunar/icons/cog.png"), this.width / 2, yPos);
         this.btnLanguage = new ImageButton("LANGUAGE", new ResourceLocation("lunar/icons/globe.png"), this.width / 2 + 15, yPos);
+        this.btnForgeModList = new ImageButton("FORGE MODS", new ResourceLocation("lunarcn/icons/forge.png"), this.width / 2 + 30, yPos);
 
         this.btnQuit = new QuitButton(this.width - 17, 7);
 
@@ -124,6 +128,9 @@ public class LunarMainMenu extends GuiMainMenu {
         if (this.btnClientOptions.hoverFade > 0) {
             HudManager.getInstance().openConfigScreen();
         }
+        if (this.btnForgeModList.hoverFade > 0) {
+            mc.displayGuiScreen(new GuiModList(mc.currentScreen));
+        }
         if (this.altList.hoverFade > 0) {
             AccountButton accountButton = this.altList.getCurrentHeld();
             this.altList.currentItem = accountButton;
@@ -155,6 +162,7 @@ public class LunarMainMenu extends GuiMainMenu {
         this.btnCosmetics.drawButton(mouseX, mouseY);
         this.btnMinecraftOptions.drawButton(mouseX, mouseY);
         this.btnLanguage.drawButton(mouseX, mouseY);
+        this.btnForgeModList.drawButton(mouseX, mouseY);
 
         this.btnQuit.drawButton(mouseX, mouseY);
 

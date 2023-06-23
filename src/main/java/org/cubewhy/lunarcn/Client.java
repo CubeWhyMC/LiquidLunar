@@ -30,6 +30,8 @@ import org.cubewhy.lunarcn.utils.*;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.*;
@@ -41,8 +43,8 @@ public class Client {
     public static final String splashImage = "lunarcn/splash.png"; // loading screen
     private static final Client instance = new Client(); // instance
     public static final String clientName = "LiquidLunar"; // client name
-    public static final String clientVersion = "b2"; // client version
-    public static final String clientOwner = "CubeWhy"; // Client dev
+    public static final String clientVersion = "v1.2-build3"; // client version
+    public static final String[] clientDev = new String[] {"CubeWhy", "catand", "yuxiangll"}; // Client dev
     public static String configDir = System.getProperty("user.home") + "/.cubewhy/liquidlunar/config";
     public static ResourceLocation clientLogo = new ResourceLocation("lunarcn/logo.png");
     public static FeaturedServerData[] featuredServerDataList = new FeaturedServerData[]{
@@ -120,14 +122,6 @@ public class Client {
             mc.displayGuiScreen(new LoginScreen());
         } else {
             currentAccount.switchAccount();
-        }
-
-        try {
-            Display.setIcon(new ByteBuffer[]{
-                    RenderUtils.imageToByteBuffer(clientLogo)
-            });
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
         // HttpRequest.get("https://api.lunarcn.top/liquid/start.php?uuid=" + mc.getSession().getPlayerID()).userAgent("liquidlunar").ok();

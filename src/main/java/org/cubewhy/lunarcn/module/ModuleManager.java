@@ -3,6 +3,7 @@ package org.cubewhy.lunarcn.module;
 import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.files.configs.ModuleConfigFile;
 import org.cubewhy.lunarcn.files.configs.PositionConfigFile;
+import org.cubewhy.lunarcn.gui.clickgui.ClickGuiModule;
 import org.cubewhy.lunarcn.gui.hud.HudManager;
 import org.cubewhy.lunarcn.gui.hud.IRenderer;
 import org.cubewhy.lunarcn.utils.ClassUtils;
@@ -23,6 +24,8 @@ public class ModuleManager {
     }
 
     public void registerModules() {
+        this.register(new ClickGuiModule());
+
         ClassUtils.INSTANCE.resolvePackage(this.getClass().getPackage().getName() + ".modules", Module.class)
                 .forEach(this::register);
     }
@@ -70,7 +73,7 @@ public class ModuleManager {
         return this.registeredModules;
     }
 
-    public Module getModule(Class<Module> module) {
+    public Module getModule(Class<?extends Module> module) {
         for (Module module1 : getRegisteredModules()) {
             if (module1.getClass().equals(module)) {
                 return module1;

@@ -17,6 +17,9 @@ import org.cubewhy.lunarcn.Client;
 import org.cubewhy.lunarcn.event.events.TickEvent;
 import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
 import org.cubewhy.lunarcn.gui.SplashProgress;
+import org.cubewhy.lunarcn.utils.FileUtils;
+import org.cubewhy.lunarcn.utils.ImageUtils;
+import org.lwjgl.opengl.Display;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -25,9 +28,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 
 @Mixin(Minecraft.class)
 abstract public class MixinMinecraft {
@@ -106,6 +112,24 @@ abstract public class MixinMinecraft {
     @Inject(method = "runTick", at = @At("RETURN"))
     public void runTick(CallbackInfo ci) {
         new TickEvent().callEvent();
+    }
+
+    /**
+     * @author CubeWhy
+     * @reason 设置窗口icon
+     */
+    @Overwrite
+    private void setWindowIcon() {
+        try {
+            BufferedImage image = ImageIO.read(FileUtils.getInstance().getFile(Client.clientLogo));
+            ByteBuffer bytebuffer = ImageUtils.readImageToBuffer(ImageUtils.resizeImage(image, 16, 16));
+            Display.setIcon(new ByteBuffer[]{
+                    bytebuffer,
+                    ImageUtils.readImageToBuffer(image)
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Inject(method = "displayCrashReport", at = @At(value = "INVOKE", target = "Lnet/minecraft/crash/CrashReport;getFile()Ljava/io/File;"))

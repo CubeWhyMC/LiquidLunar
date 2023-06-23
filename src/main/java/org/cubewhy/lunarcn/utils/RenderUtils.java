@@ -75,28 +75,4 @@ public class RenderUtils {
             return 0;
         }
     }
-
-    public static ByteBuffer imageToByteBuffer(BufferedImage image) {
-
-        final int[] rgb = image.getRGB(0, 0, image.getWidth(), image.getHeight(), null, 0, image.getWidth());
-
-        final ByteBuffer buffer = ByteBuffer.allocate(4 * rgb.length);
-        for (int color : rgb) {
-            buffer.putInt(color << 8 | ((color >> 24) & 0xFF));
-        }
-        buffer.flip();
-        return buffer;
-    }
-
-    public static ByteBuffer imageToByteBuffer(File image) throws IOException {
-        return imageToByteBuffer(ImageIO.read(image));
-    }
-
-    public static ByteBuffer imageToByteBuffer(InputStream image) throws IOException {
-        return imageToByteBuffer(ImageIO.read(image));
-    }
-
-    public static ByteBuffer imageToByteBuffer(ResourceLocation image) throws IOException {
-        return imageToByteBuffer(FileUtils.getInstance().getFile(image.getResourcePath()));
-    }
 }

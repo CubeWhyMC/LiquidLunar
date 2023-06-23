@@ -27,6 +27,10 @@ public class ClickGui extends GuiScreen {
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         super.drawDefaultBackground();
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.disableLighting();
+
         GlStateManager.color(1.0F, 1.0F, 1.0F);
 
         this.drawPanel();
@@ -44,6 +48,10 @@ public class ClickGui extends GuiScreen {
                 }
             }
         }
+
+        GlStateManager.enableLighting();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
     }
 
     private void drawModules() {
@@ -124,6 +132,6 @@ public class ClickGui extends GuiScreen {
 
     private void drawDocument(int mouseX, int mouseY, String document) {
         drawRect(mouseX + 5, mouseY, mouseX + fontRendererObj.getStringWidth(document) + 10, mouseY + fontRendererObj.FONT_HEIGHT, new Color(0, 0, 0, 30).getRGB());
-        drawString(fontRendererObj, document, mouseX + 10, mouseY, new Color(0, 255, 255).getRGB());
+        drawString(fontRendererObj, document, mouseX + 10, mouseY, new Color(0, 255, 255, 60).getRGB());
     }
 }

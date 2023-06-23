@@ -1,7 +1,13 @@
 package org.cubewhy.lunarcn.utils;
 
+import net.minecraft.util.ResourceLocation;
+
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.ByteBuffer;
 
 public class ImageUtils {
@@ -21,13 +27,28 @@ public class ImageUtils {
         return byteBuffer;
     }
 
+
+    public static ByteBuffer readImageToBuffer(File image) throws IOException {
+        return readImageToBuffer(ImageIO.read(image));
+    }
+
+    public static ByteBuffer readImageToBuffer(InputStream image) throws IOException {
+        return readImageToBuffer(ImageIO.read(image));
+    }
+
+    public static ByteBuffer readImageToBuffer(ResourceLocation image) throws IOException {
+        return readImageToBuffer(FileUtils.getInstance().getFile(image.getResourcePath()));
+    }
+
+
     /**
      * Resize the image to the specified width and height.
+     *
      * @author liulihaocai
      */
     public static BufferedImage resizeImage(BufferedImage image, int width, int height) {
-        BufferedImage buffImg = new BufferedImage(width,height, BufferedImage.TYPE_4BYTE_ABGR);
-        buffImg.getGraphics().drawImage(image.getScaledInstance(width,height, Image.SCALE_SMOOTH), 0, 0, null);
+        BufferedImage buffImg = new BufferedImage(width, height, BufferedImage.TYPE_4BYTE_ABGR);
+        buffImg.getGraphics().drawImage(image.getScaledInstance(width, height, Image.SCALE_SMOOTH), 0, 0, null);
         return buffImg;
     }
 }

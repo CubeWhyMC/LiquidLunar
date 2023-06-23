@@ -4,5 +4,5 @@ public enum ModuleCategory {
     CHEATS,
     MOVE,
     RENDER,
-    DEV
+    CLIENT, DEV
 }

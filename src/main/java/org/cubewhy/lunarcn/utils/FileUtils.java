@@ -14,4 +14,8 @@ public class FileUtils {
     public InputStream getFile(String pathToFile) {
         return this.getClass().getResourceAsStream("/assets/minecraft/" + (new ResourceLocation(pathToFile)).getResourcePath());
     }
+
+    public InputStream getFile(ResourceLocation location) {
+        return getFile(location.getResourcePath());
+    }
 }

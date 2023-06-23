@@ -111,6 +111,8 @@ public class Client {
             }
         }).start();
 
+        MicrosoftAccountUtils.getInstance().autoRefresh(); // 刷新账户
+
         IAccount currentAccount = AccountConfigFile.getInstance().getCurrentAccount();
         if (currentAccount == null) {
             mc.displayGuiScreen(new LoginScreen());

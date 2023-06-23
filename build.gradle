@@ -98,7 +98,6 @@ jar {
 }
 
 mixin {
-    disableRefMapWarning = true
     defaultObfuscationEnv searge
     add sourceSets.main, "mixins.lunarcn.refmap.json"
 }

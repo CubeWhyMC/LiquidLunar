@@ -11,6 +11,7 @@ import okhttp3.FormBody;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.account.MicrosoftAccount;
 import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
 import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
@@ -42,8 +43,25 @@ public class MicrosoftAccountUtils {
     private MicrosoftAccountUtils() {
     }
 
+    /**
+     * 自动刷新账户
+     */
     public void autoRefresh() {
-
+        IAccount[] accounts = AccountConfigFile.getInstance().getAccounts();
+        for (int i = 0; i < accounts.length; i++) {
+            IAccount account = accounts[i];
+            if (account instanceof MicrosoftAccount) {
+                Date lastFresh = ((MicrosoftAccount) account).getLastFresh();
+                if (lastFresh.after(new Date(lastFresh.getTime() + 86400))) {
+                    try {
+                        ((MicrosoftAccount) account).refresh();
+                    } catch (IOException e) {
+                        LoggerUtils.logger.error("尝试刷新账户 " + account.getUserName() + " 时发送错误");
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
     }
 
     public static MicrosoftAccountUtils getInstance() {

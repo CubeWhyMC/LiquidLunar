@@ -1,9 +1,8 @@
-package org.cubewhy.lunarcn.gui.mainmenu.lunar.util;
+package org.cubewhy.lunarcn.utils;
 
 import net.minecraft.util.MathHelper;
 
-public class ClientMathUtils {
-
+public class MathUtils {
     private static final double[] a = new double[65536];
 
     private static final double[] b = new double[360];

@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id "idea"
-    id 'org.jetbrains.kotlin.jvm' version '1.9.0-Beta'
+    id "org.jetbrains.kotlin.jvm" version "1.9.0-Beta"
     id "com.github.johnrengelman.shadow" version "6.1.0"
     id "com.gorylenko.gradle-git-properties" version "2.4.1"
     id "net.minecraftforge.gradle.forge"
@@ -24,10 +24,6 @@ configurations {
 }
 
 repositories {
-    maven {
-        allowInsecureProtocol = true
-        url "https://maven.aliyun.com/repository/public/"
-    }
     maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
     maven { url = "https://jitpack.io/" }
     mavenCentral()
@@ -36,8 +32,9 @@ repositories {
 }
 
 dependencies {
-    include fileTree(dir: "lib", includes: ['*.jar'])
+    include fileTree(dir: "lib", includes: ['*.jar']) // local lib
 
+    // Don't update mixin
     include("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
         transitive = false
         exclude module: "guava"
@@ -52,7 +49,6 @@ dependencies {
 
     include "org.jetbrains.kotlin:kotlin-stdlib"
     include 'com.squareup.okhttp3:okhttp:4.11.0'
-    implementation 'com.google.code.gson:gson:2.2.4' // 因为Minecraft使用2.2.4的gson, 请不要升级这个
     include 'com.jagrosh:DiscordIPC:0.4'
     implementation 'org.realityforge.org.jetbrains.annotations:org.jetbrains.annotations:1.7.0'
 }
@@ -79,7 +75,7 @@ minecraft {
     runDir = "run"
     mappings = "stable_22"
     makeObfSourceJar = false
-    clientJvmArgs += ["-Dfml.coreMods.load=org.cubewhy.lunarcn.injection.forge.TransformerLoader", "-Xmx1024m -Xms1024m", "-Ddev-mode"]
+    clientJvmArgs += ["--add-opens java.base/jdk.internal.loader=ALL-UNNAMED", "--add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED", "-Dfml.coreMods.load=org.cubewhy.lunarcn.injection.forge.TransformerLoader", "-Xmx4096m -Xms4096m", "-Ddev-mode"]
 }
 
 jar {

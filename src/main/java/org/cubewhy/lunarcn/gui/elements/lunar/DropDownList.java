@@ -1,15 +1,20 @@
-package org.cubewhy.lunarcn.gui.mainmenu.lunar.ui;
+package org.cubewhy.lunarcn.gui.elements.lunar;
 
+import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.account.OfflineAccount;
-import org.cubewhy.lunarcn.gui.mainmenu.lunar.ui.buttons.AccountButton;
+import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
 import org.cubewhy.lunarcn.utils.RenderUtils;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
 public class DropDownList {
-    protected AccountButton[] items;
-    protected int x, y;
-    protected int width, height;
+    public List<AccountButton> items;
+    public int x, y;
+    public int width, height;
 
     public AccountButton currentItem;
 
@@ -20,7 +25,7 @@ public class DropDownList {
     protected boolean hovered = false;
 
     public DropDownList(AccountButton[] items, int x, int y) {
-        this.items = items;
+        this.items = Arrays.asList(items);
         this.x = x;
         this.y = y;
 
@@ -47,9 +52,8 @@ public class DropDownList {
         }
 
         if (hovered) {
-            // TODO 展开列表
-            for (int i = 0; i < items.length; i++) {
-                AccountButton item = items[i];
+            for (int i = 0; i < items.size(); i++) {
+                AccountButton item = items.get(i);
                 item.x = this.x;
                 if (item.y < this.y + i * item.height + 5 && i != 0) {
                     item.y++;
@@ -61,11 +65,7 @@ public class DropDownList {
             }
         } else {
             // 重置下拉列表
-            for (int i = 0; i < items.length; i++) {
-                AccountButton item = items[i];
-                item.x = this.x;
-                item.y = this.y;
-            }
+            this.reset();
 
             currentItem.x = this.x;
             currentItem.y = this.y;
@@ -74,8 +74,9 @@ public class DropDownList {
 
         this.height = 0;
 
-        for (int i = 0; i < items.length; i++) {
-            AccountButton item = items[i];
+        for (int i = 0; i < items.size(); i++) {
+            AccountButton item = items.get(i);
+            item.width = width;
             if (hovered) {
                 this.height += item.height + 5;
             } else {
@@ -89,11 +90,23 @@ public class DropDownList {
         return currentHeld;
     }
 
+    public void remove(int index) {
+        IAccount account = items.get(index).account;
+        items.remove(index);
+        AccountConfigFile.getInstance().removeAccount(account);
+    }
+
+    public void remove(@NotNull AccountButton button) {
+        items.removeIf(b -> b.account.getUuid().equals(button.account.getUuid()));
+        AccountConfigFile.getInstance().removeAccount(button.account);
+    }
+
     public void reset() {
-        for (int i = 0; i < items.length; i++) {
-            AccountButton item = items[i];
+        for (int i = 0; i < items.size(); i++) {
+            AccountButton item = items.get(i);
             item.x = this.x;
             item.y = this.y;
+            this.height = 0;
         }
     }
 }

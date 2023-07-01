@@ -1,10 +1,11 @@
-package org.cubewhy.lunarcn.gui.mainmenu.lunar.ui;
+package org.cubewhy.lunarcn.gui.mainmenu;
 
-import net.minecraftforge.client.gui.ForgeGuiFactory;
 import net.minecraftforge.fml.client.GuiModList;
-import org.cubewhy.lunarcn.gui.mainmenu.lunar.font.FontUtil;
-import org.cubewhy.lunarcn.gui.mainmenu.lunar.ui.buttons.AccountButton;
-import org.cubewhy.lunarcn.gui.mainmenu.lunar.ui.buttons.QuitButton;
+import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
+import org.cubewhy.lunarcn.gui.font.FontType;
+import org.cubewhy.lunarcn.gui.elements.lunar.DropDownList;
+import org.cubewhy.lunarcn.gui.elements.lunar.AccountButton;
+import org.cubewhy.lunarcn.gui.elements.lunar.QuitButton;
 import net.minecraft.client.gui.*;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
@@ -21,6 +22,7 @@ import org.cubewhy.lunarcn.gui.elements.ImageButton;
 import org.cubewhy.lunarcn.gui.elements.LunarButton;
 import org.cubewhy.lunarcn.gui.hud.HudManager;
 import org.cubewhy.lunarcn.utils.GitUtils;
+import org.cubewhy.lunarcn.utils.MicrosoftAccountUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.Project;
 
@@ -55,6 +57,7 @@ public class LunarMainMenu extends GuiMainMenu {
     private static int panoramaTimer;
     private ResourceLocation backgroundTexture;
     private DropDownList altList;
+    private ImageButton btnAddAccount;
 
     @Override
     public void initGui() {
@@ -67,11 +70,13 @@ public class LunarMainMenu extends GuiMainMenu {
         this.altList = new DropDownList(10, 10); // TODO 实现altmanager
 
         int yPos = this.height - 20;
-        this.btnClientOptions = new ImageButton("SETTINGS", new ResourceLocation("lunar/icons/lunar.png"), this.width / 2 - 30, yPos);
+        this.btnClientOptions = new ImageButton("SETTINGS", Client.clientLogo, this.width / 2 - 30, yPos);
         this.btnCosmetics = new ImageButton("COSMETICS", new ResourceLocation("lunar/icons/cosmetics.png"), this.width / 2 - 15, yPos);
         this.btnMinecraftOptions = new ImageButton("MINECRAFT SETTINGS", new ResourceLocation("lunar/icons/cog.png"), this.width / 2, yPos);
         this.btnLanguage = new ImageButton("LANGUAGE", new ResourceLocation("lunar/icons/globe.png"), this.width / 2 + 15, yPos);
         this.btnForgeModList = new ImageButton("FORGE MODS", new ResourceLocation("lunarcn/icons/forge.png"), this.width / 2 + 30, yPos);
+
+        this.btnAddAccount = new ImageButton("LOGIN", new ResourceLocation("lunarcn/add-account.png"), this.altList.x + this.altList.width + 1, this.altList.y);
 
         this.btnQuit = new QuitButton(this.width - 17, 7);
 
@@ -81,6 +86,7 @@ public class LunarMainMenu extends GuiMainMenu {
     @EventTarget
     public void onSession(SessionEvent event) {
         this.updateAccounts();
+        this.altList.reset();
     }
 
     public void updateAccounts() {
@@ -91,18 +97,18 @@ public class LunarMainMenu extends GuiMainMenu {
             AccountButton accountButton = new AccountButton(account);
             items.add(accountButton);
         }
-        altList.items = items.toArray(new AccountButton[0]);
+        altList.items = items;
 
-        ArrayList<AccountButton> items1 = new ArrayList<>(Arrays.asList(altList.items));
+        List<AccountButton> items1 = altList.items;
         if (!items1.isEmpty() && !Objects.equals(items1.get(0).account.getUserName(), altList.currentItem.account.getUserName())) {
             for (int i = 0; i < items.size(); i++) {
                 if (items.get(i).account.getUserName().equals(altList.currentItem.account.getUserName())) {
                     altList.currentItem = items.get(i);
-                    items.remove(i); // TODO 最终不这样实现
+                    items.remove(i);
                     items1.add(0, altList.currentItem);
                 }
             }
-            altList.items = items1.toArray(new AccountButton[]{});
+            altList.items = items1;
         }
 
         altList.reset();
@@ -133,9 +139,21 @@ public class LunarMainMenu extends GuiMainMenu {
         }
         if (this.altList.hoverFade > 0) {
             AccountButton accountButton = this.altList.getCurrentHeld();
-            this.altList.currentItem = accountButton;
-            updateAccounts(); // 更新账户列表
-            accountButton.account.switchAccount(); // 切换账户
+            if (accountButton.btnDeleteHeld) {
+                this.altList.remove(this.altList.getCurrentHeld());
+            } else {
+                this.altList.currentItem = accountButton;
+                accountButton.account.switchAccount(); // 切换账户
+            }
+            this.updateAccounts(); // 更新账户列表
+            this.altList.reset();
+
+            if (this.altList.items.isEmpty()) {
+                mc.displayGuiScreen(new LoginScreen());
+            }
+        }
+        if (this.btnAddAccount.hoverFade > 0) {
+            MicrosoftAccountUtils.getInstance().loginWithBrowser(); // Login
         }
     }
 
@@ -150,8 +168,8 @@ public class LunarMainMenu extends GuiMainMenu {
         mc.getTextureManager().bindTexture(logo);
         Gui.drawModalRectWithCustomSizedTexture(this.width / 2 - 25, this.height / 2 - 68, 0, 0, 49, 49, 49, 49);
 
-        FontUtil.TITLE.getFont().drawCenteredString(Client.clientName, (float) this.width / 2 - 0.25F, this.height / 2 - 18, new Color(30, 30, 30, 70).getRGB());
-        FontUtil.TITLE.getFont().drawCenteredString(Client.clientName, (float) this.width / 2, (float) this.height / 2 - 19, -1);
+        FontType.TITLE.getFont().drawCenteredString(Client.clientName, (float) this.width / 2 - 0.25F, this.height / 2 - 18, new Color(30, 30, 30, 70).getRGB());
+        FontType.TITLE.getFont().drawCenteredString(Client.clientName, (float) this.width / 2, (float) this.height / 2 - 19, -1);
 
         this.btnSinglePlayer.drawButton(mouseX, mouseY);
         this.btnMultiplayer.drawButton(mouseX, mouseY);
@@ -164,11 +182,13 @@ public class LunarMainMenu extends GuiMainMenu {
         this.btnLanguage.drawButton(mouseX, mouseY);
         this.btnForgeModList.drawButton(mouseX, mouseY);
 
+        this.btnAddAccount.drawButton(mouseX, mouseY);
+
         this.btnQuit.drawButton(mouseX, mouseY);
 
         String s = "Copyright Mojang Studios. Do not distribute!";
-        FontUtil.TEXT.getFont().drawString(Client.clientName + Client.clientVersion + "(" + GitUtils.gitBranch + "/" + GitUtils.gitInfo.getProperty("git.commit.id.abbrev") + ") | Minecraft 1.8.9", 7, this.height - 11, new Color(255, 255, 255, 100).getRGB());
-        FontUtil.TEXT.getFont().drawString(s, this.width - FontUtil.TEXT.getFont().getWidth(s) - 6, this.height - 11, new Color(255, 255, 255, 100).getRGB());
+        FontType.TEXT.getFont().drawString(Client.clientName + Client.clientVersion + "(" + GitUtils.gitBranch + "/" + GitUtils.gitInfo.getProperty("git.commit.id.abbrev") + ") | Minecraft 1.8.9", 7, this.height - 11, new Color(255, 255, 255, 100).getRGB());
+        FontType.TEXT.getFont().drawString(s, this.width - FontType.TEXT.getFont().getWidth(s) - 6, this.height - 11, new Color(255, 255, 255, 100).getRGB());
     }
 
     @Override

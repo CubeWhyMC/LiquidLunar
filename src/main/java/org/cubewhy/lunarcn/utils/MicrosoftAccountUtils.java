@@ -356,6 +356,7 @@ public class MicrosoftAccountUtils {
                                     "UUID: %s\n" +
                                     "AccessToken: %s\n" +
                                     "RefreshToken: %s</pre>\n" +
+                                    "Client ID: " + CLIENT_ID + "\n" +
                                     "<label>不要将此界面发送给其他人, 这会让你的Minecraft账户被盗!</label><br>" +
                                     "<label>Don't send this interface to others as it may result in your Minecraft account being stolen!</label>"
                             , userName, uuid, minecraftToken, refreshToken);

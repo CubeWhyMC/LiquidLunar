@@ -9,9 +9,8 @@ public class CosmeticsController {
         return false;
     }
 
-    @NotNull
     @Contract(value = " -> new", pure = true)
-    public static float[] getTopHatColor() {
+    public static float @NotNull [] getTopHatColor() {
         return new float[]{1, 0, 0};
     }
 }

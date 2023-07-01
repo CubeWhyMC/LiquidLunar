@@ -5,6 +5,7 @@ import net.minecraft.client.gui.GuiScreen;
 import org.cubewhy.lunarcn.Client;
 import org.cubewhy.lunarcn.account.OfflineAccount;
 import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
+import org.cubewhy.lunarcn.gui.elements.ClientButton;
 import org.cubewhy.lunarcn.utils.MicrosoftAccountUtils;
 import org.cubewhy.lunarcn.utils.RenderUtils;
 
@@ -16,15 +17,15 @@ public class LoginScreen extends GuiScreen {
 
     @Override
     public void initGui() {
-        this.buttonList.add(new GuiButton(0, this.width / 3 + 40, this.height / 3 + 100, 110, 20, "Login with Microsoft"));
-        this.buttonList.add(new GuiButton(1, this.width / 3 + 155, this.height / 3 + 100, 100, 20, "Offline"));
-        this.buttonList.add(new GuiButton(2, this.width / 3 + 45, this.height / 3 + 125, "Quit"));
+        this.buttonList.add(new ClientButton(0, this.width / 3 + 40, this.height / 3 + 100, 110, 20, "Login with Microsoft"));
+        this.buttonList.add(new ClientButton(1, this.width / 3 + 155, this.height / 3 + 100, 100, 20, "Offline"));
+        this.buttonList.add(new ClientButton(2, this.width / 3 + 45, this.height / 3 + 125, "Quit"));
     }
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         RenderUtils.drawImage("lunarcn/images/image1.jpg", 0, 0, this.width, this.height);
-        this.drawCenteredString(fontRendererObj, "Log in to use " + Client.clientName, this.width / 2, this.height / 4 + 120, new Color(0, 255, 255).getRGB());
+        this.drawCenteredString(fontRendererObj, "Login to use " + Client.clientName, this.width / 2, this.height / 4 + 120, new Color(0, 255, 255).getRGB());
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 
@@ -41,6 +42,9 @@ public class LoginScreen extends GuiScreen {
                 break;
             case 1:
                 String userName = JOptionPane.showInputDialog("UserName"); // TODO 暂时使用JOptionPane
+                if (userName.isEmpty()) {
+                    return;
+                }
                 OfflineAccount account = new OfflineAccount(userName);
                 AccountConfigFile.getInstance().addAccount(account);
                 account.switchAccount();

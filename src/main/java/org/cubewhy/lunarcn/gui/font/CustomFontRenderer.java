@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.gui.mainmenu.lunar.font;
+package org.cubewhy.lunarcn.gui.font;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;

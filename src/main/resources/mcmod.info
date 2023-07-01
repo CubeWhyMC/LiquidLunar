@@ -2,7 +2,7 @@
   {
     "modid": "lunarcn",
     "name": "LiquidLunar",
-    "description": "Best Minecraft PVP client",
+    "description": "Minecraft PVP client",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "https://cubewhy.eu.org",

@@ -12,10 +12,10 @@ public class ListValue extends Value {
     private String currentValue;
 
     public ListValue(String name, String[] values) {
-        super(name, values);
+        super(name, values[0]);
         this.values = values;
         this.name = name;
-        this.currentValue = values[1];
+        this.currentValue = values[0];
     }
 
     @Override

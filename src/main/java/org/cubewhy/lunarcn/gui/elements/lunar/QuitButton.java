@@ -1,10 +1,10 @@
-package org.cubewhy.lunarcn.gui.mainmenu.lunar.ui.buttons;
+package org.cubewhy.lunarcn.gui.elements.lunar;
 
 import java.awt.Color;
 
 import org.cubewhy.lunarcn.gui.elements.ImageButton;
-import org.cubewhy.lunarcn.gui.mainmenu.lunar.font.FontUtil;
-import org.cubewhy.lunarcn.gui.mainmenu.lunar.util.ClientGuiUtils;
+import org.cubewhy.lunarcn.gui.font.FontType;
+import org.cubewhy.lunarcn.utils.RenderUtils;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.Minecraft;
@@ -29,10 +29,10 @@ public class QuitButton extends ImageButton {
 			if (hoverFade > 0) hoverFade -= 10;
 		}
 		
-		ClientGuiUtils.drawRoundedRect(this.x - 1, this.y - 1, this.width + 2, this.height + 2, 2, new Color(30, 30, 30, 60));
-		ClientGuiUtils.drawRoundedRect(this.x, this.y, this.width, this.height, 2, new Color(255, 255 - hoverFade * 4, 255 - hoverFade * 4, 38 + hoverFade));
+		RenderUtils.drawRoundedRect(this.x - 1, this.y - 1, this.width + 2, this.height + 2, 2, new Color(30, 30, 30, 60));
+		RenderUtils.drawRoundedRect(this.x, this.y, this.width, this.height, 2, new Color(255, 255 - hoverFade * 4, 255 - hoverFade * 4, 38 + hoverFade));
 		
-		ClientGuiUtils.drawRoundedOutline(this.x, this.y, this.x + this.width, this.y + this.height, 2, 3, new Color(255, 255, 255, 30).getRGB());
+		RenderUtils.drawRoundedOutline(this.x, this.y, this.x + this.width, this.y + this.height, 2, 3, new Color(255, 255, 255, 30).getRGB());
 		
 		int color = new Color(232, 232, 232, 183).getRGB();
 		float f1 = (color >> 24 & 0xFF) / 255.0F;
@@ -52,9 +52,9 @@ public class QuitButton extends ImageButton {
 	
 	@Override
 	protected void drawHoverEffect() {
-		int w = (int) (FontUtil.TEXT.getFont().getWidth(this.text));
-		ClientGuiUtils.drawRoundedRect(this.x + (this.width - w) / 2, this.y + 17, w, 7, 2, new Color(0, 0, 0, 126));
-		FontUtil.TEXT_BOLD.getFont().drawCenteredTextScaled(this.text, this.x + this.width / 2, this.y + 18, new Color(255, 255, 255, 135).getRGB(), 0.9F);
+		int w = (int) (FontType.TEXT.getFont().getWidth(this.text));
+		RenderUtils.drawRoundedRect(this.x + (this.width - w) / 2, this.y + 17, w, 7, 2, new Color(0, 0, 0, 126));
+		FontType.TEXT_BOLD.getFont().drawCenteredTextScaled(this.text, this.x + this.width / 2, this.y + 18, new Color(255, 255, 255, 135).getRGB(), 0.9F);
 	}
 
 }

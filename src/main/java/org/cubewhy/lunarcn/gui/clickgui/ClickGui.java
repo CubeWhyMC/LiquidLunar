@@ -120,7 +120,7 @@ public class ClickGui extends GuiScreen {
      * Called by the controls from the buttonList when activated. (Mouse pressed for buttons)
      */
     @Override
-    protected void actionPerformed(GuiButton button) throws IOException {
+    protected void actionPerformed(GuiButton button) {
         for (int i = 0; i < ModuleManager.getInstance().getRegisteredModules().size(); i++) {
             Module module = ModuleManager.getInstance().getRegisteredModules().get(i);
             SwitchButton switchButton = (SwitchButton) button;

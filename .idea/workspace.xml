@@ -5,24 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="回滚configs">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGuiModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/Element.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/Style.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/elements/ButtonElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/elements/ModuleElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/ListValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/icons/forge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README_CN.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MathUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Client.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Client.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/files/configs/ClientConfigFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/files/configs/ClientConfigFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/lunar/ui/LunarMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/lunar/ui/LunarMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/ModuleCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/ModuleCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/ModuleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/ModuleManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/FileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/ImageUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/Element.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/Style.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/elements/ButtonElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/elements/ModuleElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/ImageButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/ImageButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/LunarButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/LunarButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/lunar/font/CharColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/font/CharColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/lunar/font/CustomFontRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/font/CustomFontRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/lunar/font/FontUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/font/FontType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/lunar/ui/DropDownList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/lunar/DropDownList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/lunar/ui/LunarMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/LunarMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/lunar/ui/buttons/AccountButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/lunar/AccountButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/lunar/ui/buttons/QuitButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/lunar/QuitButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/lunar/util/ClientGuiUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/lunar/util/ClientMathUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MicrosoftAccountUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MicrosoftAccountUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/ListValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/ListValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mcmod.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mcmod.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,23 +57,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="LiquidLunarForge" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LiquidLunarForge" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LiquidLunarForge" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LiquidLunarForge" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="forgegradle" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -129,10 +123,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
+    "project.structure.last.edited": "项目",
     "project.structure.proportion": "0.14648438",
     "project.structure.side.proportion": "0.24284078",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "settings.editor.selected.configurable": "inlay.hints",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -162,6 +156,7 @@
       <command value="recompileMc --stacktrace --info" />
       <command value="gradle recompileMc --stacktrace --info" />
       <command value="gradle build" />
+      <command value="gradle getAssetIndex" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -172,64 +167,10 @@
     </option>
   </component>
   <component name="RunManager" selected="应用程序.Minecraft Client">
-    <configuration name="LiquidLunarForge [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="LiquidLunarForge [setupDecompWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="setupDecompWorkspace" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Gradle.LiquidLunarForge [setupDecompWorkspace]" />
-      <item itemvalue="Gradle.LiquidLunarForge [build]" />
       <item itemvalue="应用程序.Minecraft Client" />
       <item itemvalue="应用程序.Minecraft Server" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.LiquidLunarForge [build]" />
-        <item itemvalue="Gradle.LiquidLunarForge [setupDecompWorkspace]" />
-        <item itemvalue="Gradle.LiquidLunarForge [setupDecompWorkspace]" />
-        <item itemvalue="HTTP 请求.scratch | #1" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -247,6 +188,8 @@
       <workItem from="1687404068237" duration="8607000" />
       <workItem from="1687414949046" duration="759000" />
       <workItem from="1687510260833" duration="14233000" />
+      <workItem from="1688024096013" duration="8038000" />
+      <workItem from="1688172812847" duration="216000" />
     </task>
     <task id="LOCAL-00001" summary="forge">
       <created>1687064874162</created>

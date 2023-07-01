@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.gui.mainmenu.lunar.font;
+package org.cubewhy.lunarcn.gui.font;
 
 import java.util.regex.Pattern;
 

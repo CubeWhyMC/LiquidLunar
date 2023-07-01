@@ -28,8 +28,10 @@ public class AccountConfigFile {
         if (account instanceof OfflineAccount) {
             for (Map.Entry<String, JsonElement> entry :
                     config.entrySet()) {
-                if (config.get(entry.getKey()).getAsJsonObject().get("username").getAsString().equals(account.getUserName())) {
-                    return;
+                if (!Objects.equals(entry.getKey(), "current")) {
+                    if (config.get(entry.getKey()).getAsJsonObject().get("username").getAsString().equals(account.getUserName())) {
+                        return;
+                    }
                 }
             }
         }

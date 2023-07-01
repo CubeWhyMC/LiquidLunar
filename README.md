@@ -1,37 +1,51 @@
 # LiquidLunar
 
-![last commit](https://img.shields.io/github/last-commit/CubeWhy/LiquidLunar) ![code size](https://img.shields.io/github/repo-size/CubeWhy/LiquidLunar) ![code lines](https://img.shields.io/tokei/lines/github/CubeWhy/LiquidLunar)
+![last commit](https://img.shields.io/github/last-commit/CubeWhy/LiquidLunar)
+![code size](https://img.shields.io/github/repo-size/CubeWhy/LiquidLunar)
+![code lines](https://img.shields.io/tokei/lines/github/CubeWhy/LiquidLunar)
 
 > Forge version
+
+[README_CN](README_CN.md)
 
 ## Links
 
 [Website](https://liquid.lunarcn.top)
 
-## 关于LiquidLunar
+## About LiquidLunar
 
-> 我们使用Mixin修改游戏, 这不违反[Minecraft Eula](https://www.minecraft.net/zh-hans/eula)
+> We use Mixin to modify the game, which does not violate the [Minecraft Eula](https://www.minecraft.net/zh-hans/eula)
 
-LiquidLunar是一个开源的Minecraft 1.8.9 PVP客户端, 与LunarClient没有任何关系, 如果你想为此项目贡献代码, 你可以提交pr
+LiquidLunar is a open source Minecraft 1.8.9 PvP client
 
-## 构建错误与解决
+This project didn't use any codes from [LunarClient](https://lunarclient.com)
+
+If you want contribute to this project, you can open a [pull request](https://github.com/CubeWhy/LiquidLunar/pullrequest)
+
+## Build error and fix
 
 ### Could not find net.minecraftforge:forgeBin
 
-> 没有的文件夹自己创建, 如果依然报错请把`forgeBin-{version}.jar`文件名改为`forgeBin.jar`
+> please rename `forge-{version}.jar` to `forgeBin.jar`
 
-1. 点击此处下载[ForgeBin](https://maven.minecraftforge.net/net/minecraftforge/forge/1.8.9-11.15.1.2318-1.8.9/forge-1.8.9-11.15.1.2318-1.8.9-universal.jar)
-2. 将此文件放入%userprofile%/.gradle/caches/minecraft/net/minecraftforge/forge/1.8.9-11.15.1.2318-1.8.9/stable/22/
-3. 重新构建项目
+1. Download [ForgeBin](https://maven.minecraftforge.net/net/minecraftforge/forge/1.8.9-11.15.1.2318-1.8.9/forge-1.8.9-11.15.1.2318-1.8.9-universal.jar)
+2. Put forgeBin into `%PROJECT_DIR%/.gradle/minecraft`
+3. rebuild the project
 
-### 找不到`net.minecraft`类
+### can not find the class `net.minecraft`
 
-执行`gradlew setupDecompWorkspace`然后重新导入gradle项目即可即可
+do `gradlew setupDecompWorkspace` and then reimport the project
 
-### recompileMc报错
+### failed to run recompileMc
 
-请检查`lunarcn_at.cfg`文件是否配置正确
+> Can't find any reason? try `gradlew setupDecompWorkspace --info`
+
+Please check `lunarcn_at.cfg`
+
+### Working dir "run" not found
+
+Create dir `run`
 
 ### Others
 
-不要升级gradle!
+Don't update gradle!

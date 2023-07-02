@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="修复单词拼写">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/events/Render2DEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/Notification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/ProxyConfigScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiInGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/proxy/ProxyManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/language/LanguageManager.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/icons/debug.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/icons/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/icons/info.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/icons/warning.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/files/configs/ClientConfigFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/files/configs/ClientConfigFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/hud/HudManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/hud/HudManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/hud/IRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/hud/IRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiConnecting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiConnecting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiMultiplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiMultiplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/network/MixinNetworkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/network/MixinNetworkManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/GameInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/GameInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" afterDir="false" />
-    </list>
+    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="ProxyManager" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -238,7 +214,7 @@
       <workItem from="1688176663028" duration="22785000" />
       <workItem from="1688267012423" duration="147000" />
       <workItem from="1688267707211" duration="8151000" />
-      <workItem from="1688297021174" duration="5793000" />
+      <workItem from="1688297021174" duration="6318000" />
     </task>
     <task id="LOCAL-00001" summary="forge">
       <created>1687064874162</created>
@@ -391,7 +367,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688195383299</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="ProxyManager">
+      <option name="closed" value="true" />
+      <created>1688303075371</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1688303075371</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +416,8 @@
     <MESSAGE value="GameInfo" />
     <MESSAGE value="GameInfo (issue#3)" />
     <MESSAGE value="修复单词拼写" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复单词拼写" />
+    <MESSAGE value="ProxyManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="ProxyManager" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

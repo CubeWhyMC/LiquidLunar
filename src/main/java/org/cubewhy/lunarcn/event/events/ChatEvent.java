@@ -1,3 +1,6 @@
+/**
+ * 聊天事件
+ * */
 package org.cubewhy.lunarcn.event.events;
 
 import net.minecraft.util.IChatComponent;
@@ -10,11 +13,20 @@ public class ChatEvent extends Event {
         this.chat = chatComponent;
     }
 
+    /**
+     * 获取聊天信息
+     * @return 聊天内容(@link IChatComponent)
+     * */
     public IChatComponent getChatComponent() {
         return chat;
     }
 
-    public java.lang.String getChatMessage() {
+    /**
+     * 获取聊天文字(String)
+     * @return 聊天文字 {@link String}
+     * */
+
+    public String getChatMessage() {
         return getChatComponent().getUnformattedText();
     }
 }

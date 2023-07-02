@@ -5,7 +5,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 import static org.cubewhy.lunarcn.utils.LoggerUtils.logger;
 
-@Mod(modid = ForgeMod.modId, name = Client.clientName, version = Client.clientVersion)
+@Mod(modid = ForgeMod.modId, name = Client.clientName, version = Client.clientVersion, clientSideOnly = true)
 public class ForgeMod {
     public static final String modId = "lunarcn";
 

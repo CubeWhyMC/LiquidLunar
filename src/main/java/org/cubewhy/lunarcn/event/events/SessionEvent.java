@@ -1,3 +1,6 @@
+/**
+ * 账户切换事件
+ * */
 package org.cubewhy.lunarcn.event.events;
 
 import net.minecraft.util.Session;

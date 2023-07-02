@@ -257,4 +257,104 @@ public class RenderUtils {
         return i;
     }
 
+    public static void drawLoadingCircle(float x, float y) {
+        for (int i = 0; i < 4; i++) {
+            int rot = (int) ((System.nanoTime() / 5000000 * i) % 360);
+            drawCircle(x, y, i * 10, rot - 180, rot);
+        }
+    }
+    public static void drawCircle(float x, float y, float radius, int start, int end) {
+        GlStateManager.enableBlend();
+        GlStateManager.disableTexture2D();
+        GlStateManager.tryBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_ONE, GL_ZERO);
+        glColor(Color.WHITE);
+
+        glEnable(GL_LINE_SMOOTH);
+        glLineWidth(2F);
+        glBegin(GL_LINE_STRIP);
+        for (float i = end; i >= start; i -= (360 / 90.0f))
+            glVertex2f((float) (x + (Math.cos(i * Math.PI / 180) * (radius * 1.001F))), (float) (y + (Math.sin(i * Math.PI / 180) * (radius * 1.001F))));
+        glEnd();
+        glDisable(GL_LINE_SMOOTH);
+
+        GlStateManager.enableTexture2D();
+        GlStateManager.disableBlend();
+    }
+
+    public static void drawLimitedCircle(final float lx, final float ly, final float x2, final float y2,final int xx, final int yy, final float radius, final Color color) {
+        int sections = 50;
+        double dAngle = 2 * Math.PI / sections;
+        float x, y;
+
+        glPushAttrib(GL_ENABLE_BIT);
+
+        glEnable(GL_BLEND);
+        glDisable(GL_TEXTURE_2D);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glEnable(GL_LINE_SMOOTH);
+        glBegin(GL_TRIANGLE_FAN);
+
+        glColor(color);
+        for (int i = 0; i < sections; i++) {
+            x = (float) (radius * Math.sin((i * dAngle)));
+            y = (float) (radius * Math.cos((i * dAngle)));
+            glVertex2f(Math.min(x2,Math.max(xx + x,lx)), Math.min(y2,Math.max(yy + y,ly)));
+        }
+
+        GlStateManager.color(0, 0, 0);
+
+        glEnd();
+
+        glPopAttrib();
+    }
+
+    public static void glColor(final int red, final int green, final int blue, final int alpha) {
+        GlStateManager.color(red / 255F, green / 255F, blue / 255F, alpha / 255F);
+    }
+
+    public static void glColor(final Color color) {
+        final float red = color.getRed() / 255F;
+        final float green = color.getGreen() / 255F;
+        final float blue = color.getBlue() / 255F;
+        final float alpha = color.getAlpha() / 255F;
+
+        GlStateManager.color(red, green, blue, alpha);
+    }
+
+    public static void glColor(final Color color, final int alpha) {
+        glColor(color, alpha/255F);
+    }
+
+    public static void glColor(final Color color, final float alpha) {
+        final float red = color.getRed() / 255F;
+        final float green = color.getGreen() / 255F;
+        final float blue = color.getBlue() / 255F;
+
+        GlStateManager.color(red, green, blue, alpha);
+    }
+
+    public static void glColor(final int hex) {
+        final float alpha = (hex >> 24 & 0xFF) / 255F;
+        final float red = (hex >> 16 & 0xFF) / 255F;
+        final float green = (hex >> 8 & 0xFF) / 255F;
+        final float blue = (hex & 0xFF) / 255F;
+
+        GlStateManager.color(red, green, blue, alpha);
+    }
+
+    public static void glColor(final int hex, final int alpha) {
+        final float red = (hex >> 16 & 0xFF) / 255F;
+        final float green = (hex >> 8 & 0xFF) / 255F;
+        final float blue = (hex & 0xFF) / 255F;
+
+        GlStateManager.color(red, green, blue, alpha / 255F);
+    }
+
+    public static void glColor(final int hex, final float alpha) {
+        final float red = (hex >> 16 & 0xFF) / 255F;
+        final float green = (hex >> 8 & 0xFF) / 255F;
+        final float blue = (hex & 0xFF) / 255F;
+
+        GlStateManager.color(red, green, blue, alpha);
+    }
 }

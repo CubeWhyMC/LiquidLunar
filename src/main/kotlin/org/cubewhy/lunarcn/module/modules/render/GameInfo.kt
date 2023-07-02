@@ -73,10 +73,12 @@ class GameInfo : ModuleDraggable() {
     }
 
     private fun getServerIp(): String {
-        val serverIp = if (mc.currentServerData == null) {
+        val serverIp = if (mc.isSingleplayer) {
             "SinglePlayer"
-        } else {
+        } else if (mc.currentServerData != null) {
             mc.currentServerData.serverIP
+        } else {
+            "Null"
         }
         return serverIp
     }

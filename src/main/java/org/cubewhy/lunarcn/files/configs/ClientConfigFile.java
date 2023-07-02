@@ -7,6 +7,7 @@ import org.cubewhy.lunarcn.gui.mainmenu.LunarMainMenu;
 import net.minecraft.client.gui.GuiMainMenu;
 import org.cubewhy.lunarcn.Client;
 import org.cubewhy.lunarcn.gui.mainmenu.LiquidLunarMainMenu;
+import org.cubewhy.lunarcn.proxy.ProxyManager;
 
 import java.io.*;
 
@@ -32,7 +33,17 @@ public class ClientConfigFile {
             config.add("menu-style", new JsonPrimitive("lunar"));
         }
 
+        if (!config.has("proxy-address")) {
+            setProxyAutomatically();
+        } else {
+            ProxyManager.getInstance().setAddress(config.get("proxy-address").getAsString());
+        }
+
         save();
+    }
+    
+    public void setProxyAutomatically() {
+        config.add("proxy-address", new JsonPrimitive(ProxyManager.getInstance().getProxyAddress()));
     }
 
     public GuiMainMenu getMenuStyle() {

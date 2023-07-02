@@ -6,6 +6,9 @@ public abstract class Value<T> {
 	protected String name;
 	protected T value;
 
+	public Value() {
+	}
+
 	public Value(String name, T value) {
 		setName(name);
 		setValue(value);

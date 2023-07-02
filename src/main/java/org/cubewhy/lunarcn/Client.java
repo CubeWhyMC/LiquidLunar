@@ -17,10 +17,7 @@ import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.event.EventTarget;
 import org.cubewhy.lunarcn.event.events.PacketEvent;
 import org.cubewhy.lunarcn.event.events.TickEvent;
-import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
-import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
-import org.cubewhy.lunarcn.files.configs.ModuleConfigFile;
-import org.cubewhy.lunarcn.files.configs.PositionConfigFile;
+import org.cubewhy.lunarcn.files.configs.*;
 import org.cubewhy.lunarcn.gui.SplashProgress;
 import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
 import org.cubewhy.lunarcn.gui.hud.HudManager;
@@ -100,6 +97,7 @@ public class Client {
         Display.setTitle(clientName + " " + clientVersion + " (" + GitUtils.gitBranch + "/" + GitUtils.gitInfo.getProperty("git.commit.id.abbrev") + ")");
         ModuleConfigFile.getInstance().load(); // module config
         PositionConfigFile.getInstance().load(); // module draggable position config
+        ServerConfigFile.getInstance().load();
         hudManager = HudManager.getInstance(); // hud manager
         ModuleManager.getInstance().registerModules(); // register modules
 

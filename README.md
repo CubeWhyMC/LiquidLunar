@@ -49,3 +49,5 @@ Create dir `run`
 ### Others
 
 Don't update gradle!
+
+Don't use foreach as much as possible

@@ -3,7 +3,7 @@ package org.cubewhy.lunarcn.value;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
 
-public class StringValue extends Value {
+public class StringValue extends Value<String> {
 
 	public StringValue(String name, String value) {
 		super(name, value);
@@ -20,12 +20,12 @@ public class StringValue extends Value {
 	}
 
 	@Override
-	public Object getValue() {
+	public String getValue() {
 		return value;
 	}
 
 	@Override
-	public void setValue(Object value) {
+	public void setValue(String value) {
 		this.value = value;
 	}
 

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="ProxyManager" />
+    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="event javadoc" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,7 +214,7 @@
       <workItem from="1688176663028" duration="22785000" />
       <workItem from="1688267012423" duration="147000" />
       <workItem from="1688267707211" duration="8151000" />
-      <workItem from="1688297021174" duration="6318000" />
+      <workItem from="1688297021174" duration="7187000" />
     </task>
     <task id="LOCAL-00001" summary="forge">
       <created>1687064874162</created>
@@ -375,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688303075371</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="event javadoc">
+      <option name="closed" value="true" />
+      <created>1688304010765</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1688304010765</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +425,8 @@
     <MESSAGE value="GameInfo (issue#3)" />
     <MESSAGE value="修复单词拼写" />
     <MESSAGE value="ProxyManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="ProxyManager" />
+    <MESSAGE value="event javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="event javadoc" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

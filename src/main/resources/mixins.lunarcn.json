@@ -9,6 +9,7 @@
     "client.MixinMinecraft",
     "gui.MixinGui",
     "gui.MixinGuiConnecting",
+    "gui.MixinGuiDisconnected",
     "gui.MixinGuiInGame",
     "gui.MixinGuiMultiplayer",
     "gui.MixinGuiNewChat",

@@ -199,10 +199,4 @@ public class Client {
             }
         }
     }
-
-    @EventTarget
-    public void onChat(ChatEvent event) {
-        Notification n = new Notification(event.getChatMessage());
-        HudManager.getInstance().addNotification(n); // TODO TEST
-    }
 }

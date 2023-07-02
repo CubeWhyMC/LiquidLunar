@@ -15,12 +15,14 @@ import okhttp3.Response;
 import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.event.EventTarget;
+import org.cubewhy.lunarcn.event.events.ChatEvent;
 import org.cubewhy.lunarcn.event.events.PacketEvent;
 import org.cubewhy.lunarcn.event.events.TickEvent;
 import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
 import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
 import org.cubewhy.lunarcn.files.configs.ModuleConfigFile;
 import org.cubewhy.lunarcn.files.configs.PositionConfigFile;
+import org.cubewhy.lunarcn.gui.Notification;
 import org.cubewhy.lunarcn.gui.SplashProgress;
 import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
 import org.cubewhy.lunarcn.gui.hud.HudManager;
@@ -196,5 +198,11 @@ public class Client {
                 ClientUtils.addMessage("[" + clientName + "] " + "Player sent C17, channelName: " + channelName);
             }
         }
+    }
+
+    @EventTarget
+    public void onChat(ChatEvent event) {
+        Notification n = new Notification(event.getChatMessage());
+        HudManager.getInstance().addNotification(n); // TODO TEST
     }
 }

@@ -1,12 +1,10 @@
 package org.cubewhy.lunarcn.injection.forge.mixins.gui;
 
 
-import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.GuiMultiplayer;
-import net.minecraft.client.gui.ServerListEntryNormal;
+import net.minecraft.client.gui.*;
 import net.minecraft.client.multiplayer.ServerList;
 import org.cubewhy.lunarcn.FeaturedServerData;
+import org.cubewhy.lunarcn.gui.ProxyConfigScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,7 +17,7 @@ import java.awt.*;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
 @Mixin(GuiMultiplayer.class)
-public abstract class MixinGuiMultiplayer {
+public abstract class MixinGuiMultiplayer extends GuiScreen {
     @Shadow
     private ServerList savedServerList;
 
@@ -31,6 +29,9 @@ public abstract class MixinGuiMultiplayer {
     @Inject(method = "drawScreen", at = @At("RETURN"))
     public void drawScreen(int mouseX, int mouseY, float partialTicks, CallbackInfo ci) {
         mc.fontRendererObj.drawString("You are playing on " + mc.getSession().getUsername(), 20, 20, new Color(255, 255, 255).getRGB());
+        String text = "ProxySettings";
+        int textWidth = fontRendererObj.getStringWidth(text);
+        this.buttonList.add(new GuiButton(114514, this.width - textWidth - 20, 10, textWidth + 10, fontRendererObj.FONT_HEIGHT + 10, text));
     }
 
     /**
@@ -73,6 +74,15 @@ public abstract class MixinGuiMultiplayer {
         if (savedServerList.getServerData(index) instanceof FeaturedServerData) {
             this.btnEditServer.enabled = false;
             this.btnDeleteServer.enabled = false;
+        }
+    }
+
+    @Inject(method = "actionPerformed", at = @At("RETURN"))
+    public void actionPerformed(GuiButton button, CallbackInfo ci) {
+        switch (button.id) {
+            case 114514:
+                mc.displayGuiScreen(new ProxyConfigScreen());
+                break;
         }
     }
 }

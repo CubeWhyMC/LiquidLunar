@@ -5,12 +5,12 @@ import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.event.EventTarget;
+import org.cubewhy.lunarcn.event.events.Render2DEvent;
 import org.cubewhy.lunarcn.event.events.RenderEvent;
+import org.cubewhy.lunarcn.gui.Notification;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Set;
+import java.util.*;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
@@ -18,6 +18,7 @@ public class HudManager {
 
     private static HudManager instance = null;
     private final Set<IRenderer> registeredRenders = Sets.newHashSet();
+    public final List<Notification> notificationDisplayList = new ArrayList<>();
 
     private HudManager() {
 
@@ -70,5 +71,9 @@ public class HudManager {
         }
 
         renderer.render(position);
+    }
+
+    public void addNotification(Notification notification) {
+        notificationDisplayList.add(notification);
     }
 }

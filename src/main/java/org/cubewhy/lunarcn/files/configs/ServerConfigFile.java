@@ -75,7 +75,14 @@ public class ServerConfigFile {
     }
 
     public enum ServerEnum {
-        HYPIXEL;
+        HYPIXEL("hypixel"),
+        QBYPIXEL("qbypixel");
+
+        public final String key;
+
+        ServerEnum(String keyInJson) {
+            this.key = keyInJson;
+        }
 
         @Override
         public String toString() {

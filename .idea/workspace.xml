@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="更好看的clickGui" />
+    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="修正上一个提交, 应为原本IP" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -215,7 +215,7 @@
       <workItem from="1688267012423" duration="147000" />
       <workItem from="1688267707211" duration="8151000" />
       <workItem from="1688297021174" duration="11831000" />
-      <workItem from="1688376249525" duration="1546000" />
+      <workItem from="1688376249525" duration="2133000" />
     </task>
     <task id="LOCAL-00001" summary="forge">
       <created>1687064874162</created>
@@ -424,7 +424,23 @@
       <option name="project" value="LOCAL" />
       <updated>1688377710295</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="keyInJson">
+      <option name="closed" value="true" />
+      <created>1688378025897</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1688378025897</updated>
+    </task>
+    <task id="LOCAL-00029" summary="修正上一个提交, 应为原本IP">
+      <option name="closed" value="true" />
+      <created>1688378336307</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1688378336307</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,8 +461,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="forge with mixins" />
-    <MESSAGE value="修复源码(部分)" />
     <MESSAGE value="Mixins" />
     <MESSAGE value="增加mainmenu(不是完全工作)" />
     <MESSAGE value="utils" />
@@ -470,7 +484,9 @@
     <MESSAGE value="移除测试用代码" />
     <MESSAGE value="断开连接屏幕 重新进入服务器按钮" />
     <MESSAGE value="更好看的clickGui" />
-    <option name="LAST_COMMIT_MESSAGE" value="更好看的clickGui" />
+    <MESSAGE value="keyInJson" />
+    <MESSAGE value="修正上一个提交, 应为原本IP" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正上一个提交, 应为原本IP" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

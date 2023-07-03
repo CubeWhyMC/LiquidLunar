@@ -7,6 +7,7 @@ import org.cubewhy.lunarcn.event.events.Render2DEvent;
 import org.cubewhy.lunarcn.gui.Notification;
 import org.cubewhy.lunarcn.gui.hud.HudManager;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;

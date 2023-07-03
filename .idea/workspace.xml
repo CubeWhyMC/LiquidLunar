@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="断开连接屏幕 重新进入服务器按钮">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiDisconnected.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiDisconnected.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/ipc/DiscordIPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/ipc/DiscordIPC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +217,7 @@
       <workItem from="1688176663028" duration="22785000" />
       <workItem from="1688267012423" duration="147000" />
       <workItem from="1688267707211" duration="8151000" />
-      <workItem from="1688297021174" duration="10879000" />
+      <workItem from="1688297021174" duration="11831000" />
     </task>
     <task id="LOCAL-00001" summary="forge">
       <created>1687064874162</created>
@@ -410,7 +410,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688308503425</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="断开连接屏幕 重新进入服务器按钮">
+      <option name="closed" value="true" />
+      <created>1688309031439</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1688309031439</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

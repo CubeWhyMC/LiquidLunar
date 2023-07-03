@@ -21,16 +21,19 @@ public class ServerConfigFile {
         return instance;
     }
 
-    public static List getServerAddressesList(ServerEnum serverType) {
+    public static List<String> getServerAddressesList(ServerEnum serverType) {
         if (!config.isJsonNull()) {
-            ArrayList<String> serverAddresses = new ArrayList<String>();
+            ArrayList<String> serverAddresses = new ArrayList<>();
+            // 添加别名
             for (JsonElement serverAddress : config.get(serverType.toString()).getAsJsonArray()) {
                 serverAddresses.add(serverAddress.getAsString());
             }
+            // 添加原本的IP
+            serverAddresses.add(serverType.ip);
             return serverAddresses;
         } else {
             //TODO 初始化服务器列表
-            return new ArrayList();
+            return new ArrayList<>();
         }
     }
 
@@ -75,7 +78,14 @@ public class ServerConfigFile {
     }
 
     public enum ServerEnum {
-        HYPIXEL;
+        HYPIXEL("*.hypixel.net"),
+        QBYPIXEL("mc.cubewhy.eu.org");
+
+        public final String ip;
+
+        ServerEnum(String keyInJson) {
+            this.ip = keyInJson;
+        }
 
         @Override
         public String toString() {

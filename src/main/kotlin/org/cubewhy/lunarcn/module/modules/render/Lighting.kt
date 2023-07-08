@@ -1,5 +1,6 @@
 package org.cubewhy.lunarcn.module.modules.render
 
+import net.minecraft.util.ResourceLocation
 import org.cubewhy.lunarcn.module.Module
 import org.cubewhy.lunarcn.module.ModuleCategory
 import org.cubewhy.lunarcn.module.ModuleInfo
@@ -8,6 +9,7 @@ import org.cubewhy.lunarcn.module.ModuleInfo
 class Lighting : Module() {
 
     private val currentGamma = mc.gameSettings.gammaSetting
+    override val moduleImage =  ResourceLocation("lunarcn/icons/lighting.png")
     override fun onEnabled() {
         mc.gameSettings.gammaSetting = 1000f
     }

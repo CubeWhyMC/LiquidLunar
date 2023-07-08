@@ -1,5 +1,6 @@
 package org.cubewhy.lunarcn.module.modules.move
 
+import net.minecraft.util.ResourceLocation
 import org.cubewhy.lunarcn.event.EventTarget
 import org.cubewhy.lunarcn.event.events.RenderEvent
 import org.cubewhy.lunarcn.gui.hud.HudDesigner
@@ -9,7 +10,7 @@ import org.cubewhy.lunarcn.module.ModuleDraggable
 import org.cubewhy.lunarcn.module.ModuleInfo
 import java.awt.Color
 
-@ModuleInfo(name = "ToggleSprint", document = "Auto sprint when you move", category = ModuleCategory.MOVE)
+@ModuleInfo(name = "ToggleSprint", document = "Auto sprint when you are moving", category = ModuleCategory.MOVE)
 class ToggleSprint : ModuleDraggable() {
     private var position: ScreenPosition = ScreenPosition.fromRelativePosition(0.5, 0.5)
 
@@ -17,7 +18,7 @@ class ToggleSprint : ModuleDraggable() {
 
     var sprintState = false
 
-//    override val moduleImage = ResourceLocation("lunarcn/modules/toggleSprint.png")
+    override val moduleImage = ResourceLocation("lunarcn/icons/toggleSprint.png")
 
     override fun save(position: ScreenPosition) {
         this.position = position

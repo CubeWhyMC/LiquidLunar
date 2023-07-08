@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="修正上一个提交, 应为原本IP" />
+    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="AltList视觉(icon未更新)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/server/MixinMinecraftServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/server/HypixelMod.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/icons/fpsDisplay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/icons/kestrokes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/icons/lighting.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/icons/toggleSprint.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/lunar/DropDownList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/elements/lunar/AccountDropDownList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/LunarMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/LunarMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/Module.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/Module.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/move/ToggleSprint.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/move/ToggleSprint.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/FPSDisplay.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/FPSDisplay.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/Keystrokes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/Keystrokes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/Lighting.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/Lighting.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,9 +57,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="ForgePacket" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
         <option value="Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -215,7 +233,11 @@
       <workItem from="1688267012423" duration="147000" />
       <workItem from="1688267707211" duration="8151000" />
       <workItem from="1688297021174" duration="11831000" />
-      <workItem from="1688376249525" duration="2133000" />
+      <workItem from="1688376249525" duration="7511000" />
+      <workItem from="1688384480883" duration="536000" />
+      <workItem from="1688740077961" duration="130000" />
+      <workItem from="1688740298963" duration="1679000" />
+      <workItem from="1688792579738" duration="4407000" />
     </task>
     <task id="LOCAL-00001" summary="forge">
       <created>1687064874162</created>
@@ -440,7 +462,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688378336307</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="中文修复">
+      <option name="closed" value="true" />
+      <created>1688379040840</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1688379040840</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,8 +491,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Mixins" />
-    <MESSAGE value="增加mainmenu(不是完全工作)" />
     <MESSAGE value="utils" />
     <MESSAGE value="fix build.gradle" />
     <MESSAGE value="fix build.gradle &quot;jar&quot;" />
@@ -486,7 +514,9 @@
     <MESSAGE value="更好看的clickGui" />
     <MESSAGE value="keyInJson" />
     <MESSAGE value="修正上一个提交, 应为原本IP" />
-    <option name="LAST_COMMIT_MESSAGE" value="修正上一个提交, 应为原本IP" />
+    <MESSAGE value="中文修复" />
+    <MESSAGE value="AltList视觉(icon未更新)" />
+    <option name="LAST_COMMIT_MESSAGE" value="AltList视觉(icon未更新)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

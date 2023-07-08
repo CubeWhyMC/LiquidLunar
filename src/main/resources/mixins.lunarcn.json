@@ -25,6 +25,8 @@
     "entity.MixinEntityPlayerSP",
     "forge.MixinSplashProgress",
     "forge.MixinSplashProgressRunnable",
-    "network.MixinNetworkManager"
+    "gui.MixinGuiContainer",
+    "network.MixinNetworkManager",
+    "server.MixinMinecraftServer"
   ]
 }

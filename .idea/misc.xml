@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ASMPluginConfiguration">
+    <asm skipDebug="false" skipFrames="false" skipCode="false" expandFrames="false" />
+    <groovy codeStyle="LEGACY" />
+  </component>
   <component name="EntryPointsManager">
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="net.minecraftforge.eventbus.api.SubscribeEvent" />
       <item index="1" class="java.lang.String" itemvalue="net.minecraftforge.fml.common.Mod" />
       <item index="2" class="java.lang.String" itemvalue="net.minecraftforge.fml.common.Mod.EventHandler" />
       <item index="3" class="java.lang.String" itemvalue="net.minecraftforge.fml.common.eventhandler.SubscribeEvent" />
       <item index="4" class="java.lang.String" itemvalue="org.cubewhy.lunarcn.event.EventTarget" />
+      <item index="5" class="java.lang.String" itemvalue="org.cubewhy.lunarcn.module.ModuleInfo" />
     </list>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />

@@ -1,6 +1,7 @@
 package org.cubewhy.lunarcn.module.modules.render
 
 import net.minecraft.client.Minecraft
+import net.minecraft.util.ResourceLocation
 import org.cubewhy.lunarcn.gui.hud.ScreenPosition
 import org.cubewhy.lunarcn.module.ModuleCategory
 import org.cubewhy.lunarcn.module.ModuleDraggable
@@ -10,6 +11,7 @@ import java.awt.Color
 @ModuleInfo(name = "FPSDisplay", document = "Display game fps", category = ModuleCategory.RENDER)
 class FPSDisplay : ModuleDraggable() {
     var position: ScreenPosition? = null
+    override val moduleImage =  ResourceLocation("lunarcn/icons/fpsDisplay.png")
 
     override fun save(position: ScreenPosition) {
         this.position = position

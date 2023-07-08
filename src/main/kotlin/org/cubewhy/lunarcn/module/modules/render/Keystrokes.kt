@@ -3,6 +3,7 @@ package org.cubewhy.lunarcn.module.modules.render
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.Gui
 import net.minecraft.client.settings.KeyBinding
+import net.minecraft.util.ResourceLocation
 import org.cubewhy.lunarcn.gui.hud.ScreenPosition
 import org.cubewhy.lunarcn.module.ModuleCategory
 import org.cubewhy.lunarcn.module.ModuleDraggable
@@ -12,6 +13,7 @@ import java.awt.Color
 @ModuleInfo(name = "Keystrokes", document = "Display what key you pressed", category = ModuleCategory.RENDER)
 class Keystrokes : ModuleDraggable() {
     var position: ScreenPosition = ScreenPosition.fromRelativePosition(0.5, 0.5)
+    override val moduleImage =  ResourceLocation("lunarcn/icons/keystrokes.png")
 
     enum class Mode(vararg keys: Key) {
         WASD(Key.keyW, Key.keyA, Key.keyS, Key.keyD), WASD_WITH_MOUSE(
@@ -111,7 +113,7 @@ class Keystrokes : ModuleDraggable() {
 //        val blend: Boolean = GL11.glIsEnabled(GL11.GL_BLEND)
 //        GL11.glPushMatrix()
 //
-//        GL11.glDisable(GL11.GL_BLEND)
+//        GL11.glDisable(GL11.GL_BLEND) // 不要取消注释这些代码, 否则会出现渲染错误
 
         for (key in mode.keys) {
             val textWidth = fontRenderer.getStringWidth(key.name)

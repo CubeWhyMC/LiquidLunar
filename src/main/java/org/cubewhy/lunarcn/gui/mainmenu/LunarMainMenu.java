@@ -3,7 +3,7 @@ package org.cubewhy.lunarcn.gui.mainmenu;
 import net.minecraftforge.fml.client.GuiModList;
 import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
 import org.cubewhy.lunarcn.gui.font.FontType;
-import org.cubewhy.lunarcn.gui.elements.lunar.DropDownList;
+import org.cubewhy.lunarcn.gui.elements.lunar.AccountDropDownList;
 import org.cubewhy.lunarcn.gui.elements.lunar.AccountButton;
 import org.cubewhy.lunarcn.gui.elements.lunar.QuitButton;
 import net.minecraft.client.gui.*;
@@ -56,7 +56,7 @@ public class LunarMainMenu extends GuiMainMenu {
 
     private static int panoramaTimer;
     private ResourceLocation backgroundTexture;
-    private DropDownList altList;
+    private AccountDropDownList altList;
     private ImageButton btnAddAccount;
 
     @Override
@@ -67,7 +67,7 @@ public class LunarMainMenu extends GuiMainMenu {
 
         this.btnSinglePlayer = new LunarButton("S I N G L E P L A Y E R", this.width / 2 - 66, this.height / 2);
         this.btnMultiplayer = new LunarButton("M U L T I P L A Y E R", this.width / 2 - 66, this.height / 2 + 15);
-        this.altList = new DropDownList(10, 10); // TODO 实现altmanager
+        this.altList = new AccountDropDownList(10, 10); // TODO 实现altmanager
 
         int yPos = this.height - 20;
         this.btnClientOptions = new ImageButton("SETTINGS", Client.clientLogo, this.width / 2 - 30, yPos);
@@ -183,6 +183,7 @@ public class LunarMainMenu extends GuiMainMenu {
         this.btnForgeModList.drawButton(mouseX, mouseY);
 
         this.btnAddAccount.drawButton(mouseX, mouseY);
+        this.btnAddAccount.x = this.altList.x + this.altList.width + 20;
 
         this.btnQuit.drawButton(mouseX, mouseY);
 

@@ -11,7 +11,7 @@ public abstract class AbstractComponent {
     public AbstractComponent() {
     }
 
-    public abstract void render();
+    public abstract void drawComponent();
 
     public int getEventPriority() {
         return 0;

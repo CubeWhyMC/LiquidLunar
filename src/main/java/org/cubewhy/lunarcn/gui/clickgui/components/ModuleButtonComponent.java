@@ -30,7 +30,7 @@ public class ModuleButtonComponent extends AbstractComponent {
     }
 
     public ModuleButtonComponent(Module module, int x, int y) {
-        this(module, x, y, 180, 22);
+        this(module, x, y, mc.fontRendererObj.getStringWidth(module.getModuleInfo().name()), 22);
     }
 
     public String getText() {
@@ -42,14 +42,14 @@ public class ModuleButtonComponent extends AbstractComponent {
     }
 
     @Override
-    public void render() {
+    public void drawComponent() {
         int color;
         if (this.bindModule.getState()) {
             color = enableColor;
         } else {
             color = disableColor;
         }
-        RenderUtils.drawString(this.getText(), x + (getWidth() - mc.fontRendererObj.getStringWidth(this.getText())) / 2, y + (getHeight() - mc.fontRendererObj.FONT_HEIGHT) / 2, color, true);
+        RenderUtils.drawString(this.getText(), x, y, color, true);
     }
 
     @Override

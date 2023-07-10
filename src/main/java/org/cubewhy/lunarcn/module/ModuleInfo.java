@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 public @interface ModuleInfo {
     String name();
 
-    String document() default "a Module";
+    String description() default "a Module";
 
     ModuleCategory category();
 

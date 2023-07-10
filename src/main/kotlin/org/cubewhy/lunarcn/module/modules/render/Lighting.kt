@@ -5,7 +5,7 @@ import org.cubewhy.lunarcn.module.Module
 import org.cubewhy.lunarcn.module.ModuleCategory
 import org.cubewhy.lunarcn.module.ModuleInfo
 
-@ModuleInfo(name = "Lighting", document = "set gamma to 1000F", category = ModuleCategory.RENDER)
+@ModuleInfo(name = "Lighting", description = "set gamma to 1000F", category = ModuleCategory.RENDER)
 class Lighting : Module() {
 
     private val currentGamma = mc.gameSettings.gammaSetting

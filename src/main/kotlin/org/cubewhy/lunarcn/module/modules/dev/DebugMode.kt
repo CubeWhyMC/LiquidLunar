@@ -5,9 +5,8 @@ import org.cubewhy.lunarcn.Client
 import org.cubewhy.lunarcn.module.Module
 import org.cubewhy.lunarcn.module.ModuleCategory
 import org.cubewhy.lunarcn.module.ModuleInfo
-import org.cubewhy.lunarcn.utils.LoggerUtils
 
-@ModuleInfo(name = "debugMode", document = "show debug message in chat", category = ModuleCategory.DEV)
+@ModuleInfo(name = "debugMode", description = "show debug message in chat", category = ModuleCategory.DEV)
 class DebugMode : Module() {
     override val moduleImage: ResourceLocation
         get() = ResourceLocation("lunarcn/icons/build.png")

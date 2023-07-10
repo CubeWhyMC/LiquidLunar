@@ -15,11 +15,9 @@ import okhttp3.Response;
 import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.event.EventTarget;
-import org.cubewhy.lunarcn.event.events.ChatEvent;
 import org.cubewhy.lunarcn.event.events.PacketEvent;
 import org.cubewhy.lunarcn.event.events.TickEvent;
 import org.cubewhy.lunarcn.files.configs.*;
-import org.cubewhy.lunarcn.gui.Notification;
 import org.cubewhy.lunarcn.gui.SplashProgress;
 import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
 import org.cubewhy.lunarcn.gui.hud.HudManager;
@@ -29,10 +27,6 @@ import org.cubewhy.lunarcn.utils.*;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.nio.ByteBuffer;
 import java.util.*;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;

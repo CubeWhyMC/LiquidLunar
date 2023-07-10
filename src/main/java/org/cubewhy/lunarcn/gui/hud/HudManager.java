@@ -7,10 +7,13 @@ import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.event.EventTarget;
 import org.cubewhy.lunarcn.event.events.Render2DEvent;
 import org.cubewhy.lunarcn.event.events.RenderEvent;
-import org.cubewhy.lunarcn.gui.Notification;
+import org.cubewhy.lunarcn.gui.notification.Notification;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Set;
+import java.util.concurrent.LinkedBlockingQueue;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
@@ -18,7 +21,8 @@ public class HudManager {
 
     private static HudManager instance = null;
     private final Set<IRenderer> registeredRenders = Sets.newHashSet();
-    public final List<Notification> notificationDisplayList = new ArrayList<>();
+    private final LinkedBlockingQueue<Notification> pendingNotifications = new LinkedBlockingQueue<>();
+    private Notification currentNotification = null;
 
     private HudManager() {
 
@@ -59,6 +63,14 @@ public class HudManager {
         }
     }
 
+    @EventTarget
+    public void onRender2D(Render2DEvent event) {
+        this.updateNotifications();
+        if (currentNotification!= null) {
+            currentNotification.render();
+        }
+    }
+
     private void callRenderer(@NotNull IRenderer renderer) {
         if (!renderer.isEnabled()) {
             return;
@@ -74,6 +86,17 @@ public class HudManager {
     }
 
     public void addNotification(Notification notification) {
-        notificationDisplayList.add(notification);
+        pendingNotifications.add(notification);
+    }
+
+    private void updateNotifications() {
+        if (currentNotification != null && !currentNotification.isShown()) {
+            currentNotification = null;
+        }
+
+        if (currentNotification == null && !pendingNotifications.isEmpty()) {
+            currentNotification = pendingNotifications.poll();
+            currentNotification.show();
+        }
     }
 }

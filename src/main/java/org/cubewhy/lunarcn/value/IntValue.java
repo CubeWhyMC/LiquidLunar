@@ -4,10 +4,18 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
 
 public class IntValue extends Value<Integer> {
+	public final int maxValue;
+	public final int minValue;
 
 
 	public IntValue(String name, int value) {
+		this(name, value, Integer.MIN_VALUE, Integer.MAX_VALUE);
+	}
+
+	public IntValue(String name, int value, int maxValue,  int minValue) {
 		super(name, value);
+		this.maxValue = maxValue;
+		this.minValue = minValue;
 	}
 
 	@Override

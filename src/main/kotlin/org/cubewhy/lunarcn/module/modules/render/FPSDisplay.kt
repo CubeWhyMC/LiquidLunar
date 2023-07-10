@@ -8,7 +8,7 @@ import org.cubewhy.lunarcn.module.ModuleDraggable
 import org.cubewhy.lunarcn.module.ModuleInfo
 import java.awt.Color
 
-@ModuleInfo(name = "FPSDisplay", document = "Display game fps", category = ModuleCategory.RENDER)
+@ModuleInfo(name = "FPSDisplay", description = "Display game fps", category = ModuleCategory.RENDER)
 class FPSDisplay : ModuleDraggable() {
     var position: ScreenPosition? = null
     override val moduleImage =  ResourceLocation("lunarcn/icons/fpsDisplay.png")

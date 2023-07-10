@@ -10,7 +10,7 @@ import org.cubewhy.lunarcn.module.ModuleInfo
 
 @ModuleInfo(
     name = "AutoSag",
-    document = "Auto block your sword when you're targeting",
+    description = "Auto block your sword when you're targeting",
     category = ModuleCategory.CHEATS
 )
 class AutoSag : Module() {

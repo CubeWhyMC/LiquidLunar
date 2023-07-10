@@ -32,6 +32,9 @@ repositories {
 }
 
 dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+
     include fileTree(dir: "lib", includes: ['*.jar']) // local lib
 
     // Don't update mixin
@@ -50,7 +53,8 @@ dependencies {
     include "org.jetbrains.kotlin:kotlin-stdlib"
     include 'com.squareup.okhttp3:okhttp:4.11.0'
     include 'com.jagrosh:DiscordIPC:0.4'
-    implementation 'org.realityforge.org.jetbrains.annotations:org.jetbrains.annotations:1.7.0'
+
+    implementation 'org.jetbrains:annotations:24.0.1'
 }
 
 shadowJar {

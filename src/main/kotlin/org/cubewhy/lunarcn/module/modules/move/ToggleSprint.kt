@@ -10,7 +10,7 @@ import org.cubewhy.lunarcn.module.ModuleDraggable
 import org.cubewhy.lunarcn.module.ModuleInfo
 import java.awt.Color
 
-@ModuleInfo(name = "ToggleSprint", document = "Auto sprint when you are moving", category = ModuleCategory.MOVE)
+@ModuleInfo(name = "ToggleSprint", description = "Auto sprint when you are moving", category = ModuleCategory.MOVE)
 class ToggleSprint : ModuleDraggable() {
     private var position: ScreenPosition = ScreenPosition.fromRelativePosition(0.5, 0.5)
 

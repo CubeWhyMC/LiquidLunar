@@ -10,7 +10,7 @@ import org.cubewhy.lunarcn.module.ModuleInfo
 import org.lwjgl.opengl.GL11
 import java.awt.Color
 
-@ModuleInfo(name = "ArmorState", document = "Render your armor you wear", category = ModuleCategory.RENDER)
+@ModuleInfo(name = "ArmorState", description = "Render your armor you wear", category = ModuleCategory.RENDER)
 class ArmorState : ModuleDraggable() {
 
     private var position: ScreenPosition = ScreenPosition.fromRelativePosition(0.5, 0.5)

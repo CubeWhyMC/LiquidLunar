@@ -10,13 +10,14 @@ import org.cubewhy.lunarcn.module.ModuleDraggable
 import org.cubewhy.lunarcn.module.ModuleInfo
 import java.awt.Color
 
-@ModuleInfo(name = "Keystrokes", document = "Display what key you pressed", category = ModuleCategory.RENDER)
+@ModuleInfo(name = "Keystrokes", description = "Display what key you pressed", category = ModuleCategory.RENDER)
 class Keystrokes : ModuleDraggable() {
     var position: ScreenPosition = ScreenPosition.fromRelativePosition(0.5, 0.5)
     override val moduleImage =  ResourceLocation("lunarcn/icons/keystrokes.png")
 
     enum class Mode(vararg keys: Key) {
-        WASD(Key.keyW, Key.keyA, Key.keyS, Key.keyD), WASD_WITH_MOUSE(
+        WASD(Key.keyW, Key.keyA, Key.keyS, Key.keyD),
+        WASD_WITH_MOUSE(
             Key.keyW,
             Key.keyA,
             Key.keyS,

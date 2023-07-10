@@ -6,7 +6,9 @@ import net.minecraft.client.renderer.GlStateManager;
 import org.cubewhy.lunarcn.Client;
 import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.files.configs.ModuleConfigFile;
+import org.cubewhy.lunarcn.gui.notification.Notification;
 import org.cubewhy.lunarcn.gui.elements.SwitchButton;
+import org.cubewhy.lunarcn.gui.hud.HudManager;
 import org.cubewhy.lunarcn.module.Module;
 import org.cubewhy.lunarcn.module.ModuleCategory;
 import org.cubewhy.lunarcn.module.ModuleManager;
@@ -14,7 +16,6 @@ import org.cubewhy.lunarcn.utils.RenderUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
-import java.io.IOException;
 
 public class ClickGui extends GuiScreen {
 
@@ -44,7 +45,7 @@ public class ClickGui extends GuiScreen {
             if (button instanceof SwitchButton) {
                 SwitchButton button1 = (SwitchButton) button;
                 if (button1.isMouseOver()) {
-                    this.drawDocument(mouseX, mouseY, button1.getBindModule().getModuleInfo().document());
+                    this.drawDocument(mouseX, mouseY, button1.getBindModule().getModuleInfo().description());
                 }
             }
         }
@@ -125,12 +126,11 @@ public class ClickGui extends GuiScreen {
      */
     @Override
     protected void actionPerformed(GuiButton button) {
-        for (int i = 0; i < ModuleManager.getInstance().getRegisteredModules().size(); i++) {
-            Module module = ModuleManager.getInstance().getRegisteredModules().get(i);
-            SwitchButton switchButton = (SwitchButton) button;
-            if (module == switchButton.getBindModule()) {
-                ((SwitchButton) button).toggle(); // 切换状态
-            }
+        if (button instanceof SwitchButton) {
+            SwitchButton button1 = ((SwitchButton) button);
+            Module module = button1.getBindModule();
+            System.out.println("clicked " + module.getModuleInfo().name());
+            button1.toggle();
         }
     }
 

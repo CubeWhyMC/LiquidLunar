@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger
 import org.cubewhy.lunarcn.Client
 import org.cubewhy.lunarcn.event.EventManager
 import org.cubewhy.lunarcn.gui.hud.HudManager
+import org.cubewhy.lunarcn.gui.notification.Notification
 import org.cubewhy.lunarcn.utils.LoggerUtils
 import org.cubewhy.lunarcn.utils.MinecraftInstance
 
@@ -14,6 +15,18 @@ open class Module : MinecraftInstance() {
     open var state = false
         set(value) {
             if (value) {
+                if (!moduleInfo.canEnabled) {
+                    field = false
+                    HudManager.getInstance().addNotification(
+                        Notification(
+                            "Error",
+                            "Module " + moduleInfo.name + " can't be enable!",
+                            Notification.Type.ERROR,
+                            5
+                        )
+                    )
+                    return
+                }
                 EventManager.register(this)
                 onEnabled()
             } else {

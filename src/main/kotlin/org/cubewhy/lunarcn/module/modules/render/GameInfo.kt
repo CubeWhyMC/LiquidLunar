@@ -11,7 +11,7 @@ import org.cubewhy.lunarcn.utils.MSTimer
 import org.cubewhy.lunarcn.utils.RenderUtils
 import java.awt.Color
 
-@ModuleInfo(name = "GameInfo", document = "Show current session", category = ModuleCategory.RENDER)
+@ModuleInfo(name = "GameInfo", description = "Show current session", category = ModuleCategory.RENDER)
 class GameInfo : ModuleDraggable() {
     private var position: ScreenPosition? = null;
     private val timer: MSTimer = MSTimer()

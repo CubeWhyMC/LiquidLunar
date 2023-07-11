@@ -1,16 +1,14 @@
-<H1 align="center">LiquidLunar Client</H1>
-
-<img src="https://github.com/cubewhy/LiquidLunar/blob/master/src/main/resources/assets/minecraft/lunarcn/logo.png" align="left" width="150" height="150" alt="LiquidLunarNew logo">
+# LiquidLunar
 
 ![last commit](https://img.shields.io/github/last-commit/CubeWhy/LiquidLunar)
 ![code size](https://img.shields.io/github/repo-size/CubeWhy/LiquidLunar)
 ![code lines](https://img.shields.io/tokei/lines/github/CubeWhy/LiquidLunar)
-[![Latest Release](https://img.shields.io/github/v/release/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar)
+[![Latest Release](https://img.shields.io/github/v/release/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar/release)
 [![License](https://img.shields.io/github/license/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar/blob/master/LICENSE)
 [![Discord](https://img.shields.io/discord/724163890803638273.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/rCqCepgWJc)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar/actions)
 
->A MineCraft Forge PVP Client
+> Forge version
 
 [README_CN](README_CN.md)
 

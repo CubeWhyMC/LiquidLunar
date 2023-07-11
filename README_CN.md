@@ -4,7 +4,8 @@
 ![code size](https://img.shields.io/github/repo-size/CubeWhy/LiquidLunar)
 ![code lines](https://img.shields.io/tokei/lines/github/CubeWhy/LiquidLunar)
 [![Latest Release](https://img.shields.io/github/v/release/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar)
-> Forge 版本
+[![License](https://img.shields.io/github/license/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar/blob/master/LICENSE)
+> MineCraft Forge PvP客户端
 
 ## 链接
 
@@ -44,5 +45,4 @@ LiquidLunar是一个开源的Minecraft Forge 1.8.9 PVP客户端, 与LunarClient�
 
 不要升级gradle, 不要升级已存在的软件包!
 
-如果你用的不是Windows系统，那你只能用[gradlew](gradlew)来开发或者构建
-因为这个是Sh版本gradlew
+

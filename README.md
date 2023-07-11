@@ -1,6 +1,6 @@
 <H1 align="center">LiquidLunar</H1>
 
-<img src="https://github.com/PojavLauncherTeam/PojavLauncher/blob/v3_openjdk/app_pojavlauncher/src/main/assets/pojavlauncher.png" align="left" width="130" height="150" alt="LiquidLunarNew logo">
+<img src="https://github.com/cubewhy/LiquidLunar/blob/master/src/main/resources/assets/minecraft/lunarcn/logo.png" align="left" width="130" height="150" alt="LiquidLunarNew logo">
 
 ![last commit](https://img.shields.io/github/last-commit/CubeWhy/LiquidLunar)
 ![code size](https://img.shields.io/github/repo-size/CubeWhy/LiquidLunar)

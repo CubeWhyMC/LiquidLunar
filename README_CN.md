@@ -14,8 +14,8 @@
 
 > 我们使用Mixin修改游戏, 这不违反[Minecraft Eula](https://www.minecraft.net/zh-hans/eula)
 
-LiquidLunar是一个开源的Minecraft 1.8.9 PVP客户端, 与LunarClient没有任何关系, 如果你想为此项目贡献代码, 你可以提交pr
-
+LiquidLunar是一个开源的Minecraft Forge 1.8.9与1.12.2 PVP客户端, 与LunarClient没有任何关系, 如果你想为此项目贡献代码, 你可以提交pr
+`1.12.2版本已被搁置`
 ## 构建错误与解决
 
 ### Could not find net.minecraftforge:forgeBin
@@ -43,3 +43,5 @@ LiquidLunar是一个开源的Minecraft 1.8.9 PVP客户端, 与LunarClient没有�
 ### Others
 
 不要升级gradle, 不要升级已存在的软件包!
+如果你用的不是Windows系统，那你只能用[gradlew](gradlew)来开发或者构建
+因为这个是Sh版本gradlew

@@ -1,4 +1,4 @@
-<img src="https://github.com/cubewhy/LiquidLunar/blob/master/src/main/resources/assets/minecraft/lunarcn/logo.png" width="60" height="60" alt="LiquidLunarNew logo"><H1 align="center">LiquidLunar</H1>
+<H1 align="center">LiquidLunar</H1>
 
 ![last commit](https://img.shields.io/github/last-commit/CubeWhy/LiquidLunar)
 ![code size](https://img.shields.io/github/repo-size/CubeWhy/LiquidLunar)

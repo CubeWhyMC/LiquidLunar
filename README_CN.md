@@ -6,7 +6,7 @@
 [![Latest Release](https://img.shields.io/github/v/release/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar)
 > Forge 版本
 
-## 链接
+## 网站链接
 
 [官网](https://liquid.lunarcn.top)
 
@@ -14,7 +14,7 @@
 
 > 我们使用Mixin修改游戏, 这不违反[Minecraft Eula](https://www.minecraft.net/zh-hans/eula)
 
-LiquidLunar是一个开源的Minecraft 1.8.9 PVP客户端, 与LunarClient没有任何关系, 如果你想为此项目贡献代码, 你可以提交pr
+LiquidLunar是一个开源的Minecraft Forge 1.8.9与1.12.2 PVP客户端, 与LunarClient没有任何关系, 如果你想为此项目贡献代码, 你可以提交pr
 
 ## 构建错误与解决
 

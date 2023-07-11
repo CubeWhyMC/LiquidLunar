@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="Notification">
+    <list default="true" id="cc8891fb-88b8-4f7b-8a51-42a26f6b1b8e" name="更改" comment="old logo &amp; loading splash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/icons/warning.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/icons/warning.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/splash.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/splash.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/SplashProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/SplashProgress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/add-account.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/lunarcn/add-account.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +228,7 @@
       <workItem from="1688792579738" duration="4502000" />
       <workItem from="1688863236670" duration="586000" />
       <workItem from="1688985579858" duration="14412000" />
-      <workItem from="1689039114861" duration="1496000" />
+      <workItem from="1689039114861" duration="4420000" />
     </task>
     <task id="LOCAL-00001" summary="forge">
       <created>1687064874162</created>
@@ -487,7 +485,23 @@
       <option name="project" value="LOCAL" />
       <updated>1688999101946</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="new logo &amp; loading splash (by JAMESZ355 and muskf)">
+      <option name="closed" value="true" />
+      <created>1689040652674</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1689040652674</updated>
+    </task>
+    <task id="LOCAL-00035" summary="old logo &amp; loading splash">
+      <option name="closed" value="true" />
+      <created>1689040680361</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1689040680361</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,8 +522,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix build.gradle &quot;jar&quot;" />
-    <MESSAGE value="alt manager (not done)" />
     <MESSAGE value="置顶服务器" />
     <MESSAGE value="b2" />
     <MESSAGE value="b2-1.1" />
@@ -533,7 +545,9 @@
     <MESSAGE value="AltList视觉(icon未更新)" />
     <MESSAGE value="Notification &amp; ModuleButtonComponent (SwitchButton的替代品)" />
     <MESSAGE value="修复单次造成Module多次切换" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复单次造成Module多次切换" />
+    <MESSAGE value="new logo &amp; loading splash (by JAMESZ355 and muskf)" />
+    <MESSAGE value="old logo &amp; loading splash" />
+    <option name="LAST_COMMIT_MESSAGE" value="old logo &amp; loading splash" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

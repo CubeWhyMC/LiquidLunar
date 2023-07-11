@@ -53,5 +53,5 @@ Don't update gradle!
 
 Don't use foreach as much as possible
 
-If you want to build or develop LiquidLunar but compute OS isn't Windows,than you can only be use [gradlew](gradlew)
+If you want to build or develop LiquidLunar but compute OS isn't Windows,than you can only be use [gradlew](gradlew).
 Because it's Sh gradlew

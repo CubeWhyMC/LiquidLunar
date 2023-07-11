@@ -17,7 +17,7 @@
 
 > We use Mixin to modify the game, which does not violate the [Minecraft Eula](https://www.minecraft.net/zh-hans/eula)
 
-LiquidLunar is a open source Minecraft Forge 1.8.9&1.12.2 PvP client `1.12.2Version it has been shelved`
+LiquidLunar is a open source Minecraft Forge 1.8.9 PvP client
 
 This project didn't use any codes from [LunarClient](https://lunarclient.com)
 

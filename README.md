@@ -17,7 +17,7 @@
 
 > We use Mixin to modify the game, which does not violate the [Minecraft Eula](https://www.minecraft.net/zh-hans/eula)
 
-LiquidLunar is a open source Minecraft 1.8.9 PvP client
+LiquidLunar is a open source Minecraft Forge 1.8.9&1.12.2 PvP client `1.12.2Version it has been shelved,`
 
 This project didn't use any codes from [LunarClient](https://lunarclient.com)
 
@@ -52,3 +52,6 @@ Create dir `run`
 Don't update gradle!
 
 Don't use foreach as much as possible
+
+If you want to build or develop LiquidLunar but compute OS isn't Windows,than you can only be use [gradlew](gradlew)
+Because it's Sh gradlew

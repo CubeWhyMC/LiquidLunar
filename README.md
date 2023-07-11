@@ -5,7 +5,7 @@
 ![code lines](https://img.shields.io/tokei/lines/github/CubeWhy/LiquidLunar)
 [![Latest Release](https://img.shields.io/github/v/release/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar)
 
-> Forge version
+>A MineCraft Forge PVP Client`mod`
 
 [README_CN](README_CN.md)
 

@@ -4,6 +4,8 @@
 ![code size](https://img.shields.io/github/repo-size/CubeWhy/LiquidLunar)
 ![code lines](https://img.shields.io/tokei/lines/github/CubeWhy/LiquidLunar)
 [![Latest Release](https://img.shields.io/github/v/release/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar)
+[![License](https://img.shields.io/github/license/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar/blob/master/LICENSE)
+
 
 >A MineCraft Forge PVP Client`mod`
 
@@ -53,5 +55,4 @@ Don't update gradle!
 
 Don't use foreach as much as possible
 
-If you want to build or develop LiquidLunar but compute OS isn't Windows,than you can only be use [gradlew](gradlew).
-Because it's Sh gradlew
+

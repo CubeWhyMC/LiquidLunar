@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/github/license/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar/blob/master/LICENSE)
 
 
->A MineCraft Forge PVP Client`mod`
+>A MineCraft Forge PVP Client
 
 [README_CN](README_CN.md)
 

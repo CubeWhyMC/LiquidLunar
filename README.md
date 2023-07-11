@@ -3,6 +3,7 @@
 ![last commit](https://img.shields.io/github/last-commit/CubeWhy/LiquidLunar)
 ![code size](https://img.shields.io/github/repo-size/CubeWhy/LiquidLunar)
 ![code lines](https://img.shields.io/tokei/lines/github/CubeWhy/LiquidLunar)
+[![Latest Release](https://img.shields.io/github/v/release/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar)
 
 > Forge version
 

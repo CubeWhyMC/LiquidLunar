@@ -8,6 +8,7 @@
 [![Latest Release](https://img.shields.io/github/v/release/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar)
 [![License](https://img.shields.io/github/license/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar/blob/master/LICENSE)
 [![Discord](https://img.shields.io/discord/724163890803638273.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/rCqCepgWJc)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Cubewhy/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar/actions)
 
 >A MineCraft Forge PVP Client
 

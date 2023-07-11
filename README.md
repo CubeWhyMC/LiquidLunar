@@ -2,6 +2,8 @@
 
 <img src="https://github.com/cubewhy/LiquidLunar/blob/master/src/main/resources/assets/minecraft/lunarcn/logo.png" align="left" width="155" height="155" alt="LiquidLunarNew logo">
 
+<img src="https://github.com/cubewhy/LiquidLunar/blob/master/src/main/resources/assets/minecraft/lunarcn/logo.png" align="Right" width="155" height="155" alt="LiquidLunarNew logo">
+
 ![last commit](https://img.shields.io/github/last-commit/CubeWhy/LiquidLunar)
 ![code size](https://img.shields.io/github/repo-size/CubeWhy/LiquidLunar)
 ![code lines](https://img.shields.io/tokei/lines/github/CubeWhy/LiquidLunar)

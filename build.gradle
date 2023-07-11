@@ -9,7 +9,7 @@ plugins {
 }
 
 group = 'org.cubewhy.lunarcn'
-version = '1.2-build3-SNAPSHOT'
+version = '1.4-build5-SNAPSHOT'
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 println("Give us stars -> https://github.com/CubeWhy/LiquidLunar")
@@ -27,8 +27,6 @@ repositories {
     maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
     maven { url = "https://jitpack.io/" }
     mavenCentral()
-    mavenLocal()
-    jcenter()
 }
 
 dependencies {

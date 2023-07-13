@@ -20,7 +20,7 @@ open class Module : MinecraftInstance() {
                     HudManager.getInstance().addNotification(
                         Notification(
                             "Error",
-                            "Module " + moduleInfo.name + " can't be enable!",
+                            "Module " + moduleInfo.name + "failed to enable!",
                             Notification.Type.ERROR,
                             5
                         )

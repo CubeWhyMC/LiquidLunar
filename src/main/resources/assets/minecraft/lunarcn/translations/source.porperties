@@ -1,1 +1,14 @@
-render.GameInfo=GameInfo
+modules.render.GameInfo=GameInfo
+modules.render.ArmorState=ArmorInfo
+modules.render.FPSDisplay=GameFPS
+modules.render.Lighting=Fullbright
+modules.render.Keystrokes=GameKey
+
+modules.cheats.AutoSag=LegitAutoBlock
+
+modules.dev.ChatConfig=ChatConfig
+modules.dev.DebugMode=GameDebug
+
+modules.move.ToggleSprint=AutoSprint
+
+modules.server.HypixelMod=HypixelHelp

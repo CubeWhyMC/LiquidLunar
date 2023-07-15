@@ -50,7 +50,11 @@ dependencies {
 
     include "org.jetbrains.kotlin:kotlin-stdlib"
     include 'com.squareup.okhttp3:okhttp:4.11.0'
-    include 'com.jagrosh:DiscordIPC:0.4'
+    include('com.jagrosh:DiscordIPC:0.4') {
+        exclude module: "gson"
+        exclude module: "log4j"
+        exclude module: "json"
+    }
 
     implementation 'org.jetbrains:annotations:24.0.1'
 }
@@ -77,7 +81,7 @@ minecraft {
     runDir = "run"
     mappings = "stable_22"
     makeObfSourceJar = false
-    clientJvmArgs += ["--add-opens java.base/jdk.internal.loader=ALL-UNNAMED", "--add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED", "-Dfml.coreMods.load=org.cubewhy.lunarcn.injection.forge.TransformerLoader", "-Xmx4096m -Xms4096m", "-Ddev-mode"]
+    clientJvmArgs += ["-Dfml.coreMods.load=org.cubewhy.lunarcn.injection.forge.TransformerLoader", "-Xmx4096m -Xms4096m", "-Ddev-mode"]
 }
 
 jar {

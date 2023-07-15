@@ -2,10 +2,6 @@ package org.cubewhy.lunarcn.gui.notification;
 
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.WorldRenderer;
-import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import org.cubewhy.lunarcn.utils.RenderUtils;
 
@@ -16,13 +12,13 @@ import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 public class Notification {
     public final Type type;
 
-    private String title;
-    private String message;
+    private final String title;
+    private final String message;
+    private final long fadedIn;
+    private final long fadeOut;
+    private final long end;
     private long start;
-
-    private long fadedIn;
-    private long fadeOut;
-    private long end;
+    private long i;
 
     /**
      * 创建一个通知
@@ -63,21 +59,29 @@ public class Notification {
         long time = getTime();
 
         if (time < fadedIn) {
+            // in
             offset = Math.tanh(time / (double) (fadedIn) * 3.0) * width;
         } else if (time > fadeOut) {
+            // out
             offset = (Math.tanh(3.0 - (time - fadeOut) / (double) (end - fadeOut) * 3.0) * width);
         } else {
             offset = width;
         }
 
-        Color color = new Color(0, 0, 0, 220);
+        i = time / (fadedIn + fadeOut);
+
+        Color color = new Color(0, 0, 0, 60);
         Color color1;
 
-        if (type == Notification.Type.INFO)
+        color1 = new Color(0, 26, 169);
+
+        if (type == Type.INFO) {
             color1 = new Color(0, 26, 169);
-        else if (type == Notification.Type.WARNING)
+        } else if (type == Type.WARNING) {
             color1 = new Color(204, 193, 0);
-        else {
+        } else if (type == Type.DEBUG) {
+            color1 = new Color(0, 0, 100);
+        } else if (type == Type.ERROR) {
             color1 = new Color(204, 0, 18);
             int i = Math.max(0, Math.min(255, (int) (Math.sin(time / 100.0) * 255.0 / 2 + 127.5)));
             color = new Color(i, 0, 0, 220);
@@ -86,12 +90,14 @@ public class Notification {
         FontRenderer fontRenderer = mc.fontRendererObj;
 
         RenderUtils.drawRoundedRect((int) (res.getScaledWidth() - offset), res.getScaledHeight() - 5 - height, res.getScaledWidth(), res.getScaledHeight() - 5, 2, color);
-        RenderUtils.drawRoundedRect((int) (res.getScaledWidth() - offset), res.getScaledHeight() - 5 - height, (int) (res.getScaledWidth() - offset + 4), res.getScaledHeight() - 5, 2, color1);
+//        RenderUtils.drawRoundedRect((int) (res.getScaledWidth() - offset), res.getScaledHeight() - 5 - height, (int) (res.getScaledWidth() - offset + 4), res.getScaledHeight() - 5, 2, color1);
 
-        RenderUtils.drawImage(this.type.icon,  (int) (res.getScaledWidth() - offset + 8), res.getScaledHeight() - 5 - height, 10, 10);
+        RenderUtils.drawImage(this.type.icon, (int) (res.getScaledWidth() - offset + 10), res.getScaledHeight() - 5 - height, 25, 25);
 
         fontRenderer.drawString(title, (int) (res.getScaledWidth() - offset + 28), res.getScaledHeight() - 2 - height, -1);
         fontRenderer.drawString(message, (int) (res.getScaledWidth() - offset + 28), res.getScaledHeight() - 15, -1);
+
+        RenderUtils.drawLine(res.getScaledWidth(), (int) (res.getScaledWidth() - i), res.getScaledHeight() - 7, 1, new Color(0, 26, 169).getRGB(), false);
     }
 
     public enum Type {

@@ -1,13 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Minecraft Client" type="Application" factoryName="Application">
-    <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+  <configuration default="false" name="Start Client" type="Application" factoryName="Application" folderName="LiquidLunar">
     <option name="MAIN_CLASS_NAME" value="GradleStart" />
     <module name="LiquidLunarForge.main" />
     <option name="VM_PARAMETERS" value="-Dfml.coreMods.load=org.cubewhy.lunarcn.injection.forge.TransformerLoader -Xmx4096m -Xms4096m -Ddev-mode" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
-    <RunnerSettings RunnerId="Run" />
-    <ConfigurationWrapper RunnerId="Run" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

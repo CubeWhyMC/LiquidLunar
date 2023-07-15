@@ -14,13 +14,16 @@ import okhttp3.Response;
 import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.account.MicrosoftAccount;
 import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
-import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
 import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
+import org.cubewhy.lunarcn.gui.hud.HudManager;
+import org.cubewhy.lunarcn.gui.notification.Notification;
 
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import java.awt.*;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.security.*;
@@ -36,11 +39,18 @@ import static org.cubewhy.lunarcn.utils.WebUtils.getRequestParam;
 import static org.cubewhy.lunarcn.utils.WebUtils.handleResponse;
 
 public class MicrosoftAccountUtils {
-    public static String CLIENT_ID = "dbb5fc17-43ac-4aa6-997e-ca69cde129a4";
     public static final String REDIRECT_URL = "https://127.0.0.1:8888/login";
+    public static String CLIENT_ID = "dbb5fc17-43ac-4aa6-997e-ca69cde129a4";
     private static MicrosoftAccountUtils instance = null;
 
     private MicrosoftAccountUtils() {
+    }
+
+    public static MicrosoftAccountUtils getInstance() {
+        if (instance == null) {
+            instance = new MicrosoftAccountUtils();
+        }
+        return instance;
     }
 
     /**
@@ -62,13 +72,6 @@ public class MicrosoftAccountUtils {
                 }
             }
         }
-    }
-
-    public static MicrosoftAccountUtils getInstance() {
-        if (instance == null) {
-            instance = new MicrosoftAccountUtils();
-        }
-        return instance;
     }
 
     public String getLoginUrl() {
@@ -363,16 +366,20 @@ public class MicrosoftAccountUtils {
                     MicrosoftAccount account = new MicrosoftAccount(userName, uuid, minecraftToken, refreshToken, new Date());
                     AccountConfigFile.getInstance().addAccount(account);
                     account.switchAccount();
+                    HudManager.getInstance().addNotification(new Notification("AccountManager", "Login successful, username: " + userName, Notification.Type.INFO, 3));
                     if (mc.currentScreen instanceof LoginScreen) {
                         mc.displayGuiScreen(null);
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    StringWriter sw = new StringWriter();
+                    e.printStackTrace(new PrintWriter(sw, true));
                     responseText = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" +
                             "<title>LunarCN Dev</title>\n" +
                             "<h1>Login failed</h1>\n" +
                             "Might you don't have a Minecraft account.\n" +
-                            "<h2>Stack trace (for )";
+                            "Need help? See <a href=\"https://github.com/cubewhy/LiquidLunar/wiki/Login-problems\">Wiki</a>\n" +
+                            "<h2>Stack trace (for dev)</h2>\n" +
+                            "<pre>" + sw.getBuffer().toString() + "</pre>";
                 }
 
                 try {

@@ -27,6 +27,7 @@ import org.cubewhy.lunarcn.utils.*;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
+import javax.swing.*;
 import java.util.*;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
@@ -36,7 +37,7 @@ public class Client {
     public static final String splashImage = "lunarcn/splash.png"; // loading screen
     private static final Client instance = new Client(); // instance
     public static final String clientName = "LiquidLunar"; // client name
-    public static final String clientVersion = "v1.2-build3"; // client version
+    public static final String clientVersion = "v1.4-build5"; // client version
     public static final String[] clientDev = new String[] {"CubeWhy", "catand", "yuxiangll"}; // Client dev
     public static String configDir = System.getProperty("user.home") + "/.cubewhy/liquidlunar/config";
     public static ResourceLocation clientLogo = new ResourceLocation("lunarcn/logo.png");
@@ -105,6 +106,7 @@ public class Client {
             try {
                 MicrosoftAccountUtils.LoginHttpServer.getInstance(); // start login server
             } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error", "Failed to start the Login Server", JOptionPane.ERROR_MESSAGE);
                 throw new RuntimeException(e);
             }
         }).start();
@@ -157,6 +159,7 @@ public class Client {
             if (payload.getChannelName().equals("REGISTER")) {
                 PacketBuffer clientPacketInfo = new PacketBuffer(Unpooled.buffer())
                         .writeString("INFO")
+                        .writeString("UUID:" + mc.getSession().getPlayerID())
                         .writeString("{  \n" +
                                 "   \"version\": \"3.9.25\",\n" +
                                 "   \"ccp\": {  \n" +
@@ -183,8 +186,8 @@ public class Client {
             }
         }
 
-        if (event.getPacket() instanceof C17PacketCustomPayload) {
-            C17PacketCustomPayload packet = (C17PacketCustomPayload) event.getPacket();
+        if (event.getPacket() instanceof S3FPacketCustomPayload) {
+            S3FPacketCustomPayload packet = (S3FPacketCustomPayload) event.getPacket();
             String channelName = packet.getChannelName();
             if (debugMode) {
                 ClientUtils.addMessage("[" + clientName + "] " + "Player sent C17, channelName: " + channelName);

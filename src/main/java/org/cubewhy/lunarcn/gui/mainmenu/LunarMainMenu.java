@@ -1,6 +1,7 @@
 package org.cubewhy.lunarcn.gui.mainmenu;
 
 import net.minecraftforge.fml.client.GuiModList;
+import org.cubewhy.lunarcn.gui.GuiCommitInfo;
 import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
 import org.cubewhy.lunarcn.gui.font.FontType;
 import org.cubewhy.lunarcn.gui.elements.lunar.AccountDropDownList;
@@ -36,6 +37,7 @@ public class LunarMainMenu extends GuiMainMenu {
 
     private LunarButton btnSinglePlayer;
     private LunarButton btnMultiplayer;
+    private LunarButton btnCommitInfo;
 
     private ImageButton btnClientOptions;
     private ImageButton btnCosmetics;
@@ -67,6 +69,8 @@ public class LunarMainMenu extends GuiMainMenu {
 
         this.btnSinglePlayer = new LunarButton("S I N G L E P L A Y E R", this.width / 2 - 66, this.height / 2);
         this.btnMultiplayer = new LunarButton("M U L T I P L A Y E R", this.width / 2 - 66, this.height / 2 + 15);
+        this.btnCommitInfo = new LunarButton("G I T C O M M I T", this.width / 2 - 66, this.height / 2 + 32);
+
         this.altList = new AccountDropDownList(10, 10); // TODO 实现altmanager
 
         int yPos = this.height - 20;
@@ -155,6 +159,9 @@ public class LunarMainMenu extends GuiMainMenu {
         if (this.btnAddAccount.hoverFade > 0) {
             MicrosoftAccountUtils.getInstance().loginWithBrowser(); // Login
         }
+        if (this.btnCommitInfo.hoverFade > 0) {
+            mc.displayGuiScreen(new GuiCommitInfo());
+        }
     }
 
     @Override
@@ -173,6 +180,7 @@ public class LunarMainMenu extends GuiMainMenu {
 
         this.btnSinglePlayer.drawButton(mouseX, mouseY);
         this.btnMultiplayer.drawButton(mouseX, mouseY);
+        this.btnCommitInfo.drawButton(mouseX, mouseY);
 
         this.altList.drawList(mouseX, mouseY);
 

@@ -37,7 +37,7 @@ public class Client {
     public static final String splashImage = "lunarcn/splash.png"; // loading screen
     private static final Client instance = new Client(); // instance
     public static final String clientName = "LiquidLunar"; // client name
-    public static final String clientVersion = "v1.4-build5"; // client version
+    public static final String clientVersion = GitUtils.gitInfo.getProperty("git.build.version"); // client version
     public static final String[] clientDev = new String[] {"CubeWhy", "catand", "yuxiangll"}; // Client dev
     public static String configDir = System.getProperty("user.home") + "/.cubewhy/liquidlunar/config";
     public static ResourceLocation clientLogo = new ResourceLocation("lunarcn/logo.png");

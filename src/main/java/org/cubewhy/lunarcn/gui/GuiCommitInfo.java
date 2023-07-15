@@ -10,6 +10,8 @@ import org.cubewhy.lunarcn.utils.RenderUtils;
 import java.awt.*;
 import java.io.IOException;
 
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
+
 public class GuiCommitInfo extends GuiScreen {
     public static final ResourceLocation gitImage = new ResourceLocation("lunarcn/icons/git.png");
 
@@ -19,7 +21,7 @@ public class GuiCommitInfo extends GuiScreen {
      */
     @Override
     public void initGui() {
-        this.buttonList.add(new GuiButton(0, 70, 30 + fontRendererObj.FONT_HEIGHT * 7 + 10, "Back"));
+        this.buttonList.add(new GuiButton(0, 70, 30 + fontRenderer.FONT_HEIGHT * 7 + 10, "Back"));
         super.initGui();
     }
 
@@ -34,13 +36,13 @@ public class GuiCommitInfo extends GuiScreen {
         String commitMessage = GitUtils.gitInfo.getProperty("git.commit.message.short");
         String branch = GitUtils.gitInfo.getProperty("git.branch");
         String repo = GitUtils.gitInfo.getProperty("git.remote.origin.url");
-        this.drawString(fontRendererObj, "Git Info", 70 ,30, new Color(255, 255, 255).getRGB());
-        this.drawString(fontRendererObj, Client.clientName + " built by " + buildUser, 70, 30 + fontRendererObj.FONT_HEIGHT, new Color(255, 255, 255).getRGB());
-        this.drawString(fontRendererObj, "Version: " + version, 70, 30 + fontRendererObj.FONT_HEIGHT * 2 + 5, new Color(255, 255, 255).getRGB());
-        this.drawString(fontRendererObj, "CommitId: " + commitId + " (" + commitIdAbbrev + ")", 70, 30 + fontRendererObj.FONT_HEIGHT * 3 + 5, new Color(255, 255, 255).getRGB());
-        this.drawString(fontRendererObj, "CommitMessage: " + commitMessage, 70, 30 + fontRendererObj.FONT_HEIGHT * 4 + 5, new Color(255, 255, 255).getRGB());
-        this.drawString(fontRendererObj, "Branch: " + branch, 70, 30 + fontRendererObj.FONT_HEIGHT * 5 + 5, new Color(255, 255, 255).getRGB());
-        this.drawString(fontRendererObj, "Remote origin: " + repo, 70, 30 + fontRendererObj.FONT_HEIGHT * 6 + 5, new Color(255, 255, 255).getRGB());
+        this.drawString(fontRenderer, "Git Info", 70 ,30, new Color(255, 255, 255).getRGB());
+        this.drawString(fontRenderer, Client.clientName + " built by " + buildUser, 70, 30 + fontRenderer.FONT_HEIGHT, new Color(255, 255, 255).getRGB());
+        this.drawString(fontRenderer, "Version: " + version, 70, 30 + fontRenderer.FONT_HEIGHT * 2 + 5, new Color(255, 255, 255).getRGB());
+        this.drawString(fontRenderer, "CommitId: " + commitId + " (" + commitIdAbbrev + ")", 70, 30 + fontRenderer.FONT_HEIGHT * 3 + 5, new Color(255, 255, 255).getRGB());
+        this.drawString(fontRenderer, "CommitMessage: " + commitMessage, 70, 30 + fontRenderer.FONT_HEIGHT * 4 + 5, new Color(255, 255, 255).getRGB());
+        this.drawString(fontRenderer, "Branch: " + branch, 70, 30 + fontRenderer.FONT_HEIGHT * 5 + 5, new Color(255, 255, 255).getRGB());
+        this.drawString(fontRenderer, "Remote origin: " + repo, 70, 30 + fontRenderer.FONT_HEIGHT * 6 + 5, new Color(255, 255, 255).getRGB());
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 

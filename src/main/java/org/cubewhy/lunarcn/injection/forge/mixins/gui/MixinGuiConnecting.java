@@ -13,6 +13,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.awt.*;
 
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
+
 @Mixin(GuiConnecting.class)
 public class MixinGuiConnecting extends GuiScreen {
     @Inject(method = "connect", at = @At("RETURN"))
@@ -36,8 +38,8 @@ public class MixinGuiConnecting extends GuiScreen {
         if(serverData != null)
             ip = serverData.serverIP;
 
-        this.drawCenteredString(mc.fontRendererObj, "Connecting to", this.width / 2, this.height / 4 + 110, new Color(255, 255, 255).getRGB());
-        this.drawCenteredString(mc.fontRendererObj, ip, this.width / 2, this.height / 4 + 120, new Color(82, 129, 251).getRGB());
+        this.drawCenteredString(fontRenderer, "Connecting to", this.width / 2, this.height / 4 + 110, new Color(255, 255, 255).getRGB());
+        this.drawCenteredString(fontRenderer, ip, this.width / 2, this.height / 4 + 120, new Color(82, 129, 251).getRGB());
 
         super.drawScreen(mouseX, mouseY, partialTicks);
     }

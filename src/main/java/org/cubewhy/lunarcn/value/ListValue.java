@@ -6,9 +6,8 @@ import com.google.gson.JsonPrimitive;
 
 import java.util.ArrayList;
 
-public class ListValue extends Value {
+public class ListValue extends Value<String> {
     public String[] values;
-    private String name;
     private String currentValue;
 
     public ListValue(String name, String[] values) {
@@ -29,13 +28,13 @@ public class ListValue extends Value {
     }
 
     @Override
-    public Object getValue() {
+    public String getValue() {
         return currentValue;
     }
 
     @Override
-    public void setValue(Object value) {
-        this.currentValue = (String) value;
+    public void setValue(String value) {
+        this.currentValue = value;
     }
 
     @Override

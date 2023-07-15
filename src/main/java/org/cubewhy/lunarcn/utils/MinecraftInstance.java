@@ -1,6 +1,7 @@
 package org.cubewhy.lunarcn.utils;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraft.client.multiplayer.GuiConnecting;
@@ -12,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class MinecraftInstance {
     public static final Minecraft mc = Minecraft.getMinecraft();
+    public static final FontRenderer fontRenderer = mc.fontRendererObj;
 
     public static void setSession(@NotNull Session session) {
         mc.session = session;

@@ -7,6 +7,7 @@ import org.cubewhy.lunarcn.utils.RenderUtils;
 
 import java.awt.*;
 
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
 public class Notification {
@@ -86,8 +87,6 @@ public class Notification {
             int i = Math.max(0, Math.min(255, (int) (Math.sin(time / 100.0) * 255.0 / 2 + 127.5)));
             color = new Color(i, 0, 0, 220);
         }
-
-        FontRenderer fontRenderer = mc.fontRendererObj;
 
         RenderUtils.drawRoundedRect((int) (res.getScaledWidth() - offset), res.getScaledHeight() - 5 - height, res.getScaledWidth(), res.getScaledHeight() - 5, 2, color);
 //        RenderUtils.drawRoundedRect((int) (res.getScaledWidth() - offset), res.getScaledHeight() - 5 - height, (int) (res.getScaledWidth() - offset + 4), res.getScaledHeight() - 5, 2, color1);

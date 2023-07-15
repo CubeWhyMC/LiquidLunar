@@ -14,6 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.awt.*;
 
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
 @Mixin(GuiMultiplayer.class)
@@ -28,10 +29,10 @@ public abstract class MixinGuiMultiplayer extends GuiScreen {
 
     @Inject(method = "drawScreen", at = @At("RETURN"))
     public void drawScreen(int mouseX, int mouseY, float partialTicks, CallbackInfo ci) {
-        mc.fontRendererObj.drawString("You are playing on " + mc.getSession().getUsername(), 20, 20, new Color(255, 255, 255).getRGB());
+        fontRenderer.drawString("You are playing on " + mc.getSession().getUsername(), 20, 20, new Color(255, 255, 255).getRGB());
         String text = "ProxySettings";
-        int textWidth = fontRendererObj.getStringWidth(text);
-        this.buttonList.add(new GuiButton(114514, this.width - textWidth - 20, 10, textWidth + 10, fontRendererObj.FONT_HEIGHT + 10, text));
+        int textWidth = fontRenderer.getStringWidth(text);
+        this.buttonList.add(new GuiButton(114514, this.width - textWidth - 20, 10, textWidth + 10, fontRenderer.FONT_HEIGHT + 10, text));
     }
 
     /**

@@ -9,6 +9,8 @@ import org.cubewhy.lunarcn.utils.RenderUtils;
 
 import java.awt.*;
 
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
+
 public class ClientButton extends GuiButton {
     private final boolean drawRect;
 
@@ -33,7 +35,6 @@ public class ClientButton extends GuiButton {
     @Override
     public void drawButton(Minecraft mc, int mouseX, int mouseY) {
         if (this.visible) {
-            FontRenderer fontrenderer = mc.fontRendererObj;
 
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             this.hovered = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
@@ -62,7 +63,7 @@ public class ClientButton extends GuiButton {
                 RenderUtils.drawRoundedRect(this.xPosition, this.yPosition, this.width - 1, this.height - 1, 2, rectColor);
             }
 
-            this.drawCenteredString(fontrenderer, this.displayString, this.xPosition + this.width / 2, this.yPosition + (this.height - 8) / 2, color);
+            this.drawCenteredString(fontRenderer, this.displayString, this.xPosition + this.width / 2, this.yPosition + (this.height - 8) / 2, color);
         }
     }
 }

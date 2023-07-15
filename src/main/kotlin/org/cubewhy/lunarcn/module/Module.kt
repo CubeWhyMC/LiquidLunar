@@ -36,7 +36,7 @@ open class Module : MinecraftInstance() {
             field = value
         }
     protected val mc: Minecraft = Minecraft.getMinecraft()
-    protected val fontRenderer: FontRenderer = mc.fontRendererObj
+    protected val fontRenderer: FontRenderer = MinecraftInstance.fontRenderer
     protected val client: Client = Client.getInstance()
     protected val logger: Logger = LoggerUtils.logger
 

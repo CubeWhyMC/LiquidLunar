@@ -25,6 +25,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
 
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
+
 @Mixin(GuiNewChat.class)
 public abstract class MixinGuiNewChat extends Gui {
     @Final
@@ -58,7 +60,7 @@ public abstract class MixinGuiNewChat extends Gui {
         }
 
         int i = MathHelper.floor_float((float) this.getChatWidth() / this.getChatScale());
-        List<IChatComponent> list = GuiUtilRenderComponents.splitText(chatComponent, i, this.mc.fontRendererObj, false, false);
+        List<IChatComponent> list = GuiUtilRenderComponents.splitText(chatComponent, i,fontRenderer, false, false);
         boolean flag = this.getChatOpen();
 
         for (IChatComponent ichatcomponent : list) {

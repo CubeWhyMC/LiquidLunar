@@ -6,6 +6,7 @@ import org.cubewhy.lunarcn.utils.RenderUtils;
 
 import java.awt.*;
 
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
 public class ModuleButtonComponent extends AbstractComponent {
@@ -30,7 +31,7 @@ public class ModuleButtonComponent extends AbstractComponent {
     }
 
     public ModuleButtonComponent(Module module, int x, int y) {
-        this(module, x, y, mc.fontRendererObj.getStringWidth(module.getModuleInfo().name()), 22);
+        this(module, x, y, fontRenderer.getStringWidth(module.getModuleInfo().name()), 22);
     }
 
     public String getText() {

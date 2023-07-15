@@ -14,6 +14,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 import static org.lwjgl.opengl.GL11.*;
 
@@ -240,10 +241,10 @@ public class RenderUtils {
         if (lines.length > 1) {
             int j = 0;
             for (int i = 0; i < lines.length; i++)
-                j += Minecraft.getMinecraft().fontRendererObj.drawString(lines[i], x, (y + i * (Minecraft.getMinecraft().fontRendererObj.FONT_HEIGHT + 2)), color, shadow);
+                j += fontRenderer.drawString(lines[i], x, (y + i * (fontRenderer.FONT_HEIGHT + 2)), color, shadow);
             return j;
         }
-        return mc.fontRendererObj.drawString(text, x, y, color, shadow);
+        return fontRenderer.drawString(text, x, y, color, shadow);
     }
 
     public static int drawScaledString(String text, int x, int y, boolean shadow, float scale) {

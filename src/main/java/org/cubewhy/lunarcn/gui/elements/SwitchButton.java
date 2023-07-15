@@ -6,6 +6,7 @@ import org.cubewhy.lunarcn.module.Module;
 
 import java.awt.*;
 
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
 public class SwitchButton extends GuiButton {
@@ -18,8 +19,8 @@ public class SwitchButton extends GuiButton {
 
     public SwitchButton(int buttonId, int x, int y, Module bindModule) {
         super(buttonId, x, y, bindModule.getModuleInfo().name());
-        this.width = mc.fontRendererObj.getStringWidth(bindModule.getModuleInfo().name());
-        this.height = mc.fontRendererObj.FONT_HEIGHT + 10;
+        this.width = fontRenderer.getStringWidth(bindModule.getModuleInfo().name());
+        this.height = fontRenderer.FONT_HEIGHT + 10;
         this.bindModule = bindModule;
     }
 
@@ -35,7 +36,7 @@ public class SwitchButton extends GuiButton {
             color = disableColor;
         }
         this.hovered = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
-        drawString(mc.fontRendererObj, this.displayString, this.xPosition, this.yPosition, color);
+        drawString(fontRenderer, this.displayString, this.xPosition, this.yPosition, color);
     }
 
     public void toggle() {

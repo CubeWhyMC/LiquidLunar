@@ -11,6 +11,8 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.Proxy;
 
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
+
 public class ProxyConfigScreen extends GuiScreen {
 
     private GuiTextField addressInput;
@@ -18,7 +20,7 @@ public class ProxyConfigScreen extends GuiScreen {
     @Override
     public void initGui() {
         Keyboard.enableRepeatEvents(true);
-        addressInput = new GuiTextField(0, fontRendererObj, width / 2 - 100, 60, 200, 20);
+        addressInput = new GuiTextField(0, fontRenderer, width / 2 - 100, 60, 200, 20);
         addressInput.setText(ProxyManager.getInstance().getProxyAddress());
         addressInput.setMaxStringLength(100);
         addressInput.setFocused(true);
@@ -31,11 +33,11 @@ public class ProxyConfigScreen extends GuiScreen {
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         this.drawDefaultBackground();
-        drawCenteredString(fontRendererObj, "ProxyManager", width / 2, 35, new Color(255, 255, 255).getRGB());
+        drawCenteredString(fontRenderer, "ProxyManager", width / 2, 35, new Color(255, 255, 255).getRGB());
         addressInput.drawTextBox();
 
         if (addressInput.getText().isEmpty() && !addressInput.isFocused()) {
-            drawString(fontRendererObj, "Type proxy address...", addressInput.xPosition, addressInput.yPosition + 6, new Color(255, 255, 255).getRGB());
+            drawString(fontRenderer, "Type proxy address...", addressInput.xPosition, addressInput.yPosition + 6, new Color(255, 255, 255).getRGB());
         }
         super.drawScreen(mouseX, mouseY, partialTicks);
     }

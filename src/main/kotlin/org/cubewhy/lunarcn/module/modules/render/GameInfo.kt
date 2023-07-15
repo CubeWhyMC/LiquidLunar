@@ -59,14 +59,14 @@ class GameInfo : ModuleDraggable() {
         RenderUtils.drawString(
             "Play time: " + formatTime(timer.timePassed()),
             x + 10,
-            y + mc.fontRendererObj.FONT_HEIGHT * 2,
+            y + fontRenderer.FONT_HEIGHT * 2,
             Color(255, 255, 255, 50).rgb,
             true
         )
         RenderUtils.drawString(
             "Server IP: " + getServerIp(),
             x + 10,
-            y + mc.fontRendererObj.FONT_HEIGHT * 3,
+            y + fontRenderer.FONT_HEIGHT * 3,
             Color(255, 255, 255, 50).rgb,
             true
         )

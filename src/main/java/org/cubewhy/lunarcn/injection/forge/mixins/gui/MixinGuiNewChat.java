@@ -54,7 +54,7 @@ public abstract class MixinGuiNewChat extends Gui {
      */
     @Overwrite
     private void setChatLine(IChatComponent chatComponent, int chatLineId, int updateCounter, boolean displayOnly) {
-        var limit = ((ChatConfig) ModuleManager.getInstance().getModule(ChatConfig.class)).getLimit().getValue();
+        int limit = ((ChatConfig) ModuleManager.getInstance().getModule(ChatConfig.class)).getLimit().getValue();
         if (chatLineId != 0) {
             this.deleteChatLine(chatLineId);
         }

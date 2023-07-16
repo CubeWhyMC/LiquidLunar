@@ -5,7 +5,7 @@ import org.cubewhy.lunarcn.utils.ClassUtils;
 
 import java.lang.reflect.Constructor;
 
-import static org.cubewhy.lunarcn.utils.ClientUtils.getLogger;
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 
 public class CosmeticsManager {
 
@@ -24,7 +24,7 @@ public class CosmeticsManager {
     }
 
     private void register(Class<? extends CosmeticsBase> clazz) {
-        getLogger().info("Loading cosmetic " + clazz.getName());
+        logger.info("Loading cosmetic " + clazz.getName());
         try {
             Constructor<? extends CosmeticsBase> newClass = clazz.getDeclaredConstructor(RenderPlayer.class);
             register(newClass.newInstance(this.player));
@@ -32,7 +32,7 @@ public class CosmeticsManager {
             register((CosmeticsBase) ClassUtils.INSTANCE.getObjectInstance(clazz));
         } catch (Throwable e) {
             e.printStackTrace();
-            getLogger().error("Can't load cosmetic " + clazz.getName());
+            logger.error("Can't load cosmetic " + clazz.getName());
         }
     }
 

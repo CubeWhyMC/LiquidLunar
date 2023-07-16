@@ -50,7 +50,7 @@ public class RenderUtils {
 
     public static int loadGlTexture(ResourceLocation resource) {
         try {
-            BufferedImage bufferedImage = ImageIO.read(FileUtils.getInstance().getFile(resource.getResourcePath()));
+            BufferedImage bufferedImage = ImageIO.read(FileUtils.getFile(resource.getResourcePath()));
             return loadGlTexture(bufferedImage);
         } catch (Throwable e) {
             return 0;

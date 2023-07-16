@@ -11,7 +11,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-import static org.cubewhy.lunarcn.utils.ClientUtils.getLogger;
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
+
 
 public class ModuleManager {
 
@@ -35,14 +36,14 @@ public class ModuleManager {
      * 实例化模块并注册
      */
     private void register(Class<? extends Module> moduleClass) {
-        getLogger().info("Loading module " + moduleClass.getName());
+        logger.info("Loading module " + moduleClass.getName());
         try {
             register(moduleClass.newInstance());
         } catch (IllegalAccessException e) {
             register((Module) ClassUtils.INSTANCE.getObjectInstance(moduleClass));
         } catch (Throwable e) {
             e.printStackTrace();
-            getLogger().error("Can't load module " + moduleClass.getName());
+            logger.error("Can't load module " + moduleClass.getName());
         }
     }
 

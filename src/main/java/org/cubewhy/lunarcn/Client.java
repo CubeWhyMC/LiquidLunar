@@ -30,6 +30,7 @@ import org.lwjgl.opengl.Display;
 import javax.swing.*;
 import java.util.*;
 
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
 public class Client {
@@ -90,6 +91,7 @@ public class Client {
     }
 
     public void onStart() {
+        MinecraftInstance.fontRenderer = mc.fontRendererObj;
         SplashProgress.setProgress(4, "Initializing " + clientName);
         Display.setTitle(clientName + " " + clientVersion + " (" + GitUtils.gitBranch + "/" + GitUtils.gitInfo.getProperty("git.commit.id.abbrev") + ")");
         ModuleConfigFile.getInstance().load(); // module config
@@ -124,7 +126,7 @@ public class Client {
     }
 
     public void onStop() {
-        LoggerUtils.logger.info(clientName + clientVersion + " stopping!");
+        logger.info(clientName + clientVersion + " stopping!");
     }
 
     /**

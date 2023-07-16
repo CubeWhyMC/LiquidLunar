@@ -4,11 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="commit info">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/DoubleValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/OverlaySettings.kt" afterDir="false" />
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="update fontRender, OverlaySettings">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/VerticalScroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/components/ButtonComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MouseUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiInGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiInGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/ForgeMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/ForgeMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/cosmetic/CosmeticsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/cosmetic/CosmeticsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/AbstractComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/AbstractComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/components/ModuleButtonComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiNewChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiNewChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/ModuleInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/ModuleInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/ModuleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/ModuleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/ActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/ActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/ClientUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/ClientUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/ImageUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/LoggerUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MessageUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MicrosoftAccountUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MicrosoftAccountUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MinecraftInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MinecraftInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/WebUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/WebUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/language/LanguageManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/language/LanguageManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/Module.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/Module.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,26 +96,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/shadiao/LiquidLunar/.gradle/minecraft/forgeSrc-1.8.9-11.15.1.2318-1.8.9-PROJECT(LiquidLunarForge)-sources.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "项目",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.language.Kotlin",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/shadiao/LiquidLunar/.gradle/minecraft/forgeSrc-1.8.9-11.15.1.2318-1.8.9-PROJECT(LiquidLunarForge)-sources.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.language.Kotlin&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.cubewhy.lunarcn" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -104,7 +131,9 @@
       <updated>1689247146492</updated>
       <workItem from="1689247150269" duration="326000" />
       <workItem from="1689247583062" duration="3348000" />
-      <workItem from="1689392040156" duration="4266000" />
+      <workItem from="1689392040156" duration="5156000" />
+      <workItem from="1689485438558" duration="43000" />
+      <workItem from="1689503669326" duration="9791000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -130,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689395205714</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update fontRender, OverlaySettings">
+      <option name="closed" value="true" />
+      <created>1689397272854</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689397272854</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +190,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="version" />
     <MESSAGE value="commit info" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit info" />
+    <MESSAGE value="update fontRender, OverlaySettings" />
+    <option name="LAST_COMMIT_MESSAGE" value="update fontRender, OverlaySettings" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

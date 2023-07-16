@@ -13,4 +13,5 @@ public @interface ModuleInfo {
     ModuleCategory category();
 
     boolean canEnabled() default true;
+    boolean hideFromClickGui() default false;
 }

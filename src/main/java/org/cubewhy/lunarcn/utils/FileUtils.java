@@ -5,17 +5,11 @@ import net.minecraft.util.ResourceLocation;
 import java.io.InputStream;
 
 public class FileUtils {
-    private static final FileUtils instance = new FileUtils();
-
-    public static FileUtils getInstance() {
-        return instance;
+    public static InputStream getFile(String pathToFile) {
+        return FileUtils.class.getResourceAsStream("/assets/minecraft/" + (new ResourceLocation(pathToFile)).getResourcePath());
     }
 
-    public InputStream getFile(String pathToFile) {
-        return this.getClass().getResourceAsStream("/assets/minecraft/" + (new ResourceLocation(pathToFile)).getResourcePath());
-    }
-
-    public InputStream getFile(ResourceLocation location) {
+    public static InputStream getFile(ResourceLocation location) {
         return getFile(location.getResourcePath());
     }
 }

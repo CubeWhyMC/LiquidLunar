@@ -3,7 +3,7 @@ package org.cubewhy.lunarcn;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
-import static org.cubewhy.lunarcn.utils.LoggerUtils.logger;
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 
 @Mod(modid = ForgeMod.modId, name = Client.clientName, version = "unknown", clientSideOnly = true)
 public class ForgeMod {

@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.utils;
+package org.cubewhy.lunarcn;
 
 public interface ActionListener {
     void onAction();

@@ -37,7 +37,7 @@ public class ImageUtils {
     }
 
     public static ByteBuffer readImageToBuffer(ResourceLocation image) throws IOException {
-        return readImageToBuffer(FileUtils.getInstance().getFile(image.getResourcePath()));
+        return readImageToBuffer(FileUtils.getFile(image.getResourcePath()));
     }
 
 

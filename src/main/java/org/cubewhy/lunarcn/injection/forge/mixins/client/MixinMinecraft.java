@@ -121,7 +121,7 @@ abstract public class MixinMinecraft {
     @Overwrite
     private void setWindowIcon() {
         try {
-            BufferedImage image = ImageIO.read(FileUtils.getInstance().getFile(Client.clientLogo));
+            BufferedImage image = ImageIO.read(FileUtils.getFile(Client.clientLogo));
             ByteBuffer bytebuffer = ImageUtils.readImageToBuffer(ImageUtils.resizeImage(image, 16, 16));
             Display.setIcon(new ByteBuffer[]{
                     bytebuffer,

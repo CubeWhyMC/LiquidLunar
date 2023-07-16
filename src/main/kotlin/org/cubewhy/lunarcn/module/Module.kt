@@ -8,7 +8,7 @@ import org.cubewhy.lunarcn.Client
 import org.cubewhy.lunarcn.event.EventManager
 import org.cubewhy.lunarcn.gui.hud.HudManager
 import org.cubewhy.lunarcn.gui.notification.Notification
-import org.cubewhy.lunarcn.utils.LoggerUtils
+import org.cubewhy.lunarcn.utils.ClientUtils
 import org.cubewhy.lunarcn.utils.MinecraftInstance
 
 open class Module : MinecraftInstance() {
@@ -38,7 +38,7 @@ open class Module : MinecraftInstance() {
     protected val mc: Minecraft = Minecraft.getMinecraft()
     protected val fontRenderer: FontRenderer = MinecraftInstance.fontRenderer
     protected val client: Client = Client.getInstance()
-    protected val logger: Logger = LoggerUtils.logger
+    protected val logger: Logger = ClientUtils.logger
 
     open val moduleImage: ResourceLocation = ResourceLocation("lunarcn/default-module-image.png")
     val moduleInfo = javaClass.getAnnotation(ModuleInfo::class.java)!!

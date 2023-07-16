@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.gui.clickgui;
+package org.cubewhy.lunarcn.gui;
 
 
 public abstract class AbstractComponent {
@@ -69,12 +69,10 @@ public abstract class AbstractComponent {
         return false;
     }
 
-    public boolean mouseReleased(int button, int x, int y, boolean offscreen) {
-        return false;
+    public void mouseReleased(int button, int x, int y, boolean offscreen) {
     }
 
-    public boolean mouseMove(int x, int y, boolean offscreen) {
-        return false;
+    public void mouseMove(int x, int y, boolean offscreen) {
     }
 
     public boolean mousePressed(int button, int x, int y, boolean offscreen) {

@@ -33,6 +33,7 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 import static org.cubewhy.lunarcn.utils.HttpUtils.JSON;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 import static org.cubewhy.lunarcn.utils.WebUtils.getRequestParam;
@@ -66,7 +67,7 @@ public class MicrosoftAccountUtils {
                     try {
                         ((MicrosoftAccount) account).refresh();
                     } catch (IOException e) {
-                        LoggerUtils.logger.error("尝试刷新账户 " + account.getUserName() + " 时发送错误");
+                        logger.error("尝试刷新账户 " + account.getUserName() + " 时发送错误");
                         e.printStackTrace();
                     }
                 }
@@ -263,7 +264,7 @@ public class MicrosoftAccountUtils {
                     Runtime.getRuntime().availableProcessors() * POOL_SIZE);
             httpsServer.setExecutor(executorService);
             KeyStore keyStore = KeyStore.getInstance("JKS");
-            keyStore.load(FileUtils.getInstance().getFile("lunarcn/127.0.0.1.jks"), "abc123".toCharArray());
+            keyStore.load(FileUtils.getFile("lunarcn/127.0.0.1.jks"), "abc123".toCharArray());
             KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
             kmf.init(keyStore, "abc123".toCharArray());
             SSLContext sslContext = SSLContext.getInstance("TLSv1.2");

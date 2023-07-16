@@ -11,13 +11,15 @@ import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.event.events.SessionEvent;
 import org.jetbrains.annotations.NotNull;
 
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
+
 public class MinecraftInstance {
     public static final Minecraft mc = Minecraft.getMinecraft();
-    public static final FontRenderer fontRenderer = mc.fontRendererObj;
+    public static FontRenderer fontRenderer;
 
     public static void setSession(@NotNull Session session) {
         mc.session = session;
-        LoggerUtils.logger.info("Switch account, PlayerName: " + session.getUsername());
+        logger.info("Switch account, PlayerName: " + session.getUsername());
     }
 
     public static void setSession(@NotNull IAccount account) {

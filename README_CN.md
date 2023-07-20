@@ -15,7 +15,7 @@
 
 ## 链接
 
-[![官网](https://img.shields.io/badge/官网-点击这里-blue?style=flat-square)](README_CN.md)
+[![官网](https://img.shields.io/badge/官网-点击这里-blue?style=flat-square)](Liquid.LunarCN.top)
 
 ## 关于LiquidLunar
 

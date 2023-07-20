@@ -3,15 +3,20 @@
 ![last commit](https://img.shields.io/github/last-commit/CubeWhyMC/LiquidLunar)
 ![code size](https://img.shields.io/github/repo-size/CubeWhyMC/LiquidLunar)
 ![code lines](https://img.shields.io/tokei/lines/github/CubeWhyMC/LiquidLunar)
+[![Discord](https://img.shields.io/discord/1047866655033802802.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/rCqCepgWJc)
 [![Latest Release](https://img.shields.io/github/v/release/CubewhyMC/LiquidLunar)](https://github.com/CubewhyMC/LiquidLunar/release)
 [![License](https://img.shields.io/github/license/CubewhyMC/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar/blob/master/LICENSE)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/CubewhyMC/LiquidLunar)](https://github.com/CubewhyMC/LiquidLunar/actions)
 
 > Forge 版本
 
+[![English](https://img.shields.io/badge/English-Readme-green?style=flat-square)](README.md)
+
 ## 链接
 
 [官网](https://liquid.lunarcn.top)
+
+[MCP版本](https://github.com/CubeWhyMC/LiquidLunarMCP)
 
 ## 关于LiquidLunar
 

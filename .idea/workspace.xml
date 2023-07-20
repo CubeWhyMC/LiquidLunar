@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="update icons (by muskf)">
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="CheckBoxComponent">
+      <change afterPath="$PROJECT_DIR$/.idea/icon.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/files/BasicConfigFile.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/components/CheckBoxComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_CN.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_CN.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/GuiCommitInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/GuiCommitInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/hud/HudDesigner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/hud/HudDesigner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/LunarMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/mainmenu/LunarMainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiMultiplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiMultiplayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/Value.java" afterDir="false" />
@@ -182,7 +182,7 @@
       <workItem from="1689587147803" duration="1260000" />
       <workItem from="1689588424840" duration="44000" />
       <workItem from="1689758185394" duration="1619000" />
-      <workItem from="1689857659882" duration="448000" />
+      <workItem from="1689857659882" duration="1064000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -232,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689516499590</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="CheckBoxComponent">
+      <option name="closed" value="true" />
+      <created>1689858724715</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1689858724715</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,7 +266,8 @@
     <MESSAGE value="update fontRender, OverlaySettings" />
     <MESSAGE value="clickGUI update" />
     <MESSAGE value="update icons (by muskf)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update icons (by muskf)" />
+    <MESSAGE value="CheckBoxComponent" />
+    <option name="LAST_COMMIT_MESSAGE" value="CheckBoxComponent" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

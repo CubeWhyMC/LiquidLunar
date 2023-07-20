@@ -13,7 +13,7 @@
 
 > Forge version
 
-[![简体中文](https://img.shields.io/badge/简体中文-100%25-green?style=flat-square)](https://github.com/CubewhyMC/LiquidLunar/blob/master/README_CN.md)
+[![简体中文](https://img.shields.io/badge/简体中文-点我25-green?style=flat-square)](https://github.com/CubewhyMC/LiquidLunar/blob/master/README_CN.md)
 
 ## Links
 

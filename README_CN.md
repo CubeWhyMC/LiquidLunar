@@ -1,6 +1,5 @@
 # LiquidLunar
 
-[![简体中文](https://img.shields.io/badge/简体中文-100%25-green?style=flat-square)](https://github.com/CubewhyMC/LiquidLunar/README_CN.md)
 ![last commit](https://img.shields.io/github/last-commit/CubeWhyMC/LiquidLunar)
 ![code size](https://img.shields.io/github/repo-size/CubeWhyMC/LiquidLunar)
 ![code lines](https://img.shields.io/tokei/lines/github/CubeWhyMC/LiquidLunar)

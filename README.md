@@ -17,7 +17,7 @@
 
 ## Links
 
-[![Website](https://img.shields.io/badge/LiquidLunar Website-Click-blue?style=flat-square)](Liquid.LunarCN.top)
+[![Website](https://img.shields.io/badge/LiquidLunarWebsite-ClickThis-blue?style=flat-square)](Liquid.LunarCN.top)
 
 ## About LiquidLunar
 

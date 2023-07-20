@@ -21,7 +21,7 @@ public class GuiCommitInfo extends GuiScreen {
      */
     @Override
     public void initGui() {
-        this.buttonList.add(new GuiButton(0, 70, 30 + fontRenderer.FONT_HEIGHT * 7 + 10, "Back"));
+        this.buttonList.add(new GuiButton(0, 70, 30 + fontRenderer.FONT_HEIGHT * 7 + 20, "Back"));
         super.initGui();
     }
 
@@ -43,6 +43,7 @@ public class GuiCommitInfo extends GuiScreen {
         this.drawString(fontRenderer, "CommitMessage: " + commitMessage, 70, 30 + fontRenderer.FONT_HEIGHT * 4 + 5, new Color(255, 255, 255).getRGB());
         this.drawString(fontRenderer, "Branch: " + branch, 70, 30 + fontRenderer.FONT_HEIGHT * 5 + 5, new Color(255, 255, 255).getRGB());
         this.drawString(fontRenderer, "Remote origin: " + repo, 70, 30 + fontRenderer.FONT_HEIGHT * 6 + 5, new Color(255, 255, 255).getRGB());
+        this.drawString(fontRenderer, "Developers: " + String.join(" ", Client.clientDev), 70, 30 + fontRenderer.FONT_HEIGHT * 7 + 5, new Color(255, 255, 255).getRGB());
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 

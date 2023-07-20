@@ -40,7 +40,8 @@ public class RenderUtils {
         return (float) mouseX > xLeft && (float) mouseX <= xRight && (float) mouseY >= yUp && (float) mouseY <= yBottom;
     }
 
-    public static void drawHollowRect(Gui gui, int x, int y, int width, int height, int color) {
+    public static void drawHollowRect(int x, int y, int width, int height, int color) {
+        Gui gui = new Gui();
         gui.drawHorizontalLine(x, x + width, y, color);
         gui.drawHorizontalLine(x, x + width, y + height, color);
 

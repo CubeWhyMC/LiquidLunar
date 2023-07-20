@@ -71,7 +71,7 @@ public class LunarMainMenu extends GuiMainMenu {
         this.btnMultiplayer = new LunarButton("M U L T I P L A Y E R", this.width / 2 - 66, this.height / 2 + 15);
         this.btnCommitInfo = new LunarButton("G I T C O M M I T", this.width / 2 - 66, this.height / 2 + 32);
 
-        this.altList = new AccountDropDownList(10, 10); // TODO 实现altmanager
+        this.altList = new AccountDropDownList(10, 10);
 
         int yPos = this.height - 20;
         this.btnClientOptions = new ImageButton("SETTINGS", Client.clientLogo, this.width / 2 - 30, yPos);

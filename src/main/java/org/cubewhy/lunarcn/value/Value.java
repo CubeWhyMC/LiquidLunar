@@ -14,9 +14,13 @@ public abstract class Value<T> {
 		setValue(value);
 	}
 
-	public abstract String getName();
+	public String getName() {
+		return this.name;
+	}
 
-	public abstract void setName(String name);
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public abstract T getValue();
 

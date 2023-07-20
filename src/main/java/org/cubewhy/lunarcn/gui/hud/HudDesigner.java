@@ -73,14 +73,14 @@ public class HudDesigner extends GuiScreen {
         final float zBackUp = this.zLevel;
         this.zLevel = 200;
 
-        drawHollowRect(this, 0, 0, this.width - 1, this.height - 1, new Color(255, 0, 0).getRGB());
+        drawHollowRect(0, 0, this.width - 1, this.height - 1, new Color(255, 0, 0).getRGB());
 
         for (IRenderer renderer : renderers.keySet()) {
             ScreenPosition position = renderers.get(renderer);
 
             renderer.renderDummy(position);
 
-            drawHollowRect(this, position.getAbsoluteX(), position.getAbsoluteY(), renderer.getWidth(), renderer.getHeight(), new Color(108, 218, 202).getRGB());
+            drawHollowRect(position.getAbsoluteX(), position.getAbsoluteY(), renderer.getWidth(), renderer.getHeight(), new Color(108, 218, 202).getRGB());
         }
 
 

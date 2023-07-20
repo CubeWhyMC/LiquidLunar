@@ -7,7 +7,6 @@ import com.jagrosh.discordipc.IPCClient;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.network.play.client.C17PacketCustomPayload;
 import net.minecraft.network.play.server.S3FPacketCustomPayload;
 import net.minecraft.util.ResourceLocation;
 import okhttp3.Call;
@@ -40,7 +39,8 @@ public class Client {
     public static final String clientName = "LiquidLunar"; // client name
     public static final String clientVersion = GitUtils.gitInfo.getProperty("git.build.version"); // client version
     public static final String[] clientDev = new String[] {"CubeWhy", "catand", "yuxiangll"}; // Client dev
-    public static String configDir = System.getProperty("user.home") + "/.cubewhy/liquidlunar/config";
+    public static String clientDir = System.getProperty("user.home") + "/.cubewhy/liquidlunar";
+    public static String configDir = clientDir + "/config";
     public static ResourceLocation clientLogo = new ResourceLocation("lunarcn/logo.png");
     public static FeaturedServerData[] featuredServerDataList = new FeaturedServerData[]{
             new FeaturedServerData("QbyPixel", "mc.cubewhy.eu.org")

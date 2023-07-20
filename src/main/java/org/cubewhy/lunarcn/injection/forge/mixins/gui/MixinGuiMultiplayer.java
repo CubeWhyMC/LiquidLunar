@@ -27,12 +27,16 @@ public abstract class MixinGuiMultiplayer extends GuiScreen {
     @Shadow
     private GuiButton btnDeleteServer;
 
-    @Inject(method = "drawScreen", at = @At("RETURN"))
-    public void drawScreen(int mouseX, int mouseY, float partialTicks, CallbackInfo ci) {
-        fontRenderer.drawString("You are playing on " + mc.getSession().getUsername(), 20, 20, new Color(255, 255, 255).getRGB());
+    @Inject(method = "initGui", at = @At("RETURN"))
+    public void initGui(CallbackInfo ci) {
         String text = "ProxySettings";
         int textWidth = fontRenderer.getStringWidth(text);
         this.buttonList.add(new GuiButton(114514, this.width - textWidth - 20, 10, textWidth + 10, fontRenderer.FONT_HEIGHT + 10, text));
+    }
+
+    @Inject(method = "drawScreen", at = @At("RETURN"))
+    public void drawScreen(int mouseX, int mouseY, float partialTicks, CallbackInfo ci) {
+        fontRenderer.drawString("You are playing on " + mc.getSession().getUsername(), 20, 20, new Color(255, 255, 255).getRGB());
     }
 
     /**

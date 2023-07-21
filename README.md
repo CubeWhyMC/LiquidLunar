@@ -12,8 +12,8 @@
 [![Release Download](https://img.shields.io/github/downloads/CubewhyMC/LiquidLunar/total?style=flat-square)](https://github.com/CubewhyMC/LiquidLunar/releases)
 ![Minecraft](https://img.shields.io/badge/Game-Minecraft-brightgreen)
 
-[![Develop Team](https://img.shields.io/static/v1?label=Develop+Team&message=CubewhyMC&color=7B5804)]
-[![Version](https://img.shields.io/static/v1?label=Version&message=Forge&color=yellow)]
+![Develop Team](https://img.shields.io/static/v1?label=Develop+Team&message=CubewhyMC&color=7B5804)
+![Version](https://img.shields.io/static/v1?label=Version&message=Forge&color=yellow)
 
 [![简体中文](https://img.shields.io/badge/简体中文-Readme-green?style=flat-square)](README_CN.md)
 

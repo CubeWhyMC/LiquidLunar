@@ -12,7 +12,7 @@
 ![GitHub lines of code](https://tokei.rs/b1/github/CubewhyMC/LiquidLunar)
 ![GitHub Star](https://img.shields.io/github/stars/CubewhyMC/LiquidLunar)
 [![Release Download](https://img.shields.io/github/downloads/CubewhyMC/LiquidLunar/total?style=flat-square)](https://github.com/CubewhyMC/LiquidLunar/releases)
-![Minecraft](https://img.shields.io/badge/game-Minecraft-brightgreen)  
+![Minecraft](https://img.shields.io/badge/game-MinecraftForge-brightgreen)  
   
 > Forge version
 

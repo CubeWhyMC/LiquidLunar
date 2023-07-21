@@ -11,12 +11,11 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/CubewhyMC/LiquidLunar)
 ![GitHub lines of code](https://tokei.rs/b1/github/CubewhyMC/LiquidLunar)
 ![GitHub Star](https://img.shields.io/github/stars/CubewhyMC/LiquidLunar)
-[![Build Status](https://img.shields.io/endpoint.svg?url=
-https%3A%2F%2Factions-badge.atrox.dev%2FSteamTools-Team%2FSteamTools%2Fbadge%3Fref%3Ddevelop&style=flat-square)](https://github.com/CubeWhyMC/LiquidLunar/actions)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FSteamTools-Team%2FSteamTools%2Fbadge%3Fref%3Ddevelop&style=flat-square)](https://github.com/CubeWhyMC/LiquidLunar/actions)
 [![Release Download](https://img.shields.io/github/downloads/CubewhyMC/LiquidLunar/total?style=flat-square)](https://github.com/CubewhyMC/LiquidLunar/releases)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a41ae7bde63c143e426a/maintainability)](https://codeclimate.com/github/CubewhyMC/LiquidLunar/maintainability)
 ![Minecraft](https://img.shields.io/badge/game-Minecraft-brightgreen)  
-
+  
 > Forge version
 
 [![简体中文](https://img.shields.io/badge/简体中文-Readme-green?style=flat-square)](README_CN.md)

@@ -8,12 +8,12 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/CubewhyMC/LiquidLunar)](https://github.com/CubewhyMC/LiquidLunar/actions)
 [![Discord](https://img.shields.io/discord/1047866655033802802.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/rCqCepgWJc)
 [![State-of-the-art Shitcode](https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/UnlegitMinecraft/FDPClientChina)
-![GitHub lines of code](https://tokei.rs/b1/github/UnlegitMinecraft/FDPClientChina)
-![GitHub Star](https://img.shields.io/github/stars/UnlegitMinecraft/FDPClientChina?style=flat-square)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/CubewhyMC/LiquidLunar)
+![GitHub lines of code](https://tokei.rs/b1/github/CubewhyMC/LiquidLunar)
+![GitHub Star](https://img.shields.io/github/stars/CubewhyMC/LiquidLunar/?style=flat-square)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FSteamTools-Team%2FSteamTools%2Fbadge%3Fref%3Ddevelop&style=flat-square)](https://github.com/UnlegitMinecraft/FDPClientChina/actions/workflows/build.yml?query=event%3Apush)
-[![Release Download](https://img.shields.io/github/downloads/UnlegitMinecraft/FDPClientChina/total?style=flat-square)](https://github.com/UnlegitMinecraft/FDPClientChina/releases)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a41ae7bde63c143e426a/maintainability)](https://codeclimate.com/github/UnlegitMinecraft/FDPClientChina/maintainability)
+[![Release Download](https://img.shields.io/github/downloads/UnlegitMinecraft/FDPClientChina/total?style=flat-square)](https://github.com/CubewhyMC/LiquidLunar/releases)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a41ae7bde63c143e426a/maintainability)](https://codeclimate.com/github/CubewhyMC/LiquidLunar/maintainability)
 ![Minecraft](https://img.shields.io/badge/game-Minecraft-brightgreen)  
 
 > Forge version

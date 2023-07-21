@@ -2,18 +2,18 @@
 
 ![last commit](https://img.shields.io/github/last-commit/CubeWhyMC/LiquidLunar)
 ![code size](https://img.shields.io/github/repo-size/CubeWhyMC/LiquidLunar)
-[![Discord](https://img.shields.io/discord/1047866655033802802.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/rCqCepgWJc)
 [![Latest Release](https://img.shields.io/github/v/release/CubewhyMC/LiquidLunar)](https://github.com/CubewhyMC/LiquidLunar/release)
 [![License](https://img.shields.io/github/license/CubewhyMC/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar/blob/master/LICENSE)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/CubewhyMC/LiquidLunar)](https://github.com/CubewhyMC/LiquidLunar/actions)
-[![Develop Team](https://img.shields.io/static/v1?label=Develop+Team&message=CubewhyMC&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
+[![Discord](https://img.shields.io/discord/1047866655033802802.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/rCqCepgWJc)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/CubewhyMC/LiquidLunar)
 ![GitHub lines of code](https://tokei.rs/b1/github/CubewhyMC/LiquidLunar)
 ![GitHub Star](https://img.shields.io/github/stars/CubewhyMC/LiquidLunar)
 [![Release Download](https://img.shields.io/github/downloads/CubewhyMC/LiquidLunar/total?style=flat-square)](https://github.com/CubewhyMC/LiquidLunar/releases)
-![Minecraft](https://img.shields.io/badge/game-Minecraft-brightgreen)
+![Minecraft](https://img.shields.io/badge/Game-Minecraft-brightgreen)
 
-> Forge 版本
+[![Develop Team](https://img.shields.io/static/v1?label=Develop+Team&message=LunarCN&color=7B5804)](https://Github.com/CubewhyMC)
+![Version](https://img.shields.io/static/v1?label=Version&message=Forge&color=yellow)
 
 [![English](https://img.shields.io/badge/English-Readme-green?style=flat-square)](README.md)
 

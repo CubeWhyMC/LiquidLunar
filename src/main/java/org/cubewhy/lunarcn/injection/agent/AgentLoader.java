@@ -27,7 +27,7 @@ public class AgentLoader {
                     public byte @Nullable [] transform(@NotNull ClassLoader loader, @NotNull String className, byte @NotNull [] originalClass) {
                         if (className.startsWith("net/minecraft/client/")) {
                             instrumentation.removeTransformer(this);
-                            loader.loadClass("org.cubewhy.lunarcn.injection.agent.Agent").getDeclaredMethod("init", Instrumentation.class).invoke(null, instrumentation);
+                            loader.loadClass("org.cubewhy.lunarcn.injection.agent.Agent").getDeclaredMethod("premain", Instrumentation.class).invoke(null, instrumentation);
                         }
                         return null;
                     }

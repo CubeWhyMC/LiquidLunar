@@ -1,9 +1,8 @@
 package org.cubewhy.lunarcn.injection.transformers;
 
-import net.minecraft.client.Minecraft;
-import org.cubewhy.lunarcn.utils.NodeUtils;
 import net.minecraft.launchwrapper.IClassTransformer;
 import org.cubewhy.lunarcn.utils.ClassUtils;
+import org.cubewhy.lunarcn.utils.NodeUtils;
 import org.objectweb.asm.tree.*;
 
 import static org.objectweb.asm.Opcodes.*;
@@ -23,17 +22,22 @@ public class ForgeNetworkTransformer implements IClassTransformer {
         if (name.equals("net.minecraftforge.fml.common.network.handshake.NetworkDispatcher")) {
             try {
                 final ClassNode classNode = ClassUtils.INSTANCE.toClassNode(basicClass);
-
-                classNode.methods.stream().filter(methodNode -> methodNode.name.equals("handleVanilla")).forEach(methodNode -> {
+                classNode.methods.stream().filter(methodNode -> {
+                    if (methodNode instanceof MethodNode) {
+                        return ((MethodNode) methodNode).name.equals("handleVanilla");
+                    }
+                    return false;
+                }).forEach(methodNode -> {
                     final LabelNode labelNode = new LabelNode();
-
-                    methodNode.instructions.insertBefore(methodNode.instructions.getFirst(), NodeUtils.INSTANCE.toNodes(
-                            new MethodInsnNode(INVOKESTATIC, "org/cubewhy/lunarcn/injection/transformers/ForgeNetworkTransformer", "returnMethod", "()Z", false),
-                            new JumpInsnNode(IFEQ, labelNode),
-                            new InsnNode(ICONST_0),
-                            new InsnNode(IRETURN),
-                            labelNode
-                    ));
+                    if (methodNode instanceof MethodNode) {
+                        ((MethodNode) methodNode).instructions.insertBefore(((MethodNode) methodNode).instructions.getFirst(), NodeUtils.INSTANCE.toNodes(
+                                new MethodInsnNode(INVOKESTATIC, "org/cubewhy/lunarcn/injection/transformers/ForgeNetworkTransformer", "returnMethod", "()Z", false),
+                                new JumpInsnNode(IFEQ, labelNode),
+                                new InsnNode(ICONST_0),
+                                new InsnNode(IRETURN),
+                                labelNode
+                        ));
+                    }
                 });
 
                 return ClassUtils.INSTANCE.toBytes(classNode);
@@ -46,18 +50,24 @@ public class ForgeNetworkTransformer implements IClassTransformer {
             try {
                 final ClassNode classNode = ClassUtils.INSTANCE.toClassNode(basicClass);
 
-                classNode.methods.stream().filter(method -> method.name.equals("channelRead0")).forEach(methodNode -> {
+                classNode.methods.stream().filter(method -> {
+                    if (method instanceof MethodNode) {
+                        return ((MethodNode) method).name.equals("channelRead0");
+                    }
+                    return false;
+                }).forEach(methodNode -> {
                     final LabelNode labelNode = new LabelNode();
-
-                    methodNode.instructions.insertBefore(methodNode.instructions.getFirst(), NodeUtils.INSTANCE.toNodes(
-                            new MethodInsnNode(INVOKESTATIC,
-                                    "org/cubewhy/lunarcn/injection/transformers/ForgeNetworkTransformer",
-                                    "returnMethod", "()Z", false
-                            ),
-                            new JumpInsnNode(IFEQ, labelNode),
-                            new InsnNode(RETURN),
-                            labelNode
-                    ));
+                    if (methodNode instanceof MethodNode) {
+                        ((MethodNode) methodNode).instructions.insertBefore(((MethodNode) methodNode).instructions.getFirst(), NodeUtils.INSTANCE.toNodes(
+                                new MethodInsnNode(INVOKESTATIC,
+                                        "org/cubewhy/lunarcn/injection/transformers/ForgeNetworkTransformer",
+                                        "returnMethod", "()Z", false
+                                ),
+                                new JumpInsnNode(IFEQ, labelNode),
+                                new InsnNode(RETURN),
+                                labelNode
+                        ));
+                    }
                 });
 
                 return ClassUtils.INSTANCE.toBytes(classNode);

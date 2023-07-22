@@ -36,7 +36,7 @@ dependencies {
     include fileTree(dir: "lib", includes: ['*.jar']) // local lib
 
     // Don't update mixin
-    include("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
+    include("org.spongepowered:mixin:0.8.3") {
         transitive = false
         exclude module: "guava"
         exclude module: "commons-io"
@@ -46,7 +46,11 @@ dependencies {
         exclude module: "slf4j-api"
     }
 
-    annotationProcessor("org.spongepowered:mixin:0.7.11-SNAPSHOT")
+    annotationProcessor("org.spongepowered:mixin:0.8.3:processor")
+
+    // agent dep
+    include "org.ow2.asm:asm-all:5.2"
+    include 'com.google.guava:guava:31.1-jre'
 
     include "org.jetbrains.kotlin:kotlin-stdlib"
     include 'com.squareup.okhttp3:okhttp:4.11.0'
@@ -96,6 +100,7 @@ jar {
             "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
             "TweakOrder": "0",
             "FMLAT": "lunarcn_at.cfg",
+            "Premain-Class": "org.cubewhy.lunarcn.injection.agent.AgentLoader"
     )
 }
 

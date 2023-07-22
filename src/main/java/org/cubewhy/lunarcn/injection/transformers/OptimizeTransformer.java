@@ -6,6 +6,7 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodInsnNode;
+import org.objectweb.asm.tree.MethodNode;
 
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -23,8 +24,9 @@ public class OptimizeTransformer implements IClassTransformer {
 
     /**
      * Add transform to transformMap
-     * @param mcpName the normal name look like in developing env
-     * @param notchName the obfuscated name in player env
+     *
+     * @param mcpName    the normal name look like in developing env
+     * @param notchName  the obfuscated name in player env
      * @param targetName the target method in [StaticStorage]
      */
     private static void addTransform(final String mcpName, final String notchName, final String targetName) {
@@ -34,22 +36,24 @@ public class OptimizeTransformer implements IClassTransformer {
 
     @Override
     public byte[] transform(String name, String transformedName, byte[] basicClass) {
-        if(transformedName.startsWith("net.minecraft") && basicClass != null && !transformMap.containsKey(transformedName)) {
+        if (transformedName.startsWith("net.minecraft") && basicClass != null && !transformMap.containsKey(transformedName)) {
             try {
                 final ClassNode classNode = NodeUtils.INSTANCE.toClassNode(basicClass);
                 AtomicBoolean changed = new AtomicBoolean(false);
 
                 classNode.methods.forEach(methodNode -> {
-                    for (int i = 0; i < methodNode.instructions.size(); ++i) {
-                        final AbstractInsnNode abstractInsnNode = methodNode.instructions.get(i);
-                        if (abstractInsnNode instanceof MethodInsnNode) {
-                            MethodInsnNode min = (MethodInsnNode) abstractInsnNode;
-                            if(min.getOpcode() == Opcodes.INVOKESTATIC && min.name.equals("values")) {
-                                final String owner = min.owner.replaceAll("/", ".");
-                                if (transformMap.containsKey(owner)) {
-                                    changed.set(true);
-                                    min.owner = "org/cubewhy/lunarcn/injection/access/StaticStorage";
-                                    min.name = transformMap.get(owner);
+                    if (methodNode instanceof MethodNode) {
+                        for (int i = 0; i < ((MethodNode) methodNode).instructions.size(); ++i) {
+                            final AbstractInsnNode abstractInsnNode = ((MethodNode) methodNode).instructions.get(i);
+                            if (abstractInsnNode instanceof MethodInsnNode) {
+                                MethodInsnNode min = (MethodInsnNode) abstractInsnNode;
+                                if (min.getOpcode() == Opcodes.INVOKESTATIC && min.name.equals("values")) {
+                                    final String owner = min.owner.replaceAll("/", ".");
+                                    if (transformMap.containsKey(owner)) {
+                                        changed.set(true);
+                                        min.owner = "org/cubewhy/lunarcn/injection/access/StaticStorage";
+                                        min.name = transformMap.get(owner);
+                                    }
                                 }
                             }
                         }
@@ -59,7 +63,7 @@ public class OptimizeTransformer implements IClassTransformer {
                 if (changed.get()) {
                     return NodeUtils.INSTANCE.toBytes(classNode);
                 }
-            }catch(final Throwable throwable) {
+            } catch (final Throwable throwable) {
                 throwable.printStackTrace();
             }
         }

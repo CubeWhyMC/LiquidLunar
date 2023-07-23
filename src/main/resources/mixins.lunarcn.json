@@ -6,6 +6,7 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "client.MixinGameSettings",
+    "client.MixinItemRenderer",
     "client.MixinMinecraft",
     "gui.MixinGui",
     "gui.MixinGuiConnecting",

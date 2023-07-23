@@ -4,8 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="Update readme">
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="agent not compiled with forge, so remove it">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/events/ScreenChangeEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinItemRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/agent/Agent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/agent/AgentLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiConnecting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiConnecting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/DoubleValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/DoubleValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/injection/agent/LiquidLunarMixinService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/injection/agent/LiquidLunarMixinTransformer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/injection/agent/SafeTransformer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/OverlaySettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/OverlaySettings.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/services/org.spongepowered.asm.service.IMixinService" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +76,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectId" id="2SW0gwDLBQZV8nXGgOPPQQyKGZS" />
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
@@ -75,8 +95,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "TODO_SCOPE": "所有位置",
     "WebServerToolWindowFactoryState": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/shadiao/LiquidLunar/.gradle/minecraft/forgeSrc-1.8.9-11.15.1.2318-1.8.9-PROJECT(LiquidLunarForge)-sources.jar",
+    "last_opened_file_path": "F:/shadiao/LiquidLunar/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,11 +106,18 @@
     "project.structure.last.edited": "项目",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\shadiao\LiquidLunar\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\shadiao\LiquidLunar\src\main\resources\META-INF\services" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.cubewhy.lunarcn.files" />
       <recent name="org.cubewhy.lunarcn" />
@@ -124,32 +152,9 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="LiquidLunar [build\]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build\" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.LiquidLunar [build]" />
-        <item itemvalue="Gradle.LiquidLunar [build\]" />
       </list>
     </recent_temporary>
   </component>
@@ -173,6 +178,8 @@
       <workItem from="1689758185394" duration="1619000" />
       <workItem from="1689857659882" duration="1659000" />
       <workItem from="1689908282586" duration="39000" />
+      <workItem from="1689990679362" duration="9169000" />
+      <workItem from="1690085416189" duration="5645000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -238,7 +245,39 @@
       <option name="project" value="LOCAL" />
       <updated>1689859083330</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="agent loader">
+      <option name="closed" value="true" />
+      <created>1689998241011</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689998241012</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix agent, but all mixins are skipped">
+      <option name="closed" value="true" />
+      <created>1689999070344</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1689999070344</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix agent, but all mixins are skipped">
+      <option name="closed" value="true" />
+      <created>1689999176070</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1689999176070</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix agent, but all mixins was skipped">
+      <option name="closed" value="true" />
+      <created>1689999189093</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1689999189093</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +305,10 @@
     <MESSAGE value="update icons (by muskf)" />
     <MESSAGE value="CheckBoxComponent" />
     <MESSAGE value="Update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update readme" />
+    <MESSAGE value="agent loader" />
+    <MESSAGE value="fix agent, but all mixins are skipped" />
+    <MESSAGE value="fix agent, but all mixins was skipped" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix agent, but all mixins was skipped" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

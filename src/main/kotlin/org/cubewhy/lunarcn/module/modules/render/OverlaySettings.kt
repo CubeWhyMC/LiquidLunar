@@ -9,4 +9,5 @@ import org.cubewhy.lunarcn.value.DoubleValue
 @ModuleInfo(name = "OverlaySettings", description = "In-Game overlays", category = ModuleCategory.RENDER, canEnabled = false)
 class OverlaySettings : Module() {
     val pumpkin = BooleanValue("Render pumpkin", true)
+    val fireHeight = DoubleValue("Fire Height", 1.0, 0.0, 1.0)
 }

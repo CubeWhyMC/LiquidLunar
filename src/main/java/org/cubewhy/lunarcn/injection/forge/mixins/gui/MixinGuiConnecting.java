@@ -19,7 +19,7 @@ import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 public class MixinGuiConnecting extends GuiScreen {
     @Inject(method = "connect", at = @At("RETURN"))
     private void connect(String ip, int port, CallbackInfo ci) {
-        new JoinServerEvent(ip, port).call(); // 加入服务器事件
+        new JoinServerEvent(ip, port).callEvent(); // 加入服务器事件
     }
 
     /**

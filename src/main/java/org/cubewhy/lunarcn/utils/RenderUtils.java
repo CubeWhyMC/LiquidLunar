@@ -1,24 +1,29 @@
 package org.cubewhy.lunarcn.utils;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 import org.lwjgl.opengl.GL11;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 import static org.lwjgl.opengl.GL11.*;
 
 public class RenderUtils {
+    private static final Map<String, Map<Integer, Boolean>> glCapMap = new HashMap<>();
+
     public static void drawImage(ResourceLocation image, int x, int y, int width, int height) {
         glDisable(GL_DEPTH_TEST);
         glEnable(GL_BLEND);
@@ -265,6 +270,7 @@ public class RenderUtils {
             drawCircle(x, y, i * 10, rot - 180, rot);
         }
     }
+
     public static void drawCircle(float x, float y, float radius, int start, int end) {
         GlStateManager.enableBlend();
         GlStateManager.disableTexture2D();
@@ -283,7 +289,7 @@ public class RenderUtils {
         GlStateManager.disableBlend();
     }
 
-    public static void drawLimitedCircle(final float lx, final float ly, final float x2, final float y2,final int xx, final int yy, final float radius, final Color color) {
+    public static void drawLimitedCircle(final float lx, final float ly, final float x2, final float y2, final int xx, final int yy, final float radius, final Color color) {
         int sections = 50;
         double dAngle = 2 * Math.PI / sections;
         float x, y;
@@ -300,7 +306,7 @@ public class RenderUtils {
         for (int i = 0; i < sections; i++) {
             x = (float) (radius * Math.sin((i * dAngle)));
             y = (float) (radius * Math.cos((i * dAngle)));
-            glVertex2f(Math.min(x2,Math.max(xx + x,lx)), Math.min(y2,Math.max(yy + y,ly)));
+            glVertex2f(Math.min(x2, Math.max(xx + x, lx)), Math.min(y2, Math.max(yy + y, ly)));
         }
 
         GlStateManager.color(0, 0, 0);
@@ -324,7 +330,7 @@ public class RenderUtils {
     }
 
     public static void glColor(final Color color, final int alpha) {
-        glColor(color, alpha/255F);
+        glColor(color, alpha / 255F);
     }
 
     public static void glColor(final Color color, final float alpha) {
@@ -358,5 +364,93 @@ public class RenderUtils {
         final float blue = (hex & 0xFF) / 255F;
 
         GlStateManager.color(red, green, blue, alpha);
+    }
+
+    public static void resetCaps(final String scale) {
+        if(!glCapMap.containsKey(scale)) {
+            return;
+        }
+        Map<Integer, Boolean> map = glCapMap.get(scale);
+        map.forEach(RenderUtils::setGlState);
+        map.clear();
+    }
+
+    public static void resetCaps() {
+        resetCaps("COMMON");
+    }
+
+    public static void enableGlCap(final int cap, final String scale) {
+        setGlCap(cap, true, scale);
+    }
+
+    public static void enableGlCap(final int cap) {
+        enableGlCap(cap, "COMMON");
+    }
+
+
+    public static void enableGlCap(final int... caps) {
+        for(int cap : caps) {
+            setGlCap(cap, true, "COMMON");
+        }
+    }
+
+    public static void disableGlCap(final int... caps) {
+        for(int cap : caps) {
+            setGlCap(cap, false, "COMMON");
+        }
+    }
+
+    public static void setGlCap(final int cap, final boolean state, final String scale) {
+        if(!glCapMap.containsKey(scale)) {
+            glCapMap.put(scale, new HashMap<>());
+        }
+        glCapMap.get(scale).put(cap, glGetBoolean(cap));
+        setGlState(cap, state);
+    }
+
+    public static void setGlCap(final int cap, final boolean state) {
+        setGlCap(cap, state, "COMMON");
+    }
+
+    public static void setGlState(final int cap, final boolean state) {
+        if (state)
+            glEnable(cap);
+        else
+            glDisable(cap);
+    }
+
+    public static void renderNameTag(@NotNull EntityLivingBase entity, String tag) {
+        GlStateManager.pushMatrix();
+        glTranslated( // Translate to player position with render pos and interpolate it
+                entity.lastTickPosX + (entity.posX - entity.lastTickPosX) * mc.timer.renderPartialTicks - mc.getRenderManager().renderPosX,
+                entity.lastTickPosY + (entity.posY - entity.lastTickPosY) * mc.timer.renderPartialTicks - mc.getRenderManager().renderPosY + (double) entity.getEyeHeight() + 0.55F,
+                entity.lastTickPosZ + (entity.posZ - entity.lastTickPosZ) * mc.timer.renderPartialTicks - mc.getRenderManager().renderPosZ
+        );
+
+        glRotatef(-mc.getRenderManager().playerViewY, 0F, 1F, 0F);
+        glRotatef(mc.getRenderManager().playerViewX, 1F, 0F, 0F);
+
+        float distance = mc.thePlayer.getDistanceToEntity(entity) / 4F;
+        if (distance < 1F) {
+            distance = 1F;
+        }
+
+        disableGlCap(GL_LIGHTING, GL_DEPTH_TEST);
+
+        disableGlCap(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+        // render nameTag
+        fontRenderer.drawString(tag, (int) (-fontRenderer.getStringWidth(tag) * 0.5F), (int) (-fontRenderer.FONT_HEIGHT * 1.4F), Color.WHITE.getRGB());
+        // render finished
+
+        resetCaps();
+
+        // Reset color
+        GlStateManager.resetColor();
+        glColor4f(1F, 1F, 1F, 1F);
+
+        // Pop
+        GlStateManager.popMatrix();
     }
 }

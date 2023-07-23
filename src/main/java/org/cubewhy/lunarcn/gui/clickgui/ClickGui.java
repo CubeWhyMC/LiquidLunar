@@ -19,6 +19,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 
 public class ClickGui extends GuiScreen {
@@ -177,12 +178,13 @@ public class ClickGui extends GuiScreen {
 
     @Override
     protected void mouseClickMove(int mouseX, int mouseY, int clickedMouseButton, long timeSinceLastClick) {
-//        int x = Math.abs(mouseX - panelX);
-//        int y = Math.abs(mouseY - panelY);
+        int MX = lastMouseX - panelX;
+        int MY = lastMouseY - panelY;
 
-        if (RenderUtils.isHovering(lastMouseX, lastMouseY, panelX, panelY, panelX + panelWidth, panelY + panelHeight)) {
-            this.panelX = mouseX;
-            this.panelY = mouseY;
+        if (RenderUtils.isHovering(lastMouseX, lastMouseY, panelX, panelY, panelX + panelWidth, panelY + 20)) {
+            logger.info("Moving panel!");
+            this.panelX = MX;
+            this.panelY = MY;
             // TODO 修复窗口位置
         }
         super.mouseClickMove(mouseX, mouseY, clickedMouseButton, timeSinceLastClick);

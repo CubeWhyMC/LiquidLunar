@@ -14,6 +14,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.common.MinecraftForge;
 import org.cubewhy.lunarcn.Client;
+import org.cubewhy.lunarcn.event.events.ScreenChangeEvent;
 import org.cubewhy.lunarcn.event.events.TickEvent;
 import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
 import org.cubewhy.lunarcn.gui.SplashProgress;
@@ -175,7 +176,7 @@ abstract public class MixinMinecraft {
                 this.mcSoundHandler.resumeSounds();
                 this.setIngameFocus();
             }
-
         }
+        new ScreenChangeEvent(guiScreenIn).callEvent();
     }
 }

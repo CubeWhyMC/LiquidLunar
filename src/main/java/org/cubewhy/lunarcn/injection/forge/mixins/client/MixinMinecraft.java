@@ -16,6 +16,7 @@ import net.minecraftforge.common.MinecraftForge;
 import org.cubewhy.lunarcn.Client;
 import org.cubewhy.lunarcn.event.events.ScreenChangeEvent;
 import org.cubewhy.lunarcn.event.events.TickEvent;
+import org.cubewhy.lunarcn.event.events.WorldEvent;
 import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
 import org.cubewhy.lunarcn.gui.SplashProgress;
 import org.cubewhy.lunarcn.utils.FileUtils;
@@ -178,5 +179,10 @@ abstract public class MixinMinecraft {
             }
         }
         new ScreenChangeEvent(guiScreenIn).callEvent();
+    }
+
+    @Inject(method = "loadWorld(Lnet/minecraft/client/multiplayer/WorldClient;Ljava/lang/String;)V", at = @At("HEAD"))
+    public void loadWorld(WorldClient worldClientIn, String loadingMessage, CallbackInfo ci) {
+        new WorldEvent(worldClientIn).callEvent(); // call worldEvent
     }
 }

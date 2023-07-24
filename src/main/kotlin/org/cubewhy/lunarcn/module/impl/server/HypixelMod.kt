@@ -5,6 +5,7 @@ import org.cubewhy.lunarcn.event.EventTarget
 import org.cubewhy.lunarcn.event.events.JoinServerEvent
 import org.cubewhy.lunarcn.event.events.PacketEvent
 import org.cubewhy.lunarcn.event.events.TickEvent
+import org.cubewhy.lunarcn.event.events.WorldEvent
 import org.cubewhy.lunarcn.module.Module
 import org.cubewhy.lunarcn.module.ModuleCategory
 import org.cubewhy.lunarcn.module.ModuleInfo
@@ -59,5 +60,10 @@ class HypixelMod : Module() {
             mc.thePlayer.sendChatMessage("/tip all") // do /tip all
             timer.reset() // reset the timer
         }
+    }
+
+    @EventTarget
+    fun onWorld(event: WorldEvent) {
+        // TODO call /locraw to get current loc
     }
 }

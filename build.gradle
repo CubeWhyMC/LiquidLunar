@@ -9,7 +9,7 @@ plugins {
 }
 
 group = 'org.cubewhy.lunarcn'
-version = '1.4-build6-pre1-SNAPSHOT'
+version = '1.5-build6-pre1-SNAPSHOT'
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 println("Give us stars -> https://github.com/CubeWhy/LiquidLunar")

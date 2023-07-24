@@ -63,7 +63,7 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2SW0gwDLBQZV8nXGgOPPQQyKGZS" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -112,7 +112,7 @@
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Start Client">
+  <component name="RunManager" selected="Gradle.LiquidLunar [build]">
     <configuration name="LiquidLunar [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -135,9 +135,32 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
+    <configuration name="LiquidLunar [setupDecompWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="setupDecompWorkspace" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.LiquidLunar [build]" />
+        <item itemvalue="Gradle.LiquidLunar [setupDecompWorkspace]" />
       </list>
     </recent_temporary>
   </component>
@@ -165,6 +188,8 @@
       <workItem from="1690085416189" duration="5645000" />
       <workItem from="1690104750093" duration="497000" />
       <workItem from="1690105629138" duration="31000" />
+      <workItem from="1690174412118" duration="745000" />
+      <workItem from="1690175197265" duration="322000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />

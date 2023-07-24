@@ -18,8 +18,6 @@ compileJava.options.encoding = "UTF-8"
 
 configurations {
     include
-//    compile
-//    implementation.extendsFrom(compile)
     implementation.extendsFrom(include)
 }
 
@@ -49,7 +47,7 @@ dependencies {
     annotationProcessor("org.spongepowered:mixin:0.7.11-SNAPSHOT")
 
     // agent dep
-    include "org.ow2.asm:asm-all:5.2"
+//    include "org.ow2.asm:asm-all:5.2"
 //    include 'com.google.guava:guava:31.1-jre'
 
     include "org.jetbrains.kotlin:kotlin-stdlib"
@@ -99,7 +97,6 @@ jar {
             "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
             "TweakOrder": "0",
             "FMLAT": "lunarcn_at.cfg",
-//            "Premain-Class": "org.cubewhy.lunarcn.injection.agent.AgentLoader"
     )
 }
 

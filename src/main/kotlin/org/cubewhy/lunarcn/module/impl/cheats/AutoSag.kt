@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.modules.cheats
+package org.cubewhy.lunarcn.module.impl.cheats
 
 import net.minecraft.item.ItemSword
 import org.cubewhy.lunarcn.event.EventTarget

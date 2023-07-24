@@ -3,7 +3,7 @@ package org.cubewhy.lunarcn.injection.forge.mixins.client;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.ItemRenderer;
 import org.cubewhy.lunarcn.module.ModuleManager;
-import org.cubewhy.lunarcn.module.modules.render.OverlaySettings;
+import org.cubewhy.lunarcn.module.impl.render.OverlaySettings;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;

@@ -4,7 +4,7 @@ import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
 import org.cubewhy.lunarcn.event.events.Render2DEvent;
 import org.cubewhy.lunarcn.module.ModuleManager;
-import org.cubewhy.lunarcn.module.modules.render.OverlaySettings;
+import org.cubewhy.lunarcn.module.impl.render.OverlaySettings;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

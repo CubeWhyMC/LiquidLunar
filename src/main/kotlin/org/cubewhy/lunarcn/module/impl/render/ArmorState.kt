@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.modules.render
+package org.cubewhy.lunarcn.module.impl.render
 
 import net.minecraft.client.renderer.RenderHelper
 import net.minecraft.init.Items

@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.modules.render
+package org.cubewhy.lunarcn.module.impl.render
 
 import org.cubewhy.lunarcn.module.Module
 import org.cubewhy.lunarcn.module.ModuleCategory

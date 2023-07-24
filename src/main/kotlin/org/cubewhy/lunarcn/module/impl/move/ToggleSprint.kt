@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.modules.move
+package org.cubewhy.lunarcn.module.impl.move
 
 import net.minecraft.util.ResourceLocation
 import org.cubewhy.lunarcn.event.EventTarget

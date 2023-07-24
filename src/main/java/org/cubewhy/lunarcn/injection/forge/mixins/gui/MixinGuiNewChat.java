@@ -1,20 +1,16 @@
 package org.cubewhy.lunarcn.injection.forge.mixins.gui;
 
 
-import lombok.var;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ChatLine;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiNewChat;
 import net.minecraft.client.gui.GuiUtilRenderComponents;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.util.MathHelper;
 import org.cubewhy.lunarcn.event.events.ChatEvent;
 import org.cubewhy.lunarcn.module.ModuleManager;
-import org.cubewhy.lunarcn.module.modules.dev.ChatConfig;
-import org.cubewhy.lunarcn.utils.RenderUtils;
+import org.cubewhy.lunarcn.module.impl.dev.ChatConfig;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;

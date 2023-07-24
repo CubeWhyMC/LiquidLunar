@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.modules.server
+package org.cubewhy.lunarcn.module.impl.server
 
 import org.cubewhy.lunarcn.event.EventTarget
 import org.cubewhy.lunarcn.event.events.JoinServerEvent

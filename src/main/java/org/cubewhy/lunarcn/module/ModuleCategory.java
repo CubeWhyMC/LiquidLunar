@@ -6,5 +6,6 @@ public enum ModuleCategory {
     RENDER,
     CLIENT,
     DEV,
-    SERVER
+    PLAYER,
+    SERVER;
 }

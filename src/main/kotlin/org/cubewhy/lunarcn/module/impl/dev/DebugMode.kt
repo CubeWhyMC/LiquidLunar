@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.modules.dev
+package org.cubewhy.lunarcn.module.impl.dev
 
 import net.minecraft.util.ResourceLocation
 import org.cubewhy.lunarcn.Client

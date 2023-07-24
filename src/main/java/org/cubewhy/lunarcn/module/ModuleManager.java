@@ -27,7 +27,7 @@ public class ModuleManager {
     public void registerModules() {
         this.register(new ClickGuiModule());
 
-        ClassUtils.INSTANCE.resolvePackage(this.getClass().getPackage().getName() + ".modules", Module.class)
+        ClassUtils.INSTANCE.resolvePackage(this.getClass().getPackage().getName() + ".impl", Module.class)
                 .forEach(this::register);
     }
 

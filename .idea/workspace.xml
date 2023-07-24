@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="agent not compiled with forge, so remove it">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/events/ScreenChangeEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinItemRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/gui/clickgui/ClickGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/agent/Agent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/agent/AgentLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiConnecting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/gui/MixinGuiConnecting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/RenderUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/DoubleValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/DoubleValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/injection/agent/LiquidLunarMixinService.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/injection/agent/LiquidLunarMixinTransformer.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/injection/agent/SafeTransformer.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/OverlaySettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/modules/render/OverlaySettings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/services/org.spongepowered.asm.service.IMixinService" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,29 +71,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TODO_SCOPE": "所有位置",
-    "WebServerToolWindowFactoryState": "false",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/shadiao/LiquidLunar/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "项目",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;所有位置&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/shadiao/LiquidLunar/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\shadiao\LiquidLunar\src\main\resources" />
@@ -180,6 +163,8 @@
       <workItem from="1689908282586" duration="39000" />
       <workItem from="1689990679362" duration="9169000" />
       <workItem from="1690085416189" duration="5645000" />
+      <workItem from="1690104750093" duration="497000" />
+      <workItem from="1690105629138" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -277,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689999189093</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="agent not compiled with forge, so remove it">
+      <option name="closed" value="true" />
+      <created>1690105054211</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1690105054211</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +301,8 @@
     <MESSAGE value="agent loader" />
     <MESSAGE value="fix agent, but all mixins are skipped" />
     <MESSAGE value="fix agent, but all mixins was skipped" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix agent, but all mixins was skipped" />
+    <MESSAGE value="agent not compiled with forge, so remove it" />
+    <option name="LAST_COMMIT_MESSAGE" value="agent not compiled with forge, so remove it" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

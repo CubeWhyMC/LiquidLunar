@@ -182,8 +182,8 @@ public class ClickGui extends GuiScreen {
         int MY = lastMouseY - panelY;
 
         if (RenderUtils.isHovering(lastMouseX, lastMouseY, panelX, panelY, panelX + panelWidth, panelY + 20)) {
-            this.panelX = mouseY;
-            this.panelY = mouseX;
+            this.panelX = mouseX;
+            this.panelY = mouseY;
             // TODO 修复窗口位置
         }
         super.mouseClickMove(mouseX, mouseY, clickedMouseButton, timeSinceLastClick);

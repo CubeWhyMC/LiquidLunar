@@ -121,8 +121,6 @@ public class Client {
         } else {
             currentAccount.switchAccount();
         }
-
-        // HttpRequest.get("https://api.lunarcn.top/liquid/start.php?uuid=" + mc.getSession().getPlayerID()).userAgent("liquidlunar").ok();
     }
 
     public void onStop() {

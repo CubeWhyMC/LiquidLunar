@@ -58,16 +58,17 @@ public class MicrosoftAccountUtils {
      * 自动刷新账户
      */
     public void autoRefresh() {
+        logger.info("Start refreshing accounts...");
         IAccount[] accounts = AccountConfigFile.getInstance().getAccounts();
-        for (int i = 0; i < accounts.length; i++) {
-            IAccount account = accounts[i];
+        for (IAccount account : accounts) {
             if (account instanceof MicrosoftAccount) {
                 Date lastFresh = ((MicrosoftAccount) account).getLastFresh();
-                if (lastFresh.after(new Date(lastFresh.getTime() + 86400))) {
+                if (lastFresh.before(new Date(lastFresh.getTime() + 86400000))) {
                     try {
                         ((MicrosoftAccount) account).refresh();
+                        logger.info("Refreshing " + account.getUserName());
                     } catch (IOException e) {
-                        logger.error("尝试刷新账户 " + account.getUserName() + " 时发送错误");
+                        logger.error("Failed to refresh " + account.getUserName());
                         e.printStackTrace();
                     }
                 }

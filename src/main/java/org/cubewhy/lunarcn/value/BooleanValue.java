@@ -2,21 +2,12 @@ package org.cubewhy.lunarcn.value;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
+import org.jetbrains.annotations.NotNull;
 
 public class BooleanValue extends Value<Boolean> {
 
 	public BooleanValue(String name, boolean value) {
 		super(name, value);
-	}
-
-	@Override
-	public String getName() {
-		return name;
-	}
-
-	@Override
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	@Override
@@ -30,12 +21,12 @@ public class BooleanValue extends Value<Boolean> {
 	}
 
 	@Override
-	public JsonElement toJson() {
-		return new JsonPrimitive((boolean) value);
+	public @NotNull JsonElement toJson() {
+		return new JsonPrimitive(value);
 	}
 
 	@Override
-	public void fromJson(JsonElement jsonElement) {
+	public void fromJson(@NotNull JsonElement jsonElement) {
 		value = jsonElement.getAsBoolean();
 	}
 }

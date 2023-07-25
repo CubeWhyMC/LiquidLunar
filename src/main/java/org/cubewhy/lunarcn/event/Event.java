@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Event {
     /**
      * Call a event
+     *
      * @return Event
      */
     public Event callEvent() {

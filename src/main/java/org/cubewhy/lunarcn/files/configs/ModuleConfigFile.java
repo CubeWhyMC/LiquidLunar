@@ -39,7 +39,7 @@ public class ModuleConfigFile {
 
         config.add(name, newModule);
 
-		save();
+        save();
     }
 
     public void initModule(@NotNull Module module) {
@@ -47,13 +47,17 @@ public class ModuleConfigFile {
         List<Value<?>> moduleVarList = ClassUtils.INSTANCE.getValues(module.getClass(), module);
 
         if (!config.has(name)) {
-			setModuleConfig(module);
+            setModuleConfig(module);
         } else {
 
             module.setState(config.getAsJsonObject(name).get("state").getAsBoolean());
 
             for (Value value : moduleVarList) {
-                value.fromJson(config.getAsJsonObject(name).get(value.getName()));
+                if (config.getAsJsonObject(name).has(value.getName())) {
+                    value.fromJson(config.getAsJsonObject(name).get(value.getName()));
+                } else {
+                    config.getAsJsonObject(name).add(value.getName(), value.toJson()); // set the value
+                }
             }
         }
 

@@ -20,6 +20,7 @@ import org.cubewhy.lunarcn.event.events.WorldEvent;
 import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
 import org.cubewhy.lunarcn.gui.SplashProgress;
 import org.cubewhy.lunarcn.utils.FileUtils;
+import org.cubewhy.lunarcn.utils.GitUtils;
 import org.cubewhy.lunarcn.utils.ImageUtils;
 import org.lwjgl.opengl.Display;
 import org.spongepowered.asm.mixin.Final;
@@ -137,7 +138,11 @@ abstract public class MixinMinecraft {
     @Inject(method = "displayCrashReport", at = @At(value = "INVOKE", target = "Lnet/minecraft/crash/CrashReport;getFile()Ljava/io/File;"))
     public void displayCrashReport(CrashReport crashReportIn, CallbackInfo ci) {
         String message = crashReportIn.getCauseStackTraceOrString();
-        JOptionPane.showMessageDialog(null, "Game crashed!\n如果你看到这个窗口就说明游戏崩溃了\n给dev提供log可能会帮助你解决问题\n" + message, "oops, game crashed!", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Game crashed!\n" +
+                        "Please create a issue: \n" + GitUtils.gitInfo.get("git.remote.origin.url").toString().split("\\.")[0] + "/issues/new\n" +
+                        "Please make a screenshot of this screen and send it to developers\n"
+                        + message,
+                "oops, game crashed!", JOptionPane.ERROR_MESSAGE);
     }
 
     /**

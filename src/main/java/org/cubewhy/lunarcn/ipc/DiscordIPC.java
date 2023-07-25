@@ -26,7 +26,6 @@ public class DiscordIPC {
                             .setDetails("Minecraft 1.8.9")
                             .setStartTimestamp(OffsetDateTime.now())
                             .setLargeImage("large", "LiqLC")
-//                            .setSmallImage("ptb-small", "Discord PTB")
                             .setSpectateSecret("look");
                     client.sendRichPresence(builder.build());
                 }

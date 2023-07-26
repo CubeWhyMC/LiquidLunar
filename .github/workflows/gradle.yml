@@ -22,7 +22,7 @@ jobs:
         java-version: '8'
         distribution: 'zulu'
     - name: Build with Gradle
-      run: chmod +x ./gradlew && ./gradlew setupCiWorkspace && ./gradlew build
+      run: chmod +x ./gradlew && ./gradlew setupCiWorkspace && ./gradlew -Dfile.encoding=UTF-8 build
     - uses: actions/upload-artifact@v3
       with:
           name: LiquidLunarForge

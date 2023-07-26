@@ -139,7 +139,7 @@ abstract public class MixinMinecraft {
     public void displayCrashReport(CrashReport crashReportIn, CallbackInfo ci) {
         String message = crashReportIn.getCauseStackTraceOrString();
         JOptionPane.showMessageDialog(null, "Game crashed!\n" +
-                        "Please create a issue: \n" + GitUtils.gitInfo.get("git.remote.origin.url").toString().split("\\.")[0] + "/issues/new\n" +
+                        "Please create a issue: \n" + GitUtils.gitInfo.get("git.remote.origin.url").toString().split("\\.git")[0] + "/issues/new\n" +
                         "Please make a screenshot of this screen and send it to developers\n"
                         + message,
                 "oops, game crashed!", JOptionPane.ERROR_MESSAGE);

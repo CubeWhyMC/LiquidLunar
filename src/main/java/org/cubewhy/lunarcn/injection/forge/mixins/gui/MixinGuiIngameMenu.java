@@ -1,9 +1,6 @@
 package org.cubewhy.lunarcn.injection.forge.mixins.gui;
 
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.GuiIngameMenu;
-import net.minecraft.client.gui.GuiMultiplayer;
-import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,4 +20,18 @@ public class MixinGuiIngameMenu extends GuiScreen {
             mc.displayGuiScreen(new GuiMultiplayer(mc.currentScreen)); // display gui multiplayer
         }
     }
+
+//    @Inject(method = "actionPerformed", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;isIntegratedServerRunning()Z"), cancellable = true)
+//    public void confirmDisconnect(GuiButton button, CallbackInfo ci) {
+//        final boolean[] state = new boolean[1];
+//        GuiYesNo screen = new GuiYesNo((b, i) -> state[0] = b, "Back to mainMenu?", "", 0);
+//
+//        mc.displayGuiScreen(screen);
+//
+//
+//        if (!state[0]) {
+//            mc.displayGuiScreen(null);
+//            ci.cancel();
+//        }
+//    }
 }

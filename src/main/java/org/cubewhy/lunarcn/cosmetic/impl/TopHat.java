@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.cosmetic.cosmetics;
+package org.cubewhy.lunarcn.cosmetic.impl;
 
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.model.ModelRenderer;

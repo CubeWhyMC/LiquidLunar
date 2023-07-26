@@ -43,7 +43,7 @@ public class LoginScreen extends GuiScreen {
                 mc.displayGuiScreen(null);
                 break;
             case 1:
-                String userName = JOptionPane.showInputDialog("UserName"); // TODO 暂时使用JOptionPane
+                String userName = JOptionPane.showInputDialog("UserName");
                 if (userName.isEmpty()) {
                     return;
                 }

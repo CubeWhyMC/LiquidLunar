@@ -98,8 +98,6 @@ public class UnicodeFontRenderer {
     }
 
 
-    /*-------------------------------------------------------------------------------------------------------------------*/
-
     public static UnicodeFontRenderer getFontOnPC(String name, int size) {
         return getFontOnPC(name, size, Font.PLAIN);
     }
@@ -133,7 +131,7 @@ public class UnicodeFontRenderer {
     }
 
     private Font getFontByName(String name) throws IOException, FontFormatException {
-        return getFontFromInput("/assets/minecraft/clientname/fonts/" + name + ".ttf");
+        return getFontFromInput("/assets/minecraft/lunarcn/fonts/" + name + ".ttf");
     }
 
     private Font getFontFromInput(String path) throws IOException, FontFormatException {

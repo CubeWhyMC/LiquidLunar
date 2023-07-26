@@ -63,7 +63,7 @@ public class MicrosoftAccountUtils {
         for (IAccount account : accounts) {
             if (account instanceof MicrosoftAccount) {
                 Date lastFresh = ((MicrosoftAccount) account).getLastFresh();
-                if (lastFresh.before(new Date(lastFresh.getTime() + 86400000))) {
+                if (new Date().after(new Date(lastFresh.getTime() + 86400000))) {
                     try {
                         ((MicrosoftAccount) account).refresh();
                         logger.info("Refreshing " + account.getUserName());

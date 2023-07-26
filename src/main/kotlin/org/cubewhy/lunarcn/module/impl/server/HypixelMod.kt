@@ -59,21 +59,27 @@ class HypixelMod : Module() {
         if (!currentServerIsHypixel) {
             state = false // TODO Add tempDisable in ModuleInfo and remove this
         } else {
+            println("hypixel!")
             this.timer.reset() // reset the timer
         }
     }
 
     @EventTarget
     fun onPacket(event: PacketEvent) {
+        if (!currentServerIsHypixel) {
+            return
+        }
         // AutoGG
         val packet = event.packet
-        if (packet is S02PacketChat && autoGG.value) {
-            val clickEvent = packet.chatComponent.chatStyle.chatClickEvent.value
-            if (clickEvent.startsWith("/play", true)) {
-                // Next game action
-                mc.thePlayer.sendChatMessage("/ac ${goodGameMessage.value}") // send the message
-                if (autoNext.value) {
-                    mc.thePlayer.sendChatMessage(clickEvent) // send the command for nextGame
+        if (event.type == PacketEvent.Type.RECEIVE && packet is S02PacketChat && autoGG.value) {
+            if (packet.chatComponent.chatStyle.chatClickEvent != null) {
+                val clickEvent = packet.chatComponent.chatStyle.chatClickEvent.value
+                if (clickEvent.startsWith("/play", true)) {
+                    // Next game action
+                    mc.thePlayer.sendChatMessage("/ac ${goodGameMessage.value}") // send the message
+                    if (autoNext.value) {
+                        mc.thePlayer.sendChatMessage(clickEvent) // send the command for nextGame
+                    }
                 }
             }
         }
@@ -81,7 +87,7 @@ class HypixelMod : Module() {
 
     @EventTarget
     fun onTick(event: TickEvent) {
-        if (autoTip.value && timer.hasTimePassed(600000)) {
+        if (autoTip.value && timer.hasTimePassed(600000) && currentServerIsHypixel) {
             mc.thePlayer.sendChatMessage("/tip all") // do /tip all
             timer.reset() // reset the timer
         }
@@ -90,6 +96,9 @@ class HypixelMod : Module() {
     @EventTarget
     fun onWorld(event: WorldEvent) {
         // TODO call /locraw to get current loc
+        if (!(currentServerIsHypixel && mc.thePlayer != null)) {
+            return
+        }
         mc.thePlayer.sendChatMessage("/locraw") // send the message
         // get json
         val messages = mc.ingameGUI.chatGUI.sentMessages

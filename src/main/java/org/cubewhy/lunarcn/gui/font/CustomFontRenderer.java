@@ -11,10 +11,8 @@ import org.newdawn.slick.font.effects.ColorEffect;
 
 import java.awt.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 public class CustomFontRenderer {
@@ -58,16 +56,16 @@ public class CustomFontRenderer {
 
     private Font getFontByName(final String name) throws IOException, FontFormatException {
         if (name.equalsIgnoreCase("title")) {
-            return this.getFontFromInput("/assets/minecraft/lunar/font/raleway-extrabold.ttf");
+            return this.getFontFromInput("/assets/minecraft/lunarcn/fonts/raleway-extrabold.ttf");
         }
         if (name.equalsIgnoreCase("text_bold")) {
-            return this.getFontFromInput("/assets/minecraft/lunar/font/roboto-black.ttf");
+            return this.getFontFromInput("/assets/minecraft/lunarcn/fonts/roboto-black.ttf");
         }
-        return this.getFontFromInput("/assets/minecraft/lunar/font/roboto-regular.ttf");
+        return this.getFontFromInput("/assets/minecraft/lunarcn/fonts/roboto-regular.ttf");
     }
 
     private Font getFontFromInput(final String path) throws IOException, FontFormatException {
-        return Font.createFont(0, CustomFontRenderer.class.getResourceAsStream(path));
+        return Font.createFont(0, Objects.requireNonNull(CustomFontRenderer.class.getResourceAsStream(path)));
     }
 
     public void drawStringScaled(final String text, final int givenX, final int givenY, final int color, final double givenScale) {

@@ -27,15 +27,15 @@ import java.net.Proxy;
 
 @Mixin(NetworkManager.class)
 public class MixinNetworkManager {
-    @Inject(method = "channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V", at = @At("HEAD"))
+    @Inject(method = "channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V", at = @At("RETURN"))
     public void channelRead0(ChannelHandlerContext channelHandlerContext, Packet packet, CallbackInfo ci) {
-        if (PacketUtils.INSTANCE.getPacketType(packet) == PacketUtils.PacketType.SERVERSIDE && channelHandlerContext != null && packet != null) {
+        if (PacketUtils.INSTANCE.getPacketType(packet) == PacketUtils.PacketType.SERVERSIDE && channelHandlerContext != null) {
             new PacketEvent(packet, PacketEvent.Type.RECEIVE).callEvent();
         }
 
     }
 
-    @Inject(method = "sendPacket(Lnet/minecraft/network/Packet;)V", at = @At("HEAD"))
+    @Inject(method = "sendPacket(Lnet/minecraft/network/Packet;)V", at = @At("RETURN"))
     public void sendPacket(Packet packet, CallbackInfo ci) {
         if (PacketUtils.INSTANCE.getPacketType(packet) != PacketUtils.PacketType.CLIENTSIDE) {
             return;

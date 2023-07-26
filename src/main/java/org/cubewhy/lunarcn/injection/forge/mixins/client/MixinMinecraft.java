@@ -186,7 +186,7 @@ abstract public class MixinMinecraft {
         new ScreenChangeEvent(guiScreenIn).callEvent();
     }
 
-    @Inject(method = "loadWorld(Lnet/minecraft/client/multiplayer/WorldClient;Ljava/lang/String;)V", at = @At("HEAD"))
+    @Inject(method = "loadWorld(Lnet/minecraft/client/multiplayer/WorldClient;Ljava/lang/String;)V", at = @At("RETURN"))
     public void loadWorld(WorldClient worldClientIn, String loadingMessage, CallbackInfo ci) {
         new WorldEvent(worldClientIn).callEvent(); // call worldEvent
     }

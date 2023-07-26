@@ -19,7 +19,7 @@ public class CosmeticsManager {
 
     public void loadCosmetics(RenderPlayer player) {
         this.player = player;
-        ClassUtils.INSTANCE.resolvePackage(this.getClass().getPackage().getName() + ".cosmetics", CosmeticsBase.class)
+        ClassUtils.INSTANCE.resolvePackage(this.getClass().getPackage().getName() + ".impl", CosmeticsBase.class)
                 .forEach(this::register);
     }
 

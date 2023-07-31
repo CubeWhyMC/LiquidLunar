@@ -19,7 +19,6 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 
 public class ClickGui extends GuiScreen {
@@ -32,9 +31,8 @@ public class ClickGui extends GuiScreen {
     private int panelY;
     private int panelWidth;
     private int panelHeight;
-
-    private int lastMouseX;
-    private int lastMouseY;
+    private int movedX;
+    private int movedY;
 
     @Override
     public void initGui() {
@@ -42,8 +40,8 @@ public class ClickGui extends GuiScreen {
 
         this.panelWidth = this.width / 2 + 100;
         this.panelHeight = this.height / 2 + 100;
-        this.panelX = this.width / 2;
-        this.panelY = this.height / 2;
+        this.panelX = this.width / 2 - panelWidth / 2;
+        this.panelY = this.height / 2 - panelHeight / 2;
 
         scroller = new VerticalScroller(this.panelX, this.panelY, 10, this.panelHeight, 0);
         timer.reset();
@@ -67,8 +65,7 @@ public class ClickGui extends GuiScreen {
         super.drawScreen(mouseX, mouseY, partialTicks);
 
         // Module doc
-        for (int i = 0; i < this.buttonList.size(); i++) {
-            GuiButton button = this.buttonList.get(i);
+        for (GuiButton button : this.buttonList) {
             if (button instanceof SwitchButton) {
                 SwitchButton button1 = (SwitchButton) button;
                 if (button1.isMouseOver()) {
@@ -169,22 +166,22 @@ public class ClickGui extends GuiScreen {
 
     @Override
     protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
-        if (mouseButton == 0) {
-            this.lastMouseX = mouseX;
-            this.lastMouseY = mouseY;
-        }
         super.mouseClicked(mouseX, mouseY, mouseButton);
     }
 
     @Override
     protected void mouseClickMove(int mouseX, int mouseY, int clickedMouseButton, long timeSinceLastClick) {
-        int MX = lastMouseX - panelX;
-        int MY = lastMouseY - panelY;
-
-        if (clickedMouseButton == 0 && RenderUtils.isHovering(mouseX, mouseY, panelX, panelY, panelX + panelWidth, panelY + 20)) {
-            this.panelX = mouseX - MX;
-            this.panelY = mouseY - MY;
-            // TODO 修复窗口位置
+        if (clickedMouseButton == 0 && RenderUtils.isHovering(mouseX, mouseY, panelX, panelY, panelX + panelWidth, panelY +80)) {
+            if (movedX == 0 && movedY == 0) {
+                movedX = mouseX - panelX;
+                movedY = mouseY - panelY;
+            } else {
+                panelX = mouseX - movedX;
+                panelY = mouseY - movedY;
+            }
+        } else if (movedX != 0 || movedY != 0) {
+            movedX = 0;
+            movedY = 0;
         }
         super.mouseClickMove(mouseX, mouseY, clickedMouseButton, timeSinceLastClick);
     }

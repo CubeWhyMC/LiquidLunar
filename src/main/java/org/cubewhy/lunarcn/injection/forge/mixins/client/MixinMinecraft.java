@@ -19,6 +19,7 @@ import org.cubewhy.lunarcn.event.events.TickEvent;
 import org.cubewhy.lunarcn.event.events.WorldEvent;
 import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
 import org.cubewhy.lunarcn.gui.SplashProgress;
+import org.cubewhy.lunarcn.utils.ClientUtils;
 import org.cubewhy.lunarcn.utils.FileUtils;
 import org.cubewhy.lunarcn.utils.GitUtils;
 import org.cubewhy.lunarcn.utils.ImageUtils;
@@ -37,6 +38,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 
 @Mixin(Minecraft.class)
 abstract public class MixinMinecraft {
@@ -131,7 +134,7 @@ abstract public class MixinMinecraft {
                     ImageUtils.readImageToBuffer(image)
             });
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.catching(e);
         }
     }
 

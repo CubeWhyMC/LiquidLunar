@@ -2,9 +2,11 @@ package org.cubewhy.lunarcn.injection.transformers;
 
 import net.minecraft.launchwrapper.IClassTransformer;
 import org.cubewhy.lunarcn.utils.ClassUtils;
+import org.cubewhy.lunarcn.utils.ClientUtils;
 import org.cubewhy.lunarcn.utils.NodeUtils;
 import org.objectweb.asm.tree.*;
 
+import static org.cubewhy.lunarcn.utils.ClientUtils.*;
 import static org.objectweb.asm.Opcodes.*;
 
 public class ForgeNetworkTransformer implements IClassTransformer {
@@ -42,7 +44,7 @@ public class ForgeNetworkTransformer implements IClassTransformer {
 
                 return ClassUtils.INSTANCE.toBytes(classNode);
             } catch (final Throwable throwable) {
-                throwable.printStackTrace();
+                logger.catching(throwable);
             }
         }
 
@@ -51,7 +53,7 @@ public class ForgeNetworkTransformer implements IClassTransformer {
                 final ClassNode classNode = ClassUtils.INSTANCE.toClassNode(basicClass);
 
                 classNode.methods.stream().filter(method -> {
-                    if (method instanceof MethodNode) {
+                    if (method != null) {
                         return ((MethodNode) method).name.equals("channelRead0");
                     }
                     return false;
@@ -72,7 +74,7 @@ public class ForgeNetworkTransformer implements IClassTransformer {
 
                 return ClassUtils.INSTANCE.toBytes(classNode);
             } catch (final Throwable throwable) {
-                throwable.printStackTrace();
+                logger.catching(throwable);
             }
         }
 

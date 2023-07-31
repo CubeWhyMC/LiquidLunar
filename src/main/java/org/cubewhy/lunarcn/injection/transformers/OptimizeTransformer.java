@@ -1,6 +1,7 @@
 package org.cubewhy.lunarcn.injection.transformers;
 
 import net.minecraft.launchwrapper.IClassTransformer;
+import org.cubewhy.lunarcn.utils.ClientUtils;
 import org.cubewhy.lunarcn.utils.NodeUtils;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.AbstractInsnNode;
@@ -10,6 +11,8 @@ import org.objectweb.asm.tree.MethodNode;
 
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import static org.cubewhy.lunarcn.utils.ClientUtils.*;
 
 public class OptimizeTransformer implements IClassTransformer {
 
@@ -64,7 +67,7 @@ public class OptimizeTransformer implements IClassTransformer {
                     return NodeUtils.INSTANCE.toBytes(classNode);
                 }
             } catch (final Throwable throwable) {
-                throwable.printStackTrace();
+                logger.catching(throwable);
             }
         }
 

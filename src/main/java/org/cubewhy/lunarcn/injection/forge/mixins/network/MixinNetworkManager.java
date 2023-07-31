@@ -15,6 +15,7 @@ import net.minecraft.util.MessageSerializer;
 import net.minecraft.util.MessageSerializer2;
 import org.cubewhy.lunarcn.event.events.PacketEvent;
 import org.cubewhy.lunarcn.proxy.ProxyManager;
+import org.cubewhy.lunarcn.utils.ClientUtils;
 import org.cubewhy.lunarcn.utils.PacketUtils;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,6 +25,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.net.InetAddress;
 import java.net.Proxy;
+
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 
 @Mixin(NetworkManager.class)
 public class MixinNetworkManager {
@@ -59,8 +62,8 @@ public class MixinNetworkManager {
                 protected void initChannel(Channel channel) {
                     try {
                         channel.config().setOption(ChannelOption.TCP_NODELAY, true);
-                    } catch (ChannelException var3) {
-                        var3.printStackTrace();
+                    } catch (ChannelException e) {
+                        logger.catching(e);
                     }
                     channel.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("splitter", new MessageDeserializer2()).addLast("decoder", new MessageDeserializer(EnumPacketDirection.CLIENTBOUND)).addLast("prepender", new MessageSerializer2()).addLast("encoder", new MessageSerializer(EnumPacketDirection.SERVERBOUND)).addLast("packet_handler", networkmanager);
                 }

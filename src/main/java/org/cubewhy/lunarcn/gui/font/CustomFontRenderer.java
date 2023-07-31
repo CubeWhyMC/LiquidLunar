@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.StringUtils;
+import org.cubewhy.lunarcn.utils.ClientUtils;
 import org.lwjgl.opengl.GL11;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.UnicodeFont;
@@ -14,6 +15,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.List;
 import java.util.regex.Pattern;
+
+import static org.cubewhy.lunarcn.utils.ClientUtils.*;
 
 public class CustomFontRenderer {
 
@@ -41,7 +44,7 @@ public class CustomFontRenderer {
             this.unicodeFont.loadGlyphs();
         }
         catch (FontFormatException | IOException | SlickException e) {
-            e.printStackTrace();
+            logger.catching(e);
         }
         this.antiAliasingFactor = resolution.getScaleFactor();
     }
@@ -102,7 +105,7 @@ public class CustomFontRenderer {
             }
         }
         catch (FontFormatException | IOException | SlickException e) {
-            e.printStackTrace();
+            logger.catching(e);
         }
         this.antiAliasingFactor = resolution.getScaleFactor();
         GL11.glPushMatrix();

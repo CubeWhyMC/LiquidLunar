@@ -31,7 +31,7 @@ public class CosmeticsManager {
         } catch (IllegalAccessException e) {
             register((CosmeticsBase) ClassUtils.INSTANCE.getObjectInstance(clazz));
         } catch (Throwable e) {
-            e.printStackTrace();
+            logger.catching(e);
             logger.error("Can't load cosmetic " + clazz.getName());
         }
     }

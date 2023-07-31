@@ -1,6 +1,10 @@
 package org.cubewhy.lunarcn.event;
 
+import org.cubewhy.lunarcn.utils.ClientUtils;
+
 import java.util.ArrayList;
+
+import static org.cubewhy.lunarcn.utils.ClientUtils.*;
 
 public class Event {
     /**
@@ -17,7 +21,7 @@ public class Event {
                 try {
                     data.target.invoke(data.source, this);
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    logger.catching(e);
                 }
             }
         }

@@ -31,7 +31,7 @@ repositories {
 dependencies {
     include fileTree(dir: "libs", includes: ['*.jar'])
 
-    include 'org.newdawn.slick:core:1.0.0@core'
+//    include 'org.newdawn.slick:core:1.0.0@core'
 
     // Don't update mixin
     include("org.spongepowered:mixin:0.7.11-SNAPSHOT") {

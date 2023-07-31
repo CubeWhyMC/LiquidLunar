@@ -69,7 +69,7 @@ public class MicrosoftAccountUtils {
                         logger.info("Refreshing " + account.getUserName());
                     } catch (IOException e) {
                         logger.error("Failed to refresh " + account.getUserName());
-                        e.printStackTrace();
+                        logger.catching(e);
                     }
                 }
             }
@@ -245,7 +245,7 @@ public class MicrosoftAccountUtils {
             Desktop desktop = Desktop.getDesktop();
             desktop.browse(uri);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.catching(e);
         }
     }
 

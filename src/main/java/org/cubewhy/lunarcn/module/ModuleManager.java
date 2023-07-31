@@ -42,7 +42,7 @@ public class ModuleManager {
         } catch (IllegalAccessException e) {
             register((Module) ClassUtils.INSTANCE.getObjectInstance(moduleClass));
         } catch (Throwable e) {
-            e.printStackTrace();
+            logger.catching(e);
             logger.error("Can't load module " + moduleClass.getName());
         }
     }

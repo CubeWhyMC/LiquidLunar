@@ -78,7 +78,7 @@ public class LunarMainMenu extends GuiMainMenu {
         this.btnCosmetics = new ImageButton("COSMETICS", new ResourceLocation("lunarcn/lunar/cosmetics.png"), this.width / 2 - 15, yPos);
         this.btnMinecraftOptions = new ImageButton("MINECRAFT SETTINGS", new ResourceLocation("lunarcn/lunar/cog.png"), this.width / 2, yPos);
         this.btnLanguage = new ImageButton("LANGUAGE", new ResourceLocation("lunarcn/lunar/globe.png"), this.width / 2 + 15, yPos);
-        this.btnForgeModList = new ImageButton("FORGE MODS", new ResourceLocation("lunarcn/lunar/forge.png"), this.width / 2 + 30, yPos);
+        this.btnForgeModList = new ImageButton("FORGE MODS", new ResourceLocation("lunarcn/icons/forge.png"), this.width / 2 + 30, yPos);
 
         this.btnAddAccount = new ImageButton("LOGIN", new ResourceLocation("lunarcn/add-account.png"), this.altList.x + this.altList.width + 1, this.altList.y);
 

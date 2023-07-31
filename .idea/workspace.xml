@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix git url">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/slick.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/ModuleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/ModuleManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix resources" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +113,7 @@
       <command value="gradle cleanCache" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.LiquidLunar [setupDecompWorkspace]">
+  <component name="RunManager" selected="应用程序.Start Client">
     <configuration name="LiquidLunar [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -256,7 +250,7 @@
       <workItem from="1690363489308" duration="126000" />
       <workItem from="1690445624636" duration="14000" />
       <workItem from="1690718688303" duration="2213000" />
-      <workItem from="1690765686968" duration="556000" />
+      <workItem from="1690765686968" duration="2159000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -394,7 +388,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690360775796</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix resources">
+      <option name="closed" value="true" />
+      <created>1690767556888</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1690767556888</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix resources">
+      <option name="closed" value="true" />
+      <created>1690767808934</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1690767808934</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +440,9 @@
     <MESSAGE value="Fix module config File &amp; hypixelMod (half)" />
     <MESSAGE value="fix worldevent &amp; packetevent call" />
     <MESSAGE value="fix git url" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix git url" />
+    <MESSAGE value="fix resources path" />
+    <MESSAGE value="fix resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix resources" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

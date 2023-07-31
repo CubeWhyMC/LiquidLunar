@@ -9,7 +9,6 @@ public class UserUtils {
      */
     public static boolean isOffline() {
         String token = mc.getSession().getToken();
-        System.out.println(token);
         return token.length() >= 50;
     }
 }

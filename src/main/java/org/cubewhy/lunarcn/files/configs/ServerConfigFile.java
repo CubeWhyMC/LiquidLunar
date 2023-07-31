@@ -1,9 +1,11 @@
 package org.cubewhy.lunarcn.files.configs;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.cubewhy.lunarcn.Client;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,7 +14,7 @@ import java.util.List;
 public class ServerConfigFile {
     public static String configFilePath = Client.configDir + "/server.json";
     private static ServerConfigFile instance = null;
-    private static JsonObject config;
+    private JsonObject config;
 
     public static ServerConfigFile getInstance() {
         if (instance == null) {
@@ -21,20 +23,12 @@ public class ServerConfigFile {
         return instance;
     }
 
-    public static List<String> getServerAddressesList(ServerEnum serverType) {
-        if (!config.isJsonNull()) {
-            ArrayList<String> serverAddresses = new ArrayList<>();
-            // 添加别名
-            for (JsonElement serverAddress : config.get(serverType.toString()).getAsJsonArray()) {
-                serverAddresses.add(serverAddress.getAsString());
-            }
-            // 添加原本的IP
-            serverAddresses.add(serverType.ip);
-            return serverAddresses;
-        } else {
-            //TODO 初始化服务器列表
-            return new ArrayList<>();
+    public List<String> getServerAddressesList(@NotNull ServerEnum serverType) {
+        ArrayList<String> ipList = new ArrayList<>();
+        for (JsonElement element : config.get(serverType.toString()).getAsJsonArray()) {
+            ipList.add(element.getAsString());
         }
+        return ipList;
     }
 
     public void save() {
@@ -74,6 +68,19 @@ public class ServerConfigFile {
                     throw new RuntimeException(ex);
                 }
             }
+
+            this.initDefaultConfig();
+        }
+    }
+
+    /**
+     * Set the default config if the config haven't initiated
+     */
+    private void initDefaultConfig() {
+        for (ServerEnum value : ServerEnum.values()) {
+            if (!this.config.has(value.toString())) {
+                this.config.add(value.toString(), new JsonArray());
+            }
         }
     }
 
@@ -83,12 +90,12 @@ public class ServerConfigFile {
 
         public final String ip;
 
-        ServerEnum(String keyInJson) {
-            this.ip = keyInJson;
+        ServerEnum(String defaultIp) {
+            this.ip = defaultIp;
         }
 
         @Override
-        public String toString() {
+        public @NotNull String toString() {
             return name().toLowerCase();
         }
     }

@@ -16,6 +16,15 @@ import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 public class ProxyConfigScreen extends GuiScreen {
 
     private GuiTextField addressInput;
+    private final GuiScreen base;
+
+    public ProxyConfigScreen(GuiScreen base) {
+        this.base = base;
+    }
+
+    public ProxyConfigScreen() {
+        this.base = mc.currentScreen;
+    }
 
     @Override
     public void initGui() {
@@ -47,7 +56,7 @@ public class ProxyConfigScreen extends GuiScreen {
         switch (button.id) {
             case 0: // 返回
                 ProxyManager.getInstance().setAddress(addressInput.getText());
-                mc.displayGuiScreen(null);
+                mc.displayGuiScreen(this.base);
                 break;
             case 1: // 切换状态
                 ProxyManager.getInstance().state = !ProxyManager.getInstance().state;
@@ -71,7 +80,7 @@ public class ProxyConfigScreen extends GuiScreen {
     protected void keyTyped(char typedChar, int keyCode) throws IOException {
         if (keyCode == Keyboard.KEY_ESCAPE) {
             ProxyManager.getInstance().setAddress(addressInput.getText());
-            mc.displayGuiScreen(null);
+            mc.displayGuiScreen(this.base);
             return;
         }
 

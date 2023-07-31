@@ -10,10 +10,11 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.util.MathHelper;
+import org.apache.logging.log4j.Logger;
 import org.cubewhy.lunarcn.event.events.ChatEvent;
 import org.cubewhy.lunarcn.gui.elements.CopyButton;
 import org.cubewhy.lunarcn.module.ModuleManager;
-import org.cubewhy.lunarcn.module.impl.dev.ChatConfig;
+import org.cubewhy.lunarcn.module.impl.client.ChatConfig;
 import org.lwjgl.input.Mouse;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,12 +24,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 
 @Mixin(GuiNewChat.class)
 public abstract class MixinGuiNewChat extends Gui {
+    @Shadow @Final private static Logger logger;
     @Final
     @Shadow
     private List<ChatLine> drawnChatLines;
@@ -42,6 +45,8 @@ public abstract class MixinGuiNewChat extends Gui {
     @Final
     @Shadow
     private Minecraft mc;
+
+    private ArrayList<CopyButton> copyButtons = new ArrayList<>();
 
     @Inject(method = "printChatMessageWithOptionalDeletion", at = @At("RETURN"))
     public void printChatMessageWithOptionalDeletion(IChatComponent chatComponent, int chatLineId, CallbackInfo ci) {
@@ -109,6 +114,7 @@ public abstract class MixinGuiNewChat extends Gui {
                 GlStateManager.translate(2.0F, 20.0F, 0.0F);
                 GlStateManager.scale(f1, f1, 1.0F);
 
+
                 for (int i1 = 0; i1 + this.scrollPos < this.drawnChatLines.size() && i1 < i; ++i1) {
                     ChatLine chatline = this.drawnChatLines.get(i1 + this.scrollPos);
 
@@ -134,13 +140,14 @@ public abstract class MixinGuiNewChat extends Gui {
                                 int x = 0;
                                 int y = -i1 * 9;
                                 drawRect(x, y - 9, x + l + 4, y, l1 / 2 << 24);
-                                String s = chatline.getChatComponent().getFormattedText();
+                                String text = chatline.getChatComponent().getFormattedText();
                                 GlStateManager.enableBlend();
-                                this.mc.fontRendererObj.drawStringWithShadow(s, (float) x, (float) (y - 8), 16777215 + (l1 << 24));
-
-                                CopyButton copyButton = new CopyButton(fontRenderer.getStringWidth(s) + 20, y - 8, chatline.getChatComponent().getUnformattedText());
-                                copyButton.drawButton(Mouse.getX(), Mouse.getY());
-
+                                if (((ChatConfig) (ModuleManager.getInstance().getModule(ChatConfig.class))).getCopy().getValue()) {
+                                    CopyButton copyButton = new CopyButton(chatline.getChatComponent().getUnformattedText());
+                                    copyButton.drawButton(Mouse.getX(), Mouse.getY(), y - 8);
+                                    // TODO why still copy the last message
+                                }
+                                this.mc.fontRendererObj.drawStringWithShadow(text, (float) x, (float) (y - 8), 16777215 + (l1 << 24));
                                 GlStateManager.disableAlpha();
                                 GlStateManager.disableBlend();
                             }

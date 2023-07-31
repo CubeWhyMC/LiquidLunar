@@ -15,7 +15,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.awt.*;
 
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
-import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
 @Mixin(GuiMultiplayer.class)
 public abstract class MixinGuiMultiplayer extends GuiScreen {
@@ -86,7 +85,7 @@ public abstract class MixinGuiMultiplayer extends GuiScreen {
     public void actionPerformed(GuiButton button, CallbackInfo ci) {
         switch (button.id) {
             case 114514:
-                mc.displayGuiScreen(new ProxyConfigScreen());
+                mc.displayGuiScreen(new ProxyConfigScreen(mc.currentScreen));
                 break;
         }
     }

@@ -50,7 +50,7 @@ public class ModuleManager {
     public void register(@NotNull Module module) {
         ModuleConfigFile.getInstance().initModule(module); // Configure file
 
-        System.out.println("Module " + module.getModuleInfo().name() + " state: " + module.getState());
+        logger.info("Module " + module.getModuleInfo().name() + " state: " + module.getState());
 
         if (module.getState()) {
             try {

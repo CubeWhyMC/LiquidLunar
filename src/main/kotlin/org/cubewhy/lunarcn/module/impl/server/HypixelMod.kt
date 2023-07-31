@@ -8,6 +8,7 @@ import org.cubewhy.lunarcn.event.events.JoinServerEvent
 import org.cubewhy.lunarcn.event.events.PacketEvent
 import org.cubewhy.lunarcn.event.events.TickEvent
 import org.cubewhy.lunarcn.event.events.WorldEvent
+import org.cubewhy.lunarcn.files.configs.ServerConfigFile
 import org.cubewhy.lunarcn.module.Module
 import org.cubewhy.lunarcn.module.ModuleCategory
 import org.cubewhy.lunarcn.module.ModuleInfo
@@ -36,6 +37,8 @@ class HypixelMod : Module() {
     private var lastLobby: String? = null
     private var serverType: ServerType = ServerType.LOBBY
 
+    private val addresses = ServerConfigFile.getInstance().getServerAddressesList(ServerConfigFile.ServerEnum.HYPIXEL);
+
     enum class ServerType {
         LIMBO, // The afk server
         LOBBY, // Lobby server
@@ -55,11 +58,11 @@ class HypixelMod : Module() {
         if (mc.currentServerData == null || mc.isSingleplayer) {
             return
         }
-        currentServerIsHypixel = hypixelIP.matcher(mc.currentServerData.serverIP).find()
+        val ip = mc.currentServerData.serverIP
+        currentServerIsHypixel = hypixelIP.matcher(ip).find() || ip in addresses
         if (!currentServerIsHypixel) {
             state = false // TODO Add tempDisable in ModuleInfo and remove this
         } else {
-            println("hypixel!")
             this.timer.reset() // reset the timer
         }
     }
@@ -119,7 +122,6 @@ class HypixelMod : Module() {
         } else if (serverType == ServerType.GAME) {
             this.processGame(json)
         }
-        println("Sub: $subServer gameType: $gameType")
     }
 
     /**

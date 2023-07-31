@@ -7,7 +7,7 @@ import org.cubewhy.lunarcn.utils.RenderUtils;
 import java.awt.*;
 
 public class VerticalScroller extends Gui {
-    public final int x;
+    public int x;
     public final int y;
     public final int width;
     public final int height;

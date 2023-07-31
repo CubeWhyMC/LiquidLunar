@@ -57,14 +57,18 @@ public class ClickGui extends GuiScreen {
 
         GlStateManager.color(1.0F, 1.0F, 1.0F);
 
+        // panel and modules
         this.drawPanel();
         this.drawModules();
 
+        // scroller
+        this.scroller.x = this.panelX + this.panelWidth;
         this.scroller.drawScroller();
 
+        // button action
         super.drawScreen(mouseX, mouseY, partialTicks);
 
-        // Module doc
+        // Module description
         for (GuiButton button : this.buttonList) {
             if (button instanceof SwitchButton) {
                 SwitchButton button1 = (SwitchButton) button;
@@ -158,7 +162,6 @@ public class ClickGui extends GuiScreen {
     protected void actionPerformed(GuiButton button) {
         if (button instanceof SwitchButton && timer.hasTimePassed(1000)) {
             SwitchButton button1 = ((SwitchButton) button);
-//            Module module = button1.getBindModule();
             button1.toggle();
             timer.reset(); // Reset timer
         }

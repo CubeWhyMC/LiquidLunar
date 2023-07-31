@@ -4,21 +4,22 @@ import com.google.gson.Gson
 import com.google.gson.JsonObject
 import net.minecraft.network.play.server.S02PacketChat
 import org.cubewhy.lunarcn.event.EventTarget
-import org.cubewhy.lunarcn.event.events.JoinServerEvent
-import org.cubewhy.lunarcn.event.events.PacketEvent
-import org.cubewhy.lunarcn.event.events.TickEvent
-import org.cubewhy.lunarcn.event.events.WorldEvent
+import org.cubewhy.lunarcn.event.events.*
 import org.cubewhy.lunarcn.files.configs.ServerConfigFile
-import org.cubewhy.lunarcn.module.Module
+import org.cubewhy.lunarcn.gui.hud.ScreenPosition
 import org.cubewhy.lunarcn.module.ModuleCategory
+import org.cubewhy.lunarcn.module.ModuleDraggable
 import org.cubewhy.lunarcn.module.ModuleInfo
 import org.cubewhy.lunarcn.utils.MSTimer
 import org.cubewhy.lunarcn.value.BooleanValue
 import org.cubewhy.lunarcn.value.StringValue
+import java.awt.Color
 import java.util.regex.Pattern
 
 @ModuleInfo(name = "Hypixel Mod", description = "Helpful tools for hypixel server", category = ModuleCategory.SERVER)
-class HypixelMod : Module() {
+class HypixelMod : ModuleDraggable() {
+    private var position: ScreenPosition? = null
+
     private var currentServerIsHypixel = false
 
     private val autoGG = BooleanValue("AutoGG", true) // the autoGG toggle
@@ -37,7 +38,10 @@ class HypixelMod : Module() {
     private var lastLobby: String? = null
     private var serverType: ServerType = ServerType.LOBBY
 
-    private val addresses = ServerConfigFile.getInstance().getServerAddressesList(ServerConfigFile.ServerEnum.HYPIXEL);
+    private val addresses = ServerConfigFile.getInstance().getServerAddressesList(ServerConfigFile.ServerEnum.HYPIXEL)
+
+
+    private var texts = ArrayList<String>()
 
     enum class ServerType {
         LIMBO, // The afk server
@@ -47,6 +51,46 @@ class HypixelMod : Module() {
 
     override fun onEnabled() {
         checkHypixel()
+    }
+
+    override fun save(position: ScreenPosition) {
+        this.position = position
+    }
+
+    override fun load(): ScreenPosition {
+        if (position == null) {
+            position = ScreenPosition.fromRelativePosition(0.5, 0.5)
+        }
+        return position!!
+    }
+
+    override fun getWidth(): Int {
+        // get the max string width
+        var temp = 0
+        for (text in this.texts) {
+            if (text.length > temp) {
+                temp = text.length
+            }
+        }
+        return temp
+    }
+
+    override fun getHeight(): Int {
+        return fontRenderer.FONT_HEIGHT * this.texts.size
+    }
+
+    override fun render(position: ScreenPosition?) {
+        if (this.texts.size == 0) {
+            return // No texts to render
+        }
+
+        // position x, y
+        val x = this.position!!.absoluteX
+        val y = this.position!!.absoluteX
+
+        for (text in this.texts) {
+            fontRenderer.drawString(text, x.toFloat(), y.toFloat(), Color(255, 255, 255).rgb, true)
+        }
     }
 
     @EventTarget
@@ -61,7 +105,7 @@ class HypixelMod : Module() {
         val ip = mc.currentServerData.serverIP
         currentServerIsHypixel = hypixelIP.matcher(ip).find() || ip in addresses
         if (!currentServerIsHypixel) {
-            state = false // TODO Add tempDisable in ModuleInfo and remove this
+            state = false
         } else {
             this.timer.reset() // reset the timer
         }
@@ -103,32 +147,47 @@ class HypixelMod : Module() {
             return
         }
         mc.thePlayer.sendChatMessage("/locraw") // send the message
+    }
+
+    @EventTarget
+    fun onChat(event: ChatEvent) {
         // get json
-        val messages = mc.ingameGUI.chatGUI.sentMessages
-        val jsonRaw = messages[messages.size - 1] // get the latest message (may json)
-        // parse the json
-        val gson = Gson()
-        val json = gson.fromJson(jsonRaw, JsonObject::class.java)
-        this.subServer = json.get("server").asString // sub server name
-        if (this.subServer.equals("limbo")) {
-            // AFK Server
-            this.serverType = ServerType.LIMBO
-        } else {
-            this.gameType = json.get("gametype").asString // the game type, etc. BEDWARS, SKYWARS
-        }
-        this.serverType = if (json.has("lobby")) ServerType.LOBBY else ServerType.GAME
-        if (serverType == ServerType.LOBBY) {
-            this.lastLobby = json.get("lobby").asString
-        } else if (serverType == ServerType.GAME) {
-            this.processGame(json)
+        val msgRaw = event.chatMessage // get the latest message (may json)
+        // is json
+        if (msgRaw.startsWith("{") && msgRaw.endsWith("}")) {
+            // parse the json
+            val gson = Gson()
+            val json = gson.fromJson(msgRaw, JsonObject::class.java)
+            this.subServer = json.get("server").asString // sub server name
+            if (this.subServer.equals("limbo")) {
+                // AFK Server
+                this.serverType = ServerType.LIMBO
+            } else {
+                this.gameType = json.get("gametype").asString // the game type, etc. BEDWARS, SKYWARS
+            }
+            this.serverType = if (json.has("lobby")) ServerType.LOBBY else ServerType.GAME
+            if (serverType == ServerType.LOBBY) {
+                this.lastLobby = json.get("lobby").asString
+            } else if (serverType == ServerType.GAME) {
+                this.processGame(json)
+            }
         }
     }
 
     /**
      * Process the game
-     * etc. bedWars resource count
+     * etc. bedWars resource counts
      * */
     private fun processGame(json: JsonObject) {
-        // TODO 实现游戏内帮助
+        // TODO in game help
+        // clean text list
+        this.texts = ArrayList()
+        // add texts
+        if (this.serverType == ServerType.LIMBO) {
+            this.texts.add("I'm AFK.")
+        } else {
+            val gameType = json.get("gametype").asString // game type
+            this.texts.add("Game type: $gameType")
+        }
     }
 }

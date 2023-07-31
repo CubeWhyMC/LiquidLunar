@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix resources" />
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="I don't know why it still copies the latest message">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,10 +98,14 @@
       <recent name="F:\shadiao\LiquidLunar\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CubeWhy\IdeaProjects\LiquidLunar\src\main\resources\assets\minecraft\lunarcn\cosmetics" />
       <recent name="C:\Users\CubeWhy\IdeaProjects\LiquidLunar\src\main\resources\assets\minecraft\lunarcn" />
       <recent name="C:\Users\CubeWhy\IdeaProjects\LiquidLunar\src\main\resources\assets\minecraft\lunarcn\lunar" />
       <recent name="C:\Users\CubeWhy\IdeaProjects\LiquidLunar\src\main\resources\assets\minecraft\lunarcn\fonts" />
       <recent name="F:\shadiao\LiquidLunar\src\main\resources\META-INF\services" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="org.cubewhy.lunarcn.module.impl.client" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.cubewhy.lunarcn.files" />
@@ -108,9 +115,9 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle build\" />
-      <command value="gradle build" />
       <command value="gradle clean" />
       <command value="gradle cleanCache" />
+      <command value="gradle build" />
     </option>
   </component>
   <component name="RunManager" selected="应用程序.Start Client">
@@ -250,7 +257,8 @@
       <workItem from="1690363489308" duration="126000" />
       <workItem from="1690445624636" duration="14000" />
       <workItem from="1690718688303" duration="2213000" />
-      <workItem from="1690765686968" duration="2159000" />
+      <workItem from="1690765686968" duration="23821000" />
+      <workItem from="1690795787373" duration="1501000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -404,7 +412,55 @@
       <option name="project" value="LOCAL" />
       <updated>1690767808934</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fix forge icon">
+      <option name="closed" value="true" />
+      <created>1690767937804</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1690767937804</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add back libs &amp; logger">
+      <option name="closed" value="true" />
+      <created>1690768789374</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1690768789374</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix clickGui panel mouse moving">
+      <option name="closed" value="true" />
+      <created>1690774520499</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1690774520499</updated>
+    </task>
+    <task id="LOCAL-00023" summary="chatLine copying">
+      <option name="closed" value="true" />
+      <created>1690778395080</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1690778395080</updated>
+    </task>
+    <task id="LOCAL-00024" summary="DragonWing cos">
+      <option name="closed" value="true" />
+      <created>1690781547370</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1690781547370</updated>
+    </task>
+    <task id="LOCAL-00025" summary="I don't know why it still copies the latest message">
+      <option name="closed" value="true" />
+      <created>1690795722992</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1690795722992</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +498,13 @@
     <MESSAGE value="fix git url" />
     <MESSAGE value="fix resources path" />
     <MESSAGE value="fix resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix resources" />
+    <MESSAGE value="fix forge icon" />
+    <MESSAGE value="add back libs &amp; logger" />
+    <MESSAGE value="fix clickGui panel mouse moving" />
+    <MESSAGE value="chatLine copying" />
+    <MESSAGE value="DragonWing cos" />
+    <MESSAGE value="I don't know why it still copies the latest message" />
+    <option name="LAST_COMMIT_MESSAGE" value="I don't know why it still copies the latest message" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

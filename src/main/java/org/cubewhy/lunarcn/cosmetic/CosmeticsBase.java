@@ -1,10 +1,11 @@
 package org.cubewhy.lunarcn.cosmetic;
 
 import net.minecraft.client.entity.AbstractClientPlayer;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderPlayer;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 
-public abstract class CosmeticsBase implements LayerRenderer<AbstractClientPlayer> {
+public abstract class CosmeticsBase extends ModelBase implements LayerRenderer<AbstractClientPlayer> {
     protected final RenderPlayer playerRenderer;
 
     public CosmeticsBase(RenderPlayer playerRenderer) {

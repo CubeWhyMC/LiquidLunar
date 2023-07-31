@@ -14,7 +14,7 @@ import org.lwjgl.opengl.GL11;
 
 public class TopHat extends CosmeticsBase {
 
-    private final ResourceLocation texture = new ResourceLocation("lunarcn/hat.png");
+    private final ResourceLocation texture = new ResourceLocation("lunarcn/cosmetics/hat.png");
     private final Model model;
 
     public TopHat(RenderPlayer player) {

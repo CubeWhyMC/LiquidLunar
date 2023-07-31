@@ -1,11 +1,16 @@
 package org.cubewhy.lunarcn.cosmetic;
 
+import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderPlayer;
+import net.minecraft.entity.player.EntityPlayer;
+import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.utils.ClassUtils;
 
 import java.lang.reflect.Constructor;
 
 import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
+import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
 public class CosmeticsManager {
 
@@ -13,11 +18,16 @@ public class CosmeticsManager {
 
     private RenderPlayer player;
 
+    public CosmeticsManager() {
+        EventManager.register(this);
+    }
+
     public static CosmeticsManager getInstance() {
         return instance;
     }
 
     public void loadCosmetics(RenderPlayer player) {
+        // TODO Add API get enabled cos
         this.player = player;
         ClassUtils.INSTANCE.resolvePackage(this.getClass().getPackage().getName() + ".impl", CosmeticsBase.class)
                 .forEach(this::register);
@@ -36,7 +46,7 @@ public class CosmeticsManager {
         }
     }
 
-    private void register(CosmeticsBase cosmetic) {
+    public void register(CosmeticsBase cosmetic) {
         this.player.addLayer(cosmetic);
     }
 

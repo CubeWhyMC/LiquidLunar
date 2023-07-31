@@ -133,14 +133,8 @@ public class Client {
     @EventTarget
     public void onTick(TickEvent event) {
         if (keyBindClickGui.isPressed()) {
-            hudManager.openConfigScreen(); // click-gui没写，暂时用hud-manager
+            hudManager.openConfigScreen();
         }
-
-//        if (!mc.inGameHasFocus) {
-//            mc.gameSettings.limitFramerate = ClientConfigFile.getInstance().getConfig().get("unfocusedFps").getAsInt();
-//        } else {
-//            mc.gameSettings.limitFramerate = (int) 260.0F;
-//        }
     }
 
     /**

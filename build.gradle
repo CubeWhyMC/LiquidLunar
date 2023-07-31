@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id "idea"
-    id "org.jetbrains.kotlin.jvm" version "1.9.0-Beta"
+    id "org.jetbrains.kotlin.jvm" version "1.9.0"
     id "com.github.johnrengelman.shadow" version "6.1.0"
     id "com.gorylenko.gradle-git-properties" version "2.4.1"
     id "net.minecraftforge.gradle.forge"
@@ -22,16 +22,16 @@ configurations {
 }
 
 repositories {
+    maven { url = "https://repo.lunarcn.top/repository/maven-public/" }
     maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
     maven { url = "https://jitpack.io/" }
     mavenCentral()
 }
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.28'
-    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+    include fileTree(dir: "libs", includes: ['*.jar'])
 
-    include fileTree(dir: "lib", includes: ['*.jar']) // local lib
+    include 'org.newdawn.slick:core:1.0.0@core'
 
     // Don't update mixin
     include("org.spongepowered:mixin:0.7.11-SNAPSHOT") {

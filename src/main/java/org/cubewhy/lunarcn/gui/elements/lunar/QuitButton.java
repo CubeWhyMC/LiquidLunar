@@ -15,7 +15,7 @@ import net.minecraft.util.ResourceLocation;
 public class QuitButton extends ImageButton {
 
 	public QuitButton(int x, int y) {
-		super("QUIT", new ResourceLocation("lunar/icons/exit.png"), x, y);
+		super("QUIT", new ResourceLocation("lunarcn/icons/exit.png"), x, y);
 	}
 	
 	@Override

@@ -88,7 +88,7 @@ public class ClickGui extends GuiScreen {
         int scrollHeight = 0;
 
         int i = 0;
-        this.buttonList = new ArrayList<>(); // reset button List TODO: try to remove this
+        this.buttonList = new ArrayList<>();
         for (Module module : ModuleManager.getInstance().getRegisteredModules()) {
             if (currentCategory != null && module.getModuleInfo().category() != currentCategory || module.getModuleInfo().hideFromClickGui()) {
                 continue;
@@ -181,9 +181,9 @@ public class ClickGui extends GuiScreen {
         int MX = lastMouseX - panelX;
         int MY = lastMouseY - panelY;
 
-        if (RenderUtils.isHovering(lastMouseX, lastMouseY, panelX, panelY, panelX + panelWidth, panelY + 20)) {
-            this.panelX = mouseX;
-            this.panelY = mouseY;
+        if (clickedMouseButton == 0 && RenderUtils.isHovering(mouseX, mouseY, panelX, panelY, panelX + panelWidth, panelY + 20)) {
+            this.panelX = mouseX - MX;
+            this.panelY = mouseY - MY;
             // TODO 修复窗口位置
         }
         super.mouseClickMove(mouseX, mouseY, clickedMouseButton, timeSinceLastClick);

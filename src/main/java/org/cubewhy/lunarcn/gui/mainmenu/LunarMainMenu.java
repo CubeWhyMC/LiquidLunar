@@ -48,12 +48,12 @@ public class LunarMainMenu extends GuiMainMenu {
     private QuitButton btnQuit;
 
     private static final ResourceLocation[] titlePanoramaPaths = new ResourceLocation[]{
-            new ResourceLocation("lunar/panorama/panorama_0.png"),
-            new ResourceLocation("lunar/panorama/panorama_1.png"),
-            new ResourceLocation("lunar/panorama/panorama_2.png"),
-            new ResourceLocation("lunar/panorama/panorama_3.png"),
-            new ResourceLocation("lunar/panorama/panorama_4.png"),
-            new ResourceLocation("lunar/panorama/panorama_5.png")
+            new ResourceLocation("lunarcn/panorama/panorama_0.png"),
+            new ResourceLocation("lunarcn/panorama/panorama_1.png"),
+            new ResourceLocation("lunarcn/panorama/panorama_2.png"),
+            new ResourceLocation("lunarcn/panorama/panorama_3.png"),
+            new ResourceLocation("lunarcn/panorama/panorama_4.png"),
+            new ResourceLocation("lunarcn/panorama/panorama_5.png")
     };
 
     private static int panoramaTimer;
@@ -75,9 +75,9 @@ public class LunarMainMenu extends GuiMainMenu {
 
         int yPos = this.height - 20;
         this.btnClientOptions = new ImageButton("SETTINGS", Client.clientLogo, this.width / 2 - 30, yPos);
-        this.btnCosmetics = new ImageButton("COSMETICS", new ResourceLocation("lunar/icons/cosmetics.png"), this.width / 2 - 15, yPos);
-        this.btnMinecraftOptions = new ImageButton("MINECRAFT SETTINGS", new ResourceLocation("lunar/icons/cog.png"), this.width / 2, yPos);
-        this.btnLanguage = new ImageButton("LANGUAGE", new ResourceLocation("lunar/icons/globe.png"), this.width / 2 + 15, yPos);
+        this.btnCosmetics = new ImageButton("COSMETICS", new ResourceLocation("lunarcn/icons/cosmetics.png"), this.width / 2 - 15, yPos);
+        this.btnMinecraftOptions = new ImageButton("MINECRAFT SETTINGS", new ResourceLocation("lunarcn/icons/cog.png"), this.width / 2, yPos);
+        this.btnLanguage = new ImageButton("LANGUAGE", new ResourceLocation("lunarcn/icons/globe.png"), this.width / 2 + 15, yPos);
         this.btnForgeModList = new ImageButton("FORGE MODS", new ResourceLocation("lunarcn/icons/forge.png"), this.width / 2 + 30, yPos);
 
         this.btnAddAccount = new ImageButton("LOGIN", new ResourceLocation("lunarcn/add-account.png"), this.altList.x + this.altList.width + 1, this.altList.y);

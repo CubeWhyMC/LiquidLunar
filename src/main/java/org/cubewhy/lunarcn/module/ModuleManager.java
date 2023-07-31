@@ -32,8 +32,8 @@ public class ModuleManager {
     }
 
 
-    /*
-     * 实例化模块并注册
+    /**
+     * Register module
      */
     private void register(Class<? extends Module> moduleClass) {
         logger.info("Loading module " + moduleClass.getName());
@@ -67,8 +67,8 @@ public class ModuleManager {
     }
 
 
-    /*
-     * 获取注册过的模块
+    /**
+     * Get registered modules
      * */
     public ArrayList<Module> getRegisteredModules() {
         return this.registeredModules;

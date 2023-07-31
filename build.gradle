@@ -9,7 +9,7 @@ plugins {
 }
 
 group = 'org.cubewhy.lunarcn'
-version = '1.5-build6-pre3-SNAPSHOT'
+version = '1.5-build6-pre4-SNAPSHOT'
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 println("Give us stars -> https://github.com/CubeWhy/LiquidLunar")
@@ -55,6 +55,8 @@ dependencies {
     }
 
     implementation 'org.jetbrains:annotations:24.0.1'
+
+    implementation 'org.fusesource.jansi:jansi:2.4.0'
 }
 
 shadowJar {

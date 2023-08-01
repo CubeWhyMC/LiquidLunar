@@ -14,6 +14,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.common.MinecraftForge;
 import org.cubewhy.lunarcn.Client;
+import org.cubewhy.lunarcn.event.events.MouseEvent;
 import org.cubewhy.lunarcn.event.events.ScreenChangeEvent;
 import org.cubewhy.lunarcn.event.events.TickEvent;
 import org.cubewhy.lunarcn.event.events.WorldEvent;
@@ -192,5 +193,19 @@ abstract public class MixinMinecraft {
     @Inject(method = "loadWorld(Lnet/minecraft/client/multiplayer/WorldClient;Ljava/lang/String;)V", at = @At("RETURN"))
     public void loadWorld(WorldClient worldClientIn, String loadingMessage, CallbackInfo ci) {
         new WorldEvent(worldClientIn).callEvent(); // call worldEvent
+    }
+
+    @Inject(method = "clickMouse", at = @At("RETURN"))
+    public void clickMouse(CallbackInfo ci) {
+        new MouseEvent(MouseEvent.MouseButton.LEFT).callEvent();
+    }
+    @Inject(method = "rightClickMouse", at = @At("RETURN"))
+    public void rightClickMouse(CallbackInfo ci) {
+        new MouseEvent(MouseEvent.MouseButton.RIGHT).callEvent();
+    }
+
+    @Inject(method = "middleClickMouse", at = @At("RETURN"))
+    public void middleClickMouse(CallbackInfo ci) {
+        new MouseEvent(MouseEvent.MouseButton.MIDDLE).callEvent();
     }
 }

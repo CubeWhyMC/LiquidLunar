@@ -2,6 +2,7 @@ package org.cubewhy.lunarcn.value;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
+import org.jetbrains.annotations.NotNull;
 
 public class IntValue extends Value<Integer> {
 	public final int maxValue;

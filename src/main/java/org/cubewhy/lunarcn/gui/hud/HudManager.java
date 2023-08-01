@@ -66,23 +66,22 @@ public class HudManager {
     @EventTarget
     public void onRender2D(Render2DEvent event) {
         this.updateNotifications();
-        if (currentNotification!= null) {
+        if (currentNotification != null) {
             currentNotification.render();
         }
     }
 
     private void callRenderer(@NotNull IRenderer renderer) {
-        if (!renderer.isEnabled()) {
-            return;
+        if (renderer.isRendererEnabled()) {
+            ScreenPosition position = renderer.load();
+
+            if (position == null) {
+                position = ScreenPosition.fromRelativePosition(0.5, 0.5);
+            }
+
+            renderer.render(position);
         }
 
-        ScreenPosition position = renderer.load();
-
-        if (position == null) {
-            position = ScreenPosition.fromRelativePosition(0.5, 0.5);
-        }
-
-        renderer.render(position);
     }
 
     public void addNotification(Notification notification) {

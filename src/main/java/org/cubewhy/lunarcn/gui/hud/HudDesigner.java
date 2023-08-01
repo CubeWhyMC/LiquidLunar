@@ -8,6 +8,7 @@ import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.files.configs.PositionConfigFile;
 import org.cubewhy.lunarcn.gui.clickgui.ClickGui;
 import org.cubewhy.lunarcn.gui.elements.ClientButton;
+import org.cubewhy.lunarcn.utils.ClientUtils;
 import org.jetbrains.annotations.NotNull;
 import org.lwjgl.input.Keyboard;
 
@@ -18,6 +19,7 @@ import java.util.HashMap;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+import static org.cubewhy.lunarcn.utils.ClientUtils.*;
 import static org.cubewhy.lunarcn.utils.RenderUtils.drawHollowRect;
 
 public class HudDesigner extends GuiScreen {
@@ -33,9 +35,6 @@ public class HudDesigner extends GuiScreen {
         Collection<IRenderer> registeredRenderers = hudManager.getRegisteredRenders();
 
         for (IRenderer renderer : registeredRenderers) {
-            if (!renderer.isEnabled()) {
-                continue;
-            }
             ScreenPosition position = renderer.load();
 
             if (position == null) {
@@ -88,7 +87,7 @@ public class HudDesigner extends GuiScreen {
     }
 
     @Override
-    protected void keyTyped(char typedChar, int keyCode) throws IOException {
+    protected void keyTyped(char typedChar, int keyCode) {
         if (keyCode == Keyboard.KEY_ESCAPE) {
             renderers.forEach(IRenderConfig::save);
             PositionConfigFile positionFile = PositionConfigFile.getInstance();

@@ -2,15 +2,18 @@ package org.cubewhy.lunarcn.module.impl.server
 
 import com.google.gson.Gson
 import com.google.gson.JsonObject
+import net.minecraft.client.renderer.GlStateManager
 import net.minecraft.network.play.server.S02PacketChat
 import org.cubewhy.lunarcn.event.EventTarget
 import org.cubewhy.lunarcn.event.events.*
 import org.cubewhy.lunarcn.files.configs.ServerConfigFile
+import org.cubewhy.lunarcn.gui.hud.HudDesigner
 import org.cubewhy.lunarcn.gui.hud.ScreenPosition
 import org.cubewhy.lunarcn.module.ModuleCategory
 import org.cubewhy.lunarcn.module.ModuleDraggable
 import org.cubewhy.lunarcn.module.ModuleInfo
 import org.cubewhy.lunarcn.utils.MSTimer
+import org.cubewhy.lunarcn.utils.RenderUtils
 import org.cubewhy.lunarcn.value.BooleanValue
 import org.cubewhy.lunarcn.value.StringValue
 import java.awt.Color
@@ -66,13 +69,13 @@ class HypixelMod : ModuleDraggable() {
 
     override fun getWidth(): Int {
         // get the max string width
-        var temp = 0
+        var temp = ""
         for (text in this.texts) {
-            if (text.length > temp) {
-                temp = text.length
+            if (text.length > temp.length) {
+                temp = text
             }
         }
-        return temp
+        return fontRenderer.getStringWidth(temp)
     }
 
     override fun getHeight(): Int {
@@ -80,17 +83,24 @@ class HypixelMod : ModuleDraggable() {
     }
 
     override fun render(position: ScreenPosition?) {
-        if (this.texts.size == 0) {
-            return // No texts to render
-        }
-
         // position x, y
         val x = this.position!!.absoluteX
-        val y = this.position!!.absoluteX
+        val y = this.position!!.absoluteY
 
+        // draw bg
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F)
+        RenderUtils.drawRoundedRect(x, y, width, height, 2, Color(255, 255, 255, 40))
+        // draw texts
         for (text in this.texts) {
             fontRenderer.drawString(text, x.toFloat(), y.toFloat(), Color(255, 255, 255).rgb, true)
         }
+    }
+
+    override fun renderDummy(position: ScreenPosition?) {
+        if (this.texts.size == 0) {
+            this.texts.add("Hypixel Mod")
+        }
+        render(position)
     }
 
     @EventTarget
@@ -164,8 +174,8 @@ class HypixelMod : ModuleDraggable() {
                 this.serverType = ServerType.LIMBO
             } else {
                 this.gameType = json.get("gametype").asString // the game type, etc. BEDWARS, SKYWARS
+                this.serverType = if (json.has("lobby")) ServerType.LOBBY else ServerType.GAME
             }
-            this.serverType = if (json.has("lobby")) ServerType.LOBBY else ServerType.GAME
             if (serverType == ServerType.LOBBY) {
                 this.lastLobby = json.get("lobby").asString
             } else if (serverType == ServerType.GAME) {
@@ -189,5 +199,11 @@ class HypixelMod : ModuleDraggable() {
             val gameType = json.get("gametype").asString // game type
             this.texts.add("Game type: $gameType")
         }
+    }
+
+    enum class GameType(val gameInJson: String, val displayName: String) {
+        // the enum about gameTypes of the Hypixel server
+        BEDWARS("BEDWARS", "BedWars"),
+        SKYWARS("SKYWARS", "SkyWars")
     }
 }

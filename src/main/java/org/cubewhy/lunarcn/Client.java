@@ -15,6 +15,7 @@ import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.event.EventManager;
 import org.cubewhy.lunarcn.event.EventTarget;
 import org.cubewhy.lunarcn.event.events.PacketEvent;
+import org.cubewhy.lunarcn.event.events.SessionEvent;
 import org.cubewhy.lunarcn.event.events.TickEvent;
 import org.cubewhy.lunarcn.files.configs.*;
 import org.cubewhy.lunarcn.gui.SplashProgress;
@@ -121,6 +122,8 @@ public class Client {
         } else {
             currentAccount.switchAccount();
         }
+
+        new SessionEvent(mc.session).callEvent();
     }
 
     public void onStop() {

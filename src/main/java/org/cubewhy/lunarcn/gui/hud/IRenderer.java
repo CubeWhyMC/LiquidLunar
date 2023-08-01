@@ -2,36 +2,34 @@ package org.cubewhy.lunarcn.gui.hud;
 
 public interface IRenderer extends IRenderConfig {
     /**
-     * 获取宽
+     * Get the width of the component
+     * @return width
      * */
     int getWidth();
 
     /**
-     * 获取高
+     * Get the height of the component
+     * @return height
      * */
     int getHeight();
 
     /**
-     * 绘制组件
-     * @param position 坐标
+     * Render in hub
+     * @param position where the component render
      */
 
     void render(ScreenPosition position);
 
 
     /**
-     * 在{@link HudDesigner}中绘制的样子
-     * 也就是预览
+     * Render in {@link HudDesigner}
      * */
     default void renderDummy(ScreenPosition position) {
         render(position);
     }
 
     /**
-     * 获取是否渲染
-     * 如果要切换状态请使用{@link org.cubewhy.lunarcn.module.Module}中的state变量
+     * Control the renderer on the hub
      * */
-    default boolean isEnabled() {
-        return true;
-    }
+    default boolean isRendererEnabled() { return true;}
 }

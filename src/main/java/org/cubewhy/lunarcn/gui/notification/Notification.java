@@ -4,6 +4,7 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.util.ResourceLocation;
 import org.cubewhy.lunarcn.utils.RenderUtils;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 
@@ -24,10 +25,10 @@ public class Notification {
     /**
      * 创建一个通知
      *
-     * @param title    题目
-     * @param message  消息
-     * @param type     通知类型
-     * @param showTime 显示时间
+     * @param title    title of the notification
+     * @param message  message to show
+     * @param type     type of the notification
+     * @param showTime time
      */
 
     public Notification(String title, String message, Type type, int showTime) {
@@ -71,6 +72,21 @@ public class Notification {
 
         i = time / (fadedIn + fadeOut);
 
+        Color color = getColor(time);
+
+        RenderUtils.drawRoundedRect((int) (res.getScaledWidth() - offset), res.getScaledHeight() - 5 - height, res.getScaledWidth(), res.getScaledHeight() - 5, 2, color);
+//        RenderUtils.drawRoundedRect((int) (res.getScaledWidth() - offset), res.getScaledHeight() - 5 - height, (int) (res.getScaledWidth() - offset + 4), res.getScaledHeight() - 5, 2, color1);
+
+        RenderUtils.drawImage(this.type.icon, (int) (res.getScaledWidth() - offset + 10), res.getScaledHeight() - 5 - height, 25, 25);
+
+        fontRenderer.drawString(title, (int) (res.getScaledWidth() - offset + 28), res.getScaledHeight() - 2 - height, -1);
+        fontRenderer.drawString(message, (int) (res.getScaledWidth() - offset + 28), res.getScaledHeight() - 15, -1);
+
+        RenderUtils.drawLine(res.getScaledWidth(), (int) (res.getScaledWidth() - i), res.getScaledHeight() - 7, 1, new Color(0, 26, 169).getRGB(), false);
+    }
+
+    @NotNull
+    private Color getColor(long time) {
         Color color = new Color(0, 0, 0, 60);
         Color color1;
 
@@ -87,16 +103,7 @@ public class Notification {
             int i = Math.max(0, Math.min(255, (int) (Math.sin(time / 100.0) * 255.0 / 2 + 127.5)));
             color = new Color(i, 0, 0, 220);
         }
-
-        RenderUtils.drawRoundedRect((int) (res.getScaledWidth() - offset), res.getScaledHeight() - 5 - height, res.getScaledWidth(), res.getScaledHeight() - 5, 2, color);
-//        RenderUtils.drawRoundedRect((int) (res.getScaledWidth() - offset), res.getScaledHeight() - 5 - height, (int) (res.getScaledWidth() - offset + 4), res.getScaledHeight() - 5, 2, color1);
-
-        RenderUtils.drawImage(this.type.icon, (int) (res.getScaledWidth() - offset + 10), res.getScaledHeight() - 5 - height, 25, 25);
-
-        fontRenderer.drawString(title, (int) (res.getScaledWidth() - offset + 28), res.getScaledHeight() - 2 - height, -1);
-        fontRenderer.drawString(message, (int) (res.getScaledWidth() - offset + 28), res.getScaledHeight() - 15, -1);
-
-        RenderUtils.drawLine(res.getScaledWidth(), (int) (res.getScaledWidth() - i), res.getScaledHeight() - 7, 1, new Color(0, 26, 169).getRGB(), false);
+        return color;
     }
 
     public enum Type {

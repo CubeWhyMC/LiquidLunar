@@ -30,6 +30,7 @@ import java.security.*;
 import java.security.cert.CertificateException;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -84,20 +85,20 @@ public class MicrosoftAccountUtils {
 
     public MicrosoftAccount loginWithToken(String token) throws IOException {
         JsonElement tokenMicrosoft = MicrosoftAccountUtils.getInstance().authFromRefreshToken(token);
-        String accessToken = tokenMicrosoft.getAsJsonObject().get("access_token").getAsString();
+        String accessToken = Objects.requireNonNull(tokenMicrosoft).getAsJsonObject().get("access_token").getAsString();
 
         JsonElement tokenXboxLive = MicrosoftAccountUtils.getInstance().authWithXboxLive(accessToken);
-        String xboxLiveToken = tokenXboxLive.getAsJsonObject().get("Token").getAsString();
+        String xboxLiveToken = Objects.requireNonNull(tokenXboxLive).getAsJsonObject().get("Token").getAsString();
         String userHash = tokenXboxLive.getAsJsonObject().get("DisplayClaims").getAsJsonObject().get("xui").getAsJsonArray().get(0).getAsJsonObject().get("uhs").getAsString();
 
         JsonElement tokenXSTS = MicrosoftAccountUtils.getInstance().authWithXSTS(xboxLiveToken);
-        String XSTSToken = tokenXSTS.getAsJsonObject().get("Token").getAsString();
+        String XSTSToken = Objects.requireNonNull(tokenXSTS).getAsJsonObject().get("Token").getAsString();
 
         JsonElement tokenMinecraft = MicrosoftAccountUtils.getInstance().authWithMinecraft(userHash, XSTSToken);
-        String minecraftToken = tokenMinecraft.getAsJsonObject().get("access_token").getAsString();
+        String minecraftToken = Objects.requireNonNull(tokenMinecraft).getAsJsonObject().get("access_token").getAsString();
 
         JsonElement storeInformation = MicrosoftAccountUtils.getInstance().getStoreInformation(minecraftToken);
-        JsonArray storeProducts = storeInformation.getAsJsonObject().get("items").getAsJsonArray();
+        JsonArray storeProducts = Objects.requireNonNull(storeInformation).getAsJsonObject().get("items").getAsJsonArray();
         boolean haveGame = false;
         for (JsonElement product : storeProducts) {
             if (product.getAsJsonObject().get("name").getAsString().equals("game_minecraft")) {

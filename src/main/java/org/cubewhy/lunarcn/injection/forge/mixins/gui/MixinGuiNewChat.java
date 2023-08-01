@@ -142,9 +142,8 @@ public abstract class MixinGuiNewChat extends Gui {
                                 drawRect(x, y - 9, x + l + 4, y, l1 / 2 << 24);
                                 String text = chatline.getChatComponent().getFormattedText();
                                 GlStateManager.enableBlend();
-                                if (((ChatConfig) (ModuleManager.getInstance().getModule(ChatConfig.class))).getCopy().getValue()) {
-                                    CopyButton copyButton = new CopyButton(chatline.getChatComponent().getUnformattedText());
-                                    copyButton.drawButton(Mouse.getX(), Mouse.getY(), y - 8);
+                                if (mc.ingameGUI.getChatGUI().getChatOpen() && ((ChatConfig) (ModuleManager.getInstance().getModule(ChatConfig.class))).getCopy().getValue()) {
+                                    new CopyButton(chatline.getChatComponent().getUnformattedText()).drawButton(Mouse.getX(), Mouse.getY(), y - 8);
                                     // TODO why still copy the last message
                                 }
                                 this.mc.fontRendererObj.drawStringWithShadow(text, (float) x, (float) (y - 8), 16777215 + (l1 << 24));

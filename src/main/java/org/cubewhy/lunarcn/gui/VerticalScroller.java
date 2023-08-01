@@ -12,7 +12,7 @@ public class VerticalScroller extends Gui {
     public final int width;
     public final int height;
     public int totalHeight;
-    public int current = 0;
+    public double current = 0;
     public boolean hovered = false;
 
     public VerticalScroller(int x, int y, int width, int height, int totalHeight) {
@@ -32,7 +32,7 @@ public class VerticalScroller extends Gui {
         RenderUtils.drawRoundedRect(x, y, width, height, 2, new Color(0, 0, 0, 40));
         if (hovered || status != 0) {
             // progress
-            RenderUtils.drawRoundedRect(x, y + current * height, width, height / totalHeight, 2, new Color(0, 90, 0, 50));
+            RenderUtils.drawRoundedRect(x, (int) (y + current * height), width, height / totalHeight, 2, new Color(0, 90, 0, 50));
         }
 
         if (status > 0 && current < 1) {

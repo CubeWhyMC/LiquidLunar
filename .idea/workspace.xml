@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="Auto Clicker" />
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix clicker CPS">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/ClickUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/impl/cheats/AutoClicker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/impl/cheats/AutoClicker.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -257,7 +261,7 @@
       <workItem from="1690765686968" duration="23821000" />
       <workItem from="1690795787373" duration="1501000" />
       <workItem from="1690812287589" duration="4896000" />
-      <workItem from="1690848917316" duration="13808000" />
+      <workItem from="1690848917316" duration="17047000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -483,7 +487,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690870276998</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="i'm legit :(">
+      <option name="closed" value="true" />
+      <created>1690870791864</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1690870791864</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,8 +516,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="commit info" />
-    <MESSAGE value="update fontRender, OverlaySettings" />
     <MESSAGE value="clickGUI update" />
     <MESSAGE value="update icons (by muskf)" />
     <MESSAGE value="CheckBoxComponent" />
@@ -529,7 +539,9 @@
     <MESSAGE value="hypixel getGameType in hub" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="Auto Clicker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auto Clicker" />
+    <MESSAGE value="i'm legit :(" />
+    <MESSAGE value="fix clicker CPS" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix clicker CPS" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

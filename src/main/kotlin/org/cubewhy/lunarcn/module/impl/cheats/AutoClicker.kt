@@ -5,6 +5,7 @@ import org.cubewhy.lunarcn.event.events.TickEvent
 import org.cubewhy.lunarcn.module.Module
 import org.cubewhy.lunarcn.module.ModuleCategory
 import org.cubewhy.lunarcn.module.ModuleInfo
+import org.cubewhy.lunarcn.utils.ClickUtils
 import org.cubewhy.lunarcn.utils.MSTimer
 import org.cubewhy.lunarcn.value.BooleanValue
 import org.cubewhy.lunarcn.value.IntValue
@@ -35,7 +36,7 @@ class AutoClicker : Module() {
         if (minCPS.value > maxCPS.value) {
             maxCPS.value = minCPS.value // min can't > max
         }
-        if (targetClick.value && mc.pointedEntity != null || Mouse.isButtonDown(0)) {
+        if ((targetClick.value && mc.pointedEntity != null) || Mouse.isButtonDown(0)) {
             handleClickLeft() // click the mouse
         }
     }
@@ -44,12 +45,7 @@ class AutoClicker : Module() {
      * Click the mouse with the cps
      * */
     private fun handleClickLeft() {
-        val cps = Random.nextInt(minCPS.value, maxCPS.value)
-        delay = if (getLeftCPS() >= cps) {
-            100
-        } else {
-            30
-        }
+        delay = ClickUtils.getRandomClickCPS(minCPS.value, maxCPS.value)
 
         if (timer.hasTimePassed(delay)) {
             mc.clickMouse() // click mouse

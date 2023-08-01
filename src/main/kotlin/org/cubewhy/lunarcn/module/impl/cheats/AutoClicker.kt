@@ -1,6 +1,8 @@
 package org.cubewhy.lunarcn.module.impl.cheats
 
+import net.minecraft.client.settings.KeyBinding
 import org.cubewhy.lunarcn.event.EventTarget
+import org.cubewhy.lunarcn.event.events.RenderEvent
 import org.cubewhy.lunarcn.event.events.TickEvent
 import org.cubewhy.lunarcn.module.Module
 import org.cubewhy.lunarcn.module.ModuleCategory
@@ -10,7 +12,6 @@ import org.cubewhy.lunarcn.utils.MSTimer
 import org.cubewhy.lunarcn.value.BooleanValue
 import org.cubewhy.lunarcn.value.IntValue
 import org.lwjgl.input.Mouse
-import kotlin.random.Random
 
 @ModuleInfo(name = "AutoClicker", description = "Click agent", category = ModuleCategory.CHEATS)
 class AutoClicker : Module() {
@@ -32,7 +33,7 @@ class AutoClicker : Module() {
     private val timer = MSTimer()
 
     @EventTarget
-    fun onTick(event: TickEvent) {
+    fun onRender(event: RenderEvent) {
         if (minCPS.value > maxCPS.value) {
             maxCPS.value = minCPS.value // min can't > max
         }
@@ -45,10 +46,10 @@ class AutoClicker : Module() {
      * Click the mouse with the cps
      * */
     private fun handleClickLeft() {
-        delay = ClickUtils.getRandomClickCPS(minCPS.value, maxCPS.value)
+        delay = ClickUtils.getRandomClickDelay(minCPS.value, maxCPS.value)
 
-        if (timer.hasTimePassed(delay)) {
-            mc.clickMouse() // click mouse
+        if (timer.hasTimePassed(delay - 1L)) {
+            KeyBinding.onTick(mc.gameSettings.keyBindAttack.keyCode)
             timer.reset() // reset the timer
         }
     }

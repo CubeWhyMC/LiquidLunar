@@ -3,10 +3,13 @@ package org.cubewhy.lunarcn.account;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
+import org.cubewhy.lunarcn.utils.ClientUtils;
 import org.cubewhy.lunarcn.utils.MicrosoftAccountUtils;
 
 import java.io.IOException;
 import java.util.Date;
+
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 
 public class MicrosoftAccount implements IAccount {
     private String userName;
@@ -35,12 +38,16 @@ public class MicrosoftAccount implements IAccount {
      */
 
     public void refresh() throws IOException {
-		 MicrosoftAccount account = MicrosoftAccountUtils.getInstance().loginWithToken(this.refreshToken);
-         this.userName = account.userName;
-         this.uuid = account.uuid;
-         this.accessToken = account.accessToken;
-         this.lastFresh = new Date();
-        AccountConfigFile.getInstance().addAccount(this);
+        try {
+            MicrosoftAccount account = MicrosoftAccountUtils.getInstance().loginWithToken(this.refreshToken);
+            this.userName = account.userName;
+            this.uuid = account.uuid;
+            this.accessToken = account.accessToken;
+            this.lastFresh = new Date();
+            AccountConfigFile.getInstance().addAccount(this);
+        } catch (Exception e) {
+            logger.catching(e);
+        }
     }
 
     /*

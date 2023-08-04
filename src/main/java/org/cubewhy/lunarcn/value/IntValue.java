@@ -20,16 +20,6 @@ public class IntValue extends Value<Integer> {
 	}
 
 	@Override
-	public String getName() {
-		return name;
-	}
-
-	@Override
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	@Override
 	public Integer getValue() {
 		return value;
 	}

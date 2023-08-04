@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="cps fix and stringvalues">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/ListValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/IntValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/IntValue.java" afterDir="false" />
-    </list>
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix the account refresh crash" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +117,7 @@
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Start Client">
+  <component name="RunManager" selected="Gradle.LiquidLunar [build]">
     <configuration name="LiquidLunar [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -262,6 +258,7 @@
       <workItem from="1690795787373" duration="1501000" />
       <workItem from="1690812287589" duration="4896000" />
       <workItem from="1690848917316" duration="20299000" />
+      <workItem from="1691139405603" duration="588000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -511,7 +508,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690881977514</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fix the account refresh crash">
+      <option name="closed" value="true" />
+      <created>1691139747735</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1691139747735</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +537,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="update icons (by muskf)" />
     <MESSAGE value="CheckBoxComponent" />
     <MESSAGE value="Update readme" />
     <MESSAGE value="agent loader" />
@@ -557,7 +561,8 @@
     <MESSAGE value="i'm legit :(" />
     <MESSAGE value="fix clicker CPS" />
     <MESSAGE value="cps fix and stringvalues" />
-    <option name="LAST_COMMIT_MESSAGE" value="cps fix and stringvalues" />
+    <MESSAGE value="fix the account refresh crash" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix the account refresh crash" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

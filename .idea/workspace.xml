@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix the account refresh crash" />
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="remove autoclicker bcz it's not legit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,6 +261,8 @@
       <workItem from="1690812287589" duration="4896000" />
       <workItem from="1690848917316" duration="20299000" />
       <workItem from="1691139405603" duration="588000" />
+      <workItem from="1691141890207" duration="747000" />
+      <workItem from="1691146619469" duration="33000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -516,7 +520,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691139747735</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="remove autoclicker bcz it's not legit">
+      <option name="closed" value="true" />
+      <created>1691142030641</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1691142030641</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +549,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CheckBoxComponent" />
     <MESSAGE value="Update readme" />
     <MESSAGE value="agent loader" />
     <MESSAGE value="fix agent, but all mixins are skipped" />
@@ -562,7 +573,8 @@
     <MESSAGE value="fix clicker CPS" />
     <MESSAGE value="cps fix and stringvalues" />
     <MESSAGE value="fix the account refresh crash" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix the account refresh crash" />
+    <MESSAGE value="remove autoclicker bcz it's not legit" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove autoclicker bcz it's not legit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

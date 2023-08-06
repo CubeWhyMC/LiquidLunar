@@ -37,9 +37,10 @@ class HypixelMod : ModuleDraggable() {
 
     // Current server info
     private var subServer: String? = null
-    private var gameType: String? = null
+    private var gameType: GameType? = null
     private var lastLobby: String? = null
     private var serverType: ServerType = ServerType.LOBBY
+    private lateinit var json: JsonObject;
 
     private val addresses = ServerConfigFile.getInstance().getServerAddressesList(ServerConfigFile.ServerEnum.HYPIXEL)
 
@@ -98,7 +99,7 @@ class HypixelMod : ModuleDraggable() {
 
     override fun renderDummy(position: ScreenPosition?) {
         if (this.texts.size == 0) {
-            this.texts.add("Hypixel Mod")
+            this.texts.add("Hypixel Module")
         }
         render(position)
     }
@@ -167,19 +168,23 @@ class HypixelMod : ModuleDraggable() {
         if (msgRaw.startsWith("{") && msgRaw.endsWith("}")) {
             // parse the json
             val gson = Gson()
-            val json = gson.fromJson(msgRaw, JsonObject::class.java)
+            json = gson.fromJson(msgRaw, JsonObject::class.java)
             this.subServer = json.get("server").asString // sub server name
             if (this.subServer.equals("limbo")) {
                 // AFK Server
                 this.serverType = ServerType.LIMBO
             } else {
-                this.gameType = json.get("gametype").asString // the game type, etc. BEDWARS, SKYWARS
+                this.gameType = GameType.getType(json.get("gametype").asString) // the game type, etc. BEDWARS, SKYWARS
                 this.serverType = if (json.has("lobby")) ServerType.LOBBY else ServerType.GAME
             }
             if (serverType == ServerType.LOBBY) {
                 this.lastLobby = json.get("lobby").asString
             } else if (serverType == ServerType.GAME) {
                 this.processGame(json)
+            }
+            // remove the message
+            mc.ingameGUI.chatGUI.sentMessages.removeIf {
+                it == msgRaw
             }
         }
     }
@@ -196,14 +201,41 @@ class HypixelMod : ModuleDraggable() {
         if (this.serverType == ServerType.LIMBO) {
             this.texts.add("I'm AFK.")
         } else {
-            val gameType = json.get("gametype").asString // game type
-            this.texts.add("Game type: $gameType")
+//            val gameType = json.get("gametype").asString // game type
+            this.texts.add("Game type: ${gameType?.displayName}")
         }
     }
 
     enum class GameType(val gameInJson: String, val displayName: String) {
         // the enum about gameTypes of the Hypixel server
+        MAIN("MAIN", "MainLobby"),
+        DUELS("DUELS", "Duels"),
+        PIT("PIT", "Pit"),
+        PROTOTYPE("PROTOTYPE", "Prototype"),
+        BUILDBATTLE("BUILD_BATTLE", "BuildBattle"),
+        MEGAWALLS("WALLS3", "MegaWalls"),
+        CAC("MCGO", "CopsAndCrims"),
+        CLASSICAL("LEGARY", "Classical"),
+        SKYBLOCK("SKYBLOCK", "SkyBlock"),
+        ARCADE("ARCADE", "ArcadeGames"),
+        UHC("UHC", "UHC"),
+        MURDERMYSTERY("MURDER_MYSTERY", "MurderMystery"),
         BEDWARS("BEDWARS", "BedWars"),
-        SKYWARS("SKYWARS", "SkyWars")
+        SKYWARS("SKYWARS", "SkyWars");
+
+        companion object {
+            fun getType(name: String): GameType? {
+                for (value in entries) {
+                    if (value.gameInJson == name) {
+                        return value
+                    }
+                }
+                return null
+            }
+
+            fun getDisplayName(name: String): String {
+                return getType(name)!!.displayName
+            }
+        }
     }
 }

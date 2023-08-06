@@ -50,7 +50,7 @@ public class MicrosoftAccount implements IAccount {
         }
     }
 
-    /*
+    /**
      * 将账户信息转化成json 以便存入配置文件中
      */
     @Override

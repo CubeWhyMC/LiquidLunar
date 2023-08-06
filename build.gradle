@@ -46,7 +46,7 @@ dependencies {
 
     annotationProcessor("org.spongepowered:mixin:0.7.11-SNAPSHOT")
 
-    include 'org.jetbrains.kotlin:kotlin-stdlib:1.8.20-RC'
+    include 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
     include 'com.squareup.okhttp3:okhttp:5.0.0-alpha.11'
     include('com.jagrosh:DiscordIPC:0.4') {
         exclude module: "gson"

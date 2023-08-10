@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="remove autoclicker bcz it's not legit">
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="hypixel game id">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/worker/PingWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/worker/PingWorkerCallable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/impl/server/ServerPing.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +41,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -119,74 +122,8 @@
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.LiquidLunar [build]">
-    <configuration name="LiquidLunar [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="LiquidLunar [cleanCache]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="cleanCache" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="LiquidLunar [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="LiquidLunar [setupDecompWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.LiquidLunar [setupCiWorkspace]">
+    <configuration name="LiquidLunar [setupCiWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -197,7 +134,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="setupDecompWorkspace" />
+            <option value="setupCiWorkspace" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -208,12 +145,14 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Start Client" />
+      <item itemvalue="Gradle.Build LiquidLunar" />
+      <item itemvalue="Gradle.LiquidLunar [setupCiWorkspace]" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LiquidLunar [setupDecompWorkspace]" />
-        <item itemvalue="Gradle.LiquidLunar [cleanCache]" />
-        <item itemvalue="Gradle.LiquidLunar [clean]" />
-        <item itemvalue="Gradle.LiquidLunar [build]" />
+        <item itemvalue="Gradle.LiquidLunar [setupCiWorkspace]" />
       </list>
     </recent_temporary>
   </component>
@@ -263,6 +202,9 @@
       <workItem from="1691139405603" duration="588000" />
       <workItem from="1691141890207" duration="747000" />
       <workItem from="1691146619469" duration="33000" />
+      <workItem from="1691287418374" duration="7622000" />
+      <workItem from="1691297869219" duration="605000" />
+      <workItem from="1691630322568" duration="3042000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -528,7 +470,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691142030641</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="hypixel game id">
+      <option name="closed" value="true" />
+      <created>1691293526905</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1691293526906</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +499,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update readme" />
     <MESSAGE value="agent loader" />
     <MESSAGE value="fix agent, but all mixins are skipped" />
     <MESSAGE value="fix agent, but all mixins was skipped" />
@@ -574,7 +523,8 @@
     <MESSAGE value="cps fix and stringvalues" />
     <MESSAGE value="fix the account refresh crash" />
     <MESSAGE value="remove autoclicker bcz it's not legit" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove autoclicker bcz it's not legit" />
+    <MESSAGE value="hypixel game id" />
+    <option name="LAST_COMMIT_MESSAGE" value="hypixel game id" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

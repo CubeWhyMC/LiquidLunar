@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="pinger">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_CN.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_CN.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/worker/PingWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/worker/PingWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/impl/server/ServerPing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/impl/server/ServerPing.kt" afterDir="false" />
-    </list>
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="remove pinger, because crash client" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +42,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -82,7 +80,7 @@
     "TODO_SCOPE": "所有位置",
     "WebServerToolWindowFactoryState": "false",
     "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "development",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/CubeWhy/IdeaProjects/LiquidLunar/.gradle/minecraft/forgeSrc-1.8.9-11.15.1.2318-1.8.9-PROJECT(LiquidLunarForge)-sources.jar",
     "node.js.detected.package.eslint": "true",
@@ -231,7 +229,7 @@
       <workItem from="1691146619469" duration="33000" />
       <workItem from="1691287418374" duration="7622000" />
       <workItem from="1691297869219" duration="605000" />
-      <workItem from="1691630322568" duration="7270000" />
+      <workItem from="1691630322568" duration="8076000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -513,7 +511,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691634892827</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="remove pinger, because crash client">
+      <option name="closed" value="true" />
+      <created>1691642651500</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1691642651500</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +540,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix agent, but all mixins are skipped" />
     <MESSAGE value="fix agent, but all mixins was skipped" />
     <MESSAGE value="agent not compiled with forge, so remove it" />
     <MESSAGE value="remove asm" />
@@ -559,7 +564,8 @@
     <MESSAGE value="remove autoclicker bcz it's not legit" />
     <MESSAGE value="hypixel game id" />
     <MESSAGE value="pinger" />
-    <option name="LAST_COMMIT_MESSAGE" value="pinger" />
+    <MESSAGE value="remove pinger, because crash client" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove pinger, because crash client" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

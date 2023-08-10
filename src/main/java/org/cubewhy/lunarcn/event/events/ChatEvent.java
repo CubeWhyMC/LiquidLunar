@@ -1,11 +1,13 @@
-/**
- * 聊天事件
- * */
 package org.cubewhy.lunarcn.event.events;
 
 import net.minecraft.util.IChatComponent;
 import org.cubewhy.lunarcn.event.Event;
 
+
+/**
+ * Chat event
+ * Call when reveice a chat message
+ * */
 public class ChatEvent extends Event {
     private final IChatComponent chat;
 

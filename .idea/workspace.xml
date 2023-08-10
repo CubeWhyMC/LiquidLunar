@@ -5,7 +5,122 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="remove autoclicker bcz it's not legit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/events/Render3DEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/Renderer/MixinRendererLivingEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/MobendsMod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/AnimatedEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/Animation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Attack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Attack_Combo0.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Attack_Combo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Attack_Combo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Attack_Punch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Attack_PunchStance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Attack_Stance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Axe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Bow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Jump.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Mining.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Riding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Sneak.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Sprint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Stand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Swimming.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/player/Animation_Walk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/spider/Animation_Jump.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/spider/Animation_OnGround.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/spider/Animation_WallClimb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/zombie/Animation_Stand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/animation/zombie/Animation_Walk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/model/ModelBoxBends.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/model/ModelCustomArmor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/model/ModelRendererBends.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/model/ModelRendererBends_Child.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/model/ModelRendererBends_SeperatedChild.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/model/entity/ModelBendsPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/model/entity/ModelBendsPlayerArmor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/model/entity/ModelBendsSpider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/model/entity/ModelBendsZombie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/model/entity/ModelBendsZombieVillager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/renderer/SwordTrail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/renderer/entity/RenderBendsPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/renderer/entity/RenderBendsSpider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/renderer/entity/RenderBendsZombie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/renderer/entity/layers/LayerBendsCape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/renderer/entity/layers/LayerBendsCustomHead.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/client/renderer/entity/layers/LayerBendsPlayerArmor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/data/Data_Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/data/Data_Spider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/data/Data_Zombie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/data/EntityData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/pack/BendsAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/pack/BendsPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/pack/BendsTarget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/pack/BendsVar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/util/BendsLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/util/EnumAxis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/util/GUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/module/impl/Render/mobends/util/SmoothVector3f.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/goblinCape.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/displayBG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/displayBG.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/menuTitle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/menuTitle.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_action.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_action_add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_action_multiply.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_action_set.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_action_substract.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_add.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_add_mini.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_animation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_animation.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_add.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_add_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_add_selected.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_multiply.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_multiply.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_multiply_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_multiply_selected.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_set.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_set.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_set_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_set_selected.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_substract.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_substract.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_substract_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_calc_substract_selected.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_delete.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_cos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_cos.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_cos_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_cos_selected.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_none.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_none.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_none_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_none_selected.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_sin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_sin.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_sin_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_mod_sin_selected.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_model.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_model.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_prerot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_prerot.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_rot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_rot.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_scale.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/gui/puzzle_scale.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/mobends/textures/white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Start_Client.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Start_Client.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinEntityRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinEntityRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mixins.lunarcn.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +143,23 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LiquidLunarForge" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LiquidLunarForge" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LiquidLunarForge" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="forgegradle" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -44,10 +175,25 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$PROJECT_DIR$/.gradle/minecraft/forgeSrc-1.8.9-11.15.1.2318-1.8.9-PROJECT(LiquidLunarForge)-sources.jar!/net/minecraft/client/renderer/ItemRenderer.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -84,9 +230,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;库&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15136719&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.5322581&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -119,7 +265,28 @@
       <command value="gradle build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.LiquidLunar [build]">
+  <component name="RunManager" selected="应用程序.Start Client">
+    <configuration name="Minecraft Client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GradleStart" />
+      <module name="LiquidLunarForge.main" />
+      <option name="VM_PARAMETERS" value="-Dfml.coreMods.load=org.cubewhy.lunarcn.injection.forge.TransformerLoader -Xmx2048m -Xms2048m -Ddev-mode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Minecraft Server" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GradleStartServer" />
+      <module name="LiquidLunarForge.main" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/run" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LiquidLunar [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -139,7 +306,6 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="LiquidLunar [cleanCache]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -161,7 +327,6 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="LiquidLunar [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -183,7 +348,27 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="LiquidLunar [runClient]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runClient" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="LiquidLunar [setupDecompWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -205,12 +390,22 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Gradle.LiquidLunar [runClient]" />
+      <item itemvalue="Gradle.LiquidLunar [build]" />
+      <item itemvalue="Gradle.LiquidLunar [clean]" />
+      <item itemvalue="Gradle.LiquidLunar [cleanCache]" />
+      <item itemvalue="Gradle.LiquidLunar [setupDecompWorkspace]" />
+      <item itemvalue="应用程序.Start Client" />
+      <item itemvalue="应用程序.Minecraft Client" />
+      <item itemvalue="应用程序.Minecraft Server" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.LiquidLunar [setupDecompWorkspace]" />
+        <item itemvalue="Gradle.LiquidLunar [runClient]" />
         <item itemvalue="Gradle.LiquidLunar [cleanCache]" />
         <item itemvalue="Gradle.LiquidLunar [clean]" />
         <item itemvalue="Gradle.LiquidLunar [build]" />
@@ -263,6 +458,10 @@
       <workItem from="1691139405603" duration="588000" />
       <workItem from="1691141890207" duration="747000" />
       <workItem from="1691146619469" duration="33000" />
+      <workItem from="1691627208750" duration="955000" />
+      <workItem from="1691631870788" duration="19000" />
+      <workItem from="1691643910457" duration="1422000" />
+      <workItem from="1691674061297" duration="2513000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />

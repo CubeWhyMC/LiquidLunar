@@ -30,6 +30,7 @@
     "forge.MixinSplashProgressRunnable",
     "gui.MixinGuiContainer",
     "network.MixinNetworkManager",
-    "server.MixinMinecraftServer"
+    "server.MixinMinecraftServer",
+    "Renderer.MixinRendererLivingEntity"
   ]
 }

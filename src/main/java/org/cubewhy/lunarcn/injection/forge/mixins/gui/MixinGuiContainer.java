@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinGuiContainer extends GuiScreen {
     @Inject(method = "drawScreen", at = @At("RETURN"))
     public void drawScreen(int mouseX, int mouseY, float partialTicks, CallbackInfo ci) {
-        // TODO 换上有字的图片之后修改尺寸
+        // TODO Modify the size after turning on a font with a letter
         RenderUtils.drawImage(Client.clientLogo, width - 50, height - 25, 25, 25);
     }
 }

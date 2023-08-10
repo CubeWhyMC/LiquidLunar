@@ -14,9 +14,9 @@ public class AttackEvent extends Event {
     }
 
     /**
-     * 获取被攻击的目标
+     * Get attack target
+     * @return target
      * */
-
     public Entity getTarget() {
         return target;
     }

@@ -13,8 +13,8 @@ public class ChatSentEvent extends Event {
     }
 
     /**
-     * 获取发送的消息
-     * @return 消息 {@link String}
+     * Get sent message
+     * @return message String {@link String}
      * */
     public String getChatMessage() {
         return chatMessage;

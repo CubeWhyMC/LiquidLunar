@@ -4,11 +4,12 @@ import com.google.gson.JsonObject;
 import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.account.MicrosoftAccount;
 import org.cubewhy.lunarcn.account.OfflineAccount;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Date;
 
 public class AccountUtils {
-    public static IAccount fromJson(JsonObject json) {
+    public static IAccount fromJson(@NotNull JsonObject json) {
         String userName = json.get("username").getAsString();
         String uuid = json.get("uuid").getAsString();
         String accessToken = json.get("accessToken").getAsString();

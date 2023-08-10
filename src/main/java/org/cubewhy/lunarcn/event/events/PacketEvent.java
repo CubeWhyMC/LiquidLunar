@@ -1,11 +1,12 @@
-/**
- * 数据包事件
- * */
 package org.cubewhy.lunarcn.event.events;
 
 import net.minecraft.network.Packet;
 import org.cubewhy.lunarcn.event.Event;
 
+/**
+ * Packet event
+ * Call when send a packet
+ * */
 public class PacketEvent extends Event {
 
     private final Packet packet;
@@ -17,7 +18,7 @@ public class PacketEvent extends Event {
     }
 
     /**
-     * 获取原始数据包
+     * Get the raw packet
      * @return packet
      * */
 
@@ -26,10 +27,10 @@ public class PacketEvent extends Event {
     }
 
     /**
-     * 获取类型
+     * Get event type
      * {@link Type}
-     * RECEIVE 是接受数据包
-     * SEND 是发送数据包
+     * RECEIVE: receive packet
+     * SEND: sent packet
      * @return type
      * */
     public Type getType() {

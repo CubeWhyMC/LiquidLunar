@@ -2,8 +2,6 @@ package org.cubewhy.lunarcn.injection.forge.mixins.gui;
 
 
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.GuiMainMenu;
-import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraft.client.gui.ServerListEntryNormal;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.util.ResourceLocation;
@@ -35,13 +33,10 @@ public class MixinServerListEntryNormal {
 
     @Inject(method = "mousePressed", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiMultiplayer;connectToSelected()V"))
     public void mousePressed(int slotIndex, int p_148278_2_, int p_148278_3_, int p_148278_4_, int p_148278_5_, int p_148278_6_, CallbackInfoReturnable<Boolean> cir) {
-        // disconnect in server switcher
-        if (mc.getCurrentServerData() != null && !mc.isSingleplayer()) {
-            // back to the menu
-            mc.displayGuiScreen(new GuiMultiplayer(new GuiMainMenu()));
-        } else if (mc.isSingleplayer()) {
-            // back to mainMenu
-            mc.displayGuiScreen(new GuiMainMenu());
+        // disconnect first
+        if (mc.theWorld != null) {
+            mc.theWorld.sendQuittingDisconnectingPacket();
+            mc.loadWorld(null);
         }
     }
 

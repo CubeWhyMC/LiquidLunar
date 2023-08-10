@@ -2,7 +2,6 @@
 
 ![last commit](https://img.shields.io/github/last-commit/CubeWhyMC/LiquidLunar)
 ![code size](https://img.shields.io/github/repo-size/CubeWhyMC/LiquidLunar)
-![code lines](https://img.shields.io/tokei/lines/github/CubeWhyMC/LiquidLunar)
 [![Latest Release](https://img.shields.io/github/v/release/CubewhyMC/LiquidLunar)](https://github.com/CubewhyMC/LiquidLunar/release)
 [![License](https://img.shields.io/github/license/CubewhyMC/LiquidLunar)](https://github.com/Cubewhy/LiquidLunar/blob/master/LICENSE)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/CubewhyMC/LiquidLunar)](https://github.com/CubewhyMC/LiquidLunar/actions)
@@ -26,7 +25,17 @@ LiquidLunar is an open source Minecraft 1.8.9 PvP client
 
 This project didn't use any codes from [LunarClient](https://lunarclient.com)
 
-If you want contribute to this project, you can open a [pull request](https://github.com/CubeWhyMC/LiquidLunar/pulls)
+If you want to contribute to this project, you can open a [pull request](https://github.com/CubeWhyMC/LiquidLunar/pulls)
+
+## License
+
+LiquidLunar license under GPLv3
+
+You are allowed to
+
+- use
+- share
+- modify
 
 ## Build error and fix
 

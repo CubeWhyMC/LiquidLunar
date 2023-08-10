@@ -1,5 +1,7 @@
 package org.cubewhy.lunarcn.worker;
 
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
+
 public class PingWorker implements Runnable {
     private PingWorkerCallable callable;
     private int ping;
@@ -59,8 +61,8 @@ public class PingWorker implements Runnable {
                 }
 
                 Thread.sleep(5000L);
-            } catch (Exception var2) {
-                var2.printStackTrace();
+            } catch (Exception e) {
+                logger.catching(e);
             }
 
             if (this.runOnce) {

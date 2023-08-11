@@ -16,7 +16,7 @@ public class JoinServerEvent extends Event {
     }
 
     /**
-     * 获取服务器IP
+     * Get server IP
      * @return IP
      * */
     public String getIp() {
@@ -25,7 +25,7 @@ public class JoinServerEvent extends Event {
 
 
     /**
-     * 获取服务器端口
+     * Get server port
      * @return port
      * */
     public int getPort() {
@@ -33,10 +33,9 @@ public class JoinServerEvent extends Event {
     }
 
     /**
-     * 获取服务器地址
+     * Get server address
      * @return ip:port
      * */
-
     public String getAddress() {
         return ip + ":" + port;
     }

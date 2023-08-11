@@ -1,6 +1,7 @@
 package org.cubewhy.lunarcn.injection.forge;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin.MCVersion;
 import org.cubewhy.lunarcn.injection.transformers.OptimizeTransformer;
 import org.spongepowered.asm.launch.MixinBootstrap;
 import org.spongepowered.asm.mixin.MixinEnvironment;
@@ -8,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixins;
 
 import java.util.Map;
 
-@IFMLLoadingPlugin.MCVersion("1.8.9")
+@MCVersion("1.8.9")
 public class TransformerLoader implements IFMLLoadingPlugin {
 
     public TransformerLoader() {
@@ -34,8 +35,8 @@ public class TransformerLoader implements IFMLLoadingPlugin {
      * depend on.
      * Trivially, this modcontainer will be loaded before all regular mod containers,
      * which means it will be forced to be "immutable" - not susceptible to normal
-     * sorting behaviour.
-     * All other mod behaviours are available however- this container can receive and handle
+     * sorting behavior.
+     * All other mod behaviors are available however-this container can receive and handle
      * normal loading events
      */
     @Override
@@ -44,7 +45,7 @@ public class TransformerLoader implements IFMLLoadingPlugin {
     }
 
     /**
-     * Return the class name of an implementor of "IFMLCallHook", that will be run, in the
+     * Return the class name of an implementor of "IFMLCallHook," that will be run, in the
      * main thread, to perform any additional setup this coremod may require. It will be
      * run <strong>prior</strong> to Minecraft starting, so it CANNOT operate on minecraft
      * itself. The game will deliberately crash if this code is detected to trigger a

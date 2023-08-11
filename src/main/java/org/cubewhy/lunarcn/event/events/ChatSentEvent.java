@@ -1,10 +1,11 @@
-/**
- * 聊天发送事件
- * */
 package org.cubewhy.lunarcn.event.events;
 
 import org.cubewhy.lunarcn.event.Event;
 
+/**
+ * Chat sent event
+ * Call when you send a chat message
+ * */
 public class ChatSentEvent extends Event {
     private final String chatMessage;
 
@@ -13,8 +14,8 @@ public class ChatSentEvent extends Event {
     }
 
     /**
-     * 获取发送的消息
-     * @return 消息 {@link String}
+     * Get sent message
+     * @return message String {@link String}
      * */
     public String getChatMessage() {
         return chatMessage;

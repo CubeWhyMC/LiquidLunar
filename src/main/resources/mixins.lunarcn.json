@@ -26,6 +26,7 @@
     "client.MixinEntityRenderer",
     "entity.MixinEntityLivingBase",
     "entity.MixinEntityPlayerSP",
+    "forge.MixinFMLHandshakeMessageModList",
     "forge.MixinSplashProgress",
     "forge.MixinSplashProgressRunnable",
     "gui.MixinGuiContainer",

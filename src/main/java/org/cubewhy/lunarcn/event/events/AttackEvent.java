@@ -1,11 +1,12 @@
-/**
- * 攻击事件
- * */
 package org.cubewhy.lunarcn.event.events;
 
 import net.minecraft.entity.Entity;
 import org.cubewhy.lunarcn.event.Event;
 
+/**
+ * Attack event
+ * Call when you're attacking a target
+ * */
 public class AttackEvent extends Event {
     private final Entity target;
 
@@ -14,9 +15,9 @@ public class AttackEvent extends Event {
     }
 
     /**
-     * 获取被攻击的目标
+     * Get attack target
+     * @return target
      * */
-
     public Entity getTarget() {
         return target;
     }

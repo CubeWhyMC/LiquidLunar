@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.impl.Render.mobends.client.renderer.entity;
+package org.cubewhy.lunarcn.module.impl.render.mobends.client.renderer.entity;
 
 import com.google.common.collect.Lists;
 
@@ -19,8 +19,8 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.util.ResourceLocation;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.entity.ModelBendsZombie;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.entity.ModelBendsZombieVillager;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.entity.ModelBendsZombie;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.entity.ModelBendsZombieVillager;
 
 public class RenderBendsZombie extends RenderBiped
 {

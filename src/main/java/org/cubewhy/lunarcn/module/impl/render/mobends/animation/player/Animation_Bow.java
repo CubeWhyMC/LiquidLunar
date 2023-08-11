@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.impl.Render.mobends.animation.player;
+package org.cubewhy.lunarcn.module.impl.render.mobends.animation.player;
 
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.animation.Animation;
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.client.model.ModelRendererBends;
@@ -8,11 +8,11 @@ package org.cubewhy.lunarcn.module.impl.Render.mobends.animation.player;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.animation.Animation;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.ModelRendererBends;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.entity.ModelBendsPlayer;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.data.EntityData;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.util.GUtil;
+import org.cubewhy.lunarcn.module.impl.render.mobends.animation.Animation;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.ModelRendererBends;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.entity.ModelBendsPlayer;
+import org.cubewhy.lunarcn.module.impl.render.mobends.data.EntityData;
+import org.cubewhy.lunarcn.module.impl.render.mobends.util.GUtil;
 
 public class Animation_Bow extends Animation {
 	

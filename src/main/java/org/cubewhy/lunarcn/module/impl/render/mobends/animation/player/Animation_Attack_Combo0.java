@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.impl.Render.mobends.animation.player;
+package org.cubewhy.lunarcn.module.impl.render.mobends.animation.player;
 
 
 //import me.yuxiangll.jigsaw.Jigsaw;
@@ -10,14 +10,14 @@ package org.cubewhy.lunarcn.module.impl.Render.mobends.animation.player;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemSword;
 
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.ModelRendererBends;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.entity.ModelBendsPlayer;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.data.Data_Player;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.util.GUtil;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.ModelRendererBends;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.entity.ModelBendsPlayer;
+import org.cubewhy.lunarcn.module.impl.render.mobends.data.PlayerData;
+import org.cubewhy.lunarcn.module.impl.render.mobends.util.GUtil;
 import org.lwjgl.util.vector.Vector3f;
 
 public class Animation_Attack_Combo0 {
-	public static void animate(EntityPlayer player, ModelBendsPlayer model, Data_Player data){
+	public static void animate(EntityPlayer player, ModelBendsPlayer model, PlayerData data){
 		if(data.ticksAfterPunch < 0.5f){
 			model.swordTrail.reset();
 		}

@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.impl.Render.mobends.client.renderer.entity;
+package org.cubewhy.lunarcn.module.impl.render.mobends.client.renderer.entity;
 
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.client.model.entity.ModelBendsSpider;
 import net.minecraft.client.renderer.GlStateManager;
@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderSpider;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntitySpider;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.entity.ModelBendsSpider;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.entity.ModelBendsSpider;
 
 public class RenderBendsSpider extends RenderSpider {
     public RenderBendsSpider(RenderManager renderManager) {

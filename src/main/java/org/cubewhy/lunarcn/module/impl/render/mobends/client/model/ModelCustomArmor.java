@@ -1,10 +1,10 @@
-package org.cubewhy.lunarcn.module.impl.Render.mobends.client.model;
+package org.cubewhy.lunarcn.module.impl.render.mobends.client.model;
 
 
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.client.model.entity.ModelBendsPlayer;
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.util.SmoothVector3f;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.entity.ModelBendsPlayer;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.util.SmoothVector3f;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.entity.ModelBendsPlayer;
+import org.cubewhy.lunarcn.module.impl.render.mobends.util.SmoothVector3f;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.model.ModelBiped;
@@ -47,10 +47,10 @@ public class ModelCustomArmor extends ModelBiped{
         this.bipedBody = new ModelRendererBends(this, 16, 16).setShowChildIfHidden(true);
         this.bipedBody.addBox(-4.0F, -12.0F, -2.0F, 8, 12, 4, p_i1149_1_);
         this.bipedBody.setRotationPoint(0.0F, 0.0F + p_i1149_2_ + 12, 0.0F);
-        this.bipedRightArm = new ModelRendererBends_SeperatedChild(this, 40, 16).setMother((ModelRendererBends) this.bipedBody);
+        this.bipedRightArm = new ModelRendererBendsSeperatedChild(this, 40, 16).setMother((ModelRendererBends) this.bipedBody);
         this.bipedRightArm.addBox(-3.0F, -2.0F, -2.0F, 4, 6, 4, p_i1149_1_);
         this.bipedRightArm.setRotationPoint(-5.0F, 2.0F + p_i1149_2_ - 12.0f, 0.0F);
-        this.bipedLeftArm = new ModelRendererBends_SeperatedChild(this, 40, 16).setMother((ModelRendererBends) this.bipedBody);
+        this.bipedLeftArm = new ModelRendererBendsSeperatedChild(this, 40, 16).setMother((ModelRendererBends) this.bipedBody);
         this.bipedLeftArm.mirror = true;
         this.bipedLeftArm.addBox(-1.0F, -2.0F, -2.0F, 4, 6, 4, p_i1149_1_);
         this.bipedLeftArm.setRotationPoint(5.0F, 2.0F + p_i1149_2_ - 12.0f, 0.0F);
@@ -95,8 +95,8 @@ public class ModelCustomArmor extends ModelBiped{
         this.bipedRightLeg.addChild(this.bipedRightForeLeg);
         this.bipedLeftLeg.addChild(this.bipedLeftForeLeg);
         
-        ((ModelRendererBends_SeperatedChild)this.bipedRightArm).setSeperatedPart((ModelRendererBends) this.bipedRightForeArm);
-        ((ModelRendererBends_SeperatedChild)this.bipedLeftArm).setSeperatedPart((ModelRendererBends) this.bipedLeftForeArm);
+        ((ModelRendererBendsSeperatedChild)this.bipedRightArm).setSeperatedPart((ModelRendererBends) this.bipedRightForeArm);
+        ((ModelRendererBendsSeperatedChild)this.bipedLeftArm).setSeperatedPart((ModelRendererBends) this.bipedLeftForeArm);
     }
     
     public void render(Entity argEntity, float p_78088_2_, float p_78088_3_, float p_78088_4_, float p_78088_5_, float p_78088_6_, float p_78088_7_)

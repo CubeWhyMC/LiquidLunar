@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.impl.Render.mobends.data;
+package org.cubewhy.lunarcn.module.impl.render.mobends.data;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.impl.Render.mobends.animation.player;
+package org.cubewhy.lunarcn.module.impl.render.mobends.animation.player;
 
 
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.animation.Animation;
@@ -9,11 +9,11 @@ package org.cubewhy.lunarcn.module.impl.Render.mobends.animation.player;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.animation.Animation;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.entity.ModelBendsPlayer;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.data.Data_Player;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.data.EntityData;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.pack.BendsPack;
+import org.cubewhy.lunarcn.module.impl.render.mobends.animation.Animation;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.entity.ModelBendsPlayer;
+import org.cubewhy.lunarcn.module.impl.render.mobends.data.PlayerData;
+import org.cubewhy.lunarcn.module.impl.render.mobends.data.EntityData;
+import org.cubewhy.lunarcn.module.impl.render.mobends.pack.BendsPack;
 
 public class Animation_Attack extends Animation {
 	public String getName() {
@@ -23,7 +23,7 @@ public class Animation_Attack extends Animation {
 	@Override
 	public void animate(EntityLivingBase argEntity, ModelBase argModel, EntityData argData) {
 		ModelBendsPlayer model = (ModelBendsPlayer) argModel;
-		Data_Player data = (Data_Player) argData;
+		PlayerData data = (PlayerData) argData;
 		EntityPlayer player = (EntityPlayer) argEntity;
 
 		if (player.getCurrentEquippedItem() != null) {

@@ -32,6 +32,6 @@
     "gui.MixinGuiContainer",
     "network.MixinNetworkManager",
     "server.MixinMinecraftServer",
-    "Renderer.MixinRendererLivingEntity"
+    "entity.MixinRendererLivingEntity"
   ]
 }

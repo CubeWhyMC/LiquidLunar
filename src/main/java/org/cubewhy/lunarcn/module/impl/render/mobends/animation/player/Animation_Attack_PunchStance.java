@@ -1,17 +1,17 @@
-package org.cubewhy.lunarcn.module.impl.Render.mobends.animation.player;
+package org.cubewhy.lunarcn.module.impl.render.mobends.animation.player;
 
 
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.client.model.ModelRendererBends;
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.client.model.entity.ModelBendsPlayer;
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.data.Data_Player;
 import net.minecraft.entity.player.EntityPlayer;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.ModelRendererBends;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.entity.ModelBendsPlayer;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.data.Data_Player;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.ModelRendererBends;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.entity.ModelBendsPlayer;
+import org.cubewhy.lunarcn.module.impl.render.mobends.data.PlayerData;
 
 public class Animation_Attack_PunchStance {
 	
-	public static void animate(EntityPlayer player, ModelBendsPlayer model, Data_Player data){
+	public static void animate(EntityPlayer player, ModelBendsPlayer model, PlayerData data){
 		if(!(data.motion.x == 0 & data.motion.z == 0)){
 			return;
 		}

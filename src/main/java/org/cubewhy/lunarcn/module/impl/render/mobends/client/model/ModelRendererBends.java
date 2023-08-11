@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.impl.Render.mobends.client.model;
+package org.cubewhy.lunarcn.module.impl.render.mobends.client.model;
 
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.util.SmoothVector3f;
 import net.minecraft.client.model.ModelBase;
@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 
-import org.cubewhy.lunarcn.module.impl.Render.mobends.util.SmoothVector3f;
+import org.cubewhy.lunarcn.module.impl.render.mobends.util.SmoothVector3f;
 import org.lwjgl.opengl.GL11;
 
 public class ModelRendererBends extends ModelRenderer{

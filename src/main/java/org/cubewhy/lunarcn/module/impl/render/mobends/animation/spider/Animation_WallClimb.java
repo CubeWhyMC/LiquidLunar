@@ -1,4 +1,4 @@
-package org.cubewhy.lunarcn.module.impl.Render.mobends.animation.spider;
+package org.cubewhy.lunarcn.module.impl.render.mobends.animation.spider;
 
 
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.animation.Animation;
@@ -6,11 +6,11 @@ package org.cubewhy.lunarcn.module.impl.Render.mobends.animation.spider;
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.client.model.entity.ModelBendsSpider;
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.data.Data_Spider;
 //import me.yuxiangll.jigsaw.client.Utils.render.mobends.data.EntityData;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.animation.Animation;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.ModelRendererBends;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.client.model.entity.ModelBendsSpider;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.data.Data_Spider;
-import org.cubewhy.lunarcn.module.impl.Render.mobends.data.EntityData;
+import org.cubewhy.lunarcn.module.impl.render.mobends.animation.Animation;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.ModelRendererBends;
+import org.cubewhy.lunarcn.module.impl.render.mobends.client.model.entity.ModelBendsSpider;
+import org.cubewhy.lunarcn.module.impl.render.mobends.data.SpiderData;
+import org.cubewhy.lunarcn.module.impl.render.mobends.data.EntityData;
 import org.lwjgl.util.vector.Vector3f;
 
 import net.minecraft.client.model.ModelBase;
@@ -28,7 +28,7 @@ public class Animation_WallClimb extends Animation {
     public void animate(EntityLivingBase argEntity, ModelBase argModel, EntityData argData) {
         EntitySpider spider = (EntitySpider) argEntity;
         ModelBendsSpider model = (ModelBendsSpider) argModel;
-        Data_Spider data = (Data_Spider) argData;
+        SpiderData data = (SpiderData) argData;
 
         float armSwing = data.ticks * 0.4f;
         float armSwingAmount = 0.7f;

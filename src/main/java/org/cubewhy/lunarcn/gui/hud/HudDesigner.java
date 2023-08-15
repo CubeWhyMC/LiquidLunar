@@ -5,10 +5,10 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
 import org.cubewhy.lunarcn.event.EventManager;
+import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
 import org.cubewhy.lunarcn.files.configs.PositionConfigFile;
-import org.cubewhy.lunarcn.gui.clickgui.ClickGui;
+import org.cubewhy.lunarcn.gui.clickgui.impl.LiquidLunarClickGui;
 import org.cubewhy.lunarcn.gui.elements.ClientButton;
-import org.cubewhy.lunarcn.utils.ClientUtils;
 import org.jetbrains.annotations.NotNull;
 import org.lwjgl.input.Keyboard;
 
@@ -19,7 +19,6 @@ import java.util.HashMap;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-import static org.cubewhy.lunarcn.utils.ClientUtils.*;
 import static org.cubewhy.lunarcn.utils.RenderUtils.drawHollowRect;
 
 public class HudDesigner extends GuiScreen {
@@ -140,7 +139,8 @@ public class HudDesigner extends GuiScreen {
     public void actionPerformed(@NotNull GuiButton button) {
         switch (button.id) {
             case 1:
-                mc.displayGuiScreen(new ClickGui());
+                // display click gui
+                mc.displayGuiScreen(ClientConfigFile.getInstance().getClickGuiStyle());
                 break;
         }
     }
@@ -152,7 +152,8 @@ public class HudDesigner extends GuiScreen {
 
     private class MouseOverFinder implements Predicate<IRenderer> {
 
-        private int mouseX, mouseY;
+        private final int mouseX;
+        private final int mouseY;
 
         public MouseOverFinder(int x, int y) {
             this.mouseX = x;

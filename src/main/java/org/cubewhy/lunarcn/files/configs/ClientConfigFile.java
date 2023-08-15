@@ -3,6 +3,8 @@ package org.cubewhy.lunarcn.files.configs;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
+import org.cubewhy.lunarcn.gui.clickgui.ClickGui;
+import org.cubewhy.lunarcn.gui.clickgui.impl.LiquidLunarClickGui;
 import org.cubewhy.lunarcn.gui.mainmenu.LunarMainMenu;
 import net.minecraft.client.gui.GuiMainMenu;
 import org.cubewhy.lunarcn.Client;
@@ -31,6 +33,10 @@ public class ClientConfigFile {
 
         if (!config.has("menu-style")) {
             config.add("menu-style", new JsonPrimitive("lunar"));
+        }
+
+        if (!config.has("click-gui")) {
+            config.add("click-gui", new JsonPrimitive("liquid-lunar"));
         }
 
         if (!config.has("proxy-address")) {
@@ -64,6 +70,18 @@ public class ClientConfigFile {
         }
 
         return menu;
+    }
+
+    public ClickGui getClickGuiStyle() {
+        String style = config.get("click-gui").getAsString();
+        ClickGui clickGui = null;
+        switch (style) {
+            case "liquid-lunar":
+            default:
+                clickGui = new LiquidLunarClickGui();
+                break;
+        }
+        return clickGui;
     }
 
     public void save() {

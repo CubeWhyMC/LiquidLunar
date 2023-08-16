@@ -37,7 +37,7 @@ public class MixinFMLHandshakeMessageModList {
             boolean hidden = ForgeMod.modId.equalsIgnoreCase(modTag.getKey());
             // hide LiquidLunar mod (some server ban us)
             if (hidden) {
-                logger.info(String.format("HideModList: %s %s", modTag.getKey(), modTag.getValue()));
+                logger.info(String.format("HideMod: %s %s", modTag.getKey(), modTag.getValue()));
             } else {
                 shownTags.add(modTag);
             }
@@ -46,7 +46,7 @@ public class MixinFMLHandshakeMessageModList {
         ByteBufUtils.writeVarInt(buffer, shownTags.size(), 2);
 
         for (Map.Entry<String, String> modTag : shownTags) {
-            logger.info(String.format("SendModList: %s %s", modTag.getKey(), modTag.getValue()));
+            logger.info(String.format("Mod: %s %s", modTag.getKey(), modTag.getValue()));
             ByteBufUtils.writeUTF8String(buffer, modTag.getKey());
             ByteBufUtils.writeUTF8String(buffer, modTag.getValue());
         }

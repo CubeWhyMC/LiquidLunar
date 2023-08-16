@@ -6,7 +6,9 @@ import com.google.gson.JsonParser;
 import com.jagrosh.discordipc.IPCClient;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.network.play.client.C17PacketCustomPayload;
 import net.minecraft.network.play.server.S3FPacketCustomPayload;
 import net.minecraft.util.ResourceLocation;
 import okhttp3.Call;
@@ -28,6 +30,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.util.*;
 
 import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
@@ -40,6 +43,7 @@ public class Client {
     public static final String clientName = "LiquidLunar"; // client name
     public static final String clientVersion = GitUtils.gitInfo.getProperty("git.build.version"); // client version
     public static final String[] clientDev = new String[] {"CubeWhy", "catand", "yuxiangll"}; // Client dev
+    public static final String clientId = clientName.toLowerCase() + ":" + GitUtils.gitBranch;
     public static String clientDir = System.getProperty("user.home") + "/.cubewhy/liquidlunar";
     public static String configDir = clientDir + "/config";
     public static ResourceLocation clientLogo = new ResourceLocation("lunarcn/logo.png");
@@ -52,6 +56,7 @@ public class Client {
 
     private HudManager hudManager;
     public boolean debugMode = false;
+    public final ArrayList<UUID> sameClient = new ArrayList<>();
 
     public KeyBinding keyBindClickGui = new KeyBinding("ClickGui", Keyboard.KEY_RSHIFT, clientName);
 
@@ -146,48 +151,29 @@ public class Client {
      * @param event PacketEvent
      */
     @EventTarget
-    public void onPacket(PacketEvent event) {
+    public void onPacket(PacketEvent event) throws IOException {
         if (debugMode) {
             ClientUtils.addMessage("[" + clientName + "] " + "Packet "
                     + (event.getType() == PacketEvent.Type.RECEIVE ? "received" : "sent") + ", type: " + event.getPacket().getClass().getSimpleName());
         }
-        if (event.getPacket() instanceof S3FPacketCustomPayload) {
-            S3FPacketCustomPayload payload = (S3FPacketCustomPayload) event.getPacket();
+        if (event.getPacket() instanceof C17PacketCustomPayload) {
+            C17PacketCustomPayload payload = (C17PacketCustomPayload) event.getPacket();
             if (payload.getChannelName().equals("REGISTER")) {
-                PacketBuffer clientPacketInfo = new PacketBuffer(Unpooled.buffer())
-                        .writeString("INFO")
-                        .writeString("UUID:" + mc.getSession().getPlayerID())
-                        .writeString("{  \n" +
-                                "   \"version\": \"3.9.25\",\n" +
-                                "   \"ccp\": {  \n" +
-                                "      \"enabled\": true,\n" +
-                                "      \"version\": 2\n" +
-                                "   },\n" +
-                                "   \"shadow\":{  \n" +
-                                "      \"enabled\": true,\n" +
-                                "      \"version\": 1\n" +
-                                "   },\n" +
-                                "   \"addons\": [  \n" +
-                                "      {  \n" +
-                                "         \"uuid\": \"null\",\n" +
-                                "         \"name\": \"null\"\n" +
-                                "      }\n" +
-                                "   ],\n" +
-                                "   \"mods\": [\n" +
-                                "      {  \n" +
-                                "      }\n" +
-                                "   ]\n" +
-                                "}");
-
-//                mc.getNetHandler().addToSendQueue(new C17PacketCustomPayload(clientName.toLowerCase() + ":" + GitUtils.gitBranch, clientPacketInfo));
-            }
-        }
-
-        if (event.getPacket() instanceof S3FPacketCustomPayload) {
-            S3FPacketCustomPayload packet = (S3FPacketCustomPayload) event.getPacket();
-            String channelName = packet.getChannelName();
-            if (debugMode) {
-                ClientUtils.addMessage("[" + clientName + "] " + "Player sent C17, channelName: " + channelName);
+                // sned packet
+                PacketBuffer clientPacketInfo = new PacketBuffer(Unpooled.buffer());
+                clientPacketInfo.writeString(clientId + ":" + mc.getSession().getPlayerID());
+                // TODO hypixel blocked this
+//                mc.getNetHandler().addToSendQueue(new C17PacketCustomPayload("MC|Brand", clientPacketInfo));
+            } else if (payload.getChannelName().equals("MC|Brand")) {
+                // handle packet
+                String info = new String(payload.data.readByteArray());
+                if (info.startsWith(clientId)) {
+                    UUID playerUuid = UUID.fromString(JavaUtils.getLastItem(info.split(":")).toString());
+                    sameClient.add(playerUuid);
+                }
+            } else if (payload.getChannelName().equalsIgnoreCase("MC|Brand")) {
+                // TEST: LunarClient
+                logger.info("LunarClient: " + new String(payload.data.readByteArray()));
             }
         }
     }

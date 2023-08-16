@@ -16,8 +16,8 @@ public class GuiAltManager extends GuiScreen {
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-        drawDefaultBackground();
-        drawCenteredString(fontRenderer, "In dev", this.width / 2, 10, new Color(255, 255, 255).getRGB());
+        this.drawDefaultBackground();
+        drawCenteredString(fontRenderer, "Alt Manager", this.width / 2, 10, new Color(255, 255, 255).getRGB());
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 }

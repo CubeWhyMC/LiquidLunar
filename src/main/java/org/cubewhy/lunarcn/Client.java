@@ -173,7 +173,10 @@ public class Client {
                 }
             } else if (payload.getChannelName().equalsIgnoreCase("MC|Brand")) {
                 // TEST: LunarClient
-                logger.info("LunarClient: " + new String(payload.data.readByteArray()));
+                String info = new String(payload.data.readByteArray());
+                if (info.startsWith("lunarclient:")) {
+                    logger.info("LunarClient: " + info);
+                }
             }
         }
     }

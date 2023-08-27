@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.FileNotFoundException;
 import java.time.OffsetDateTime;
 
+import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 
 public class DiscordIPC {
@@ -22,18 +23,19 @@ public class DiscordIPC {
                 @Override
                 public void onReady(IPCClient client) {
                     RichPresence.Builder builder = new RichPresence.Builder();
-                    builder.setState("Playing on " + mc.getSession().getUsername() + (UserUtils.isOffline() ? " (Genuine)" : " (Offline)"))
-                            .setDetails("Minecraft 1.8.9")
+                    builder.setState("Loading client")
+                            .setDetails(Client.clientName)
                             .setStartTimestamp(OffsetDateTime.now())
-                            .setLargeImage("large", "LiqLC")
-                            .setSpectateSecret("look");
+                            .setLargeImage("logo", "ICON")
+                            .setSpectateSecret("Join");
                     client.sendRichPresence(builder.build());
                 }
             });
 
             client.connect();
             return client;
-        } catch (Throwable ignored) {
+        } catch (Throwable e) {
+            logger.catching(e);
             return null;
         }
     }

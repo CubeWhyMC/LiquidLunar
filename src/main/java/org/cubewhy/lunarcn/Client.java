@@ -74,8 +74,6 @@ public class Client {
 
         AccountConfigFile.getInstance().load(); // Accounts
 
-        discordIPC = DiscordIPC.startIPC();
-
         // load pinned servers
         try {
             Call call = HttpUtils.get(pinnedServerApi);
@@ -97,6 +95,7 @@ public class Client {
     }
 
     public void onStart() {
+        discordIPC = DiscordIPC.startIPC(); // Init IPC
         MinecraftInstance.fontRenderer = mc.fontRendererObj;
         SplashProgress.setProgress(4, "Initializing " + clientName);
         Display.setTitle(clientName + " " + clientVersion + " (" + GitUtils.gitBranch + "/" + GitUtils.gitInfo.getProperty("git.commit.id.abbrev") + ")");

@@ -5,6 +5,7 @@ import net.minecraft.client.gui.*;
 import net.minecraft.client.multiplayer.ServerList;
 import org.cubewhy.lunarcn.FeaturedServerData;
 import org.cubewhy.lunarcn.gui.ProxyConfigScreen;
+import org.cubewhy.lunarcn.utils.MinecraftInstance;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -79,6 +80,12 @@ public abstract class MixinGuiMultiplayer extends GuiScreen {
             this.btnEditServer.enabled = false;
             this.btnDeleteServer.enabled = false;
         }
+    }
+
+    @Inject(method = "connectToSelected", at = @At("HEAD"))
+    public void connectToSelected(CallbackInfo ci) {
+        // if in game, disconnect first
+        MinecraftInstance.disconnect(); // do disconnect
     }
 
     @Inject(method = "actionPerformed", at = @At("RETURN"))

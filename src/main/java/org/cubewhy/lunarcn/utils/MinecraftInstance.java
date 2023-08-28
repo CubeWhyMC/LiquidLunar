@@ -19,8 +19,9 @@ public class MinecraftInstance {
 
     /**
      * Login to another account
+     *
      * @param session Session object
-     * */
+     */
     public static void setSession(@NotNull Session session) {
         // change session
         mc.session = session;
@@ -31,8 +32,9 @@ public class MinecraftInstance {
 
     /**
      * Login to another Account
+     *
      * @param account Account object
-     * */
+     */
     public static void setSession(@NotNull IAccount account) {
         Session session = new Session(account.getUserName(), account.getUuid(), account.getAccessToken(), "legary");
         setSession(session);
@@ -40,9 +42,25 @@ public class MinecraftInstance {
 
     /**
      * Join server
+     *
      * @param serverData data of the server
-     * */
+     */
     public static void connectToServer(ServerData serverData) {
         mc.displayGuiScreen(new GuiConnecting(new GuiMultiplayer(new GuiMainMenu()), mc, serverData));
+    }
+
+    /**
+     * Disconnect current server
+     */
+    public static void disconnect() {
+        if (mc.thePlayer != null) {
+            if (mc.isSingleplayer()) {
+                // single-player
+                mc.displayGuiScreen(new GuiMainMenu());
+            } else {
+                // multi-player
+                mc.displayGuiScreen(new GuiMultiplayer(new GuiMainMenu()));
+            }
+        }
     }
 }

@@ -1,5 +1,5 @@
 package org.cubewhy.lunarcn;
 
-public interface ActionListener {
+public interface Action {
     void onAction();
 }

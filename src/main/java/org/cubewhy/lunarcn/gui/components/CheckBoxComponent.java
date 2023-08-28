@@ -1,6 +1,6 @@
 package org.cubewhy.lunarcn.gui.components;
 
-import org.cubewhy.lunarcn.ActionListener;
+import org.cubewhy.lunarcn.Action;
 import org.cubewhy.lunarcn.gui.AbstractComponent;
 import org.cubewhy.lunarcn.utils.RenderUtils;
 import org.lwjgl.input.Mouse;
@@ -10,7 +10,7 @@ import java.awt.*;
 import static org.cubewhy.lunarcn.utils.MinecraftInstance.fontRenderer;
 
 public class CheckBoxComponent extends AbstractComponent {
-    public final ActionListener actionListener;
+    public final Action actionListener;
     public final int height;
     public final int width;
     public int x;
@@ -20,7 +20,7 @@ public class CheckBoxComponent extends AbstractComponent {
 
     public boolean hovered = false;
 
-    public CheckBoxComponent(String text, int x, int y, boolean initState, ActionListener actionListener) {
+    public CheckBoxComponent(String text, int x, int y, boolean initState, Action actionListener) {
         this.text = text;
         this.state = initState;
         this.actionListener = actionListener;

@@ -32,7 +32,7 @@ public class ProxyManager {
     public void setAddress(String address) {
         String[] realAddress = address.split(":");
         if (realAddress.length != 2) {
-            return; // 不是正确的IP地址
+            return;
         }
         this.proxyIp = realAddress[0];
         this.proxyPort = realAddress[1];

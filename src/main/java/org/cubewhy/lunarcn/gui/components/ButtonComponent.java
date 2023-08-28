@@ -2,7 +2,7 @@ package org.cubewhy.lunarcn.gui.components;
 
 import net.minecraft.client.renderer.GlStateManager;
 import org.cubewhy.lunarcn.gui.AbstractComponent;
-import org.cubewhy.lunarcn.ActionListener;
+import org.cubewhy.lunarcn.Action;
 import org.cubewhy.lunarcn.utils.RenderUtils;
 
 import java.awt.*;
@@ -17,9 +17,9 @@ public class ButtonComponent extends AbstractComponent {
     private final String text;
     private final boolean shadow;
 
-    public final ActionListener actionListener;
+    public final Action actionListener;
 
-    public ButtonComponent(String text, int x, int y, int width, int height, ActionListener actionListener, boolean shadow) {
+    public ButtonComponent(String text, int x, int y, int width, int height, Action actionListener, boolean shadow) {
         this.text = text;
         this.actionListener = actionListener;
         this.x = x;
@@ -29,15 +29,15 @@ public class ButtonComponent extends AbstractComponent {
         this.shadow = shadow;
     }
 
-    public ButtonComponent(String text, int x, int y, int width, int height, ActionListener actionListener) {
+    public ButtonComponent(String text, int x, int y, int width, int height, Action actionListener) {
         this(text, x, y, width, height, actionListener, false);
     }
 
-    public ButtonComponent(String text, int x, int y, ActionListener actionListener, boolean shadow) {
+    public ButtonComponent(String text, int x, int y, Action actionListener, boolean shadow) {
         this(text, x, y, 200, 20, actionListener, shadow);
     }
 
-    public ButtonComponent(String text, int x, int y, ActionListener actionListener) {
+    public ButtonComponent(String text, int x, int y, Action actionListener) {
         this(text, x, y, actionListener, false);
     }
 

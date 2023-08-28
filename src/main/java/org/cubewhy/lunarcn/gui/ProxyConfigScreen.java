@@ -54,28 +54,21 @@ public class ProxyConfigScreen extends GuiScreen {
     @Override
     protected void actionPerformed(GuiButton button) throws IOException {
         switch (button.id) {
-            case 0: // 返回
+            case 0: // back
                 ProxyManager.getInstance().setAddress(addressInput.getText());
                 mc.displayGuiScreen(this.base);
                 break;
-            case 1: // 切换状态
+            case 1: // toggle state
                 ProxyManager.getInstance().state = !ProxyManager.getInstance().state;
                 button.displayString = getStateText();
                 break;
-            case 2: // 切换代理模式
+            case 2: // toggle protocol
                 ProxyManager.getInstance().proxyType = ProxyManager.getInstance().proxyType == Proxy.Type.HTTP ? Proxy.Type.SOCKS : Proxy.Type.HTTP;
                 button.displayString = getProxyTypeText();
                 break;
         }
     }
 
-    /**
-     * Fired when a key is typed (except F11 which toggles full screen). This is the equivalent of
-     * KeyListener.keyTyped(KeyEvent e). Args : character (character on the key), keyCode (lwjgl Keyboard key code)
-     *
-     * @param typedChar 输入的字符
-     * @param keyCode 按键码
-     */
     @Override
     protected void keyTyped(char typedChar, int keyCode) throws IOException {
         if (keyCode == Keyboard.KEY_ESCAPE) {

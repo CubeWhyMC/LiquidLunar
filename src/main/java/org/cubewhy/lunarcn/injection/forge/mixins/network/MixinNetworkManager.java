@@ -30,7 +30,7 @@ import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 
 @Mixin(NetworkManager.class)
 public class MixinNetworkManager {
-    @Inject(method = "channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V", at = @At("RETURN"))
+    @Inject(method = "channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V", at = @At("RETURN"), cancellable = true)
     public void channelRead0(ChannelHandlerContext channelHandlerContext, Packet packet, CallbackInfo ci) {
         if (PacketUtils.INSTANCE.getPacketType(packet) == PacketUtils.PacketType.SERVERSIDE && channelHandlerContext != null) {
             if (new PacketEvent(packet, PacketEvent.Type.RECEIVE).callEvent().isCanCalled()) {
@@ -40,7 +40,7 @@ public class MixinNetworkManager {
 
     }
 
-    @Inject(method = "sendPacket(Lnet/minecraft/network/Packet;)V", at = @At("RETURN"))
+    @Inject(method = "sendPacket(Lnet/minecraft/network/Packet;)V", at = @At("RETURN"), cancellable = true)
     public void sendPacket(Packet packet, CallbackInfo ci) {
         if (PacketUtils.INSTANCE.getPacketType(packet) != PacketUtils.PacketType.CLIENTSIDE) {
             return;

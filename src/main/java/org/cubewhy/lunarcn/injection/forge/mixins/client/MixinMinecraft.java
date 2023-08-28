@@ -206,7 +206,7 @@ abstract public class MixinMinecraft {
         new MouseEvent(MouseEvent.MouseButton.MIDDLE).call();
     }
 
-    @Inject(method = "runTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/settings/KeyBinding;setKeyBindState(IZ)V"), cancellable = true)
+    @Inject(method = "runTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/settings/KeyBinding;setKeyBindState(IZ)V", ordinal = 1), cancellable = true)
     public void callKeyEvent(CallbackInfo ci) {
         if (new KeyEvent(Keyboard.getEventKey()).call().isCanceled()) {
             ci.cancel(); // cancel event

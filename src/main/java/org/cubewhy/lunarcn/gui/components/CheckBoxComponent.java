@@ -2,8 +2,8 @@ package org.cubewhy.lunarcn.gui.components;
 
 import org.cubewhy.lunarcn.ActionListener;
 import org.cubewhy.lunarcn.gui.AbstractComponent;
-import org.cubewhy.lunarcn.utils.MouseUtils;
 import org.cubewhy.lunarcn.utils.RenderUtils;
+import org.lwjgl.input.Mouse;
 
 import java.awt.*;
 
@@ -38,8 +38,8 @@ public class CheckBoxComponent extends AbstractComponent {
 
     @Override
     public void drawComponent() {
-        int mouseX = MouseUtils.getX();
-        int mouseY = MouseUtils.getY();
+        int mouseX = Mouse.getX();
+        int mouseY = Mouse.getY();
 
         this.hovered = RenderUtils.isHovering(mouseX, mouseY, x, y, x + 10, y + 10);
         // draw box

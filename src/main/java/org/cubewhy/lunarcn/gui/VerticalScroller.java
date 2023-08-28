@@ -1,8 +1,8 @@
 package org.cubewhy.lunarcn.gui;
 
 import net.minecraft.client.gui.Gui;
-import org.cubewhy.lunarcn.utils.MouseUtils;
 import org.cubewhy.lunarcn.utils.RenderUtils;
+import org.lwjgl.input.Mouse;
 
 import java.awt.*;
 
@@ -24,9 +24,9 @@ public class VerticalScroller extends Gui {
     }
 
     public void drawScroller() {
-        int mouseX = MouseUtils.getX();
-        int mouseY = MouseUtils.getY();
-        int status = MouseUtils.getDWheel();
+        int mouseX = Mouse.getX();
+        int mouseY = Mouse.getY();
+        int status = Mouse.getDWheel();
 
         this.hovered = RenderUtils.isHovering(mouseX, mouseY, x, y, x + width, y + height);
         RenderUtils.drawRoundedRect(x, y, width, height, 2, new Color(0, 0, 0, 40));

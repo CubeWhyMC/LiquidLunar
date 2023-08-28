@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix ipc">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/ipc/DiscordIPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/ipc/DiscordIPC.java" afterDir="false" />
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="rename method callEvent to call">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/EventCancelable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/EventCancelable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,31 +80,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;所有位置&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/CubeWhy/IdeaProjects/LiquidLunar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TODO_SCOPE": "所有位置",
+    "WebServerToolWindowFactoryState": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/CubeWhy/IdeaProjects/LiquidLunar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\shadiao\LiquidLunar\src\main\resources" />
@@ -279,7 +277,7 @@
       <workItem from="1693133505518" duration="1378000" />
       <workItem from="1693135165427" duration="865000" />
       <workItem from="1693199491747" duration="27000" />
-      <workItem from="1693199544991" duration="75000" />
+      <workItem from="1693199544991" duration="2950000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -601,7 +599,55 @@
       <option name="project" value="LOCAL" />
       <updated>1693132865813</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="use new metadata API">
+      <option name="closed" value="true" />
+      <created>1693200377750</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1693200377750</updated>
+    </task>
+    <task id="LOCAL-00042" summary="remove CL">
+      <option name="closed" value="true" />
+      <created>1693200543455</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1693200543455</updated>
+    </task>
+    <task id="LOCAL-00043" summary="version">
+      <option name="closed" value="true" />
+      <created>1693200842833</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1693200842833</updated>
+    </task>
+    <task id="LOCAL-00044" summary="cancelable Events">
+      <option name="closed" value="true" />
+      <created>1693201602453</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1693201602453</updated>
+    </task>
+    <task id="LOCAL-00045" summary="marked as cancelable">
+      <option name="closed" value="true" />
+      <created>1693201675941</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1693201675941</updated>
+    </task>
+    <task id="LOCAL-00046" summary="rename method callEvent to call">
+      <option name="closed" value="true" />
+      <created>1693202216171</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1693202216171</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,12 +668,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix worldevent &amp; packetevent call" />
-    <MESSAGE value="fix git url" />
-    <MESSAGE value="fix resources path" />
-    <MESSAGE value="fix resources" />
-    <MESSAGE value="fix forge icon" />
-    <MESSAGE value="add back libs &amp; logger" />
     <MESSAGE value="fix clickGui panel mouse moving" />
     <MESSAGE value="chatLine copying" />
     <MESSAGE value="DragonWing cos" />
@@ -647,7 +687,13 @@
     <MESSAGE value="anti forge (some server banned us)" />
     <MESSAGE value="multi-clickGui (in-work)" />
     <MESSAGE value="fix ipc" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix ipc" />
+    <MESSAGE value="use new metadata API" />
+    <MESSAGE value="remove CL" />
+    <MESSAGE value="version" />
+    <MESSAGE value="cancelable Events" />
+    <MESSAGE value="marked as cancelable" />
+    <MESSAGE value="rename method callEvent to call" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename method callEvent to call" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

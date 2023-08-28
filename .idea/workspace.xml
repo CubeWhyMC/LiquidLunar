@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix serverSwitcher">
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="order">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MinecraftInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MinecraftInstance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mcmod.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mcmod.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinMinecraft.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +103,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.json.schema",
+    "settings.editor.selected.configurable": "preferences.general",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -281,15 +280,9 @@
       <workItem from="1693135165427" duration="865000" />
       <workItem from="1693199491747" duration="27000" />
       <workItem from="1693199544991" duration="4621000" />
-      <workItem from="1693204315691" duration="564000" />
-    </task>
-    <task id="LOCAL-00001" summary="commit info">
-      <option name="closed" value="true" />
-      <created>1689394180268</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1689394180268</updated>
+      <workItem from="1693204315691" duration="3301000" />
+      <workItem from="1693222533395" duration="944000" />
+      <workItem from="1693223503692" duration="143000" />
     </task>
     <task id="LOCAL-00002" summary="version">
       <option name="closed" value="true" />
@@ -667,7 +660,23 @@
       <option name="project" value="LOCAL" />
       <updated>1693203252269</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="key event">
+      <option name="closed" value="true" />
+      <created>1693210408209</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1693210408210</updated>
+    </task>
+    <task id="LOCAL-00050" summary="order">
+      <option name="closed" value="true" />
+      <created>1693210508466</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1693210508466</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -688,8 +697,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="DragonWing cos" />
-    <MESSAGE value="I don't know why it still copies the latest message" />
     <MESSAGE value="hypixel getGameType in hub" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="Auto Clicker" />
@@ -713,7 +720,9 @@
     <MESSAGE value="rename method callEvent to call" />
     <MESSAGE value="Remove mouseUtils" />
     <MESSAGE value="fix serverSwitcher" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix serverSwitcher" />
+    <MESSAGE value="key event" />
+    <MESSAGE value="order" />
+    <option name="LAST_COMMIT_MESSAGE" value="order" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

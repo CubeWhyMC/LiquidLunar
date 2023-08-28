@@ -23,7 +23,7 @@ public class DiscordIPC {
                 @Override
                 public void onReady(IPCClient client) {
                     RichPresence.Builder builder = new RichPresence.Builder();
-                    builder.setState("Loading client")
+                    builder.setState("IDLE")
                             .setDetails(Client.clientName)
                             .setStartTimestamp(OffsetDateTime.now())
                             .setLargeImage("logo", "ICON")

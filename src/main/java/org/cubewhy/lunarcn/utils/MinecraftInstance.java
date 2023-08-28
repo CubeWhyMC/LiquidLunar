@@ -36,7 +36,7 @@ public class MinecraftInstance {
      * @param account Account object
      */
     public static void setSession(@NotNull IAccount account) {
-        Session session = new Session(account.getUserName(), account.getUuid(), account.getAccessToken(), "legary");
+        Session session = new Session(account.getUserName(), account.getUuid(), account.getAccessToken(), "legacy");
         setSession(session);
     }
 

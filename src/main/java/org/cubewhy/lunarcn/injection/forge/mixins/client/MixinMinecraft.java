@@ -14,15 +14,13 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.common.MinecraftForge;
 import org.cubewhy.lunarcn.Client;
-import org.cubewhy.lunarcn.event.events.MouseEvent;
-import org.cubewhy.lunarcn.event.events.ScreenChangeEvent;
-import org.cubewhy.lunarcn.event.events.TickEvent;
-import org.cubewhy.lunarcn.event.events.WorldEvent;
+import org.cubewhy.lunarcn.event.events.*;
 import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
 import org.cubewhy.lunarcn.gui.SplashProgress;
 import org.cubewhy.lunarcn.utils.FileUtils;
 import org.cubewhy.lunarcn.utils.GitUtils;
 import org.cubewhy.lunarcn.utils.ImageUtils;
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -122,7 +120,7 @@ abstract public class MixinMinecraft {
 
     /**
      * @author CubeWhy
-     * @reason 设置窗口icon
+     * @reason window icon
      */
     @Overwrite
     private void setWindowIcon() {
@@ -150,7 +148,7 @@ abstract public class MixinMinecraft {
 
     /**
      * @author CubeWhy
-     * @reason 自定义屏幕
+     * @reason MainMenu redirect
      */
     @Overwrite
     public void displayGuiScreen(GuiScreen guiScreenIn) {
@@ -194,17 +192,24 @@ abstract public class MixinMinecraft {
         new WorldEvent(worldClientIn).call(); // call worldEvent
     }
 
-    @Inject(method = "clickMouse", at = @At("RETURN"))
+    @Inject(method = "clickMouse", at = @At("HEAD"))
     public void clickMouse(CallbackInfo ci) {
         new MouseEvent(MouseEvent.MouseButton.LEFT).call();
     }
-    @Inject(method = "rightClickMouse", at = @At("RETURN"))
+    @Inject(method = "rightClickMouse", at = @At("HEAD"))
     public void rightClickMouse(CallbackInfo ci) {
         new MouseEvent(MouseEvent.MouseButton.RIGHT).call();
     }
 
-    @Inject(method = "middleClickMouse", at = @At("RETURN"))
+    @Inject(method = "middleClickMouse", at = @At("HEAD"))
     public void middleClickMouse(CallbackInfo ci) {
         new MouseEvent(MouseEvent.MouseButton.MIDDLE).call();
+    }
+
+    @Inject(method = "runTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/settings/KeyBinding;setKeyBindState(IZ)V"), cancellable = true)
+    public void callKeyEvent(CallbackInfo ci) {
+        if (new KeyEvent(Keyboard.getEventKey()).call().isCanceled()) {
+            ci.cancel(); // cancel event
+        }
     }
 }

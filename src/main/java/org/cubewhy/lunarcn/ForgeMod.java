@@ -1,6 +1,7 @@
 package org.cubewhy.lunarcn;
 
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
@@ -13,7 +14,7 @@ public class ForgeMod {
     public static ForgeMod instance;
 
     @Mod.EventHandler
-    public void init(FMLServerStartingEvent event) {
+    public void init(FMLPreInitializationEvent event) {
         logger.info("FML Init");
     }
 }

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="rename method callEvent to call">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/EventCancelable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/event/EventCancelable.java" afterDir="false" />
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix serverSwitcher">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MinecraftInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/utils/MinecraftInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mcmod.info" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mcmod.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +61,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/.gradle/minecraft/forgeSrc-1.8.9-11.15.1.2318-1.8.9-PROJECT(LiquidLunarForge)-sources.jar!/net/minecraft/client/Minecraft.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$PROJECT_DIR$/.gradle/minecraft/forgeSrc-1.8.9-11.15.1.2318-1.8.9-PROJECT(LiquidLunarForge)-sources.jar!/net/minecraft/client/renderer/ItemRenderer.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -91,17 +94,17 @@
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/CubeWhy/IdeaProjects/LiquidLunar",
+    "last_opened_file_path": "C:/Users/CubeWhy/IdeaProjects/LiquidLunar/.gradle/minecraft/forgeSrc-1.8.9-11.15.1.2318-1.8.9-PROJECT(LiquidLunarForge)-sources.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "项目",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java",
+    "settings.editor.selected.configurable": "settings.json.schema",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -277,7 +280,8 @@
       <workItem from="1693133505518" duration="1378000" />
       <workItem from="1693135165427" duration="865000" />
       <workItem from="1693199491747" duration="27000" />
-      <workItem from="1693199544991" duration="2950000" />
+      <workItem from="1693199544991" duration="4621000" />
+      <workItem from="1693204315691" duration="564000" />
     </task>
     <task id="LOCAL-00001" summary="commit info">
       <option name="closed" value="true" />
@@ -647,7 +651,23 @@
       <option name="project" value="LOCAL" />
       <updated>1693202216171</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Remove mouseUtils">
+      <option name="closed" value="true" />
+      <created>1693202675805</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1693202675805</updated>
+    </task>
+    <task id="LOCAL-00048" summary="fix serverSwitcher">
+      <option name="closed" value="true" />
+      <created>1693203252269</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1693203252269</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,8 +688,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix clickGui panel mouse moving" />
-    <MESSAGE value="chatLine copying" />
     <MESSAGE value="DragonWing cos" />
     <MESSAGE value="I don't know why it still copies the latest message" />
     <MESSAGE value="hypixel getGameType in hub" />
@@ -693,7 +711,9 @@
     <MESSAGE value="cancelable Events" />
     <MESSAGE value="marked as cancelable" />
     <MESSAGE value="rename method callEvent to call" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename method callEvent to call" />
+    <MESSAGE value="Remove mouseUtils" />
+    <MESSAGE value="fix serverSwitcher" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix serverSwitcher" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

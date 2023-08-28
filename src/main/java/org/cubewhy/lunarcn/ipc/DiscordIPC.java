@@ -31,7 +31,6 @@ public class DiscordIPC {
                     client.sendRichPresence(builder.build());
                 }
             });
-
             client.connect();
             return client;
         } catch (Throwable e) {

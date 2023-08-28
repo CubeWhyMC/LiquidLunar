@@ -30,8 +30,6 @@ repositories {
 dependencies {
     include fileTree(dir: "libs", includes: ['*.jar'])
 
-//    include 'org.newdawn.slick:core:1.0.0@core'
-
     // Don't update mixin
     include("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
         transitive = false
@@ -42,19 +40,17 @@ dependencies {
         exclude module: "log4j-core"
         exclude module: "slf4j-api"
     }
-
-    annotationProcessor("org.spongepowered:mixin:0.7.11-SNAPSHOT")
-
-    include 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
-    include 'com.squareup.okhttp3:okhttp:5.0.0-alpha.11'
     include('com.jagrosh:DiscordIPC:0.4') {
         exclude module: "gson"
         exclude module: "log4j"
     }
 
-    implementation 'org.jetbrains:annotations:24.0.1'
+    annotationProcessor("org.spongepowered:mixin:0.7.11-SNAPSHOT")
 
-    implementation 'org.fusesource.jansi:jansi:2.4.0'
+    include 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
+    include 'com.squareup.okhttp3:okhttp:5.0.0-alpha.11'
+
+    implementation 'org.jetbrains:annotations:24.0.1'
 }
 
 shadowJar {

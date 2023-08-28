@@ -6,10 +6,8 @@ import com.google.gson.JsonParser;
 import com.jagrosh.discordipc.IPCClient;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.client.C17PacketCustomPayload;
-import net.minecraft.network.play.server.S3FPacketCustomPayload;
 import net.minecraft.util.ResourceLocation;
 import okhttp3.Call;
 import okhttp3.Response;
@@ -42,15 +40,14 @@ public class Client {
     private static final Client instance = new Client(); // instance
     public static final String clientName = "LiquidLunar"; // client name
     public static final String clientVersion = GitUtils.gitInfo.getProperty("git.build.version"); // client version
-    public static final String[] clientDev = new String[] {"CubeWhy", "catand", "yuxiangll"}; // Client dev
+    public static final String[] clientDev = new String[]{"CubeWhy", "catand", "yuxiangll"}; // Client dev
     public static final String clientId = clientName.toLowerCase() + ":" + GitUtils.gitBranch;
     public static String clientDir = System.getProperty("user.home") + "/.cubewhy/liquidlunar";
     public static String configDir = clientDir + "/config";
     public static ResourceLocation clientLogo = new ResourceLocation("lunarcn/logo.png");
-    public static FeaturedServerData[] featuredServerDataList = new FeaturedServerData[]{
-            new FeaturedServerData("QbyPixel", "mc.cubewhy.eu.org")
-    };
-    public static final String pinnedServerApi = "https://www.lunarcn.top/api/pinned_servers.php?format=json";
+    public static FeaturedServerData[] featuredServerDataList = new FeaturedServerData[]{};
+    public static final String metadataApi = "https://api.badlion.top/api/liquid/metadata";
+    public static JsonObject metadata;
     public static long discordAppId = 1072028154564198420L; // Discord api id
     public IPCClient discordIPC;
 
@@ -74,23 +71,31 @@ public class Client {
 
         AccountConfigFile.getInstance().load(); // Accounts
 
-        // load pinned servers
         try {
-            Call call = HttpUtils.get(pinnedServerApi);
-            ArrayList<FeaturedServerData> serverDataList = new ArrayList<>();
+            // load metadata
+            Call call = HttpUtils.get(metadataApi);
             try (Response response = call.execute()) {
-                if (response.body() != null) {
-                    JsonObject json = new JsonParser().parse(response.body().string()).getAsJsonObject();
-                    for (Map.Entry<String, JsonElement> set :
-                            json.entrySet()) {
-                        serverDataList.add(new FeaturedServerData(set.getKey(), set.getValue().getAsString()));
-                    }
+                JsonObject responseJson = new JsonParser().parse(response.body().string()).getAsJsonObject();
+                int code = responseJson.get("code").getAsInt();
+                if (code == 200) {
+                    // request success
+                    metadata = responseJson.getAsJsonObject("data");
+                } else {
+                    // request failed
+                    // Throw a error
+                    throw new Exception("Fetch metadata failed, code = " + code);
                 }
             }
-
+            ArrayList<FeaturedServerData> serverDataList = new ArrayList<>();
+            // Load pinned servers
+            for (Map.Entry<String, JsonElement> set :
+                    metadata.get("pinned-servers").getAsJsonObject().entrySet()) {
+                serverDataList.add(new FeaturedServerData(set.getKey(), set.getValue().getAsString()));
+            }
             featuredServerDataList = serverDataList.toArray(new FeaturedServerData[]{});
-        } catch (Throwable ignored) {
-
+        } catch (Throwable e) {
+            // Log errors
+            logger.catching(e);
         }
     }
 

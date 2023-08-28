@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinPlayerControllerMP {
     @Inject(method = "attackEntity", at = @At("RETURN"), cancellable = true)
     public void attackEntity(EntityPlayer playerIn, Entity targetEntity, CallbackInfo ci) {
-        if (new AttackEvent(targetEntity).callEvent().isCanCalled()) {
+        if (new AttackEvent(targetEntity).call().isCanceled()) {
             ci.cancel(); // cancel event
         }
     }

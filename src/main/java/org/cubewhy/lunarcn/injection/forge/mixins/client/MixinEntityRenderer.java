@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinEntityRenderer {
     @Inject(method = "updateCameraAndRender", at = @At("RETURN"))
     public void updateCameraAndRender(CallbackInfo ci) {
-        new RenderEvent().callEvent();
+        new RenderEvent().call();
     }
 }

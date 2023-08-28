@@ -2,18 +2,19 @@ package org.cubewhy.lunarcn.event;
 
 public class EventCancelable extends Event {
 
-    private boolean canCalled = false;
+    private boolean canceled = false;
 
-    public boolean isCanCalled() {
-        return canCalled;
+    public boolean isCanceled() {
+        return canceled;
     }
 
-    public void setCanCalled(boolean value) {
-        canCalled = value;
+    public EventCancelable cancel() {
+        canceled = true;
+        return this;
     }
 
     @Override
-    public EventCancelable callEvent() {
-        return (EventCancelable) super.callEvent();
+    public EventCancelable call() {
+        return (EventCancelable) super.call();
     }
 }

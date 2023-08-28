@@ -15,7 +15,6 @@ import net.minecraft.util.MessageSerializer;
 import net.minecraft.util.MessageSerializer2;
 import org.cubewhy.lunarcn.event.events.PacketEvent;
 import org.cubewhy.lunarcn.proxy.ProxyManager;
-import org.cubewhy.lunarcn.utils.ClientUtils;
 import org.cubewhy.lunarcn.utils.PacketUtils;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,7 +23,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.net.InetAddress;
-import java.net.Proxy;
 
 import static org.cubewhy.lunarcn.utils.ClientUtils.logger;
 
@@ -33,7 +31,7 @@ public class MixinNetworkManager {
     @Inject(method = "channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V", at = @At("RETURN"), cancellable = true)
     public void channelRead0(ChannelHandlerContext channelHandlerContext, Packet packet, CallbackInfo ci) {
         if (PacketUtils.INSTANCE.getPacketType(packet) == PacketUtils.PacketType.SERVERSIDE && channelHandlerContext != null) {
-            if (new PacketEvent(packet, PacketEvent.Type.RECEIVE).callEvent().isCanCalled()) {
+            if (new PacketEvent(packet, PacketEvent.Type.RECEIVE).call().isCanceled()) {
                 ci.cancel(); // cancel event
             }
         }
@@ -46,7 +44,7 @@ public class MixinNetworkManager {
             return;
         }
 
-        if (new PacketEvent(packet, PacketEvent.Type.SEND).callEvent().isCanCalled()) {
+        if (new PacketEvent(packet, PacketEvent.Type.SEND).call().isCanceled()) {
             ci.cancel(); // cancel event
         }
     }

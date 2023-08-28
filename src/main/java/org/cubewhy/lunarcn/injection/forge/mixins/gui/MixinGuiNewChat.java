@@ -50,7 +50,7 @@ public abstract class MixinGuiNewChat extends Gui {
 
     @Inject(method = "printChatMessageWithOptionalDeletion", at = @At("RETURN"))
     public void printChatMessageWithOptionalDeletion(IChatComponent chatComponent, int chatLineId, CallbackInfo ci) {
-        new ChatEvent(chatComponent).callEvent();
+        new ChatEvent(chatComponent).call();
     }
 
     /**

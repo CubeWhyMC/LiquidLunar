@@ -20,7 +20,6 @@ import org.cubewhy.lunarcn.event.events.TickEvent;
 import org.cubewhy.lunarcn.event.events.WorldEvent;
 import org.cubewhy.lunarcn.files.configs.ClientConfigFile;
 import org.cubewhy.lunarcn.gui.SplashProgress;
-import org.cubewhy.lunarcn.utils.ClientUtils;
 import org.cubewhy.lunarcn.utils.FileUtils;
 import org.cubewhy.lunarcn.utils.GitUtils;
 import org.cubewhy.lunarcn.utils.ImageUtils;
@@ -118,7 +117,7 @@ abstract public class MixinMinecraft {
 
     @Inject(method = "runTick", at = @At("RETURN"))
     public void runTick(CallbackInfo ci) {
-        new TickEvent().callEvent();
+        new TickEvent().call();
     }
 
     /**
@@ -187,25 +186,25 @@ abstract public class MixinMinecraft {
                 this.setIngameFocus();
             }
         }
-        new ScreenChangeEvent(guiScreenIn).callEvent();
+        new ScreenChangeEvent(guiScreenIn).call();
     }
 
     @Inject(method = "loadWorld(Lnet/minecraft/client/multiplayer/WorldClient;Ljava/lang/String;)V", at = @At("RETURN"))
     public void loadWorld(WorldClient worldClientIn, String loadingMessage, CallbackInfo ci) {
-        new WorldEvent(worldClientIn).callEvent(); // call worldEvent
+        new WorldEvent(worldClientIn).call(); // call worldEvent
     }
 
     @Inject(method = "clickMouse", at = @At("RETURN"))
     public void clickMouse(CallbackInfo ci) {
-        new MouseEvent(MouseEvent.MouseButton.LEFT).callEvent();
+        new MouseEvent(MouseEvent.MouseButton.LEFT).call();
     }
     @Inject(method = "rightClickMouse", at = @At("RETURN"))
     public void rightClickMouse(CallbackInfo ci) {
-        new MouseEvent(MouseEvent.MouseButton.RIGHT).callEvent();
+        new MouseEvent(MouseEvent.MouseButton.RIGHT).call();
     }
 
     @Inject(method = "middleClickMouse", at = @At("RETURN"))
     public void middleClickMouse(CallbackInfo ci) {
-        new MouseEvent(MouseEvent.MouseButton.MIDDLE).callEvent();
+        new MouseEvent(MouseEvent.MouseButton.MIDDLE).call();
     }
 }

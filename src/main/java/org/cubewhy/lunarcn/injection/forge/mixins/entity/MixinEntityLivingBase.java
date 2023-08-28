@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinEntityLivingBase {
     @Inject(method = "jump", at = @At("HEAD"))
     public void jump(CallbackInfo ci) {
-        new JumpEvent().callEvent();
+        new JumpEvent().call();
     }
 }

@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinGuiInGame {
     @Inject(method = "renderTooltip", at = @At("RETURN"))
     protected void renderTooltip(ScaledResolution sr, float partialTicks, CallbackInfo ci) {
-        new Render2DEvent().callEvent();
+        new Render2DEvent().call();
     }
 
     @Inject(method = "renderPumpkinOverlay", at = @At("HEAD"), cancellable = true)

@@ -10,9 +10,6 @@ import org.cubewhy.lunarcn.event.events.PacketEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(NetHandlerPlayClient.class)
 public class MixinNetHandlerPlayClient {
@@ -35,7 +32,7 @@ public class MixinNetHandlerPlayClient {
                     (this.gameController.thePlayer.motionX + packetIn.func_149149_c()) * 8000.0,
                     (this.gameController.thePlayer.motionY + packetIn.func_149144_d()) * 8000.0,
                     (this.gameController.thePlayer.motionZ + packetIn.func_149147_e()) * 8000.0);
-            new PacketEvent(packet, PacketEvent.Type.RECEIVE).callEvent();
+            new PacketEvent(packet, PacketEvent.Type.RECEIVE).call();
         }
     }
 }

@@ -25,7 +25,7 @@ public class MinecraftInstance {
         // change session
         mc.session = session;
         // call session event
-        new SessionEvent(session).callEvent();
+        new SessionEvent(session).call();
         logger.info("Switch account, PlayerName: " + session.getUsername());
     }
 

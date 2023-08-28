@@ -132,7 +132,7 @@ public class Client {
             currentAccount.switchAccount();
         }
 
-        new SessionEvent(mc.session).callEvent();
+        new SessionEvent(mc.session).call();
     }
 
     public void onStop() {

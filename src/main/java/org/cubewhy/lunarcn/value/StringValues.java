@@ -10,11 +10,15 @@ public class StringValues extends Value<String> {
     public String[] values;
     private String currentValue;
 
-    public StringValues(String name, String[] values) {
-        super(name, values[0]);
+    public StringValues(String name, String[] values, String defaultValue) {
+        super(name, defaultValue);
         this.values = values;
         this.name = name;
         this.currentValue = values[0];
+    }
+
+    public StringValues(String name, String[] values) {
+        this(name, values, values[0]);
     }
 
     @Override

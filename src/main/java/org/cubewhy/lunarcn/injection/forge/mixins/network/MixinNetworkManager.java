@@ -33,7 +33,9 @@ public class MixinNetworkManager {
     @Inject(method = "channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V", at = @At("RETURN"))
     public void channelRead0(ChannelHandlerContext channelHandlerContext, Packet packet, CallbackInfo ci) {
         if (PacketUtils.INSTANCE.getPacketType(packet) == PacketUtils.PacketType.SERVERSIDE && channelHandlerContext != null) {
-            new PacketEvent(packet, PacketEvent.Type.RECEIVE).callEvent();
+            if (new PacketEvent(packet, PacketEvent.Type.RECEIVE).callEvent().isCanCalled()) {
+                ci.cancel(); // cancel event
+            }
         }
 
     }
@@ -44,7 +46,9 @@ public class MixinNetworkManager {
             return;
         }
 
-        new PacketEvent(packet, PacketEvent.Type.SEND).callEvent();
+        if (new PacketEvent(packet, PacketEvent.Type.SEND).callEvent().isCanCalled()) {
+            ci.cancel(); // cancel event
+        }
     }
 
     @Inject(method = "createNetworkManagerAndConnect", at = @At("HEAD"), cancellable = true)

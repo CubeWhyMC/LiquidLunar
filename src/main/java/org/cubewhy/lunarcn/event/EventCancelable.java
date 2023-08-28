@@ -11,4 +11,9 @@ public class EventCancelable extends Event {
     public void setCanCalled(boolean value) {
         canCalled = value;
     }
+
+    @Override
+    public EventCancelable callEvent() {
+        return (EventCancelable) super.callEvent();
+    }
 }

@@ -2,12 +2,13 @@ package org.cubewhy.lunarcn.event.events;
 
 import net.minecraft.network.Packet;
 import org.cubewhy.lunarcn.event.Event;
+import org.cubewhy.lunarcn.event.EventCancelable;
 
 /**
  * Packet event
  * Call when send a packet
  * */
-public class PacketEvent extends Event {
+public class PacketEvent extends EventCancelable {
 
     private final Packet packet;
     private final Type type;

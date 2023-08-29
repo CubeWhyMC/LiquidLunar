@@ -22,9 +22,13 @@ public abstract class Value<T> {
 		this.name = name;
 	}
 
-	public abstract T getValue();
+	public T getValue() {
+		return value;
+	}
 
-	public abstract void setValue(T value);
+	public void setValue(T value) {
+		this.value = value;
+	}
 
 	public abstract JsonElement toJson();
 

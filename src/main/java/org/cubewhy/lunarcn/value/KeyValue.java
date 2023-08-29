@@ -1,24 +1,21 @@
 package org.cubewhy.lunarcn.value;
 
-import org.lwjgl.input.Keyboard;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonPrimitive;
 
-import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
+public class KeyValue extends Value<Integer> {
 
-public class KeyValue extends IntValue {
-    public KeyValue(String name, int value) {
+    public KeyValue(String name, Integer value) {
         super(name, value);
     }
 
-    public KeyValue(String name, int value, int maxValue, int minValue) {
-        super(name, value, maxValue, minValue);
+    @Override
+    public JsonElement toJson() {
+        return new JsonPrimitive(value);
     }
 
-    /**
-     * Get key state
-     *
-     * @return state of the key
-     * */
-    public boolean isPressed() {
-        return Keyboard.isKeyDown(this.value);
+    @Override
+    public void fromJson(JsonElement jsonElement) {
+        value = jsonElement.getAsInt();
     }
 }

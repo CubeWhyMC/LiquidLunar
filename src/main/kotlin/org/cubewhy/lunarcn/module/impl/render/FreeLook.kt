@@ -20,6 +20,7 @@ class FreeLook : Module() {
         get() = if (freeLookState) field else mc.thePlayer.rotationPitch
     private var previous = 0
 
+    // holdDown = true
     private val returnOnRelease = BooleanValue("ReturnOnRelease", true)
     private var freeLookState = false
 
@@ -33,20 +34,22 @@ class FreeLook : Module() {
     fun onKey(event: KeyEvent) {
         if (event.keyCode == key.value) {
             if (Keyboard.getEventKeyState()) {
-                freeLookState = !freeLookState
-            }
-            cameraYaw = mc.thePlayer.rotationYaw
-            cameraPitch = mc.thePlayer.rotationPitch
-            if (freeLookState) {
-                previous = mc.gameSettings.thirdPersonView
-                mc.gameSettings.thirdPersonView = 1
-            } else {
-                // make it back
+                freeLookState = !freeLookState // toggle
+                cameraYaw = mc.thePlayer.rotationYaw
+                cameraPitch = mc.thePlayer.rotationPitch
+
+                if (freeLookState) {
+                    previous = mc.gameSettings.thirdPersonView
+                    mc.gameSettings.thirdPersonView = 1
+                } else {
+                    // make it back
+                    mc.gameSettings.thirdPersonView = previous
+                }
+            } else if (returnOnRelease.value) {
+                println("OFF")
+                freeLookState = false
                 mc.gameSettings.thirdPersonView = previous
             }
-        } else if (returnOnRelease.value) {
-            freeLookState = false
-            mc.gameSettings.thirdPersonView = previous
         }
         // built-in perspective keyBind pressed
         if (event.keyCode == mc.gameSettings.keyBindTogglePerspective.keyCode) {
@@ -57,7 +60,7 @@ class FreeLook : Module() {
 
     fun overrideMouse(): Boolean {
         if (mc.inGameHasFocus && Display.isActive()) {
-            if (!freeLookState || !state) {
+            if (!freeLookState) {
                 return true
             }
             mc.mouseHelper.mouseXYChange()

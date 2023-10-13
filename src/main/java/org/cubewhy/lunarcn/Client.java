@@ -46,7 +46,7 @@ public class Client {
     public static String configDir = clientDir + "/config";
     public static ResourceLocation clientLogo = new ResourceLocation("lunarcn/logo.png");
     public static FeaturedServerData[] featuredServerDataList = new FeaturedServerData[]{};
-    public static final String metadataApi = "https://api.badlion.top/api/liquid/metadata";
+    public static final String metadataApi = "https://api.lunarclient.top/api/liquid/metadata";
     public static JsonObject metadata;
     public static long discordAppId = 1072028154564198420L; // Discord api id
     public IPCClient discordIPC;

@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="Module free-look">
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix soon">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinEntityRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/injection/forge/mixins/client/MixinEntityRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/KeyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/KeyValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/value/Value.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/ForgeMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/ForgeMod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/impl/render/FreeLook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/impl/render/FreeLook.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,9 +60,28 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;MERGED&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;MERGED&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="e3f0e310-1942-4c75-a1aa-244f347c0fc8" />
+        <option name="url" value="https://github.com/CubeWhyMC/LiquidLunar.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$PROJECT_DIR$/.gradle/minecraft/forgeSrc-1.8.9-11.15.1.2318-1.8.9-PROJECT(LiquidLunarForge)-sources.jar!/net/minecraft/client/Minecraft.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$PROJECT_DIR$/.gradle/minecraft/forgeSrc-1.8.9-11.15.1.2318-1.8.9-PROJECT(LiquidLunarForge)-sources.jar!/net/minecraft/client/renderer/EntityRenderer.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$PROJECT_DIR$/.gradle/minecraft/forgeSrc-1.8.9-11.15.1.2318-1.8.9-PROJECT(LiquidLunarForge)-sources.jar!/net/minecraft/client/renderer/ItemRenderer.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -102,11 +120,11 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -157,7 +175,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="LiquidLunar [setupDecompWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -179,7 +197,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="LiquidLunar [setupDevWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -201,22 +219,20 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Application.Start Client" />
       <item itemvalue="Gradle.Build LiquidLunar" />
-      <item itemvalue="Gradle.LiquidLunar [setupDecompWorkspace]" />
       <item itemvalue="Gradle.LiquidLunar [setupCiWorkspace]" />
+      <item itemvalue="Gradle.LiquidLunar [setupDecompWorkspace]" />
       <item itemvalue="Gradle.LiquidLunar [setupDevWorkspace]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LiquidLunar [setupDevWorkspace]" />
         <item itemvalue="Gradle.LiquidLunar [setupDecompWorkspace]" />
-        <item itemvalue="Gradle.LiquidLunar [setupDevWorkspace]" />
-        <item itemvalue="Gradle.LiquidLunar [setupCiWorkspace]" />
-        <item itemvalue="Gradle.LiquidLunar [setupDevWorkspace]" />
         <item itemvalue="Gradle.LiquidLunar [setupCiWorkspace]" />
       </list>
     </recent_temporary>
@@ -286,23 +302,20 @@
       <workItem from="1693204315691" duration="3301000" />
       <workItem from="1693222533395" duration="944000" />
       <workItem from="1693223503692" duration="10263000" />
-      <workItem from="1693268302864" duration="67000" />
-    </task>
-    <task id="LOCAL-00004" summary="update fontRender, OverlaySettings">
-      <option name="closed" value="true" />
-      <created>1689397272854</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1689397272854</updated>
-    </task>
-    <task id="LOCAL-00005" summary="clickGUI update">
-      <option name="closed" value="true" />
-      <created>1689513739826</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1689513739826</updated>
+      <workItem from="1693268302864" duration="4684000" />
+      <workItem from="1694844885085" duration="446000" />
+      <workItem from="1694845395586" duration="251000" />
+      <workItem from="1694845690154" duration="87000" />
+      <workItem from="1694845809469" duration="41000" />
+      <workItem from="1694845883542" duration="42000" />
+      <workItem from="1694845958031" duration="342000" />
+      <workItem from="1694846335990" duration="1919000" />
+      <workItem from="1694848822783" duration="195000" />
+      <workItem from="1694849047745" duration="474000" />
+      <workItem from="1695380183340" duration="753000" />
+      <workItem from="1695905606887" duration="233000" />
+      <workItem from="1695906153147" duration="17000" />
+      <workItem from="1697203515726" duration="32000" />
     </task>
     <task id="LOCAL-00006" summary="update icons (by muskf)">
       <option name="closed" value="true" />
@@ -680,7 +693,23 @@
       <option name="project" value="LOCAL" />
       <updated>1693227513786</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="fix keybinding">
+      <option name="closed" value="true" />
+      <created>1693269344048</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1693269344049</updated>
+    </task>
+    <task id="LOCAL-00054" summary="fix soon">
+      <option name="closed" value="true" />
+      <created>1693273001375</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1693273001375</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,8 +730,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Auto Clicker" />
-    <MESSAGE value="i'm legit :(" />
     <MESSAGE value="fix clicker CPS" />
     <MESSAGE value="cps fix and stringvalues" />
     <MESSAGE value="fix the account refresh crash" />
@@ -726,7 +753,9 @@
     <MESSAGE value="order" />
     <MESSAGE value="rename" />
     <MESSAGE value="Module free-look" />
-    <option name="LAST_COMMIT_MESSAGE" value="Module free-look" />
+    <MESSAGE value="fix keybinding" />
+    <MESSAGE value="fix soon" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix soon" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -61,8 +61,6 @@ Please check `lunarcn_at.cfg`
 
 Create dir `run`
 
-### Others
+~~### Others
 
-Don't update gradle!
-
-Don't use foreach as much as possible
+Don't update gradle!~~

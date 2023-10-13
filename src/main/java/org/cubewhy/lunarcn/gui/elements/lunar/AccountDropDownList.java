@@ -107,14 +107,11 @@ public class AccountDropDownList {
         return currentHeld;
     }
 
-    public void remove(int index) {
-        IAccount account = items.get(index).account;
-        items.remove(index);
-        AccountConfigFile.getInstance().removeAccount(account);
-    }
-
     public void remove(@NotNull AccountButton button) {
         items.removeIf(b -> b.account.getUuid().equals(button.account.getUuid()));
+        if (button.account.getUuid().equals(mc.session.getPlayerID())) {
+            items.get(0).account.switchAccount(); // do switch, because the account removed
+        }
         AccountConfigFile.getInstance().removeAccount(button.account);
     }
 

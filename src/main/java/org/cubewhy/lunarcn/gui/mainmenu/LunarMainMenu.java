@@ -147,7 +147,7 @@ public class LunarMainMenu extends GuiMainMenu {
                 this.altList.remove(this.altList.getCurrentHeld());
             } else {
                 this.altList.currentItem = accountButton;
-                accountButton.account.switchAccount(); // 切换账户
+                accountButton.account.switchAccount(); // switch account
             }
             this.updateAccounts(); // 更新账户列表
             this.altList.reset();

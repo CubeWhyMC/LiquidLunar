@@ -12,7 +12,7 @@ import org.cubewhy.lunarcn.value.StringValues
 import org.lwjgl.input.Keyboard
 import org.lwjgl.opengl.Display
 
-@ModuleInfo(name = "FreeLook", description = "Look around", category = ModuleCategory.RENDER)
+@ModuleInfo(name = "FreeLook", description = "Look around without a rotation", category = ModuleCategory.RENDER)
 class FreeLook : Module() {
     var cameraYaw: Float = 0.0f
         get() = if (freeLookState) field else mc.thePlayer.rotationYaw
@@ -80,7 +80,8 @@ class FreeLook : Module() {
             if (cameraYaw < -90F) {
                 cameraYaw = -90F
             }
+            return false
         }
-        return false
+        return true
     }
 }

@@ -7,7 +7,7 @@
     <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix soon">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/ForgeMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cubewhy/lunarcn/ForgeMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/impl/render/FreeLook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/impl/render/FreeLook.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,12 +31,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LiquidLunarForge" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -231,8 +226,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LiquidLunar [setupDevWorkspace]" />
         <item itemvalue="Gradle.LiquidLunar [setupDecompWorkspace]" />
+        <item itemvalue="Gradle.LiquidLunar [setupDevWorkspace]" />
         <item itemvalue="Gradle.LiquidLunar [setupCiWorkspace]" />
       </list>
     </recent_temporary>
@@ -316,6 +311,11 @@
       <workItem from="1695905606887" duration="233000" />
       <workItem from="1695906153147" duration="17000" />
       <workItem from="1697203515726" duration="32000" />
+      <workItem from="1699013408745" duration="884000" />
+      <workItem from="1699016740464" duration="1488000" />
+      <workItem from="1699018291713" duration="68000" />
+      <workItem from="1699018407939" duration="1165000" />
+      <workItem from="1699019906538" duration="458000" />
     </task>
     <task id="LOCAL-00006" summary="update icons (by muskf)">
       <option name="closed" value="true" />

@@ -28,6 +28,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 
 import javax.swing.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
@@ -56,6 +57,10 @@ public class Client {
     public final ArrayList<UUID> sameClient = new ArrayList<>();
 
     public KeyBinding keyBindClickGui = new KeyBinding("ClickGui", Keyboard.KEY_RSHIFT, clientName);
+
+    private Client() {
+        new File(configDir).mkdirs(); // init
+    }
 
     public static Client getInstance() {
         return instance;

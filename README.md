@@ -60,7 +60,3 @@ Please check `lunarcn_at.cfg`
 ### Working dir "run" not found
 
 Create dir `run`
-
-~~### Others
-
-Don't update gradle!~~

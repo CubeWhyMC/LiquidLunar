@@ -3,10 +3,7 @@ package org.cubewhy.lunarcn.utils;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
-import com.sun.net.httpserver.HttpsConfigurator;
-import com.sun.net.httpserver.HttpsServer;
+import com.sun.net.httpserver.*;
 import okhttp3.FormBody;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -41,7 +38,8 @@ import static org.cubewhy.lunarcn.utils.WebUtils.getRequestParam;
 import static org.cubewhy.lunarcn.utils.WebUtils.handleResponse;
 
 public class MicrosoftAccountUtils {
-    public static final String REDIRECT_URL = "https://127.0.0.1:8888/login";
+    // use lunarclient.top to remove the unverified SSL warning
+    public static final String REDIRECT_URL = "https://local.lunarclient.top/login"; // if you think this is a scam, please turn to https://127.0.0.1:8888
     public static String CLIENT_ID = "dbb5fc17-43ac-4aa6-997e-ca69cde129a4";
     private static MicrosoftAccountUtils instance = null;
 
@@ -252,28 +250,29 @@ public class MicrosoftAccountUtils {
 
     public static class LoginHttpServer {
         private static LoginHttpServer instance = null;
-        private final HttpsServer httpsServer;
+        private final HttpServer theServer;
         private final ExecutorService executorService;
         private final int POOL_SIZE = 4;
 
         private final Handler handler = new Handler();
 
         private LoginHttpServer() throws IOException, KeyManagementException, NoSuchAlgorithmException, KeyStoreException, UnrecoverableKeyException, CertificateException {
-            httpsServer = HttpsServer.create(new InetSocketAddress(8888), 0);
-            httpsServer.createContext("/login", handler);
-            httpsServer.createContext("/", new PageAboutClient());
+            theServer = HttpServer.create(new InetSocketAddress(8888), 0);
+            theServer.createContext("/login", handler);
+            theServer.createContext("/", new PageAboutClient());
             executorService = Executors.newFixedThreadPool(
                     Runtime.getRuntime().availableProcessors() * POOL_SIZE);
-            httpsServer.setExecutor(executorService);
-            KeyStore keyStore = KeyStore.getInstance("JKS");
-            keyStore.load(FileUtils.getFile("lunarcn/127.0.0.1.jks"), "abc123".toCharArray());
-            KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
-            kmf.init(keyStore, "abc123".toCharArray());
-            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
-            sslContext.init(kmf.getKeyManagers(), null, null);
-            HttpsConfigurator httpsConfigurator = new HttpsConfigurator(sslContext);
-            httpsServer.setHttpsConfigurator(httpsConfigurator);
-            httpsServer.start();
+            theServer.setExecutor(executorService);
+            // No longer need SSL, we used local.lunarclient.top now
+//            KeyStore keyStore = KeyStore.getInstance("JKS");
+//            keyStore.load(FileUtils.getFile("lunarcn/127.0.0.1.jks"), "abc123".toCharArray());
+//            KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
+//            kmf.init(keyStore, "abc123".toCharArray());
+//            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
+//            sslContext.init(kmf.getKeyManagers(), null, null);
+//            HttpsConfigurator httpsConfigurator = new HttpsConfigurator(sslContext);
+//            theServer.setHttpsConfigurator(httpsConfigurator);
+            theServer.start();
         }
 
         public static LoginHttpServer getInstance() throws IOException, UnrecoverableKeyException, CertificateException, NoSuchAlgorithmException, KeyStoreException, KeyManagementException {

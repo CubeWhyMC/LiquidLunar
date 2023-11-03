@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="fix soon">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="init dir">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/impl/render/FreeLook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/cubewhy/lunarcn/module/impl/render/FreeLook.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,15 +312,7 @@
       <workItem from="1699016740464" duration="1488000" />
       <workItem from="1699018291713" duration="68000" />
       <workItem from="1699018407939" duration="1165000" />
-      <workItem from="1699019906538" duration="458000" />
-    </task>
-    <task id="LOCAL-00006" summary="update icons (by muskf)">
-      <option name="closed" value="true" />
-      <created>1689516499590</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1689516499590</updated>
+      <workItem from="1699019906538" duration="931000" />
     </task>
     <task id="LOCAL-00007" summary="CheckBoxComponent">
       <option name="closed" value="true" />
@@ -709,7 +698,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693273001375</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="init dir">
+      <option name="closed" value="true" />
+      <created>1699020719014</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1699020719016</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -730,7 +727,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix clicker CPS" />
     <MESSAGE value="cps fix and stringvalues" />
     <MESSAGE value="fix the account refresh crash" />
     <MESSAGE value="remove autoclicker bcz it's not legit" />
@@ -755,7 +751,8 @@
     <MESSAGE value="Module free-look" />
     <MESSAGE value="fix keybinding" />
     <MESSAGE value="fix soon" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix soon" />
+    <MESSAGE value="init dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="init dir" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

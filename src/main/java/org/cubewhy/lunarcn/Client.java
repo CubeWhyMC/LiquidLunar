@@ -38,7 +38,6 @@ import static org.cubewhy.lunarcn.utils.MinecraftInstance.mc;
 public class Client {
 
     public static final String splashImage = "lunarcn/splash.png"; // loading screen
-    private static final Client instance = new Client(); // instance
     public static final String clientName = "LiquidLunar"; // client name
     public static final String clientVersion = GitUtils.gitInfo.getProperty("git.build.version"); // client version
     public static final String[] clientDev = new String[]{"CubeWhy", "catand", "yuxiangll"}; // Client dev
@@ -51,6 +50,7 @@ public class Client {
     public static JsonObject metadata;
     public static long discordAppId = 1072028154564198420L; // Discord api id
     public IPCClient discordIPC;
+    private static final Client instance = new Client(); // instance
 
     private HudManager hudManager;
     public boolean debugMode = false;

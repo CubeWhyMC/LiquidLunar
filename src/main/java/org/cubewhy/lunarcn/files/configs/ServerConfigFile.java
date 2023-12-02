@@ -69,8 +69,8 @@ public class ServerConfigFile {
                 }
             }
 
-            this.initDefaultConfig();
         }
+        this.initDefaultConfig();
     }
 
     /**

@@ -5,7 +5,8 @@ build/
 !**/src/test/**/build/
 
 ### Minecraft ###
-run
+**/run/*
+!**/run/README.txt
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

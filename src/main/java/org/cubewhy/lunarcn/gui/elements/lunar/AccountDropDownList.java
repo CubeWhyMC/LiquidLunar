@@ -2,9 +2,9 @@ package org.cubewhy.lunarcn.gui.elements.lunar;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
-import org.cubewhy.lunarcn.account.IAccount;
 import org.cubewhy.lunarcn.account.OfflineAccount;
 import org.cubewhy.lunarcn.files.configs.AccountConfigFile;
+import org.cubewhy.lunarcn.gui.altmanager.LoginScreen;
 import org.cubewhy.lunarcn.utils.RenderUtils;
 import org.jetbrains.annotations.NotNull;
 
@@ -110,7 +110,12 @@ public class AccountDropDownList {
     public void remove(@NotNull AccountButton button) {
         items.removeIf(b -> b.account.getUuid().equals(button.account.getUuid()));
         if (button.account.getUuid().equals(mc.session.getPlayerID())) {
-            items.get(0).account.switchAccount(); // do switch, because the account removed
+            if (items.isEmpty()) {
+                // no account in the list, so display the login screen
+                mc.displayGuiScreen(new LoginScreen());
+            } else {
+                items.get(0).account.switchAccount(); // do switch, because the account removed
+            }
         }
         AccountConfigFile.getInstance().removeAccount(button.account);
     }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="v1.6" />
+    <list default="true" id="bd8a95e8-79fe-4a52-aafb-c0811235409c" name="更改" comment="load account from arg" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -264,15 +264,7 @@
       <workItem from="1699019906538" duration="931000" />
       <workItem from="1699020905543" duration="1927000" />
       <workItem from="1702111860614" duration="1152000" />
-      <workItem from="1702113024092" duration="1004000" />
-    </task>
-    <task id="LOCAL-00009" summary="agent loader">
-      <option name="closed" value="true" />
-      <created>1689998241011</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1689998241012</updated>
+      <workItem from="1702113024092" duration="1385000" />
     </task>
     <task id="LOCAL-00010" summary="fix agent, but all mixins are skipped">
       <option name="closed" value="true" />
@@ -658,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702113805448</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="load account from arg">
+      <option name="closed" value="true" />
+      <created>1702114364730</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1702114364731</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +679,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="remove autoclicker bcz it's not legit" />
     <MESSAGE value="hypixel game id" />
     <MESSAGE value="pinger" />
     <MESSAGE value="remove pinger, because crash client" />
@@ -704,7 +703,8 @@
     <MESSAGE value="init dir" />
     <MESSAGE value="make CLIENT instance in the end" />
     <MESSAGE value="v1.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.6" />
+    <MESSAGE value="load account from arg" />
+    <option name="LAST_COMMIT_MESSAGE" value="load account from arg" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -43,11 +43,7 @@ public class LoginScreen extends GuiScreen {
                 mc.displayGuiScreen(null);
                 break;
             case 1:
-                String userName = JOptionPane.showInputDialog("UserName");
-                if (userName.isEmpty()) {
-                    return;
-                }
-                OfflineAccount account = new OfflineAccount(userName);
+                OfflineAccount account = new OfflineAccount(mc.session.getUsername(), mc.session.getPlayerID(), mc.session.getToken());
                 AccountConfigFile.getInstance().addAccount(account);
                 account.switchAccount();
                 mc.displayGuiScreen(null);

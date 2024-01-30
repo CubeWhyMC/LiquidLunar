@@ -1,1 +1,1 @@
-Minecarft data folder
+Minecraft data folder
